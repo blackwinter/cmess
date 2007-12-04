@@ -23,6 +23,6 @@ task(:gem_spec) {{
   :require_path     => 'lib',
   :bindir           => 'bin',
   :executables      => EXECS,
-  :extra_rdoc_files => RDOCS,
+  :extra_rdoc_files => RDOCS + EXECS,
   :dependencies     => %w[htmlentities]
 }}
