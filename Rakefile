@@ -6,7 +6,7 @@ require 'lib/cmess/version'
 FILES = FileList['lib/**/*.rb'].to_a
 EXECS = FileList['bin/*'].to_a
 RDOCS = %w[README COPYING ChangeLog]
-OTHER = FileList['[A-Z]*', 'example/*', 'data/*'].to_a
+OTHER = FileList['[A-Z]*', 'example/**/*', 'data/**/*'].to_a
 
 task(:doc_spec) {{
   :title      => 'cmess Application documentation',
