@@ -14,7 +14,6 @@ task(:doc_spec) {{
 }}
 
 task(:gem_spec) {{
-  :append_svnversion => false,
   :name             => 'cmess',
   :version          => CMess::VERSION,
   :summary          => "Assist with handling messed up encodings " <<
