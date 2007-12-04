@@ -24,5 +24,5 @@ task(:gem_spec) {{
   :bindir           => 'bin',
   :executables      => EXECS,
   :extra_rdoc_files => RDOCS,
-  :dependencies     => %w[]
+  :dependencies     => %w[htmlentities]
 }}

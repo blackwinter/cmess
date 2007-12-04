@@ -119,6 +119,8 @@ OptionParser.new(nil, 40) { |opts|
   opts.separator 'Options:'
 
   opts.on('-i', '--input FILE', "Input file to read from [Default: STDIN]") { |f|
+    abort "Can't find input file: #{f}" unless File.readable?(f)
+
     options[:input] = File.open(f)
   }
 

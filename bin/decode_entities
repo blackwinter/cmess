@@ -1,0 +1,119 @@
+#! /usr/bin/ruby
+
+#--
+###############################################################################
+#                                                                             #
+# decode_entities -- Decode HTML entities                                     #
+#   [A component of cmess, the encoding tool-box]                             #
+#                                                                             #
+# Copyright (C) 2007 University of Cologne,                                   #
+#                    Albertus-Magnus-Platz,                                   #
+#                    50932 Cologne, Germany                                   #
+#                                                                             #
+# Authors:                                                                    #
+#     Jens Wille <jens.wille@uni-koeln.de>                                    #
+#                                                                             #
+# cmess is free software; you can redistribute it and/or modify it under the  #
+# terms of the GNU General Public License as published by the Free Software   #
+# Foundation; either version 3 of the License, or (at your option) any later  #
+# version.                                                                    #
+#                                                                             #
+# cmess is distributed in the hope that it will be useful, but WITHOUT ANY    #
+# WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS   #
+# FOR A PARTICULAR PURPOSE. See the GNU General Public License for more       #
+# details.                                                                    #
+#                                                                             #
+# You should have received a copy of the GNU General Public License along     #
+# with cmess. If not, see <http://www.gnu.org/licenses/>.                     #
+#                                                                             #
+###############################################################################
+#++
+
+require 'optparse'
+require 'iconv'
+
+require 'rubygems'
+require 'htmlentities/string'
+
+$: << File.join(File.dirname(__FILE__), '..', 'lib')
+
+require 'cmess/version'
+
+# our version ;-)
+module DecodeEntities
+  VERSION = '0.0.1'
+end
+
+PROGNAME = File.basename($0)
+
+# HTMLEntities requires UTF-8
+INTERMEDIATE_ENCODING = 'utf-8'
+
+ICONV_DUMMY = begin
+  dummy = Object.new
+
+  def dummy.iconv(string)
+    string
+  end
+
+  dummy
+end
+
+options = {
+  :input           => STDIN,
+  :output          => STDOUT,
+  :source_encoding => INTERMEDIATE_ENCODING,
+  :target_encoding => nil
+}
+
+OptionParser.new { |opts|
+  opts.banner = "Usage: #{$0} [options]"
+
+  opts.separator ''
+  opts.separator 'Options:'
+
+  opts.on('-i', '--input FILE', "Input file to read from [Default: STDIN]") { |f|
+    abort "Can't find input file: #{f}" unless File.readable?(f)
+
+    options[:input] = File.open(f)
+  }
+
+  opts.on('-o', '--output FILE', "Output file to write to [Default: STDOUT]") { |f|
+    options[:output] = File.open(f, 'w')
+  }
+
+  opts.separator ''
+
+  opts.on('-e', '--source-encoding ENCODING', "Encoding of input file [Default: #{options[:source_encoding].upcase}]") { |e|
+    options[:source_encoding] = e.downcase
+  }
+
+  opts.on('-t', '--target-encoding ENCODING', "Desired encoding for output file [Default: <source_encoding>]") { |e|
+    options[:target_encoding] = e.downcase
+  }
+
+  opts.separator ''
+  opts.separator 'Generic options:'
+
+  opts.on('-h', '--help', "Print this help message and exit") {
+    puts opts
+    exit
+  }
+
+  opts.on('--version', "Print program version and exit") {
+    puts "#{PROGNAME} v#{DecodeEntities::VERSION} (part of cmess v#{CMess::VERSION})"
+    exit
+  }
+}.parse!
+
+options[:target_encoding] ||= options[:source_encoding]
+
+ICONV_IN  = options[:source_encoding] != INTERMEDIATE_ENCODING ?
+  Iconv.new(INTERMEDIATE_ENCODING, options[:source_encoding]) : ICONV_DUMMY
+
+ICONV_OUT = options[:target_encoding] != INTERMEDIATE_ENCODING ?
+  Iconv.new(options[:target_encoding], INTERMEDIATE_ENCODING) : ICONV_DUMMY
+
+options[:input].each { |line|
+  options[:output].puts ICONV_OUT.iconv(ICONV_IN.iconv(line).decode_entities)
+}
