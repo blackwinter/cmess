@@ -10,7 +10,7 @@ OTHER = FileList['[A-Z]*', 'example/**/*', 'data/**/*'].to_a
 
 task(:doc_spec) {{
   :title      => 'cmess Application documentation',
-  :rdoc_files => RDOCS + FILES
+  :rdoc_files => RDOCS + FILES + EXECS
 }}
 
 task(:gem_spec) {{

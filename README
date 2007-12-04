@@ -7,7 +7,17 @@ This documentation refers to cmess version 0.0.1
 
 == DESCRIPTION
 
-TODO: well, the description... ;-)
+CMess bundles several tools under its hood that aim at dealing with various
+problems occurring in the context of character sets and encodings. Currently,
+there are:
+
+guess_encoding:: simple helper to identify the encoding of a given string
+cinderella::     when characters are "double encoded", you can't easily
+                 convert them back -- this is where cinderella comes in,
+                 sorting the good ones into the pot and the (potentially)
+                 bad ones into the crop...
+
+TODO: well, more of the description... ;-)
 
 
 == AUTHORS
