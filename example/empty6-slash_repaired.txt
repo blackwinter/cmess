@@ -1,0 +1,1495 @@
+Afghanistan=Kabul=Museum
+Ägypten=Alexandria=Musée Gréco-Romain
+Ägypten=Gizeh=Museum
+Ägypten=Kairo=Ägyptisches Museum
+Ägypten=Kairo=Museum
+Ägypten=Memphis=Sarapieion
+Ägypten=Ptolemais=Museum
+Albanien=Butrint / Buthrotum=Archäologisches Museum
+Albanien=Pojani=Archäologisches Museum
+Albanien=Tirana=Archäologisches Museum
+Algerien=Algier=Musée Nat. des Antiquités
+Algerien=Algier=Musée National des Antiquitè
+Algerien=Annaba=Museum
+Algerien=Cherchell=Musée Archéologique
+Algerien=Cherchell=Musée St. Gsell
+Algerien=Constantine=Musée Gustave Mercier
+Algerien=Guelma=Musée des Antiquités - Römisches Theater
+Algerien=Timgad=Musée Archéologique
+Algerien=Tipasa=Archäologischer Park
+Algerien=Tipasa=Museum
+Belgien=Brüssel=Bibliothèque Royale Albert Ier=Section des manuscrits
+Belgien=Brüssel=Musées Royaux d´Art et d´Histoire (Musée Rouyaux du Cinquantenaire
+Belgien=Gent=Zisterzienserabtei van de Bijloke
+Belgien=Lüttich=Archives de l'Etat
+Belgien=Lüttich=Musee Curtius
+Belgien=Mariemont=Musée Warocque
+Belgien=Sint-Truiden=Museum voor religieuze Kunst
+#Cava dei Tirreni, Badia della Trinità / Italien
+#Centraal Museum Axel Funke
+Dänemark=Kopenhagen=Nationalmuseet
+Dänemark=Kopenhagen=Ny Carlsberg Glyptothek
+Dänemark=Kopenhagen=Thorvaldsen Museum
+Deutschland=Aachen=Domschatzkammer
+Deutschland=Aachen=Domschatzkammer=Lotharkreuz
+Deutschland=Aachen=Stadtarchiv
+Deutschland=Aachen=Suermondt-Ludwig-Museum
+Deutschland=Aalen=Römisches Parkmuseum
+Deutschland=Alsfeld=Geschichts- und Museumsverein
+Deutschland=Altenberg an der Lahn=Kloster Altenberg
+Deutschland=Altenberg=Zisterzienserkloster
+Deutschland=Alzey=Museum Alzey
+Deutschland=Alzey=Museum für die Stadt und den Landkreis
+Deutschland=Annweiler=Burg Trifels
+Deutschland=Aschaffenburg=Hofbibliothek
+Deutschland=Aschaffenburg=Museum
+Deutschland=Baden-Baden=Zisterzienserinnenabtei Lichtenthal
+Deutschland=Bad Hersfeld=ehemaliges Benediktinerkloster
+Deutschland=Bad Karlshafen-Helmarshausen=ehemalige Benediktinerabtei Sankt Maria und Petrus
+Deutschland=Bad Karlshafen-Helmarshausen=Krukenburg
+Deutschland=Bad Kreuznach=Karl-Geib-Museum
+Deutschland=Bad Nauheim=Trinkkur-Anlage
+Deutschland=Bamberg=Historisches Museum
+Deutschland=Bamberg=Staatsbibliothek
+Deutschland=Büdingen=Schloß
+Deutschland=Bebenhausen=Zisterzienserkloster
+Deutschland=Bergheim=früheres Landesmuseum
+Deutschland=Berlin=Deutsches Historisches Museum
+Deutschland=Berlin=Deutsches Historisches Museumk
+Deutschland=Berlin=Geheimes Staatsarchiv
+Deutschland=Berlin=Gendarmenmarkt
+Deutschland=Berlin=Kaiser-Friedrich-Museum
+Deutschland=Berlin=Kunstbibliothek
+Deutschland=Berlin=Pergamon- Museum
+Deutschland=Berlin=Schloß Tegel
+Deutschland=Berlin=Staatliche Museen
+Deutschland=Berlin=Staatliche Museen Preußischer Kulturbesitz
+Deutschland=Berlin=Staatl. Museen Münzkabinett
+Deutschland=Berlin=Stalin-Allee
+Deutschland=Bernkastel-Kues=St. Nikolaus Hospital / Cusanus Stift
+Deutschland=Bonn=Akademisches Kunstmuseum - Antikensammlung der Universität Bonn
+Deutschland=Bonn-Beuel-Vilich=Archiv der kath. Pfarrkirche St. Peter
+Deutschland=Bonn=Rheinisches Landesmuseum
+Deutschland=Braunschweig=Herzog Anton Ulrich Museum
+Deutschland=Braunschweig=Sammlung Heyde
+Deutschland=Braunschweig=Städtisches Museum
+Deutschland=Burghausen=Museum
+Deutschland=Butzbach=Marktplatz
+Deutschland=Butzbach=Weiseler Straße
+Deutschland=Clausen=Jesuitenkloster
+Deutschland=Darmstadt=Hessische Landes- und Hochschulbibliothek
+Deutschland=Darmstadt=Hessisches Landesmuseum
+Deutschland=Darmstadt=Mathildenhöhe
+Deutschland=Dresden=Staatliche Kunstsammlung=Dresden
+Deutschland=Dresden=Staatliche Kunstsammlungen
+Deutschland=Düsseldorf=Hauptstaatsarchiv
+Deutschland=Düsseldorf=Kunstmuseum
+Deutschland=Eberbach=Zisterzienserkloster
+Deutschland=Einsiedeln=Benediktinerabtei
+Deutschland=Einsiedeln=Stiftsbibliothek
+Deutschland=Emmerich=Schatzkammer von Sankt Martin
+Deutschland=Erbach=Gräfliches Schloß
+Deutschland=Essen=Kloster Werden
+Deutschland=Essen=Münsterschatzkammer
+Deutschland=Frankenberg=Stadtverwaltung
+Deutschland=Frankfurt a. M.=Bundespostmuseum
+Deutschland=Frankfurt a. M.=Freies Deutsches Hochstift
+Deutschland=Frankfurt a. M.=Goethe-Museum
+Deutschland=Frankfurt a. M.=Grossmarkthalle
+Deutschland=Frankfurt a. M.=Hauptsynagoge
+Deutschland=Frankfurt a. M.=Historisches Museum
+Deutschland=Frankfurt a. M.=IG-Farben-Gebäude
+Deutschland=Frankfurt a. M.=Jüdisches Gemeindezentrum
+Deutschland=Frankfurt a. M.=Kunstgeschichtliches Institut, Diathek
+Deutschland=Frankfurt a. M.=Liebieghaus
+Deutschland=Frankfurt a. M.=Messe
+Deutschland=Frankfurt a. M.=Museum für Moderne Kunst
+Deutschland=Frankfurt a. M.=Neue Börse
+Deutschland=Frankfurt a. M.=Philosophikum
+Deutschland=Frankfurt a. M.=Privatbesitz
+Deutschland=Frankfurt a. M.=Sankt Bartholomäus
+Deutschland=Frankfurt a. M.=Sankt Leonhard
+Deutschland=Frankfurt a. M.=Städel Museum
+Deutschland=Frankfurt a. M.=Städelsches Kunstinstitut
+Deutschland=Frankfurt a. M.=Städtische Galerie im Städelschen Kunstinstitut
+Deutschland=Frankfurt a. M.=Synagoge
+Deutschland=Frankfurt a. M.=Synagoge am Börneplatz
+Deutschland=Frankfurt a. M.=Synagoge an der Friedberger Anlage
+Deutschland=Frankfurt a. M.=Synagoge der Israelitischen Religionsgesellschaft in der Schützensraße
+Deutschland=Frankfurt a. M.=Victoria-Haus
+Deutschland=Frankfurt a. M.=Westendsynagoge
+Deutschland=Freiburg im Breisgau=Kloster Adelhausen
+Deutschland=Fritzlar=Dommuseum
+Deutschland=Fürstenfeldbruck=Kloster Fürstenfeld
+Deutschland=Fulda=Dommuseum
+Deutschland=Fulda=Schloß Adolphseck Fasanerie
+Deutschland=Gelnhausen=Stadtverwaltung (Heimatmuseum
+Deutschland=Gießen=Schiffenberg
+Deutschland=Glauchau=ev. Kirche
+Deutschland=Goßlar=Stadtarchiv Goßlar
+Deutschland=Goslar=Kaiserpfalz
+Deutschland=Gotha=Landesbibliothek
+Deutschland=Gotha=Schloßmuseum
+Deutschland=Göttingen=Archäologisches Institut der Universität
+Deutschland=Göttingen=Staatliches Archivlager
+Deutschland=Haina=Zisterzienserkloster
+Deutschland=Halle/Saale=ROBERTINUM, Archäologisches Museum der Universität Halle
+Deutschland=Hamburg=Kunsthalle
+Deutschland=Hamburg=Museum für Kunst und Gewerbe
+Deutschland=Hamburg=Staatsarchiv
+Deutschland=Hannover=Kestner - Museum
+Deutschland=Hannover=Kestner-Museum
+Deutschland=Hannover=Niedersächsisches Hauptstaatsarchiv
+Deutschland=Hannover=Provinzialmuseum
+Deutschland=Hannover=Slg. Helmke
+Deutschland=Hannover=Slg. Wallmoden
+Deutschland=Heidelberg=Kurpfälzisches Museum
+Deutschland=Heidelberg=Schloß
+Deutschland=Heilbronn=Historisches Museum der Stadt
+Deutschland=Hildesheim=Domschatz
+Deutschland=Hirsau=Kloster Hirsau
+Deutschland=Ilbenstadt=Prämonstratenserkloster
+Deutschland=Jagsthausen=Berlichingensche Sammlung
+Deutschland=Kaiserswerth=Kaiserpfalz
+Deutschland=Kaisheim=Zisterzienserabtei
+Deutschland=Karlsruhe=Staatliche Kunsthalle
+Deutschland=Kassel=Schloß Wilhelmshöhe
+Deutschland=Kassel=Staatliche Kunstsammlungen
+Deutschland=Kelkheim=Privatbesitz
+Deutschland=Köln=Archiv der Dombauverwaltung
+Deutschland=Köln=Erzbischöfliche Diözesan- und Dombibliothek
+Deutschland=Köln=Historisches Archiv der Stadt Köln
+Deutschland=Köln=Kath. Pfarrkirche St. Andreas
+Deutschland=Köln=Kirche St. Gereon
+Deutschland=köln=Kirche St. Gereon=Nikolauskapelle
+Deutschland=Köln=Kirche St. Severin
+Deutschland=Köln=Kölner Stadtmuseum
+Deutschland=Köln=Kölnisches Stadtmuseum
+Deutschland=Köln=Museum Ludwig
+Deutschland=Köln=Museum Schnütgen
+Deutschland=Köln=Rheinisches Bildarchiv
+Deutschland=Köln=Römisch-Germanisches Museum
+Deutschland=Köln=Stadtmuseum
+Deutschland=Köln=Wallraf-Richartz-Museum
+Deutschland=Klosterreichenbach=Kloster
+Deutschland=Königslutter=Benediktinerabtei
+Deutschland=Koblenz=Landeshauptarchiv
+Deutschland=Koblenz=Mittelrhein-Museum
+Deutschland=Köln=Polizeipräsidium
+Deutschland=Köln=Römisch-Germanisches Museum
+Deutschland=Köln=St. Gereon
+Deutschland=Konstanz=Rosgartenmuseum
+Deutschland=Korbach=Heimatmuseum
+Deutschland=Kulmbach=Landschaftsmuseum Obermain
+Deutschland=Kulmbach=Landschaftsmuseum Obermain Plassenburg
+Deutschland=Lübeck=Archiv der Hansestadt
+Deutschland=Lübeck=Sankt-Annen-Museum
+Deutschland=Lengfeld=Privatbesitz
+Deutschland=Lich=ehemaliges Zisterzienserkloster Arnsburg
+Deutschland=Limburg=Domschatz
+Deutschland=Lüneburg=Museum für das Fürstentum Lüneburg
+Deutschland=Mainz=Altertumsmuseum der Stadt Mainz
+Deutschland=Mainz=Dommuseum
+Deutschland=Mainz=Römisch-Germanisches Zentralmuseum
+Deutschland=Mannheim=Antiquarium
+Deutschland=Marburg=Hessisches Staatasarchiv Siegel Slg. Bodmann-Habel
+Deutschland=Marburg=Hessisches Staatsarchiv
+Deutschland=Marburg=Hessisches Staatsarchiv=Sammlung Bodmann- Habel Siegelsammlung Bodmann-Habel
+Deutschland=Marburg=Schloß
+Deutschland=Marienstatt=Zisterzienserkloster
+Deutschland=Maulbronn=Zisterzienserkloster
+Deutschland=Meißen=Albrechtsburg
+Deutschland=Meißen=Museum in der Albrechtsburg
+Deutschland=Miltenberg=Museum
+Deutschland=Minden=Museum für Geschichte
+Deutschland=München=Bayerisches Hauptstaatsarchiv Kl Andechs
+Deutschland=München=Bayerisches Nationalmuseum
+Deutschland=München=Bayerische Staatsbibliothek
+Deutschland=München=Bayerische Staatsgemäldesammlung
+Deutschland=München=Bayerische Staatsgemäldesammlungen=Alte Pinakothek
+Deutschland=München=Königsplatz
+Deutschland=Münster=Landesmuseum für Kunst und Kulturgeschichte
+Deutschland=Münster=Staatsarchiv
+Deutschland=Münster=Westfälisches Landesmuseum
+Deutschland=München=Glyptothek
+Deutschland=München=Slg. Zichy
+Deutschland=Münster=Westfälisches Museum für Archäologie
+Deutschland=Nürnberg=Burg
+Deutschland=Nürnberg=Germanisches Nationalmuseum
+Deutschland=Nürnberg=Kunsthalle
+Deutschland=Nürnberg=Museen der Stadt Nürnberg
+Deutschland=Nürnberg=Stadtbibliothek
+Deutschland=Otterberg=Zisterzienserabtei
+Deutschland=Ottobeuren=Benediktinerabtei
+Deutschland=Paderborn=Diözesan Museum
+Deutschland=Paderborn=Domschatz
+Deutschland=Pelplin=Zisterzienserkloster
+Deutschland=Potsdam=Schloß
+Deutschland=Ravensburg=Kloster Weingarten
+Deutschland=Regensburg=Museum der Stadt Regensburg
+Deutschland=Salem=Zisterzienserkloster
+Deutschland=Sankt Johann=Benediktinernonnenkloster
+Deutschland=Schaffhausen=Benediktinerabtei Allerheiligen
+Deutschland=Schleswig=Landesarchiv
+Deutschland=Schloß Königswart=Sammlung Metternich
+Deutschland=Seligenstadt=ehemalige Benediktinerabtei
+Deutschland=Siegburg=Schatz von Sankt Servatius
+Deutschland=Speyer=Historisches Museum der Pfalz
+Deutschland=Speyer=Stadtarchiv
+Deutschland=Stuttgart=Weißenhofsiedlung
+Deutschland=Stuttgart=Würtembergisches Landesmuseum
+Deutschland=Stuttgart=Württembergisches Landesmuseum
+Deutschland=Stuttgart=Württembergisches Landesmuseum=Abt. Lapidarium
+Deutschland=Tegernsee=Kloster
+Deutschland=Trier=Bischöfliches Dom- und Diözesanmuseum M 64
+Deutschland=Trier=Landesmuseum
+Deutschland=Trier=Rheinisches Landesmuseum
+Deutschland=Trier=Rheinisches Landesmuseum Trier
+Deutschland=Trier=Stadtbibliothek
+Deutschland=Ulm=ehemaliges Bendediktinerkloster Wiblingen
+Deutschland=Ulm=Stadtarchiv
+Deutschland=Vianden=Burg
+Deutschland=Weil am Rhein=Möbelfabrik Vitra
+Deutschland=Weingarten=Benediktinerabtei
+Deutschland=Weltenburg=Benediktinerabtei
+Deutschland=Wiesbadeb=Museum
+Deutschland=Wiesbaden=Schloß Biebrich
+Deutschland=Wolfenbüttel=Herzog August Bibliothek
+Deutschland=Wolfenbüttel=Niedersächsisches Staatsarchiv
+Deutschland=Wörlitz=Pantheon
+Deutschland=Wörlitz=Schloß
+Deutschland=Wörlitz=Schloßgarten
+Deutschland=Wörlitz=Schloß
+Deutschland=Würzburg=Universitätsbibliothek
+Deutschland=Würzburg=Martin-von-Wagner-Museum
+Deutschland=Zons=Kreismuseum Zons
+Dänemark=Ulkebøl/Sønderborg=ev.-lutherische Kirche
+Finnland=Langres=Musée de la Soc. hist. et arch. de Langres
+Frankreich=Agens=Musée d´Agen
+Frankreich=Aix-en-Provence=Musée
+Frankreich=Aix-en-Provence=Musée Granet
+Frankreich=Aix-les-Bains=Musée
+Frankreich=Alyscamps=Arles=Musée St. Honorat
+Frankreich=Amboise=Château d' Amboise
+Frankreich=Amiens=Musée de Picardie
+Frankreich=Angoulême=Musée de la Société Archéologique et Historique de la Charente
+Frankreich=Anzy le Duc=Kirche Sainte Trinité, Sainte Croix et Sainte Marie
+Frankreich=Arles=Alyscamps
+Frankreich=Arles=Musée de l’ Arles Antique
+Frankreich=Arles=Musée Lapidaire
+Frankreich=Arles=Musée Réattu
+Frankreich=Arles=St. Maximin
+Frankreich=Arles=Theater
+Frankreich=Arlon=Musée
+Frankreich=Auch=Musée
+Frankreich=Autun=Musée Lapidaire
+Frankreich=Autun=Musée Rolin
+Frankreich=Autun=Musée Salle Capitulaire
+Frankreich=Auxerre=Musée Lapidaire
+Frankreich=Avesnes=Musée de la Société Archéologique
+Frankreich=Avignon=Musée Calvet
+Frankreich=Avignon=Papstpalast
+Frankreich=Bayeux=Musée de la Reine Mathilde
+Frankreich=Bayonne=Musée M. Bonnat
+Frankreich=Besancon=Musée
+Frankreich=Béziers=Musée Lapidaire
+Frankreich=Blois=Benediktinerabtei
+Frankreich=Bordeaux=Musée d’ Aquitaine
+Frankreich=Cannes (ehemals)=Sammlung de Courcel ; verschollen
+Frankreich=Châalis=Zisterzienserabtei Châalis
+Frankreich=Chambourcy=Prämostratenserabtei Joyenval
+Frankreich=Champlieu=beim Theater
+Frankreich=Chantilly=Musée Condé
+Frankreich=Chantilly=Musée Condé
+Frankreich=Chantilly=Musée Condè
+Frankreich=Château du Colombier=Gigondas=Slg. der Witwe Eugène Raspail
+Frankreich=Chaumont=Château de Chaumont
+Frankreich=Chenonceaux=Château de Chenonceaux
+Frankreich=Châteaudun=Château de Châteaudun
+Frankreich=Cimiez=Musée Archeologique
+Frankreich=Cluny=Benediktinerkloster
+Frankreich=Cluny=Musée de Farinier
+Frankreich=Deuil=Benediktinerabtei Saint-Florent
+Frankreich=Dijon=Bibliotèque municipale
+Frankreich=Dijon=Musée Archéologique
+Frankreich=Ecouen=Musée de la Renaissance
+Frankreich=Epernay=Bibliothèque Municipale
+Frankreich=Etablissement Thermal=Mont-Dore=am Aufgang zur sogenannten Caesar-Quelle
+Frankreich=Evreux=Musée
+Frankreich=Fontefroide=ehemaliges Zisterzienserkloster
+Frankreich=Fontenay=Zisterzienserabtei
+Frankreich=Fontevrault=Abtei
+Frankreich=Gordes=Zisterzienserabtei Senanque
+Frankreich=Grandfonataine=Heiligtumsbezirk des Merkur Le Donon
+Frankreich=Lagny=Benediktinerabtei
+Frankreich=La Roque-d'Antheron=Zisterzienserkloster Senanque
+Frankreich=Lavaudieu=ehemalige Benediktinerabtei
+Frankreich=Le Mans=Musée Tessé
+Frankreich=Lille=Musée des Beaux-Arts
+Frankreich=Lille=Musée Vicar
+Frankreich=Loc Dieu=Zisterzienserabtei
+Frankreich=Loches=Château de Loches
+Frankreich=Longpont=Zisterzienserabtei
+Frankreich=Lévis-Saint-Nom=Viktorinerabtei
+Frankreich=Lyon=Musée de la Civilisation Gallo-Romaine
+Frankreich=Lyon=Musée St. Pierre
+Frankreich=Marly=Musée Promenade de Marly
+Frankreich=Melun=Garten des Rathauses
+Frankreich=Metz=La Cour d’Or=Metz=Musées des Metz
+Frankreich=Metz=La Cour d’Or / Musées de Metz
+Frankreich=Metz=Städtisches Museum
+Frankreich=Meudon=musée de Meudon
+Frankreich=Mont-Dore=Etablissement Thermal
+Frankreich=Montmédy=auf der Kirchhofsmauer
+Frankreich=Montpellier=Musée Fabre
+Frankreich=Montpellier=Société archéologique
+Frankreich=Montpoupon=Château de Montpoupon
+Frankreich=Mont-Saint-Michel=Abtei
+Frankreich=Mériel=Zisterzienserabtei Notre-Dame-du-Val
+Frankreich=Narbonne=Musée de Lambourguier
+Frankreich=Narbonne=Musée de Lamourguier
+Frankreich=Narbonne=Musée Lapidaire
+Frankreich=Nimes=Dianatempel
+Frankreich=Nimes=lapidaire
+Frankreich=Nimes=Musée de la Maison Carrée
+Frankreich=Nimes=Musée Lapidaire
+Frankreich=Orange=Mus. municipal
+Frankreich=Orange=Theater
+Frankreich=Orbais=Benediktinerabtei
+Frankreich=Ourscamp=Zisterzienserabtei
+Frankreich=Paris=Archives nationales
+Frankreich=Paris=Archives Nationales=Fonds Sanson
+Frankreich=Paris=Benediktinerabtei
+Frankreich=Paris=Bibliothèque de l´ Arsenal
+Frankreich=Paris=Bibliothèque de l' Institut
+Frankreich=Paris=Bibliothèque des Arts décoratifs
+Frankreich=Paris=Bibliothèque du Patrimoine
+Frankreich=Paris=Bibliothèque Nationale
+Frankreich=Paris=Caisse Nationale des Monuments Historiques et des Sites
+Frankreich=Paris=Cité international universtitaire de Paris
+Frankreich=Paris=École Nationale des Beaux-Arts
+Frankreich=Paris=Denfert-Rochereau
+Frankreich=Paris=Friedhof Picpus
+Frankreich=Paris=Friedhof Père-Lachaise
+Frankreich=Paris=Front de Seine
+Frankreich=Paris=Garten der l'Avenue de l'Observatoire
+Frankreich=Paris=Grünanlage Frédérick-Lemaître
+Frankreich=Paris=Grünanlage Jules-Ferry
+Frankreich=Paris=Grünanlage Montholon
+Frankreich=Paris=Gymnasium Henri-IV
+Frankreich=Paris=Institut Néerlandais=Fondation Custodia
+Frankreich=Paris=Kaserne Poissy
+Frankreich=Paris=La Défense
+Frankreich=Paris=Île des Cygnes
+Frankreich=Paris=Mobilier national dessin
+Frankreich=Paris=Montmartre
+Frankreich=Paris=Musée Carnavalet
+Frankreich=Paris=Musée de Cluny
+Frankreich=Paris=Musée des Plans-reliefs
+Frankreich=Paris=Musée du Louvre
+Frankreich=Paris=Musée du Louvre
+Frankreich=Paris=Musée national du moyen âge et Thermes de Cluny
+Frankreich=Paris=Musée Notre-Dame
+Frankreich=Paris=nuesmuseumtest
+Frankreich=Paris=Park Monceau
+Frankreich=Paris=Park Montsouris
+Frankreich=Paris=Place d'Alleray
+Frankreich=Paris=Place de France
+Frankreich=Paris=Place de Joachim-du-Bellay
+Frankreich=Paris=Place de la Bastille
+Frankreich=Paris=Place de la Nation
+Frankreich=Paris=Place de la Porte-de-Saint-Cloud
+Frankreich=Paris=Place de la République
+Frankreich=Paris=Place des Pyramides
+Frankreich=Paris=Place des États-Unis
+Frankreich=Paris=Place du Génera-Catroux
+Frankreich=Paris=Place du Palais-Bourbon
+Frankreich=Paris=Place du Panthéon
+Frankreich=Paris=Place Félix-Éboué
+Frankreich=Paris=Place Marcel-Aymé
+Frankreich=Parthenay-le-Vieux=Kloster
+Frankreich=Pau=Musée National du Château
+Frankreich=Perpignan=Musée Hyacinthe Rigaud
+Frankreich=Poissy=Priorei Saint-Louis
+Frankreich=Pontigny=Zisterzienserabtei
+Frankreich=Provins=Burg
+Frankreich=Puivert=Kartharerburg
+Frankreich=Quéribus=Kartharerburg
+Frankreich=Rambures=Burg
+Frankreich=Reims=Musée Lapidaire
+Frankreich=Reims=Museum
+Frankreich=Rodez=Archives départementales de la Haute-Garonne
+Frankreich=Saintes=Musée Archéologique
+Frankreich=Saint-Germer-de-Fly=Benediktinerabtei
+Frankreich=Saint-Honorat=Zisterzienserkloster Lerins
+Frankreich=Saint-Jean-aux-Bois=Benediktinerinnenabtei
+Frankreich=Saint-Martin-aux-Bois=Augustinerchorherrenabtei
+Frankreich=Saint-Martin-du-Canigou=Kloster
+Frankreich=Sarrebourg=Musée du Pays des Sarrebourg
+Frankreich=Sceaux=Musée de l'Ile de France
+Frankreich=Sedan=Museum
+Frankreich=Sens=Musée Municipal
+Frankreich=Septmonts=Burg
+Frankreich=Straßburg=Archives départementales du Bas Rhin
+Frankreich=Straßburg=Bibliothéque Nationale et Universitaire
+Frankreich=Straßburg=Frauenhausmuseum
+Frankreich=Straßburg=Musée des Beaux-Arts
+Frankreich=Straßburg=Musée Archéologique
+Frankreich=St. Remy-de-Provence=Musée des Alpilles
+Frankreich=St. Remy-de-Provence=Museum
+Frankreich=Thann=Engelsburg
+Frankreich=Toulouse=Musée Saint-Raymond
+Frankreich=Toulouse=Musée St. Raymond
+Frankreich=Tours=Archives Départementales du Loir-et-Cher
+Frankreich=Troyes=Bibliotèque municipale
+Frankreich=Ussé=Château d'Ussé
+Frankreich=Vaux-de-Cernay=Zisterzienserabtei
+Frankreich=Versailles=Musée du Chateau
+Frankreich=Vienne=Musée de St.-André-le-Bas
+Frankreich=Vienne=Musée Lapidaire
+Frankreich=Villefranche-de-Rouergue=Kartause Saint-Sauveur
+Frankreich=Vincennes=Schloß
+Frankreich=Vitreux=Kloster Notre Dame d'Acey
+Frankreich=Voncq=befindet sich in einer Kirche
+Frankreich=Vézelay=Benediktinerabtei
+Georgien=Tiflis=Georgisches Museum
+Griechenland=Aigina=Museum
+Griechenland=Argos=Museum
+Griechenland=Argos=Theater
+Griechenland=Athen=Agora
+Griechenland=Athen=Agora-Museum
+Griechenland=Athen=Akropolis-Museum
+Griechenland=Athen=Attalos-Stoa
+Griechenland=Athen=Byzantinisches Museum
+Griechenland=Athen=Dionysos-Theater
+Griechenland=Athen=Kerameikosmuseum
+Griechenland=Athen=Kleine Metropolis-Kirche
+Griechenland=Athen=Lysikrates-Monument
+Griechenland=Athen=Museum Benaki
+Griechenland=Athen=Nationalmuseum
+Griechenland=Chora=Archäologisches Museum
+Griechenland=Delphi=Archäologisches Museum
+Griechenland=Eleusis=Archäologisches Museum
+Griechenland=Epidauros=Museum
+Griechenland=Eretria=unbekannt
+Griechenland=Gortyn=Antiquarium
+Griechenland=Gortyn=Basilika
+Griechenland=Korinth=Museum
+Griechenland=Korinth=sogen. West Shops
+Griechenland=Kos=Archäologisches Museum
+Griechenland=Kreta=Hierapetra
+Griechenland=Larissa / Thessalien=Archaeological Museum
+Griechenland=Olympia=Archäologisches Museum
+Griechenland=Olynth=Olynth
+Griechenland=Pella=Museum
+Griechenland=Piali (Tegea)=Museum
+Griechenland=Piräus=Archäologisches Museum
+Griechenland=Rhodos=Archäologisches Museum
+Griechenland=Sparta=Museum
+Griechenland=Thera=Museum
+Griechenland=Thespiae=Museum
+Griechenland=Thessaloniki=Galeriusbogen
+Griechenland=Thessaloniki=Museum
+Griechenland=Thessaloniki=St. Georg-Rotunde
+Griechenland=Vathy=Museum
+Großbritannien=Bristol=Bristol Museums and Art Galery
+Großbritannien=Bury=Saint Edmunds Abtei
+Großbritannien=Cambridge=Corpus Christi College
+Großbritannien=Cambridge=King's College
+Großbritannien=Cambridge=Queen's College
+Großbritannien=Cambridge=Trinity College
+Großbritannien=Canterbury=Canterbury Cathedral Archives
+Großbritannien=Canterbury=Canterbury Cathedral Library
+Großbritannien=Canterbury=Saint Augustin's Abbey
+Großbritannien=Cardiff=National Museum of Wales
+Großbritannien=Chatsworth=Collection Devonshire
+Großbritannien=Duncannon Castle=Zisterzienserabtei Tintern Minor
+Großbritannien=Essex=Colchester Borough Council
+Großbritannien=Glastonbury=Benediktinerabtei
+Großbritannien=Leominster=Leominster Priory
+Großbritannien=Lewes=Lewes Priory
+Großbritannien=Lincoln=Dean and Chapter of Lincoln Cathedral
+Großbritannien=Llangollen=Valle Crucis Abtei
+Großbritannien=London=British Library
+Großbritannien=London=British Library Harley Charter
+Großbritannien=London=British Museum
+Großbritannien=London=British Museum King's
+Großbritannien=London=Courtauld Institute Gallery
+Großbritannien=London=Dean and Chapter of Westminster
+Großbritannien=London=Iveagh Bequest=Kenwood House
+Großbritannien=London=(Lady Lubbock
+Großbritannien=London=National Gallery
+Großbritannien=London=R.I.B.A.
+Großbritannien=London=Richard Green Galleries
+Großbritannien=London=Royal Institute of British Architecture
+Großbritannien=London=Sammlung Wallace
+Großbritannien=London=Society of Antiquaries
+Großbritannien=London=Tate Gallery
+Großbritannien=London=The British Museum
+Großbritannien=London=The Trustees of the British Museum
+Großbritannien=London=Victoria and Albert Museum
+Großbritannien=London=Westminster Abbey Archives
+Großbritannien=London=Westminster Palace
+Großbritannien=Manchester=John Rylands Library
+Großbritannien=Oxford=Ashmolean Museum
+Großbritannien=Oxford=Bodleian Library
+Großbritannien=Oxford=Merton College
+Großbritannien=Oxford=Worcester College
+Großbritannien=Romsey=Romsey Abbey
+Großbritannien=Shrewsbury=Buildwas Abbey
+Großbritannien=Whitby=Benediktinerabtei
+Großbritannien=Windsor Castle=Royal Collection
+Großbritannien=Windsor Castle=Royal Library
+Großbritannien=Yorkshire=Newby Hall
+Großbritannien=Althorp House
+Großbritannien=Bignor Park=Slg. Hawkins
+Großbritannien=Brocklesby Park=Slg. Yarborough
+Großbritannien=Cheshire=Dunham Massey=Dunham Massey Hall
+Großbritannien=Cirencester=Dugdale Collection
+Großbritannien=Cliveden=Slg. Astor
+Großbritannien=Derbyshire=Chatsworth=Slg. Cavendish
+Großbritannien=Duncombe Park=Slg. Feversham
+Großbritannien=Farnborough=Farnborough Hall
+Großritannien=Fountains Abbey=Park
+Großritannien=Hampshire=Stoke Charity=St. Mary and St. Michael
+Großritannien=Hever Castle=Slg. Astor
+Großritannien=Holkham Hall=Slg. Coke
+Großritannien=Knole=Slg. Sackville
+Großritannien=Liverpool=Liverpool Museum
+Großritannien=London=British Museum
+Großritannien=London=Guidhall Museum
+Großritannien=London=Hampton Court=Royal Collection
+Großritannien=Melchett Court=Slg. Melchett
+Großritannien=Newby Hall=Garten
+Großritannien=Norfolk=Houghton Hall=Slg. Robert Walpole
+Großritannien=Northwick Park=Slg. Spencer-Churchill
+Großritannien=Oxford=Ashmolean Museum
+Großritannien=Oxfordshire=Blenheim Palace=Slg. Marlborough
+Großritannien=Petworth House=Slg. Leconfield
+Großritannien=Petworth House=Slg. Wyndham
+Großritannien=Stockport=Lyme Park
+Großritannien=Stratfield Saye=Swimmingpool
+Großritannien=Wilton House=Forecourt
+Großritannien=Withington Hall
+Großritannien=Yorkshire=Castle Howard=Slg. Carlisle
+Großritannien=Yorkshire=Harewood House 
+Großritannien=Yorkshire=Newby Hall
+Irak=Baghdad=Museum
+Iran=Isfahan=Gebäude der provinzialen Erziehungsabteilung
+Iran=Teheran=Archäologisches Museum
+israel=Jerusalem=Heilig-Grab-Kirche
+Italien=Salerno=Dom
+Italien=Agrigen=Museo Civico
+Italien=Agrigent=Kathedrale
+Italien=Agrigent=Museo Archeologico
+Italien=Agrigent=Museo Civico
+Italien=Agrigent=San Nicola
+Italien=Albano=S. Maria della Rotonda
+Italien=Albano=Villa Comunale
+Italien=Altino=Antiquarium
+Italien=Amalfi=Kathedrale
+Italien=Amelia=Municipio
+Italien=Anacapri=Villa Axel Munthe
+Italien=Anagni=Dom
+Italien=Ancona=Museo Archeologico Nazionale de Marche
+Italien=Ancona=Museo Archeologico Nazionale de. Marche
+Italien=Ancona=Museo Civico
+Italien=Ancona=Museo Museo Archeologico Nazionale de Marche
+Italien=Anzio=Forresteria
+Italien=Anzio=Parco Communale
+Italien=Anzio=Villa Spigarelli
+Italien=Aosta=Domschatz
+Italien=Aosta=Museo Archeologico
+Italien=Aquileia=Museo Archeologico Nazionale
+Italien=Aquino=S. Maria della Libera
+Italien=Arezzo=Museo Civico
+Italien=Arezzo=Museo Nazionale Archeologico
+Italien=Arezzo=unbekannt
+Italien=Ariccia=Palazzo Chigi
+Italien=Ariccia=S. Maria Assunt
+Italien=Arsoli=Castello Maximum
+Italien=Arsoli=Villa Helbig - Morani
+Italien=Artena=Palazzo Borghese
+Italien=Ascoli Piceno=Giardino Cafarelli
+Italien=Ascoli Piceno=Museo Civico
+Italien=Ascoli Piceno=Palazzo del Popolo
+Italien=Assisi=Antiquarium am Forum
+Italien=Assisi=Museo Civico
+Italien=Assisi=San Rufino
+Italien=Asti=Corso Alfieri
+Italien=Avellino=Museo Irpino
+Italien=Avezzano (ehemals)=Museo Civico ; verschollen
+Italien=Avezzano=Museo Civico
+Italien=Bagnolo di Lonigo=Archivio de Lazzara-Pisani
+Italien=Baiae=Antiquario
+Italien=Baiae=Castello
+Italien=Bari=Museo Archeologico
+Italien=Bassano del Grappa=Museo Civico
+Italien=Benevent=Museo del Sannio
+Italien=Benevent=Trajansbogen
+Italien=Bergamo=Via Giuseppe Verdi
+Italien=Bevagna=Rathaus
+Italien=Blera=Cinema
+Italien=Blera=Kirche
+Italien=Bologna=Museo Civico Archeologico
+Italien=Bologna=Museo dell' Opera di San Petronio
+Italien=Bozen=Staatsarchiv
+Italien=Bracciano=Castello Odescalchi
+Italien=Brescia=Museo Civico
+Italien=Brescia=Museo Civico Romano
+Italien=Brindisi=Museo Civico
+Italien=Cagliari=Museo Archeologico Nazionale
+Italien=Campobasso=Soprintendenza
+Italien=Canosa di Puglia=Museo Civico
+Italien=Capri=Privatbesitz=Capri=Colman
+Italien=Capri=Villa San Michele
+Italien=Capua=S. Maria di Capua Vetere=Museo Provinciale Campano
+Italien=Capua=S. Maria di Capua Vetere=Piazza dei Giudici
+Italien=Carditello (bei Capua)=Casino Reale
+Italien=Casamari=Museum
+Italien=Casamari=Zisterzienserabtei
+Italien=Casauria / Torre de Passeri=Basilika S. Clemente
+Italien=Cassino=Klosterbibliothek
+Italien=Castelchiodato=Parrocchia
+Italien=Castel Gandolfo=Exedrawand
+Italien=Castel Gandolfo=Villa Barberini
+Italien=Castelloni di Suasa=Palazzo della Rovere
+Italien=Catania=Museo Civico di Castello Ursino
+Italien=Ceccano=Palazzo Vescovile
+Italien=Cefalù=Chiesa di S. Francesco
+Italien=Cerveteri=Museo Archeologico
+Italien=Chieti=Museo Archeologico Nazionale
+Italien=Chiusdino=Zisterzienserkloster San Galgano
+Italien=Chiusi=Museo Archeologico Nazionale
+Italien=Chiusi=Piazza di Vittorio Veneto
+Italien=Ciciliano=Villa Manni
+Italien=Cingoli=Museo Civico
+Italien=Civitavecchia=Museum
+Italien=Como=Museo Civico Archeologico P. Giovio
+Italien=Concordia Sagittaria=Museo Civico
+Italien=Corfinio=Dom Magazin
+Italien=Cori=S. Oliva
+Italien=Cortona=Museo dell’ Accademia Etrusca
+Italien=Cortona=Museo Diocesano
+Italien=Cremona=Museo Civico
+Italien=Crotone=Museo Archeologico
+Italien=Falerone=Museo Civico
+Italien=Fano=Palazzo Malatestiano
+Italien=Fano=Vescovado
+Italien=Farfa=Abtei
+Italien=Fermo=Museo Archeologico
+Italien=Ferrara=Friedhof der Certosa (Kartause
+Italien=Fiesole=Museo Archeologico
+Italien=Fiesole=Museo Etrusco Romano
+Italien=Florenz=Archivio Contemporaneo
+Italien=Florenz=Battisterio S. Giovanni
+Italien=Florenz=Biblioteca Medicea Laurenziana
+Italien=Florenz=Casa Buonarroti
+Italien=Florenz=Cassa di Risparmio
+Italien=Florenz=Galleria degli Uffizi
+Italien=Florenz=Giardino Boboli
+Italien=Florenz=Kloster San Marco
+Italien=Florenz=Kunsthistorisches Institut Florenz
+Italien=Florenz=Loggia dei Lanzi
+Italien=Florenz=Museo Archeologico
+Italien=Florenz=Museo Archeologico Etrusco
+Italien=Florenz=Museo degli Argenti=Palazzo Pitti
+Italien=Florenz=Museo dell' Opera del Duomo
+Italien=Florenz=Museo dell' Opera del Duomo
+Italien=Florenz=Museo di Firenze comera
+Italien=Florenz=Museo Nazionale del Bargello
+Italien=Florenz=Museo Nazionale del Bargello ; verschollen
+Italien=Florenz=Palazzo Corsini al Prato=Giardino
+Italien=Florenz=Palazzo Medici - Riccardi
+Italien=Florenz=Palazzo Pitti
+Italien=Florenz=Palazzo Riccardi
+Italien=Florenz=Palazzo Vecchio
+Italien=Florenz=Piazetta Antinori
+Italien=Florenz=Piazza della Signoria
+Italien=Florenz=Piazza del Limbo
+Italien=Florenz=Piazza di Santa Trinita
+Italien=Florenz=Piazza San Firenze
+Italien=Florenz=Piazza Santa Croce
+Italien=Florenz=Piazza Santissima Annunziata
+Italien=Florenz=Piazza Strozzi
+Italien=Florenz=Slg. Capelli
+Italien=Florenz=Villa la Pietra
+Italien=Foligno=Museo Civico
+Italien=Foligno=Museo Communale
+Italien=Fondi=Convento di S. Francesco
+Italien=Formia=Antiquarium
+Italien=Fossanova=Zisterzienserabtei
+Italien=Fossombrone=Museo
+Italien=Frascati=Municipio
+Italien=Frascati=Museo Tuscolano - Palazzo Vescovile
+Italien=Frascati=Villa Aldobrandini
+Italien=Frascati=Villa Parisi
+Italien=Frascati=Villa Tuscolo
+Italien=Gaeta=Dom
+Italien=Gaeta=Pinakothek
+Italien=Gallese=Castello
+Italien=Genua=Museo di S. Agostino
+Italien=Grosseto=Museo Civico
+Italien=Grosseto=Museo Nazionale Archeologico delle Marche
+Italien=Grosseto=Museum
+Italien=Gubbio=Museo Comunale - Palazzo dei Consoli
+Italien=Herculaneum=Casa dei Cervi
+Italien=Imola=Palazzo vescovile
+Italien=Isernia=Antiquario Comunale
+Italien=Isernia=Arco di S. Pietro
+Italien=Isernia=S. Maria delle Monache
+Italien=Ivrea=Museo Civico
+Italien=Jesi=Museo Civico
+Italien=Jesi=Pinacoteca civica
+Italien=Lanuvio=im Gebiet des Heiligtums der Juno
+Italien=Lanuvio=in den Ruinen der antiken Stadt Lanuvium
+Italien=Lanuvio=in den Ruinen des Theaters
+Italien=L’ Aquila=Museo Nazionale d’ Abruzzo
+Italien=Lecce=Amphitheater
+Italien=Lecce=Giardino Palmieri
+Italien=Lecce=Museo Sigismondo Castromediano
+Italien=Licenza=Museo Oraziano
+Italien=Lucera=Museo Civico Fiorelli
+Italien=Macerata=Palazzo Comunale
+Italien=Mailand=Castello Sforzesco
+Italien=Mailand=Civico Museo Archeologico
+Italien=Mailand=Galleria Civica d'Arte Moderna
+Italien=Mailand=Pinacoteca di Brera
+Italien=Manaforno=Casa Alassi
+Italien=Mantua=Palazzo Ducale
+Italien=Mantua=Seminario Vescovile
+Italien=Manziana=Villa G. Tittoni
+Italien=Marina di Ascea=Antiquarium
+Italien=Massa d’ Albe=; verschollen
+Italien=Matelica=Museo Pierluigi
+Italien=Melfi=Bischofspalast
+Italien=Mentana=Slg. Zeri
+Italien=Modena=Dom
+Italien=Modena=Galleria Estense
+Italien=Modena=Museo Civico Archeologico Etnologico
+Italien=Motya / Mozia=Museumsgarten
+Italien=Mozia=Whitaker-Museum
+Italien=Murano=Museo Vetrario
+Italien=Narni=San Domenico
+Italien=Narni=San Domenico=Chiesa della Pietrella
+Italien=Neapel=Grabkammer=Via dei Cristallini
+Italien=Neapel=Mus. Arch. Naz. di Napoli
+Italien=Neapel=Museo Archeologico Nazionale
+Italien=Neapel=S. Chiara
+Italien=Nocera=Kirche S. Maria Maggiore
+Italien=Nocera Superiore=Kirche S. Maria Maggiore
+Italien=Oderzo=Museo Civico
+Italien=Orvieto=Museo Archeologico
+Italien=Osimo=Comune
+Italien=Ostia=am Decumanus Maximus=Ostia=70 m außerhalb der Porta Marina
+Italien=Ostia=beim Theater
+Italien=Ostia=Cimetero
+Italien=Ostia=Forum
+Italien=Ostia=Forumsbasilika
+Italien=Ostia=Forumsthermen
+Italien=Ostia=Horrea Epagathaniana
+Italien=Ostia=Isola Sacra
+Italien=Ostia=Museo Ostiense
+Italien=Ostia=Museo Ostiense=Ostia=beim Museum
+Italien=Ostia=Porto=Ostia=Verwaltungsgebäude d. Bonificazione
+Italien=Ostia=Roma und Augustus -Tempel
+Italien=Ostia=Rundtempel
+Italien=Padua=Mus. Archeologico di Padova
+Italien=Padua=Museo Civico di Padova
+Italien=Padula=Certosa di S. Lorenzo
+Italien=Paestum=am Forum
+Italien=Paestum=Museo Archeologico Nazionale
+Italien=Palermo=Museo Archeologico Regionale „Antonio Salinas“
+Italien=Palermo=Museo Regionale di Palermo
+Italien=Palermo=Palazzo dei Principi Alliata di Villafranca
+Italien=Palermo=Villa la Favorita
+Italien=Palestrina=Museo Archeologico Nazionale (Palazzo Barberini)
+Italien=Palestrina (Praeneste)=Museo Archeologico Nazionale (Palazzo Barberini)
+Italien=Palestrina (Praeneste)=Museo Archeologico Nazionale (Palazzo Barberini
+Italien=Palestrina (Praeneste)=Seminario
+Italien=Palestrina (Praeneste)=Villa Fiorini
+Italien=Parma=Galleria Nazionale
+Italien=Parma=Museo Nazionale di Antichità
+Italien=Perugia=Akademie der Künste
+Italien=Perugia=Museo Archeologico
+Italien=Perugia=Museo Archeologico Nazionale dell’ Umbria
+Italien=Perugia=Museum
+Italien=Perugia=Piazza del Quattro Novembre
+Italien=Perugia=S. Ercolano
+Italien=Pesaro=Museo Archeologico Oliveriano
+Italien=Pescara=Provinzialverwaltung Pescara
+Italien=Piazza Armerina=Villa
+Italien=Pietrabbondante=Theater
+Italien=Pisa=Baptisterium
+Italien=Pisa=Campo dei Miracoli
+Italien=Pisa=Campo Santo
+Italien=Pisa=Dom
+Italien=Pisa=Kirche San Pietro in Grado
+Italien=Pistoia=S. Andrea
+Italien=Poggio a Caiano=Museo
+Italien=Pompeji=Antiquarium
+Italien=Pompeji= Casa dalla Fontana piccolaVI
+Italien=Pompeji=Casa dei Vetti
+Italien=Pompeji=Casa I 6 (Casa del Criptoportico
+Italien=Pompeji=Casa III 2 (Haus des Aulus Trebius Valens)
+Italien=Pompeji=Casa III 2 (Haus des Aulus Trebius Valens
+Italien=Pompeji=Casa IV 15
+Italien=Pompeji=Casa IX 1
+Italien=Pompeji=Casa VI 2 (Haus des Sallusti)
+Italien=Pompeji=Forum civile (am Eingang zum Macellum)
+Italien=Pompeji=Haus des Isispriesters
+Italien=Pompeji=Magazin am Forum
+Italien=Pompeji=Regio VII 7
+Italien=Pompeji=Sala degli edili
+Italien=Pompeji=Tempel des Vespasianus
+Italien=Pompeji= VI 14, 20 (Haus des Orpheus)
+Italien=Pompeji=Villa dei Misteri
+Italien=Pomposa=Benediktinerabtei San Maria di Pomposa
+Italien=Portici=Palazzo Reale
+Italien=Pozzuoli=Antiquario Flegreo
+Italien=Pozzuoli=beim Amphitheater
+Italien=Pratica di Mare=Grabungsmuseum
+Italien=Pratica di Mare=Kastell=Sammlung Borghese
+Italien=Prato=Santo Stefano
+Italien=Ravello=Duomo
+Italien=Ravenna=Museo Archeologico Nazionale
+Italien=Ravenna=Museo di San Vitale
+Italien=Ravenna=San Apollinare Nuovo
+Italien=Ravenna=San Apollinare Nuovo (Reliquienkapelle)
+Italien=Ravenna=San Vitale
+Italien=Ravenna=San Vittorio
+Italien=Recanati=Museo Diocesano
+Italien=Reggio Calabria=Museo Archeologico Nazionale
+Italien=Reggio Emilia=Museo Nazionale
+Italien=Revello=Zisterzienserkloster Staffarda
+Italien=Rieti=Museo Civico
+Italien=Ripatransone=Museo Civico
+Italien=Rom=Abbadia
+Italien=Rom=Accademia dei Lincei
+Italien=Rom=Amelung
+Italien=Rom=American Academy
+Italien=Rom=Amerikanische Botschaft
+Italien=Rom=Antiquario Palatino
+Italien=Rom=Antiquarium
+Italien=Rom=Antiquarium Forense
+Italien=Rom=Antiquarium neben dem Grabbau der Caecilia Metella
+Italien=Rom=Antiquarium Palatino
+Italien=Rom=Antiquarum Comunale
+Italien=Rom=Apollon Sosianus - Tempel
+Italien=Rom=Apollo-Sosianus-Tempel
+Italien=Rom=Ara Pacis (Via della Ripetta
+Italien=Rom=Auditorium des Maecenas
+Italien=Rom=Augustusforum
+Italien=Rom=Banca d’ Italia
+Italien=Rom=Banca Nazionale del Lavoro (Via del Corso
+Italien=Rom=Basilica Aemilia
+Italien=Rom=Basilika S. Agnese fuori
+Italien=Rom=Biblioteca Angelica
+Italien=Rom=Biblioteca Apostolica Vaticana
+Italien=Rom=Cantina degli Stabilimenti Francesi
+Italien=Rom=Caracallathermen
+Italien=Rom=Casino dell‘Aurora (Villa Ludovisi
+Italien=Rom=Castello dei Cesari
+Italien=Rom=Catacomba di Domitilla
+Italien=Rom=Catacomba di Pretestato
+Italien=Rom=Catacomba di San Callisto
+Italien=Rom=Chiesa di San Marcello
+Italien=Rom=Circonvallazione Appia 99
+Italien=Rom=Colosseum
+Italien=Rom=Deutsches Archäologisches Institut
+Italien=Rom=Diokletiansthermen
+Italien=Rom=Forum Romanum
+Italien=Rom=Forum Romanum - Aula Regia
+Italien=Rom=Forum Romanum=Basilica Aemilia
+Italien=Rom=Forum Romanum - Basilica Aemilia
+Italien=Rom=Forum Romanum - Curia Iulia=Rom
+Italien=Rom=Forum Romanum - Faustina-Tempel
+Italien=Rom=Forum Romanum - Lacus Iuturnae
+Italien=Rom=Forum Romanum - Saturntempel
+Italien=Rom=Forum Romanum - Titusbogen
+Italien=Rom=Friedhof an der Cestius-Pyramide
+Italien=Rom=Galleria Borghese
+Italien=Rom=Galleria Colonna
+Italien=Rom=Galleria Nazionale d'Arte Moderna
+Italien=Rom=Galleria Spada
+Italien=Rom=Gebäude der Altertümerverwaltung
+Italien=Rom=Hotel Villa Florenc
+Italien=Rom=Im Park der Villa Doria Pamphili
+Italien=Rom=Istituto Spagnolo di Cultura
+Italien=Rom=Konstantinsbogen
+Italien=Rom=Lateran=Rom=Museo Profano
+Italien=Rom=Magazin der Domus Transitoria
+Italien=Rom=Marcellustheater
+Italien=Rom=Marsfeld Apollontempel
+Italien=Rom=Mausoleum bei San Sebastiano
+Italien=Rom=Mausoleum des Augustus
+Italien=Rom=Metro-Station Colosseo
+Italien=Rom=Musée Warocque
+Italien=Rom=Musei Capitolini
+Italien=Rom=Musei Capitolini (Antiquarium Comunale a Palazzo Caffarelli)
+Italien=Rom=Musei Capitolini=Rom=Centrale Montemartini
+Italien=Rom=Museo Barracco
+Italien=Rom=Museo dei Gessi
+Italien=Rom=Museo della Civiltà Romana
+Italien=Rom=Museo di Palazzo Venezia
+Italien=Rom=Museo Mussolini
+Italien=Rom=Museo Nazionale di Villa Giulia
+Italien=Rom=Museo Nazionale Romano
+Italien=Rom=Museo Nazionale Romano - Magazzini
+Italien=Rom=Museo Nazionale Romano - Magazzino Sculture
+Italien=Rom=Museo Nazionale Romano - Museo delle Terme
+Italien=Rom=Museo Nazionale Romano - Palazzo Altemps
+Italien=Rom=Museo Nazionale Romano - Palazzo Massimo
+Italien=Rom=Museo Torlonia
+Italien=Rom=Niederländisches Institut
+Italien=Rom=Ospedale di S. Giovanni
+Italien=Rom=Palatin
+Italien=Rom=Palatin - Casa di Livia
+Italien=Rom=Palatin - Domitianspalast
+Italien=Rom=Palatin - Domus Augustana
+Italien=Rom=Palatin - Hippodrom
+Italien=Rom=Palazzo Albani - Del Drago
+Italien=Rom=Palazzo Altieri
+Italien=Rom=Palazzo Antonelli
+Italien=Rom=Palazzo Barberini
+Italien=Rom=Palazzo Borghese
+Italien=Rom=Palazzo Braschi (Museo di Roma
+Italien=Rom=Palazzo Braschi (Museo di Roma)=Rom=Magazin
+Italien=Rom=Palazzo Colonna
+Italien=Rom=Palazzo Corsini
+Italien=Rom= Palazzo del Quirinale
+Italien=Rom=Palazzo del Quirinale
+Italien=Rom=Palazzo Doria
+Italien=Rom=Palazzo Doria Pamphilj
+Italien=Rom=Palazzo Farnese
+Italien=Rom=Palazzo Gabrielli
+Italien=Rom=Palazzo Giustiniani
+Italien=RomPalazzo Graziol
+Italien=Rom=Palazzo Lancellotti
+Italien=Rom=Palazzo Lazzaroni
+Italien=Rom=Palazzo Massimi alle colonne
+Italien=Rom=Palazzo Massimo
+Italien=Rom=Palazzo Mattei
+Italien=Rom=Palazzo Odescalchi
+Italien=Rom=Palazzo Poli
+Italien=Rom=Palazzo Rospigliosi
+Italien=Rom=Palazzo Sacchetti
+Italien=Rom=Palazzo Salviati
+Italien=Rom=Palazzo Valentini
+Italien=Rom=Palazzo Venezia
+Italien=Rom=Pantheon
+Italien=Rom=Petersplatz
+Italien=Rom=Piazza Acquasparta
+Italien=Rom=Piazza Barberini
+Italien=Rom=Piazza del Campidoglio
+Italien=Rom=Piazza del Popolo
+Italien=Rom=Piazza del Quirinale
+Italien=Rom=Piazza Firdusi
+Italien=Rom=Piazza Navona
+Italien=Rom=Piazza Pasquino
+Italien=Rom=Piazza Santa Maria sopra Minerva
+Italien=Rom=Porta Maggiore - Grabmahl des Eurysaces
+Italien=Rom=Profeßhaus des Jesuiterordens
+Italien=Rom=S. Agnese fuori le mura
+Italien=Rom=S. Agnesi fuori le mura
+Italien=Rom=S. Alessio
+Italien=Rom=San Clemente
+Italien=Rom=San Giovanni in Laterano
+Italien=Rom=S. Cecilia
+Italien=Rom=S. Clemente
+Italien=Rom=S. Cosimato
+Italien=Rom=S. Crisogono
+Italien=Rom=Senatorenpalast
+Italien=Rom=Sepolcro degli Scipioni (Via di Porta San Sebastiano)
+Italien=Rom=Sepolcro dei Pancrazi (Via Latina)
+Italien=Rom=S. Francesco
+Italien=Rom=S. Giovanni in Laterano
+Italien=Rom=Slg. Capelli
+Italien=Rom=S. Lorenzo fuori le mura
+Italien=Rom=S. Lorenzo fuori le Mura
+Italien=Rom=S. Lorenzo in Panisperna
+Italien=Rom=S. Maria della Minerva
+Italien=Rom=S. Maria in Domnica
+Italien=Rom=S. Maria in Trastevere
+Italien=Rom=S. Maria Maggiore
+Italien=Rom=S. Maria Navicella
+Italien=Rom=S. Martino ai Monti
+Italien=Rom=S. Omobono
+Italien=Rom=Spanische Treppe
+Italien=Rom=S. Paolo entro le mura
+Italien=Rom=S. Paolo fuori le mura
+Italien=Rom=S. Prassede
+Italien=Rom=S. Saba
+Italien=Rom=S. Sabina
+Italien=Rom=S. Sebastiano
+Italien=Rom=SS. Giovanni e Paolo
+Italien=Rom=Studio Canova
+Italien=Rom=S. Urbano
+Italien=Rom=Tabularium
+Italien=Rom=Tiberinsel
+Italien=Rom=Tomba di Tritussa
+Italien=Rom=Trajansforum
+Italien=Rom=Trajansmärkte
+Italien=Rom=Vatikan
+Italien=Rom=Vatikanische Museen
+Italien=Rom=Via Appia
+Italien=Rom=Via Barberini
+Italien=Rom=Via del Corso
+Italien=Rom=Via della Croce
+Italien=Rom=Via di Porta San Sebastiano
+Italien=Rom=Via Flaminia
+Italien=Rom=Via Giulia
+Italien=Rom=Via Quattro Fontane
+Italien=Rom=Villa Albani
+Italien=Rom=Villa Aldobrandini
+Italien=Rom=Villa Borghese
+Italien=Rom=Villa Casali
+Italien=Rom=Villa Celimontana
+Italien=Rom=Villa Contessa Margarucci
+Italien=Rom=Villa Doria Pamphilj
+Italien=Rom=Villa Farnesina
+Italien=Rom=Villa Massimo
+Italien=Rom=Villa Medici
+Italien=Rom=Villa Patrizi
+Italien=Rom=Villa Wolkonsky
+Italien=Rosignano Marittimo=Museo Civico Archeologico
+Italien=Rovigo=Biblioteca dei Concordi
+Italien=Salerno=Dom
+Italien=Salerno=Museo del Duomo
+Italien=Salerno=Palazzo d’ Avossa
+Italien=Salerno=Scuderia des bischöfl. Palastes
+Italien=San Casciano Val di Pesa=Museo di Arte sacra
+Italien=San Elpidio=Collegiata
+Italien=San Severino Marche=Museo Archeologico
+Italien=Sassari=Museo Nazionale G. A. Sanna
+Italien=Sassoferrato=Museo Civico
+Italien=Selinunt=Antiquarium
+Italien=Sepino=Fraz. Atilia
+Italien=Serravalle Scrivia=in der Kirche S. GiovanniuBattista
+Italien=Sestofiorentino=Palazzo Gincciardini
+Italien=Siena=Biblioteca Comunale
+Italien=Siena=Dom
+Italien=Siena=Museo Archeologico
+Italien=Siena=Palazzo Chigi
+Italien=Solmona=Museum
+Italien=Solunto=Museo
+Italien=Sorrento=Museo Correale
+Italien=Sovana=Felsnekropole
+Italien=Sperlonga=Museo Nazionale
+Italien=Sperlonga=Museum
+Italien=Spoleto=Museo Archeologico
+Italien=Spoleto=Museo Civico
+Italien=Spoleto=römisches Theater von Spoleto
+Italien=Stroncone=Municipio
+Italien=Subiaco=giardano publico
+Italien=Subiaco=Kloster der Heiligen Monica
+Italien=Subiaco=Kloster der Scholastica
+Italien=Subiaco=Kloster der Scholastica=Subiaco=Eingangshalle
+Italien=Sutri=Municipio
+Italien=Syrakus=Museo Archeologico
+Italien=Syrakus=Museo Archeologico Nazionale
+Italien=Syrakus=Museo Nazionale Archeologico
+Italien=Taormina=Museo del Teatro
+Italien=Tarent=Museo Archeologico
+Italien=Tarent=Museo Archeologico Nazionale
+Italien=Tarquinia=Museo Nazionale
+Italien=Tarquinia=Museo Nazionale Tarquiense
+Italien=Teggiano=S. Andrea
+Italien=Teramo=Deposito
+Italien=Teramo=Museo Civico
+Italien=Terracina=Museo
+Italien=Tivoli=Mensa Ponderaria
+Italien=Tivoli=Villa d‘Este
+Italien=Tivoli=Villa Hadriana
+Italien=Todi=im Denkmal des Jacopone da Todi verbaut
+Italien=Todi=Museo del Comune
+Italien=Treia=Museo Civico
+Italien=Treia=Muso Civico
+Italien=Treia=Villa del Marchese Luzi di Votalaria
+Italien=Trento=Museo Provinciale (Castello del Buonconsiglio
+Italien=Treviso=Biblioteca Civica
+Italien=Treviso=Dominikanerkonvent San Nicolo
+Italien=Treviso=Museo Civico
+Italien=Treviso=Villa Reale d’ Osson
+Italien=Triest=Civico Museo Revoltella
+Italien=Triest=Civico Museo Revoltella=Galleria d'Arte Moderna
+Italien=Triest=Museo Civico
+Italien=Turin=Biblioteca Nazionale
+Italien=Turin=Civica Galleria d'Arte Moderna
+Italien=Turin=Il Museo di Antichità
+Italien=Turin=Museo Civico
+Italien=Turin=Museo di AntichitÃ
+Italien=Turin=Museo di antichità
+Italien=Turin=Museo di Antichità
+Italien=Turin=Museum
+Italien=Turin=Privatsammlung
+Italien=Udine=Museo Civico
+Italien=Urbino=Palazzo Ducale
+Italien=Varese=Museo Poliaghi
+Italien=Varese, Sacromonte=Museo Poliaghi
+Italien=Vasto=Museo Comunale
+Italien=Veleia=am Forum
+Italien=Velletri=Museum
+Italien=Venafro=S. Agostino
+Italien=Venafro=S. Chiara
+Italien=Venafro=Via Cavour
+Italien=Venafro=Via Silla
+Italien=Venedig=Archivo di Stato
+Italien=Venedig=Arsenal
+Italien=Venedig=Ateneo Veneto
+Italien=Venedig=Biblioteca Nazionale Marciana
+Italien=Venedig=Centro Studi di Storia del Tessuto e del Costume
+Italien=Venedig=Collezione Giustiniani
+Italien=Venedig=Collezione Peggy Guggenheim
+Italien=Venedig=Galleria Internazionale d'Arte Moderna di Ca' Pesaro
+Italien=Venedig=Gallerie dell' Accademia
+Italien=Venedig=Historisches Museum für Schiffahrt
+Italien=Venedig=Isola di San Giorgio
+Italien=Venedig=Kloster della Celestia
+Italien=Venedig=Liceo Artistico
+Italien=Venedig=Museo Archelogico
+Italien=Venedig=Museo Archeologico
+Italien=Venedig=Museo Civico Correr
+Italien=Venedig=Museo Correr
+Italien=Venedig=Museo dell' Istituto Ellenico
+Italien=Venedig=Museo Marciano
+Italien=Venedig=Piazza San Marco
+Italien=Venedig=Piazzetta San Marco
+Italien=Venedig=Pinacoteca Querini Stampalia
+Italien=Venedig=Privatsammlung
+Italien=Venedig=Sammlung Palumbo-Fossati
+Italien=Venedig=San Marco
+Italien=Venedig=Staatsarchiv
+Italien=Veroli=Pinacoteca Givardina
+Italien=Verona=Biblioteca Capitolare
+Italien=Verona=Biblioteca Civica
+Italien=Verona=Museo al teatro Romano
+Italien=Verona=Museo archeologico
+Italien=Verona=Museo Archeologico
+Italien=Verona=Museo Archeologico al Teatro romano
+Italien=Verona=Museo Archeologico al Teatro Romano
+Italien=Verona=Museo Archeologico del Teatro romano
+Italien=Verona=Museo lapidario
+Italien=Verona=Museo Maffeiano
+ItalienVerona=Museo Maffeiano
+Italien=Vibo Valentia=Museo Archeologico
+Italien=Vicenza=Archivio Torre
+Italien=Vicenza=Biblioteca Bertoliana
+Italien=Vicenza=Biblioteca Bertolina
+Italien=Vicenza=C.I.S.A. Cod. Tuixden
+Italien=Vicenza=Museo Civico
+Italien=Vicovaro=Via Valeria
+Italien=Viterbo=Museo Communale
+Italien=Volterra=Museo Etrusco Guarnacci
+Italien=Volterra=Museo Guarnacci
+Italien=Volterra=Mus. Etrusco Guarnacci
+Italien=Volterra=Mus. Guarnacci
+Italien=Vulci=Castello
+Italien=Zagarolo=Palazzo Rospigliosi
+Kanada=Toronto=Royal Ontario Museum
+Kroatien=Salona=Theater
+Kroatien=Split=Archäologisches Museum
+Kroatien=Split=Museum
+Kroatien=Vid=Archäologische Sammlung
+Kroatien=Zadar=Museum
+Kroatien=Zagreb=Archäologisches Museum
+Kuba=Havanna=Nationalmuseum
+Libanon=Baalbek=großer Tempelvorhof
+Libanon=Beirut=Musée National
+Libyen=Kyrene=Agora
+Libyen=Kyrene=Agora=Demetertempel
+Libyen=Kyrene=Apollontempel
+Libyen=Kyrene=Haus des Iason Magnus
+Libyen=Kyrene=Museum of Antiquities
+Libyen=Kyrene=Propylon an der Marktstraße
+Libyen=Kyrene=Stoa der Hermen
+Libyen=Kyrene=Verwaltungsgebäude
+Libyen=Ptolemais=Palazzo delle Colonne
+Libyen=Sabratha=Museum
+Libyen=Triplois=Leptis Magna=Altes Forum
+Libyen=Tripolis=Archäologisches Museum
+Libyen=Tripolis=Leptis Magna
+Libyen=Tripolis=Leptis Magna=Museum
+Libyen=Tripolis=Leptis Magna=Theater
+Libyen=Tripolis=Leptis Magna=Theater (in der Nähe
+Libyen=Tripolis=Museo Archeologico
+Libyen=Tripolis=Museum
+Luxemburg=Luxemburg=Musée National d‘Histoire et d‘Art
+Malta=La Valetta=Nationalmuseum
+Muldentalkreis=Machern=Kirche
+Nationalmuseum=Königliches Kupferstichkabinett Stuttgart
+Niederlande=Amersfoort=W.A van Es
+Niederlande=Amsterdam=Allard-Pierson-Museum
+Niederlande=Nijmegen=Rijksmuseum
+Österreich=Bad Deutsch-Altenburg=Petronell=Museum
+Österreich=Innsbruck=Archäologische Sammlung der Universität
+Polen=Warschau=Schloß Wilanow
+Portugal=Alcobaça=Abtei Santa Maria de Alcobaca
+Portugal=Batalha=Kloster Santa Maria da Vitória
+Portugal=Bélem=Kloster dos Jerónimos
+Portugal=Lissabon=Museum der Stiftung Calouste Gulbenkian
+Portugal=Tomar=Konvent der Christusritter
+Rumänien=Aiud=Museum
+Rumänien=Alba Iulia / Apulum=Museum
+Rumänien=Alba Iulia=Museum
+Rumänien=Bukarest=Museo nazionale di Antichità
+Rumänien=Bukarest=Museo Nazionale di Antichità
+Rumänien=Bukarest=Muzeul National de Antichitati (Nationalmuseum
+Rumänien=Cluj=Museum für Geschichte Transsylvaniens
+Rumänien=Cluj=Museum für Geschichte Transsylvaniens (Muzeul de Istoria Transilvaniei
+Rumänien=Cluj=Muzeul de Istoria Transilvaniei (Museum für Geschichte Transsylvaniens
+Rumänien=Constanta=Museum
+Rumänien=Deva=Museum
+Rumänien=Gherla=Museum
+Rumänien=Sfintu Gheorghe=Museum
+Rumänien=Sibiu=Museum Brukenthal
+Rumänien=Tirgu Mures=Museum
+Rumänien=Turda=Museum
+Rumänien=Turnu Severin=Museum
+Rußland=Anapa=Heimatkundemuseum
+Rußland=Anapa=Museum
+Rußland=Anapa=Quartier der Archäol. Expedition des IA AN SSSR
+Rußland=Krasnodar=Heimatkundemuseum
+Rußland=Moskau=Historisches Museum
+Rußland=Moskau=Puschkin–Museum
+Rußland=Novo±erkassk=Museum für die Geschichte der Donkosaken
+Rußland=Taman=Heimatkundemuseum
+Rußland=Taman=Museum
+Rußland=Temrjuk=Heimatkundemuseum
+Rußland=Temrjuk=Museum
+Schweden=M illesgården / Lidingö
+Schweden=Millesgården / Lidingö=Slg. Carl Millies
+Schweden=Stockhol=Gustav III. Antikmuseum
+Schweden=Stockholm=Gustav III. Antikmuseum
+Schweden=Stockholm=Kungliga Biblioteket
+Schweden=Stockholm=Nationalmuseum
+Schweden=Stockholm=Statens Historiska Museum
+Schweden=Visby=Gotlands Fornsal
+Schweiz=Augst=Römermuseum
+Schweiz=Avenches=Musée Romain
+Schweiz=Basel=Antikenmuseum
+SchweizBasel=Öffentliche Kunstsammlung=Kupferstichkabinett
+Schweiz=Basel=Historische Museum 1903=Basel=139
+Schweiz=Basel=Historisches Museum
+Schweiz=Basel=Universitätsbibliothek
+Schweiz=Bourg de Martigny / Octodurus
+Schweiz=Chéserex=Abtei von Bonmont
+Schweiz=Genf=Bibliothèque Nationale=Cabinet des estampes
+Schweiz=Genf=Bibliothèque Publique et Universitaire
+Schweiz=Genf=Musée d’ Art et d’ Histoire
+Schweiz=Genf=Privatbesitz N. Koutoulakis
+Schweiz=Lausanne (ehemals)=Musée Historique cantonal
+Schweiz=Lugano=Sammlung Baron Thyssen-Bornemisza
+Schweiz=Luzern=Zentralbibliothek
+Schweiz=Sankt Gallen=Stiftsbibliothek
+Schweiz=Solothurn=Slg. Müller
+Schweiz=Zürich=Kunsthaus
+Schweiz=Zürich=Landesmuseum Zürich
+Schweiz=Zürich=Schweizerisches Landesmuseum
+Schweiz=Zürich=Rehalp-Friedhof
+Schweiz=Zürich=Slg. Ennetwies
+Serbien-Montenegro=Belgrad=Nationalmuseum
+Spanien=Ager (Lérida)=Iglesia Parroquial
+Spanien=Albacete=Museo
+Spanien=Alcalá de Henares=Konvent der Bernhardinerinnen
+Spanien=Antequera=Museo Municipal
+Spanien=Aranjuez=Palacio Real=Real Casa del Labrador
+Spanien=Barcelona=Museo Arqueológico
+Spanien=Barcelona=Museo de Arte de Cataluna
+Spanien=Barcelona=Museo de la historia de la Ciudad
+Spanien=Barcelona=Palau de la Generalitat
+Spanien=Barcelona=Palau Reial
+Spanien=Burgo de Osma=Museum der Kathedrale
+Spanien=Burgos=Museo Provincial
+Spanien=Cádiz=Museo Arqueológico Provincial
+Spanien=Carmona=Museo Arqueológico
+Spanien=Carmona=Museum
+Spanien=Córdoba=Sammlung Romero de Torres
+Spanien=Cuenca=Museo Arqueológico
+Spanien=Cuenca=Museo Arqueológico Provincial El Almudi
+Spanien=Ecija=Kreuzgang der Kirche Santa Maria
+Spanien=Ecija=Museo Arqueológico de la Parroquia Santa Maria
+Spanien=Ecija=Museo Arqueológico Parroquial=Iglesia Santa Maria
+Spanien=El Paular=Kartäuserkloster Nuestra Senora del Paular
+Spanien=Gradefes=Zisterzienserinnenkloster
+Spanien=Granada=Alhambra
+Spanien=Granada=Museo Nacional de Arte Hispanosmusalmán
+Spanien=Guadalajara=Palacio del Infantado
+Spanien=Italica=Lokalmuseum
+Spanien=Jerez de la Frontera=Alcázar
+Spanien=Jerez de la Frontera=Kartause Santa María de la Defensíon
+Spanien=Jerez de la Frontera / Provinz Cádiz=Museo Arqueológico
+Spanien=Jimena de la Frontera=möglicherweise im Rathaus (auf jeden Fall in einem öffentl. Gebäude
+Spanien=Jâtiva=Museum
+Spanien=Las Ventas de Caparra=“adossée à un bâtiment d‘exploitation du domaine de Valverdejo”
+Spanien=Lebrija (Sevilla)=Privatsammlung Bellido-Ahumado
+Spanien=Madrid=Museo Arqueológico Nacional
+Spanien=Madrid=Museo de Arqueológico Nacional
+Spanien=Madrid=Museo del Prado
+Spanien=Madrid=Museum der Stiftung Thyssen-Bornemisza
+Spanien=Málaga=Museo Arqueológico Provincial
+Spanien=Mérida=MNAR
+Spanien=Mérida=Museo Nacional de Arte Romano
+Spanien=Málaga=Zitadelle
+Spanien=Murcia=Archäologisches Forschungszentrum
+#Spanien, Museo de Cádiz=Cádiz=Sección de Arqueología
+#Spanien, Museo Provincial de Bellas Artes=Córdoba=Col. Romero de Torres
+Spanien=Niebla=Casa de la Cultura
+Spanien=Oviedo=Palast
+#Spanien, Palacio de los Condes de Mayoralgo=Cáceres=Hof
+Spanien=Palma de Mallorca=Castell Bellver
+Spanien=Pamplona=Museo da Navarra
+Spanien=Perelada=Sammlung Mateu
+Spanien=Pontevedra=Museum
+Spanien=Ronda=Bürgermeisterei
+Spanien=Sagunt=Museo Arqueológico
+Spanien=Sagunto=Museo Arqueológico
+Spanien=Sagunto=Museum
+Spanien=Salamanca=Jesuitenkolleg La Clercía
+Spanien=Salamanca=Plaza Mayor
+Spanien=San Ildefonso=Jagdschloß La Granja
+Spanien=Santa María de Huerta=Zisterzienserabtei
+Spanien=Santes Creus=Zisterzienserabtei
+Spanien=Sevilla=MAP
+Spanien=Sevilla=Museo Arqueológico
+Spanien=Silos=Kloster Santo Domingo
+Spanien=Teba (Prov. Sevilla)=Museo Histórico Municipal
+Spanien=Toledo=“Casa del Greco”
+Spanien=Valencia=Museo Provincial de Bellas Artes
+Spanien=Valladolid=Dombibliothek
+Spanien=Valladolid=Stift San Greorio
+Spanien=Vimbodi=Zisterzienserabtei Poblet
+Österreich=Althofen= Pfarrkirch
+Österreich=Bischofshofen=Frauenkirche
+Österreich=Graz=Burg
+Österreich=Göttweig=Stiftsarchiv Göttweig
+Österreich=Hall=Dekanats-und Stadtpfarramt Sankt Nikolaus
+Österreich=Lilienfeld=Zisterzienserkloster
+Österreich=Melk=Stift Melk
+Österreich=Wien=Belvedere
+Österreich=Wiener Neustadt=Burg
+Österreich=Wien=Gemäldegalerie der Akademie der bildenden Künste
+Österreich=Wien=Hofburg
+Österreich=Wien=Hof- und Staatsarchiv
+Österreich=Wien=Kunsthistorisches Museum
+Österreich=Wien=Schatzkammer
+Österreich=Wien=Österreichische Nationalbibliothek
+Österreich=Wien=Österreichisches Museum für Kunst und Industrie
+Österreich=Zwettl=Zisterzienserabtei
+Syrien=Aleppo=Museum
+Syrien=Damaskus=Nationalmuseum
+Syrien=Shahba=Museum
+Syrien=Soueida=Museum
+Syrien=Soueida=Museum von Soueida
+Tunesien=Karthago=Musée National
+Tunesien=Karthago=Thermen des Antoninus
+Tunesien=Oran=Museum
+Tunesien=Peristyl des „Hauses der figürlichen Kapitelle“
+Tunesien=Sousse=Museum
+Tunesien=Tunis=Bardo-Museum
+Tunesien=Tunis=Claridge Hotel
+Tunesien=Tunis=Musée Alaoui du Bardo
+Tunesien=Tunis=Musée Bardo
+Tunesien=Tunis=Musée du Bardo
+Tunesien=Tunis=Musée National du Bardo
+Tunesien=Utica=„Maison de la Cascade“
+Tunesien=Utica=Peristyl des „Hauses der figürlichen Kapitelle“
+Türkei=Afyon=Archäologisches Museum
+Türkei=Aglasun=Grabungshaus
+Türkei=Aizanoi=Nordnekropole
+Türkei=Amasra=Amasra - Museum
+Türkei=Ankara=Ankara - Museum
+Türkei=Ankara=Archäologisches Museum=Depot im römischen Bad bei Cankiri Kapi
+Türkei=Antakya=Museum
+Türkei=Antalya=Museum
+Türkei=Bergama (Pergamon)=Museum
+Türkei=Bergama (Pergamon)=Oberes Gymnasium
+Türkei=Bolu=Bolu - Museum
+Türkei=Burdur=Archäologisches Museum
+Türkei=Bursa=Museum
+Türkei=Çanakkale=Museum
+Türkei=Geyre (Aphrodisias)=Depot der Grabung
+Türkei=Geyre (Aphrodisias)=Propylon zum Vorhof des Aphroditetempels
+Türkei=Istanbul=Antikenmuseum
+Türkei=Istanbul=Archäologisches Museum
+Türkei=Izmit=Museum Izmit
+Türkei=Kayseri=Museum
+Türkei=Milet=Museum
+Türkei=Nigde=Nigde=Museum
+Türkei=Pamukkale (Hierapolis)=Theater
+Türkei=Pergamon=Museum
+Türkei=Perge=Theater
+Türkei=Samsun=Samsun - Museum
+Türkei=Selcuk=Ephesosmuseum
+Türkei=Sinop=Sinop - Mueum
+Türkei=Smyrna=Museum
+Türkei=Trabzon=Trabzon - Museum
+Türkei=Yalvac=Archäologisches Museum
+Türkei=Yozgat=Yozgat - Museum
+#Ukraine, Carskij - Kurgan (KW)=Ker±=Museum
+#Ukraine, Carskij–Kurgan (KW)=Ker±=Museum
+Ukraine=Chersones=Historisches Museum
+Ukraine=Ivanov=Heimatkundemuseum
+#Ukraine=Ker±=Carskij–Kurgan
+#Ukraine=Ker±=Museum
+Ukraine, Museum (KW)=Ker±=Carskij Kurgan (CIRB)
+Ukraine=Simferopol=Heimatkundemuseum
+Ukraine=Simferopol=Heimatmuseum
+Ungarn=Budapest=Akademie der Wissenschaften
+Ungarn=Budapest=Kunstmuseum
+Ungarn=Budapest=magyar Nemzeti Múzeum
+Ungarn=Budapest=Magyar Országos Levéltar
+Ungarn=Budapest=Musée des Beaux-Arts
+Ungarn=Budapest=Muzeum Aquincumi
+Ungarn=Budapest=Szépmüvészeti Múzeum
+Ungarn=Budapest=Ungarisches Staatsarchiv
+Ungarn=Esztergom=Prímási Levéltár
+Ungarn=Ödenburg=Museum
+USA=Baltimore (Maryland)=Walters Art Gallery
+USA=Boston (Massachusetts)=Museum of Fine Arts
+USA=Cambridge (Massachusetts)=Fogg Art Museum
+USA=Chicago (Ilinois)=Smith College Museum of Art
+USA=Cleveland (Ohio)=Cleveland Museum of Art
+USA=Detroit (Michigan)=The Detroit Institute of Arts
+USA=Minneapolis (Minnesota)=The Minneapolis Institute of Arts
+USA=New York (New York)=Metropolitan Museum of Art
+USA=Philadelphia (Pennsylvania)=Art Museum
+USA=Philadelphia (Pennsylvania)=University of Pennsylvania - The University Museum
+USA=Princeton (New Jersey)=Art Museum
+USA=San Francisco (Kalifornien)=Hearst Castle
+USA=San Simeon (California)=Slg. Hearst
+USA=Urbana-Champaign (Illinois)=Krannert Art Museum
+USA=Wellesley (Massachusetts)= Wellesley College Museum=Jewett Arts Center
+USA=Worcester (Massachusetts)=Worcester Art Museum
+USA=Yale (Connecticut)=Yale University, Art Gallery
+Vatikanstaat=Rom=Musei Vaticani
+Vatikanstaat=Rom=Musei Vaticani=Belvedere
+Vatikanstaat=Rom=Musei Vaticani=Belvedere: Vestibolo Rotondo
+Vatikanstaat=Rom=Musei Vaticani=Biblioteca
+Vatikanstaat=Rom=Musei Vaticani, Bibliothek
+Vatikanstaat=Rom=Musei Vaticani=Braccio Nuovo
+Vatikanstaat=Rom=Musei Vaticani=Cortile del Belvedere
+Vatikanstaat=Rom=Musei Vaticani=Cortile della Pigna
+Vatikanstaat=Rom=Musei Vaticani=Galleria Chiaramonti
+Vatikanstaat=Rom=Musei Vaticani, Galleria Chiaramonti
+Vatikanstaat=Rom=Musei Vaticani=Galleria dei Candelabri
+Vatikanstaat=Rom=Musei Vaticani=Galleria Lapidaria
+Vatikanstaat=Rom=Musei Vaticani=Giardino della Pigna
+Vatikanstaat=Rom=Musei Vaticani=Lateran
+Vatikanstaat=Rom=Musei Vaticani=Magazin
+Vatikanstaat=Rom=Musei Vaticani=Magazzino
+Vatikanstaat=Rom=Musei Vaticani=Museo Gregoriano Profano
+Vatikanstaat=Rom=Musei Vaticani, Museo Gregoriano Profano=Magazzino ex Ponteggi
+Vatikanstaat=Rom=Musei Vaticani, Museo Pio Clementino=Galleria delle Statue
+Vatikanstaat=Rom=Musei Vaticani=Museo Profano
+Vatikanstaat=Rom=Musei Vaticani=Sala dei Busti
+Vatikanstaat=Rom=Musei Vaticani=Sala della Biga
+Vatikanstaat=Rom=Musei Vaticani=S. Pietro in Vaticano
+Vatikanstaat=Rom=Musei Vaticani=Vestibül der Musei Vaticaniischen Bibliothek
+Vatikanstaat=Rom=Mus. Vaticani=Mus. Gregoriano Profano
+Vatikanstaat=Rom=Nekropole Mausoleum F
+Vatikanstaat=Rom=Vatikan=Cortile del Belvedere
+Vatikanstaat=Rom=Vatikan=Giardino dell Pigna
+Wissembourg=Weißenburg=Abteikirche St. Peter und Paul
+Zypern=Bellapais=Museum
+Zypern=Salamis=Gymnasium

@@ -1,0 +1,129 @@
+---
+- "ʹ"  # GREEK NUMERAL SIGN
+- "͵"  # GREEK LOWER NUMERAL SIGN
+- "ͺ"  # GREEK YPOGEGRAMMENI
+- "ͻ"  # GREEK SMALL REVERSED LUNATE SIGMA SYMBOL
+- "ͼ"  # GREEK SMALL DOTTED LUNATE SIGMA SYMBOL
+- "ͽ"  # GREEK SMALL REVERSED DOTTED LUNATE SIGMA SYMBOL
+- ";"  # GREEK QUESTION MARK
+- "΄"  # GREEK TONOS (present in WGL4)
+- "΅"  # GREEK DIALYTIKA TONOS (present in WGL4)
+- "Ά"  # GREEK CAPITAL LETTER ALPHA WITH TONOS (present in WGL4)
+- "·"  # GREEK ANO TELEIA (present in WGL4)
+- "Έ"  # GREEK CAPITAL LETTER EPSILON WITH TONOS (present in WGL4)
+- "Ή"  # GREEK CAPITAL LETTER ETA WITH TONOS (present in WGL4)
+- "Ί"  # GREEK CAPITAL LETTER IOTA WITH TONOS (present in WGL4)
+- "Ό"  # GREEK CAPITAL LETTER OMICRON WITH TONOS (present in WGL4)
+- "Ύ"  # GREEK CAPITAL LETTER UPSILON WITH TONOS (present in WGL4)
+- "Ώ"  # GREEK CAPITAL LETTER OMEGA WITH TONOS (present in WGL4)
+- "ΐ"  # GREEK SMALL LETTER IOTA WITH DIALYTIKA AND TONOS (present in WGL4)
+- "Α"  # GREEK CAPITAL LETTER ALPHA (present in WGL4 and in Symbol font)
+- "Β"  # GREEK CAPITAL LETTER BETA (present in WGL4 and in Symbol font)
+- "Γ"  # GREEK CAPITAL LETTER GAMMA (present in WGL4 and in Symbol font)
+- "Δ"  # GREEK CAPITAL LETTER DELTA (present in WGL4 and in Symbol font)
+- "Ε"  # GREEK CAPITAL LETTER EPSILON (present in WGL4 and in Symbol font)
+- "Ζ"  # GREEK CAPITAL LETTER ZETA (present in WGL4 and in Symbol font)
+- "Η"  # GREEK CAPITAL LETTER ETA (present in WGL4 and in Symbol font)
+- "Θ"  # GREEK CAPITAL LETTER THETA (present in WGL4 and in Symbol font)
+- "Ι"  # GREEK CAPITAL LETTER IOTA (present in WGL4 and in Symbol font)
+- "Κ"  # GREEK CAPITAL LETTER KAPPA (present in WGL4 and in Symbol font)
+- "Λ"  # GREEK CAPITAL LETTER LAMDA (present in WGL4 and in Symbol font)
+- "Μ"  # GREEK CAPITAL LETTER MU (present in WGL4 and in Symbol font)
+- "Ν"  # GREEK CAPITAL LETTER NU (present in WGL4 and in Symbol font)
+- "Ξ"  # GREEK CAPITAL LETTER XI (present in WGL4 and in Symbol font)
+- "Ο"  # GREEK CAPITAL LETTER OMICRON (present in WGL4 and in Symbol font)
+- "Π"  # GREEK CAPITAL LETTER PI (present in WGL4 and in Symbol font)
+- "Ρ"  # GREEK CAPITAL LETTER RHO (present in WGL4 and in Symbol font)
+- "Σ"  # GREEK CAPITAL LETTER SIGMA (present in WGL4 and in Symbol font)
+- "Τ"  # GREEK CAPITAL LETTER TAU (present in WGL4 and in Symbol font)
+- "Υ"  # GREEK CAPITAL LETTER UPSILON (present in WGL4 and in Symbol font)
+- "Φ"  # GREEK CAPITAL LETTER PHI (present in WGL4 and in Symbol font)
+- "Χ"  # GREEK CAPITAL LETTER CHI (present in WGL4 and in Symbol font)
+- "Ψ"  # GREEK CAPITAL LETTER PSI (present in WGL4 and in Symbol font)
+- "Ω"  # GREEK CAPITAL LETTER OMEGA (present in WGL4 and MacRoman, and in Symbol font)
+- "Ϊ"  # GREEK CAPITAL LETTER IOTA WITH DIALYTIKA
+- "Ϋ"  # GREEK CAPITAL LETTER UPSILON WITH DIALYTIKA
+- "ά"  # GREEK SMALL LETTER ALPHA WITH TONOS
+- "έ"  # GREEK SMALL LETTER EPSILON WITH TONOS
+- "ή"  # GREEK SMALL LETTER ETA WITH TONOS
+- "ί"  # GREEK SMALL LETTER IOTA WITH TONOS
+- "ΰ"  # GREEK SMALL LETTER UPSILON WITH DIALYTIKA AND TONOS
+- "α"  # GREEK SMALL LETTER ALPHA (present in WGL4 and in Symbol font)
+- "β"  # GREEK SMALL LETTER BETA (present in WGL4 and in Symbol font)
+- "γ"  # GREEK SMALL LETTER GAMMA (present in WGL4 and in Symbol font)
+- "δ"  # GREEK SMALL LETTER DELTA (present in WGL4 and in Symbol font)
+- "ε"  # GREEK SMALL LETTER EPSILON (present in WGL4 and in Symbol font)
+- "ζ"  # GREEK SMALL LETTER ZETA (present in WGL4 and in Symbol font)
+- "η"  # GREEK SMALL LETTER ETA (present in WGL4 and in Symbol font)
+- "θ"  # GREEK SMALL LETTER THETA (present in WGL4 and in Symbol font)
+- "ι"  # GREEK SMALL LETTER IOTA (present in WGL4 and in Symbol font)
+- "κ"  # GREEK SMALL LETTER KAPPA (present in WGL4 and in Symbol font)
+- "λ"  # GREEK SMALL LETTER LAMDA (present in WGL4 and in Symbol font)
+- "μ"  # GREEK SMALL LETTER MU (present in WGL4 and in Symbol font)
+- "ν"  # GREEK SMALL LETTER NU (present in WGL4 and in Symbol font)
+- "ξ"  # GREEK SMALL LETTER XI (present in WGL4 and in Symbol font)
+- "ο"  # GREEK SMALL LETTER OMICRON (present in WGL4 and in Symbol font)
+- "π"  # GREEK SMALL LETTER PI (present in WGL4 and MacRoman, and in Symbol font)
+- "ρ"  # GREEK SMALL LETTER RHO (present in WGL4 and in Symbol font)
+- "ς"  # GREEK SMALL LETTER FINAL SIGMA (present in WGL4 and in Symbol font)
+- "σ"  # GREEK SMALL LETTER SIGMA (present in WGL4 and in Symbol font)
+- "τ"  # GREEK SMALL LETTER TAU (present in WGL4 and in Symbol font)
+- "υ"  # GREEK SMALL LETTER UPSILON (present in WGL4 and in Symbol font)
+- "φ"  # GREEK SMALL LETTER PHI (present in WGL4 and in Symbol font)
+- "χ"  # GREEK SMALL LETTER CHI (present in WGL4 and in Symbol font)
+- "ψ"  # GREEK SMALL LETTER PSI (present in WGL4 and in Symbol font)
+- "ω"  # GREEK SMALL LETTER OMEGA (present in WGL4 and in Symbol font)
+- "ϊ"  # GREEK SMALL LETTER IOTA WITH DIALYTIKA (present in WGL4)
+- "ϋ"  # GREEK SMALL LETTER UPSILON WITH DIALYTIKA (present in WGL4)
+- "ό"  # GREEK SMALL LETTER OMICRON WITH TONOS (present in WGL4)
+- "ύ"  # GREEK SMALL LETTER UPSILON WITH TONOS (present in WGL4)
+- "ώ"  # GREEK SMALL LETTER OMEGA WITH TONOS (present in WGL4)
+- "ϐ"  # GREEK BETA SYMBOL
+- "ϑ"  # GREEK THETA SYMBOL (present in Symbol font)
+- "ϒ"  # GREEK UPSILON WITH HOOK SYMBOL (present in Symbol font)
+- "ϓ"  # GREEK UPSILON WITH ACUTE AND HOOK SYMBOL
+- "ϔ"  # GREEK UPSILON WITH DIAERESIS AND HOOK SYMBOL
+- "ϕ"  # GREEK PHI SYMBOL (present in Symbol font)
+- "ϖ"  # GREEK PI SYMBOL (present in Symbol font)
+- "ϗ"  # GREEK KAI SYMBOL
+- "Ϙ"  # GREEK LETTER ARCHAIC KOPPA
+- "ϙ"  # GREEK SMALL LETTER ARCHAIC KOPPA
+- "Ϛ"  # GREEK LETTER STIGMA
+- "ϛ"  # GREEK SMALL LETTER STIGMA
+- "Ϝ"  # GREEK LETTER DIGAMMA
+- "ϝ"  # GREEK SMALL LETTER DIGAMMA
+- "Ϟ"  # GREEK LETTER KOPPA
+- "ϟ"  # GREEK SMALL LETTER KOPPA
+- "Ϡ"  # GREEK LETTER SAMPI
+- "ϡ"  # GREEK SMALL LETTER SAMPI
+- "Ϣ"  # COPTIC CAPITAL LETTER SHEI
+- "ϣ"  # COPTIC SMALL LETTER SHEI
+- "Ϥ"  # COPTIC CAPITAL LETTER FEI
+- "ϥ"  # COPTIC SMALL LETTER FEI
+- "Ϧ"  # COPTIC CAPITAL LETTER KHEI
+- "ϧ"  # COPTIC SMALL LETTER KHEI
+- "Ϩ"  # COPTIC CAPITAL LETTER HORI
+- "ϩ"  # COPTIC SMALL LETTER HORI
+- "Ϫ"  # COPTIC CAPITAL LETTER GANGIA
+- "ϫ"  # COPTIC SMALL LETTER GANGIA
+- "Ϭ"  # COPTIC CAPITAL LETTER SHIMA
+- "ϭ"  # COPTIC SMALL LETTER SHIMA
+- "Ϯ"  # COPTIC CAPITAL LETTER DEI
+- "ϯ"  # COPTIC SMALL LETTER DEI
+- "ϰ"  # GREEK KAPPA SYMBOL
+- "ϱ"  # GREEK RHO SYMBOL
+- "ϲ"  # GREEK LUNATE SIGMA SYMBOL
+- "ϳ"  # GREEK LETTER YOT
+- "ϴ"  # GREEK CAPITAL THETA SYMBOL
+- "ϵ"  # GREEK LUNATE EPSILON SYMBOL
+- "϶"  # GREEK REVERSED LUNATE EPSILON SYMBOL
+- "Ϸ"  # GREEK CAPITAL LETTER SHO
+- "ϸ"  # GREEK SMALL LETTER SHO
+- "Ϲ"  # GREEK CAPITAL LUNATE SIGMA SYMBOL
+- "Ϻ"  # GREEK CAPITAL LETTER SAN
+- "ϻ"  # GREEK SMALL LETTER SAN
+- "ϼ"  # GREEK RHO WITH STROKE SYMBOL
+- "Ͻ"  # GREEK CAPITAL REVERSED LUNATE SIGMA SYMBOL
+- "Ͼ"  # GREEK CAPITAL DOTTED LUNATE SIGMA SYMBOL
+- "Ͽ"  # GREEK CAPITAL REVERSED DOTTED LUNATE SIGMA SYMBOL
+- "₯"  # DRACHMA SIGN
