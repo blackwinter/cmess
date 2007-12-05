@@ -26,26 +26,38 @@
 ###############################################################################
 #++
 
-module CMess::Version
+require 'iconv'
 
-  MAJOR = 0
-  MINOR = 0
-  TINY  = 2
+# Find (and possibly repair) doubly encoded characters. Here's how it's done:
+#
+# Treats characters encoded in target encoding as if they were encoded in
+# source encoding, converts them to target encoding and "grep"s for lines
+# containing those doubly encoded characters; if asked to repair doubly
+# encoded characters, substitutes them with their original character.
 
-  class << self
+module CMess::Cinderella
 
-    # Returns array representation.
-    def to_a
-      [MAJOR, MINOR, TINY]
-    end
+  extend self
 
-    # Short-cut for version string.
-    def to_s
-      to_a.join('.')
-    end
+  # our version ;-)
+  VERSION = '0.0.3'
 
+  def pick(input, pot, crop, source_encoding, target_encoding, chars, repair = false)
+    iconv = Iconv.new(target_encoding, source_encoding)
+
+    encoded = chars.inject({}) { |hash, char|
+      hash.update(iconv.iconv(char) => char)
+    }
+
+    regexp = Regexp.union(*encoded.keys)
+
+    input.each { |line|
+      if out = line =~ regexp ? crop : pot
+        line.gsub!(regexp) { |m| encoded[m] } if repair
+
+        out.puts(line)
+      end
+    }
   end
 
 end
-
-CMess::VERSION = Version.to_s

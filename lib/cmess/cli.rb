@@ -26,9 +26,7 @@
 ###############################################################################
 #++
 
-module CMess
-
-  module CLI
+module CMess::CLI
 
     def ensure_readable(file)
       abort "Can't find input file: #{file}" unless File.readable?(file)
@@ -79,5 +77,3 @@ explicitly via the SYSTEM_ENCODING environment variable or via the '-t' option.
     end
 
   end
-
-end

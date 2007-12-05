@@ -29,28 +29,16 @@
 ###############################################################################
 #++
 
-# Find (and possibly repair) doubly encoded characters. Here's how it's done:
-#
-# Treats characters encoded in target encoding as if they were encoded in
-# source encoding, converts them to target encoding and "grep"s for lines
-# containing those doubly encoded characters; if asked to repair doubly
-# encoded characters, substitutes them with their original character.
-
 require 'optparse'
-require 'iconv'
 require 'yaml'
 
 $: << File.join(File.dirname(__FILE__), '..', 'lib')
 
 require 'cmess'
+require 'cmess/cinderella'
 require 'cmess/cli'
 
 include CMess::CLI
-
-# our version ;-)
-module Cinderella
-  VERSION = '0.0.2'
-end
 
 PROGNAME = File.basename($0)
 
@@ -165,7 +153,7 @@ OptionParser.new(nil, 40) { |opts|
   }
 
   opts.on('--version', "Print program version and exit") {
-    puts "#{PROGNAME} v#{Cinderella::VERSION} (part of cmess v#{CMess::VERSION})"
+    puts "#{PROGNAME} v#{CMess::Cinderella::VERSION} (part of cmess v#{CMess::VERSION})"
     exit
   }
 
@@ -179,8 +167,6 @@ options[:target_encoding].call if options[:target_encoding].respond_to?(:call)
 abort "No source encoding given! (Use the '-e' switch to do so; see '--help' for more information)" \
   unless options[:source_encoding]
 
-ICONV = Iconv.new(options[:target_encoding], options[:source_encoding])
-
 yaml_file = "#{options[:target_encoding].downcase}.yaml"
 char_file = options[:csets].inject(nil) { |path, cset|
   path = File.join(cset, yaml_file)
@@ -189,16 +175,12 @@ char_file = options[:csets].inject(nil) { |path, cset|
 abort "Char file not found for target encoding: #{options[:target_encoding]}" \
   unless char_file
 
-encoded = YAML.load_file(char_file).inject({}) { |hash, char|
-  hash.update(ICONV.iconv(char) => char)
-}
-
-regexp = Regexp.union(*encoded.keys)
-
-options[:input].each { |line|
-  if out = options[line =~ regexp ? :crop : :pot]
-    line.gsub!(regexp) { |m| encoded[m] } if options[:repair]
-
-    out.puts(line)
-  end
-}
+CMess::Cinderella.pick(
+  options[:input],
+  options[:pot],
+  options[:crop],
+  options[:source_encoding],
+  options[:target_encoding],
+  YAML.load_file(char_file),
+  options[:repair]
+)

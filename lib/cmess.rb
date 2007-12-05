@@ -26,7 +26,18 @@
 ###############################################################################
 #++
 
-require 'cmess/version'
+# Bundles several tools that aim at dealing with various problems occurring in
+# the context of character sets and encodings. Currently, there are:
+#
+# guess_encoding::  simple helper to identify the encoding of a given string
+#                   (see GuessEncoding)
+# cinderella::      when characters are "double encoded", you can't easily
+#                   convert them back -- this is where cinderella comes in,
+#                   sorting the good ones into the pot and the (potentially)
+#                   bad ones into the crop... (see Cinderella)
+# decode_entities:: decode HTML entities in a string (see DecodeEntities)
 
 module CMess
 end
+
+require 'cmess/version'

@@ -30,42 +30,21 @@
 #++
 
 require 'optparse'
-require 'iconv'
-
-require 'rubygems'
-require 'htmlentities/string'
 
 $: << File.join(File.dirname(__FILE__), '..', 'lib')
 
 require 'cmess'
+require 'cmess/decode_entities'
 require 'cmess/cli'
 
 include CMess::CLI
 
-# our version ;-)
-module DecodeEntities
-  VERSION = '0.0.1'
-end
-
 PROGNAME = File.basename($0)
-
-# HTMLEntities requires UTF-8
-INTERMEDIATE_ENCODING = 'utf-8'
-
-ICONV_DUMMY = begin
-  dummy = Object.new
-
-  def dummy.iconv(string)
-    string
-  end
-
-  dummy
-end
 
 options = {
   :input           => STDIN,
   :output          => STDOUT,
-  :source_encoding => INTERMEDIATE_ENCODING,
+  :source_encoding => CMess::DecodeEntities::INTERMEDIATE_ENCODING,
   :target_encoding => nil
 }
 
@@ -106,19 +85,17 @@ OptionParser.new { |opts|
   }
 
   opts.on('--version', "Print program version and exit") {
-    puts "#{PROGNAME} v#{DecodeEntities::VERSION} (part of cmess v#{CMess::VERSION})"
+    puts "#{PROGNAME} v#{CMess::DecodeEntities::VERSION} (part of cmess v#{CMess::VERSION})"
     exit
   }
+
+  opts.separator ''
+  opts.separator "When FILE is -, either STDIN or STDOUT is used (as appropriate)."
 }.parse!
 
-options[:target_encoding] ||= options[:source_encoding]
-
-ICONV_IN  = options[:source_encoding] != INTERMEDIATE_ENCODING ?
-  Iconv.new(INTERMEDIATE_ENCODING, options[:source_encoding]) : ICONV_DUMMY
-
-ICONV_OUT = options[:target_encoding] != INTERMEDIATE_ENCODING ?
-  Iconv.new(options[:target_encoding], INTERMEDIATE_ENCODING) : ICONV_DUMMY
-
-options[:input].each { |line|
-  options[:output].puts ICONV_OUT.iconv(ICONV_IN.iconv(line).decode_entities)
-}
+CMess::DecodeEntities.decode(
+  options[:input],
+  options[:output],
+  options[:source_encoding],
+  options[:target_encoding]
+)

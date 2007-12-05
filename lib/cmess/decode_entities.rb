@@ -26,26 +26,43 @@
 ###############################################################################
 #++
 
-module CMess::Version
+require 'iconv'
 
-  MAJOR = 0
-  MINOR = 0
-  TINY  = 2
+require 'rubygems'
+require 'htmlentities/string'
 
-  class << self
+module CMess::DecodeEntities
 
-    # Returns array representation.
-    def to_a
-      [MAJOR, MINOR, TINY]
+  extend self
+
+  # our version ;-)
+  VERSION = '0.0.2'
+
+  # HTMLEntities requires UTF-8
+  INTERMEDIATE_ENCODING = 'utf-8'
+
+  ICONV_DUMMY = begin
+    dummy = Object.new
+
+    def dummy.iconv(string)
+      string
     end
 
-    # Short-cut for version string.
-    def to_s
-      to_a.join('.')
-    end
+    dummy
+  end
 
+  def decode(input, output, source_encoding, target_encoding = nil)
+    target_encoding ||= source_encoding
+
+    iconv_in  = source_encoding != INTERMEDIATE_ENCODING ?
+      Iconv.new(INTERMEDIATE_ENCODING, source_encoding) : ICONV_DUMMY
+
+    iconv_out = target_encoding != INTERMEDIATE_ENCODING ?
+      Iconv.new(target_encoding, INTERMEDIATE_ENCODING) : ICONV_DUMMY
+
+    input.each { |line|
+      output.puts iconv_out.iconv(iconv_in.iconv(line).decode_entities)
+    }
   end
 
 end
-
-CMess::VERSION = Version.to_s

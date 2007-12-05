@@ -29,59 +29,20 @@
 ###############################################################################
 #++
 
-# Outputs given string (or line), being encoded in target encoding, encoded in
-# various test encodings, thus allowing to identify the (seemingly) correct
-# encoding by visually comparing the input string with its desired appearance.
-
 require 'optparse'
-require 'iconv'
+
+require 'rubygems'
+require 'nuggets/string/word_wrap'
 
 $: << File.join(File.dirname(__FILE__), '..', 'lib')
 
 require 'cmess'
+require 'cmess/guess_encoding'
 require 'cmess/cli'
 
 include CMess::CLI
 
-# our version ;-)
-module GuessEncoding
-  VERSION = '0.0.2'
-end
-
 PROGNAME = File.basename($0)
-
-# default encodings to try
-ENCODINGS = %w[
-  ISO-8859-1
-  ISO-8859-2
-  ISO-8859-15
-  CP1250
-  CP1251
-  CP1252
-  CP850
-  CP852
-  CP856
-  UTF-8
-]
-
-# likely candidates to suggest to the user
-CANDIDATES = %w[
-  ANSI_X3.4
-  EBCDIC-AT-DE
-  EBCDIC-US
-  EUC-JP
-  KOI-8
-  MACINTOSH
-  MS-ANSI
-  SHIFT-JIS
-  UTF-7
-  UTF-16
-  UTF-16BE
-  UTF-16LE
-  UTF-32
-  UTF-32BE
-  UTF-32LE
-]
 
 # how to split list of encodings
 SPLIT_ENCODING_LIST_RE = /\s*[,\s]\s*/o
@@ -139,17 +100,24 @@ OptionParser.new(nil, 40) { |opts|
   }
 
   opts.on('--version', "Print program version and exit") {
-    puts "#{PROGNAME} v#{GuessEncoding::VERSION} (part of cmess v#{CMess::VERSION})"
+    puts "#{PROGNAME} v#{CMess::GuessEncoding::VERSION} (part of cmess v#{CMess::VERSION})"
     exit
   }
 
   opts.separator ''
   opts.separator 'Default encodings:'
-  opts.separator ENCODINGS.join(', ')
+  CMess::GuessEncoding::ENCODINGS.join(', ').word_wrap(110, true).each { |l|
+    opts.separator l
+  }
 
   opts.separator ''
   opts.separator 'Likely candidates for additional testing:'
-  opts.separator CANDIDATES.join(', ')
+  CMess::GuessEncoding::CANDIDATES.join(', ').word_wrap(110, true).each { |l|
+    opts.separator l
+  }
+
+  opts.separator ''
+  opts.separator "When FILE is -, STDIN is used."
 }.parse!
 
 options[:target_encoding].call if options[:target_encoding].respond_to?(:call)
@@ -163,27 +131,9 @@ input = options[:input].each { |line|
 abort "Input was empty!" if $..zero?
 abort "Line not found -- input has only #{$.} line#{'s' if $. != 1}" unless input.is_a?(String)
 
-target = options[:target_encoding]
-
-encodings = (options[:encodings] || ENCODINGS) + options[:additional_encodings]
-encodings = encodings.reverse.uniq.reverse     # uniq with additional encodings
-                                               # staying at the end
-encodings = [target] + (encodings - [target])  # move target encoding to front
-
-max_length = encodings.map { |encoding| encoding.length }.max
-
-encodings.each { |encoding|
-  converted = begin
-    Iconv.conv(target, encoding, input)
-  rescue Iconv::IllegalSequence => err
-    "ILLEGAL INPUT SEQUENCE: #{err}"
-  rescue Iconv::InvalidEncoding
-    if encoding == target
-      abort "Invalid encoding: #{encoding}"
-    else
-      "INVALID ENCODING!"
-    end
-  end
-
-  puts "%-#{max_length}s : %s" % [encoding, converted]
-}
+CMess::GuessEncoding.display(
+  input,
+  options[:target_encoding],
+  options[:encodings],
+  options[:additional_encodings]
+)
