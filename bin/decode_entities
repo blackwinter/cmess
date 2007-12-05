@@ -37,7 +37,10 @@ require 'htmlentities/string'
 
 $: << File.join(File.dirname(__FILE__), '..', 'lib')
 
-require 'cmess/version'
+require 'cmess'
+require 'cmess/cli'
+
+include CMess::CLI
 
 # our version ;-)
 module DecodeEntities
@@ -73,20 +76,15 @@ OptionParser.new { |opts|
   opts.separator 'Options:'
 
   opts.on('-i', '--input FILE', "Input file to read from [Default: STDIN]") { |f|
-    abort "Can't find input file: #{f}" unless File.readable?(f)
-
-    options[:input] = File.open(f)
+    options[:input] = open_file_or_std(f)
   }
 
   opts.on('-o', '--output FILE', "Output file to write to [Default: STDOUT]") { |f|
-    options[:output] = File.open(f, 'w')
+    options[:output] = open_file_or_std(f, 'w')
   }
 
   opts.on('-I', '--in-place FILE', "Modify file in-place; sets '-i' and '-o'") { |f|
-    abort "Can't find input file: #{f}" unless File.readable?(f)
-
-    options[:input]  = File.readlines(f)
-    options[:output] = File.open(f, 'w')
+    options[:input], options[:output] = open_file_in_place(f)
   }
 
   opts.separator ''

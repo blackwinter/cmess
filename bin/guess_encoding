@@ -38,7 +38,10 @@ require 'iconv'
 
 $: << File.join(File.dirname(__FILE__), '..', 'lib')
 
-require 'cmess/version'
+require 'cmess'
+require 'cmess/cli'
+
+include CMess::CLI
 
 # our version ;-)
 module GuessEncoding
@@ -83,27 +86,6 @@ CANDIDATES = %w[
 # how to split list of encodings
 SPLIT_ENCODING_LIST_RE = /\s*[,\s]\s*/o
 
-def determine_system_encoding
-  ENV['SYSTEM_ENCODING']   ||
-  ENV['LANG'][/\.(.*)/, 1] ||
-  system_encoding_not_found
-end
-
-def system_encoding_not_found
-  not_found = lambda {
-    abort <<-EOT
-Your system's encoding couldn't be determined automatically -- please specify it
-explicitly via the SYSTEM_ENCODING environment variable or via the '-t' option.
-    EOT
-  }
-
-  def not_found.to_s
-    'NOT FOUND'
-  end
-
-  not_found
-end
-
 options = {
   :input                => STDIN,
   :line                 => 1,
@@ -119,9 +101,7 @@ OptionParser.new(nil, 40) { |opts|
   opts.separator 'Options:'
 
   opts.on('-i', '--input FILE', "Input file to read from [Default: STDIN]") { |f|
-    abort "Can't find input file: #{f}" unless File.readable?(f)
-
-    options[:input] = File.open(f)
+    options[:input] = open_file_or_std(f)
   }
 
   opts.on('-l', '--line LINE', "Line number of input file to use for testing [Default: #{options[:line]}]") { |l|

@@ -42,7 +42,10 @@ require 'yaml'
 
 $: << File.join(File.dirname(__FILE__), '..', 'lib')
 
-require 'cmess/version'
+require 'cmess'
+require 'cmess/cli'
+
+include CMess::CLI
 
 # our version ;-)
 module Cinderella
@@ -50,27 +53,6 @@ module Cinderella
 end
 
 PROGNAME = File.basename($0)
-
-def determine_system_encoding
-  ENV['SYSTEM_ENCODING']   ||
-  ENV['LANG'][/\.(.*)/, 1] ||
-  system_encoding_not_found
-end
-
-def system_encoding_not_found
-  not_found = lambda {
-    abort <<-EOT
-Your system's encoding couldn't be determined automatically -- please specify it
-explicitly via the SYSTEM_ENCODING environment variable or via the '-t' option.
-    EOT
-  }
-
-  def not_found.to_s
-    'NOT FOUND'
-  end
-
-  not_found
-end
 
 options = {
   :input           => STDIN,
@@ -92,25 +74,23 @@ OptionParser.new(nil, 40) { |opts|
   opts.separator 'Options:'
 
   opts.on('-i', '--input FILE', "Input file to read from [Default: STDIN]") { |f|
-    abort "Input file not found: #{f}" unless File.readable?(f)
-
-    options[:input] = File.open(f)
+    options[:input] = open_file_or_std(f)
   }
 
   opts.separator ''
 
   opts.on('-p', '--pot FILE', "The good into the pot...") { |f|
-    options[:pot] = f == '-' ? STDOUT : File.open(f, 'w')
+    options[:pot] = open_file_or_std(f, 'w')
   }
 
   opts.on('-c', '--crop FILE', "...the bad into the crop") { |f|
-    options[:crop] = f == '-' ? STDOUT : File.open(f, 'w')
+    options[:crop] = open_file_or_std(f, 'w')
   }
 
   opts.separator ''
 
   opts.on('-o', '--output [FILE]', "Write both good and bad lines to FILE or", "default [Default: STDOUT] (Particularly", "useful in combination with the '-r' option)") { |f|
-    options[:output] = f == '-' ? STDOUT : File.open(f, 'w') if f
+    options[:output] = open_file_or_std(f, 'w') if f
 
     options[:pot]  = options[:output]
     options[:crop] = options[:output]
@@ -119,10 +99,7 @@ OptionParser.new(nil, 40) { |opts|
   opts.separator ''
 
   opts.on('-I', '--in-place FILE', "Modify file in-place; sets '-i' and '-o'", "(Only really useful in combination with", "the '-r' option)") { |f|
-    abort "Input file not found: #{f}" unless File.readable?(f)
-
-    options[:input]  = File.readlines(f)
-    options[:output] = File.open(f, 'w')
+    options[:input], options[:output] = open_file_in_place(f)
 
     options[:pot]  = options[:output]
     options[:crop] = options[:output]
@@ -141,7 +118,7 @@ OptionParser.new(nil, 40) { |opts|
   opts.separator ''
 
   opts.on('-T', '--addtl-target-encodings DIRECTORY', "Directory providing additional char files", "for target encoding") { |d|
-    abort "Directory not found: #{d}" unless File.directory?(d)
+    ensure_directory(d)
 
     options[:csets] |= [File.expand_path(d)]
   }
