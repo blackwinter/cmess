@@ -118,6 +118,18 @@ OptionParser.new(nil, 40) { |opts|
 
   opts.separator ''
 
+  opts.on('-I', '--in-place FILE', "Modify file in-place; sets '-i' and '-o'", "(Only really useful in combination with", "the '-r' option)") { |f|
+    abort "Input file not found: #{f}" unless File.readable?(f)
+
+    options[:input]  = File.readlines(f)
+    options[:output] = File.open(f, 'w')
+
+    options[:pot]  = options[:output]
+    options[:crop] = options[:output]
+  }
+
+  opts.separator ''
+
   opts.on('-e', '--source-encoding ENCODING', "Source encoding (from) [REQUIRED]") { |e|
     options[:source_encoding] = e
   }
@@ -197,7 +209,8 @@ char_file = options[:csets].inject(nil) { |path, cset|
   path = File.join(cset, yaml_file)
   break path if File.readable?(path)
 }
-abort "Char file not found for target encoding: #{options[:target_encoding]}"
+abort "Char file not found for target encoding: #{options[:target_encoding]}" \
+  unless char_file
 
 encoded = YAML.load_file(char_file).inject({}) { |hash, char|
   hash.update(ICONV.iconv(char) => char)

@@ -82,6 +82,13 @@ OptionParser.new { |opts|
     options[:output] = File.open(f, 'w')
   }
 
+  opts.on('-I', '--in-place FILE', "Modify file in-place; sets '-i' and '-o'") { |f|
+    abort "Can't find input file: #{f}" unless File.readable?(f)
+
+    options[:input]  = File.readlines(f)
+    options[:output] = File.open(f, 'w')
+  }
+
   opts.separator ''
 
   opts.on('-e', '--source-encoding ENCODING', "Encoding of input file [Default: #{options[:source_encoding].upcase}]") { |e|
