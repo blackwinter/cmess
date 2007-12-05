@@ -1,7 +1,9 @@
 # Utilizes global rake-tasks: alias rake="rake -r rake -R /path/to/rakelibdir"
 # (Base tasks at <http://prometheus.khi.uni-koeln.de/svn/scratch/rake-tasks/>)
 
-require 'lib/cmess'
+$:.unshift('lib')
+
+require 'cmess'
 
 FILES = FileList['lib/**/*.rb'].to_a
 EXECS = FileList['bin/*'].to_a
