@@ -46,6 +46,6 @@ module CMess::Version
 
   end
 
-end
+  CMess::VERSION = to_s
 
-CMess::VERSION = Version.to_s
+end
