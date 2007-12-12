@@ -2,7 +2,7 @@
 
 == VERSION
 
-This documentation refers to cmess version 0.0.2
+This documentation refers to cmess version 0.0.3
 
 
 == DESCRIPTION
@@ -11,12 +11,14 @@ CMess bundles several tools under its hood that aim at dealing with various
 problems occurring in the context of character sets and encodings. Currently,
 there are:
 
-guess_encoding::  simple helper to identify the encoding of a given string
-cinderella::      when characters are "double encoded", you can't easily
+guess_encoding::  Simple helper to identify the encoding of a given string.
+                  Includes the ability to automatically detect the encoding
+                  of an input.
+cinderella::      When characters are "double encoded", you can't easily
                   convert them back -- this is where cinderella comes in,
                   sorting the good ones into the pot and the (potentially)
                   bad ones into the crop...
-decode_entities:: decode HTML entities in a string
+decode_entities:: Decode HTML entities in a string.
 
 TODO: well, more of the description... ;-)
 
@@ -24,6 +26,13 @@ TODO: well, more of the description... ;-)
 == AUTHORS
 
 * Jens Wille <mailto:jens.wille@uni-koeln.de>
+
+
+== CREDITS
+
+* John Vorhauer <mailto:john@vorhauer.de> for the idea and
+  original implementation of the automatic encoding guesser
+  (see CMess::GuessEncoding::Guesser).
 
 
 == LICENSE AND COPYRIGHT

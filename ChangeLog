@@ -1,5 +1,6 @@
 = Revision history for cmess
 
-== x.y.z [yyyy-mm-dd]
+== 0.0.3 [2007-12-12]
 
-* ...
+* Added automatic encoding detection to GuessEncoding. Idea and original
+  implementation provided by John. Thanks :-)

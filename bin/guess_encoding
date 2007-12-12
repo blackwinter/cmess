@@ -52,7 +52,8 @@ options = {
   :line                 => 1,
   :encodings            => nil,
   :additional_encodings => [],
-  :target_encoding      => determine_system_encoding
+  :target_encoding      => determine_system_encoding,
+  :guess                => false
 }
 
 OptionParser.new(nil, 40) { |opts|
@@ -64,6 +65,10 @@ OptionParser.new(nil, 40) { |opts|
   opts.on('-i', '--input FILE', "Input file to read from [Default: STDIN]") { |f|
     options[:input] = open_file_or_std(f)
   }
+
+  opts.separator ''
+  opts.separator '  * Manual guessing'
+  opts.separator ''
 
   opts.on('-l', '--line LINE', "Line number of input file to use for testing [Default: #{options[:line]}]") { |l|
     options[:line] = l.to_i
@@ -92,6 +97,14 @@ OptionParser.new(nil, 40) { |opts|
   }
 
   opts.separator ''
+  opts.separator '  * Automatic guessing'
+  opts.separator ''
+
+  opts.on('-g', '--guess', "Actually guess the encoding of the input, automatically!", "(see below for a list of supported encodings)") {
+    options[:guess] = true
+  }
+
+  opts.separator ''
   opts.separator 'Generic options:'
 
   opts.on('-h', '--help', "Print this help message and exit") {
@@ -117,23 +130,33 @@ OptionParser.new(nil, 40) { |opts|
   }
 
   opts.separator ''
+  opts.separator 'Supported encodings for automatic guessing (will be tried in that order):'
+  CMess::GuessEncoding::Guesser.supported_encodings.join(', ').word_wrap(110, true).each { |l|
+    opts.separator l
+  }
+
+  opts.separator ''
   opts.separator "When FILE is -, STDIN is used."
 }.parse!
 
-options[:target_encoding].call if options[:target_encoding].respond_to?(:call)
+if options[:guess]
+  puts CMess::GuessEncoding.guess(options[:input])
+else
+  options[:target_encoding].call if options[:target_encoding].respond_to?(:call)
 
-# reset line counter
-$. = 0
+  # reset line counter
+  $. = 0
 
-input = options[:input].each { |line|
-  break line if $. == options[:line]
-}
-abort "Input was empty!" if $..zero?
-abort "Line not found -- input has only #{$.} line#{'s' if $. != 1}" unless input.is_a?(String)
+  input = options[:input].each { |line|
+    break line if $. == options[:line]
+  }
+  abort "Input was empty!" if $..zero?
+  abort "Line not found -- input has only #{$.} line#{'s' if $. != 1}" unless input.is_a?(String)
 
-CMess::GuessEncoding.display(
-  input,
-  options[:target_encoding],
-  options[:encodings],
-  options[:additional_encodings]
-)
+  CMess::GuessEncoding.display(
+    input,
+    options[:target_encoding],
+    options[:encodings],
+    options[:additional_encodings]
+  )
+end
