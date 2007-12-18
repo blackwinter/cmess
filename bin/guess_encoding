@@ -44,6 +44,9 @@ include CMess::CLI
 
 PROGNAME = File.basename($0)
 
+# short-cut
+CGE = CMess::GuessEncoding
+
 # how to split list of encodings
 SPLIT_ENCODING_LIST_RE = /\s*[,\s]\s*/o
 
@@ -53,7 +56,9 @@ options = {
   :encodings            => nil,
   :additional_encodings => [],
   :target_encoding      => determine_system_encoding,
-  :guess                => false
+  :guess                => false,
+  :chunk_size           => nil,
+  :ignore_bom           => false
 }
 
 OptionParser.new(nil, 40) { |opts|
@@ -104,6 +109,16 @@ OptionParser.new(nil, 40) { |opts|
     options[:guess] = true
   }
 
+  opts.on('-c', '--chunk-size SIZE', Integer, "Size of chunks input will be read in until a valid encoding", "has been found; by default the whole file will be read") { |s|
+    options[:chunk_size] = s
+  }
+
+  opts.separator ''
+
+  opts.on('-b', '--ignore-bom', "Ignore detected BOM (if any)", "(see below for a list of supported encodings)") {
+    options[:ignore_bom] = true
+  }
+
   opts.separator ''
   opts.separator 'Generic options:'
 
@@ -113,25 +128,31 @@ OptionParser.new(nil, 40) { |opts|
   }
 
   opts.on('--version', "Print program version and exit") {
-    puts "#{PROGNAME} v#{CMess::GuessEncoding::VERSION} (part of cmess v#{CMess::VERSION})"
+    puts "#{PROGNAME} v#{CGE::VERSION} (part of cmess v#{CMess::VERSION})"
     exit
   }
 
   opts.separator ''
-  opts.separator 'Default encodings:'
-  CMess::GuessEncoding::ENCODINGS.join(', ').word_wrap(110, true).each { |l|
+  opts.separator 'Default encodings for manual guessing:'
+  CGE::Manual::ENCODINGS.join(', ').word_wrap(110, true).each { |l|
     opts.separator l
   }
 
   opts.separator ''
   opts.separator 'Likely candidates for additional testing:'
-  CMess::GuessEncoding::CANDIDATES.join(', ').word_wrap(110, true).each { |l|
+  CGE::Manual::CANDIDATES.join(', ').word_wrap(110, true).each { |l|
     opts.separator l
   }
 
   opts.separator ''
   opts.separator 'Supported encodings for automatic guessing (will be tried in that order):'
-  CMess::GuessEncoding::Guesser.supported_encodings.join(', ').word_wrap(110, true).each { |l|
+  CGE::Automatic.supported_encodings.join(', ').word_wrap(110, true).each { |l|
+    opts.separator l
+  }
+
+  opts.separator ''
+  opts.separator 'Supported encodings for BOM detection (will be tried in that order):'
+  CGE::Automatic.supported_boms.join(', ').word_wrap(110, true).each { |l|
     opts.separator l
   }
 
@@ -140,7 +161,7 @@ OptionParser.new(nil, 40) { |opts|
 }.parse!
 
 if options[:guess]
-  puts CMess::GuessEncoding.guess(options[:input])
+  puts CGE::Automatic.guess(options[:input], options[:chunk_size], options[:ignore_bom])
 else
   options[:target_encoding].call if options[:target_encoding].respond_to?(:call)
 
@@ -153,7 +174,7 @@ else
   abort "Input was empty!" if $..zero?
   abort "Line not found -- input has only #{$.} line#{'s' if $. != 1}" unless input.is_a?(String)
 
-  CMess::GuessEncoding.display(
+  CGE::Manual.display(
     input,
     options[:target_encoding],
     options[:encodings],
