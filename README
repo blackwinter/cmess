@@ -32,7 +32,7 @@ TODO: well, more of the description... ;-)
 
 * John Vorhauer <mailto:john@vorhauer.de> for the idea and
   original implementation of the automatic encoding guesser
-  (see CMess::GuessEncoding::Guesser).
+  (see CMess::GuessEncoding::Automatic).
 
 
 == LICENSE AND COPYRIGHT
