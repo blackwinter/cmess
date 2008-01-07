@@ -31,6 +31,7 @@
 #++
 
 require 'iconv'
+require 'forwardable'
 
 # Outputs given string (or line), being encoded in target encoding, encoded in
 # various test encodings, thus allowing to identify the (seemingly) correct
@@ -139,8 +140,8 @@ module CMess::GuessEncoding
 
     extend Forwardable
 
-    def_delegators :@klass, :encoding_guessers, :supported_encoding?,
-                            :bom_guessers,      :supported_bom?
+    def_delegators self, :encoding_guessers, :supported_encoding?,
+                         :bom_guessers,      :supported_bom?
 
     include Encoding
 
@@ -199,8 +200,6 @@ module CMess::GuessEncoding
     def initialize(input, chunk_size = nil)
       @input      = input
       @chunk_size = chunk_size
-
-      @klass = self.class
     end
 
     def guess(ignore_bom = false)
