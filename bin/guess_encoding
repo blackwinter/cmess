@@ -56,24 +56,43 @@ options = {
   :encodings            => nil,
   :additional_encodings => [],
   :target_encoding      => determine_system_encoding,
-  :guess                => false,
+  :manual               => false,
   :chunk_size           => nil,
   :ignore_bom           => false
 }
 
 OptionParser.new(nil, 40) { |opts|
-  opts.banner = "Usage: #{$0} [options]"
+  opts.banner = "Usage: #{$0} [options] [FILE]"
 
   opts.separator ''
   opts.separator 'Options:'
 
   opts.on('-i', '--input FILE', "Input file to read from [Default: STDIN]") { |f|
     options[:input] = open_file_or_std(f)
+    options[:input_set] = true
+  }
+
+  opts.separator ''
+  opts.separator '  * Automatic guessing'
+  opts.separator ''
+
+  opts.on('-c', '--chunk-size SIZE', Integer, "Size of chunks input will be read in until a valid encoding", "has been found; by default the whole file will be read") { |s|
+    options[:chunk_size] = s
+  }
+
+  opts.separator ''
+
+  opts.on('-b', '--ignore-bom', "Ignore detected BOM (if any)", "(see below for a list of supported encodings)") {
+    options[:ignore_bom] = true
   }
 
   opts.separator ''
   opts.separator '  * Manual guessing'
   opts.separator ''
+
+  opts.on('-m', '--manual', "Present variously encoded input for manual encoding guessing") {
+    options[:manual] = true
+  }
 
   opts.on('-l', '--line LINE', "Line number of input file to use for testing [Default: #{options[:line]}]") { |l|
     options[:line] = l.to_i
@@ -99,24 +118,6 @@ OptionParser.new(nil, 40) { |opts|
 
   opts.on('-t', '--target-encoding ENCODING', "Target encoding of your system [Default: #{options[:target_encoding]}]") { |e|
     options[:target_encoding] = e
-  }
-
-  opts.separator ''
-  opts.separator '  * Automatic guessing'
-  opts.separator ''
-
-  opts.on('-g', '--guess', "Actually guess the encoding of the input, automatically!", "(see below for a list of supported encodings)") {
-    options[:guess] = true
-  }
-
-  opts.on('-c', '--chunk-size SIZE', Integer, "Size of chunks input will be read in until a valid encoding", "has been found; by default the whole file will be read") { |s|
-    options[:chunk_size] = s
-  }
-
-  opts.separator ''
-
-  opts.on('-b', '--ignore-bom', "Ignore detected BOM (if any)", "(see below for a list of supported encodings)") {
-    options[:ignore_bom] = true
   }
 
   opts.separator ''
@@ -160,7 +161,11 @@ OptionParser.new(nil, 40) { |opts|
   opts.separator "When FILE is -, STDIN is used."
 }.parse!
 
-if options[:guess]
+if ARGV[0] && !options[:input_set]
+  options[:input] = open_file_or_std(ARGV[0])
+end
+
+unless options[:manual]
   puts CGE::Automatic.guess(options[:input], options[:chunk_size], options[:ignore_bom])
 else
   options[:target_encoding].call if options[:target_encoding].respond_to?(:call)

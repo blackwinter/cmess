@@ -56,13 +56,14 @@ options = {
 }
 
 OptionParser.new(nil, 40) { |opts|
-  opts.banner = "Usage: #{$0} [options]"
+  opts.banner = "Usage: #{$0} [options] [FILE]"
 
   opts.separator ''
   opts.separator 'Options:'
 
   opts.on('-i', '--input FILE', "Input file to read from [Default: STDIN]") { |f|
     options[:input] = open_file_or_std(f)
+    options[:input_set] = true
   }
 
   opts.separator ''
@@ -88,6 +89,7 @@ OptionParser.new(nil, 40) { |opts|
 
   opts.on('-I', '--in-place FILE', "Modify file in-place; sets '-i' and '-o'", "(Only really useful in combination with", "the '-r' option)") { |f|
     options[:input], options[:output] = open_file_in_place(f)
+    options[:input_set] = true
 
     options[:pot]  = options[:output]
     options[:crop] = options[:output]
@@ -174,6 +176,10 @@ char_file = options[:csets].inject(nil) { |path, cset|
 }
 abort "Char file not found for target encoding: #{options[:target_encoding]}" \
   unless char_file
+
+if ARGV[0] && !options[:input_set]
+  options[:input] = open_file_or_std(ARGV[0])
+end
 
 CMess::Cinderella.pick(
   options[:input],

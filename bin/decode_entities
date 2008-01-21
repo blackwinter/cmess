@@ -49,13 +49,14 @@ options = {
 }
 
 OptionParser.new { |opts|
-  opts.banner = "Usage: #{$0} [options]"
+  opts.banner = "Usage: #{$0} [options] [FILE]"
 
   opts.separator ''
   opts.separator 'Options:'
 
   opts.on('-i', '--input FILE', "Input file to read from [Default: STDIN]") { |f|
     options[:input] = open_file_or_std(f)
+    options[:input_set] = true
   }
 
   opts.on('-o', '--output FILE', "Output file to write to [Default: STDOUT]") { |f|
@@ -64,6 +65,7 @@ OptionParser.new { |opts|
 
   opts.on('-I', '--in-place FILE', "Modify file in-place; sets '-i' and '-o'") { |f|
     options[:input], options[:output] = open_file_in_place(f)
+    options[:input_set] = true
   }
 
   opts.separator ''
@@ -92,6 +94,10 @@ OptionParser.new { |opts|
   opts.separator ''
   opts.separator "When FILE is -, either STDIN or STDOUT is used (as appropriate)."
 }.parse!
+
+if ARGV[0] && !options[:input_set]
+  options[:input] = open_file_or_std(ARGV[0])
+end
 
 CMess::DecodeEntities.decode(
   options[:input],

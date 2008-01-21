@@ -1,5 +1,14 @@
 = Revision history for cmess
 
+== 0.0.5 [2008-01-21]
+
+* Made automatic guessing the default for guess_encoding
+* Allow to specify input file as argument
+
+== 0.0.4 [2007-12-18]
+
+* Added BOM detection
+
 == 0.0.3 [2007-12-12]
 
 * Added automatic encoding detection to GuessEncoding. Idea and original

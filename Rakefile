@@ -4,8 +4,7 @@ rescue LoadError
   abort "Please install the 'hen' gem first."
 end
 
-$:.unshift('lib')
-require 'cmess'
+require 'lib/cmess'
 
 Hen.lay! {{
   :rubyforge => {
