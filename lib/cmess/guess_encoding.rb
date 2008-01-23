@@ -30,6 +30,8 @@
 ###############################################################################
 #++
 
+$KCODE = 'u'
+
 require 'iconv'
 require 'forwardable'
 
@@ -144,6 +146,31 @@ module CMess::GuessEncoding
                          :bom_guessers,      :supported_bom?
 
     include Encoding
+
+    # Creates a converter for desired encoding (from UTF-8)
+    ICONV_FOR = Hash.new { |h, k| h[k] = Iconv.new(k, UTF_8) }
+
+    # Encodings to test statistically by TEST_CHARS
+    TEST_ENCODINGS = [
+      MACINTOSH,
+      ISO_8859_1,
+      ISO_8859_15,
+      CP1252,
+      CP850,
+      MS_ANSI
+    ]
+
+    # Certain chars to test for in TEST_ENCODINGS
+    TEST_CHARS = 'ÁÀÂÄÃÇÉÈÊËÍÌÎÏÑÓÒÔÖÚÙÛÜÆáàâäãçéèêëíìîïñóòôöúùûüæ'.
+      split(//).inject(Hash.new { |h, k| h[k] = [] }) { |hash, char|
+        TEST_ENCODINGS.each { |encoding|
+          hash[encoding] += ICONV_FOR[encoding].iconv(char).unpack('C')
+        }
+        hash
+      }
+
+    # Relative count of TEST_CHARS must exceed this threshold to yield a match
+    TEST_THRESHOLD = 0.0004
 
     @supported_encodings = []
     @encoding_guessers   = []
@@ -318,13 +345,12 @@ module CMess::GuessEncoding
       esc_bytes > 0 && esc_bytes == fol_bytes
     end
 
-    # Analyse statistical appearance of German umlauts (=> ÄäÖöÜüß)
-    encodings MACINTOSH, ISO_8859_1 do
-      {
-        MACINTOSH  => [0x80, 0x8a, 0x85, 0x9a, 0x86, 0x9f, 0xa7],
-        ISO_8859_1 => [0xc4, 0xe4, 0xd6, 0xf6, 0xdc, 0xfc, 0xdf]
-      }.each { |encoding, umlauts|
-        break encoding if relative_byte_count(byte_count_sum(umlauts)) > 0.001
+    # Analyse statistical appearance of German umlauts and other accented
+    # letters (see TEST_CHARS)
+    encodings *TEST_ENCODINGS do
+      TEST_ENCODINGS.each { |encoding|
+        break encoding if
+          relative_byte_count(byte_count_sum(TEST_CHARS[encoding])) > TEST_THRESHOLD
       }
     end
 
