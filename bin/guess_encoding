@@ -134,18 +134,6 @@ OptionParser.new(nil, 40) { |opts|
   }
 
   opts.separator ''
-  opts.separator 'Default encodings for manual guessing:'
-  CGE::Manual::ENCODINGS.join(', ').word_wrap(110, true).each { |l|
-    opts.separator l
-  }
-
-  opts.separator ''
-  opts.separator 'Likely candidates for additional testing:'
-  CGE::Manual::CANDIDATES.join(', ').word_wrap(110, true).each { |l|
-    opts.separator l
-  }
-
-  opts.separator ''
   opts.separator 'Supported encodings for automatic guessing (will be tried in that order):'
   CGE::Automatic.supported_encodings.join(', ').word_wrap(110, true).each { |l|
     opts.separator l
@@ -154,6 +142,18 @@ OptionParser.new(nil, 40) { |opts|
   opts.separator ''
   opts.separator 'Supported encodings for BOM detection (will be tried in that order):'
   CGE::Automatic.supported_boms.join(', ').word_wrap(110, true).each { |l|
+    opts.separator l
+  }
+
+  opts.separator ''
+  opts.separator 'Default encodings for manual guessing:'
+  CGE::Manual::ENCODINGS.join(', ').word_wrap(110, true).each { |l|
+    opts.separator l
+  }
+
+  opts.separator ''
+  opts.separator 'Likely candidates for additional testing:'
+  CGE::Manual::CANDIDATES.join(', ').word_wrap(110, true).each { |l|
     opts.separator l
   }
 

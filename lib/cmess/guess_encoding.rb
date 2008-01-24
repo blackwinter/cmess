@@ -32,6 +32,7 @@
 
 $KCODE = 'u'
 
+require 'yaml'
 require 'iconv'
 require 'forwardable'
 
@@ -46,10 +47,25 @@ require 'forwardable'
 module CMess::GuessEncoding
 
   # our version ;-)
-  VERSION = '0.0.5'
+  VERSION = '0.0.6'
 
   # Namespace for our encodings.
   module Encoding
+
+    extend self
+
+    def const_name_for(encoding)
+      encoding.tr('-', '_').gsub(/\W/, '').upcase
+    end
+
+    def set_encoding_const(encoding, const = const_name_for(encoding))
+      const_set(const, encoding.freeze)
+    end
+
+    def get_or_set_encoding_const(encoding)
+      const_defined?(const = const_name_for(encoding)) ? const_get(const) :
+        set_encoding_const(encoding, const)
+    end
 
     %w[
       UNKNOWN ASCII MACINTOSH
@@ -58,10 +74,7 @@ module CMess::GuessEncoding
       UTF-8 UTF-16 UTF-16BE UTF-16LE UTF-32 UTF-32BE UTF-32LE
       UTF-7 UTF-EBCDIC SCSU BOCU-1
       ANSI_X3.4 EBCDIC-AT-DE EBCDIC-US EUC-JP KOI-8 MS-ANSI SHIFT-JIS
-    ].each { |encoding|
-      const = encoding.tr('-', '_').gsub(/\W/, '')
-      const_set(const, encoding.freeze)
-    }
+    ].each { |encoding| set_encoding_const(encoding) }
 
   end
 
@@ -150,7 +163,7 @@ module CMess::GuessEncoding
     # Creates a converter for desired encoding (from UTF-8)
     ICONV_FOR = Hash.new { |h, k| h[k] = Iconv.new(k, UTF_8) }
 
-    # Encodings to test statistically by TEST_CHARS
+    # Single-byte encodings to test statistically by TEST_CHARS
     TEST_ENCODINGS = [
       MACINTOSH,
       ISO_8859_1,
@@ -160,17 +173,35 @@ module CMess::GuessEncoding
       MS_ANSI
     ]
 
-    # Certain chars to test for in TEST_ENCODINGS
-    TEST_CHARS = 'ÁÀÂÄÃÇÉÈÊËÍÌÎÏÑÓÒÔÖÚÙÛÜÆáàâäãçéèêëíìîïñóòôöúùûüæ'.
-      split(//).inject(Hash.new { |h, k| h[k] = [] }) { |hash, char|
-        TEST_ENCODINGS.each { |encoding|
-          hash[encoding] += ICONV_FOR[encoding].iconv(char).unpack('C')
-        }
-        hash
-      }
+    # Certain (non-ASCII) chars to test for in TEST_ENCODINGS
+    CHARS_TO_TEST = (
+      '€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂ' <<
+      'ÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ'
+    ).split(//)
 
-    # Relative count of TEST_CHARS must exceed this threshold to yield a match
-    TEST_THRESHOLD = 0.0004
+    # Map TEST_ENCODINGS to respectively encoded CHARS_TO_TEST
+    TEST_CHARS = Hash.new { |hash, encoding|
+      encoding = Encoding.get_or_set_encoding_const(encoding)
+      encchars = CHARS_TO_TEST.map { |char|
+        begin
+          byte = *ICONV_FOR[encoding].iconv(char).unpack('C')
+        rescue Iconv::IllegalSequence
+        end
+      }.compact
+
+      TEST_ENCODINGS << encoding unless TEST_ENCODINGS.include?(encoding)
+      hash[encoding] = encchars
+    }.update(YAML.load_file(
+      File.join(File.dirname(__FILE__), '..', '..', 'data', 'test_chars.yaml')
+    ))
+
+    # Relative count of TEST_CHARS must exceed this threshold to yield
+    # a direct match
+    TEST_THRESHOLD_DIRECT = 0.1
+
+    # Relative count of TEST_CHARS must exceed this threshold to yield
+    # an approximate match
+    TEST_THRESHOLD_APPROX = 0.0004
 
     @supported_encodings = []
     @encoding_guessers   = []
@@ -199,7 +230,8 @@ module CMess::GuessEncoding
       def encodings(*encodings, &encoding_block)
         encodings.each { |encoding|
           @supported_encodings << encoding
-          @encoding_guessers   << encoding_block
+          @encoding_guessers   << encoding_block \
+            unless @encoding_guessers.include?(encoding_block)
         }
       end
 
@@ -213,7 +245,8 @@ module CMess::GuessEncoding
         }
 
         @supported_boms << encoding
-        @bom_guessers   << encoding_block
+        @bom_guessers   << encoding_block \
+          unless @bom_guessers.include?(encoding_block)
       end
 
       def supported_bom?(encoding)
@@ -322,10 +355,10 @@ module CMess::GuessEncoding
     encodings UTF_16BE, UTF_16LE, UTF_16 do
       if relative_byte_count(byte_count[0]) > 0.25
         case first_byte
-          when 0:   UTF_32
-          when 254: UTF_16BE
-          when 255: UTF_16LE
-          else      UTF_16
+          when 0x0:  UTF_32
+          when 0xfe: UTF_16BE
+          when 0xff: UTF_16LE
+          else       UTF_16
         end
       end
     end
@@ -348,9 +381,15 @@ module CMess::GuessEncoding
     # Analyse statistical appearance of German umlauts and other accented
     # letters (see TEST_CHARS)
     encodings *TEST_ENCODINGS do
-      TEST_ENCODINGS.each { |encoding|
-        break encoding if
-          relative_byte_count(byte_count_sum(TEST_CHARS[encoding])) > TEST_THRESHOLD
+      ratios = {}
+
+      TEST_ENCODINGS.find(lambda {
+        ratio, encoding = ratios.sort.last
+        encoding if ratio >= TEST_THRESHOLD_APPROX
+      }) { |encoding|
+        ratio = relative_byte_count(byte_count_sum(TEST_CHARS[encoding]))
+        #p [encoding, ratio]
+        ratio >= TEST_THRESHOLD_DIRECT || (ratios[ratio] ||= encoding; false)
       }
     end
 
