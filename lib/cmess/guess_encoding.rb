@@ -3,9 +3,9 @@
 #                                                                             #
 # A component of cmess, the encoding tool-box.                                #
 #                                                                             #
-# Copyright (C) 2007 University of Cologne,                                   #
-#                    Albertus-Magnus-Platz,                                   #
-#                    50932 Cologne, Germany                                   #
+# Copyright (C) 2007-2008 University of Cologne,                              #
+#                         Albertus-Magnus-Platz,                              #
+#                         50932 Cologne, Germany                              #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@uni-koeln.de>                                    #
@@ -130,7 +130,7 @@ module CMess::GuessEncoding
       encodings.each { |encoding|
         converted = begin
           Iconv.conv(target, encoding, input)
-        rescue Iconv::IllegalSequence => err
+        rescue Iconv::IllegalSequence, Iconv::InvalidCharacter => err
           "ILLEGAL INPUT SEQUENCE: #{err}"
         rescue Iconv::InvalidEncoding
           if encoding == target

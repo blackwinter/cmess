@@ -2,7 +2,7 @@
 
 == VERSION
 
-This documentation refers to cmess version 0.0.5
+This documentation refers to cmess version 0.0.6
 
 
 == DESCRIPTION
@@ -37,7 +37,7 @@ TODO: well, more of the description... ;-)
 
 == LICENSE AND COPYRIGHT
 
-Copyright (C) 2007 University of Cologne,
+Copyright (C) 2007-2008 University of Cologne,
 Albertus-Magnus-Platz, 50932 Cologne, Germany
 
 cmess is free software: you can redistribute it and/or modify it under the

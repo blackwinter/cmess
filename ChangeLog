@@ -1,5 +1,10 @@
 = Revision history for cmess
 
+== 0.0.6 [2008-01-30]
+
+* Added ability to specify charcodes as input for manual guessing
+* Improved automatic guessing and further enhancements
+
 == 0.0.5 [2008-01-21]
 
 * Made automatic guessing the default for guess_encoding

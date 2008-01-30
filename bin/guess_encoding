@@ -6,9 +6,9 @@
 # guess_encoding -- Assist with guessing the encoding of some input at hand   #
 #   [A component of cmess, the encoding tool-box]                             #
 #                                                                             #
-# Copyright (C) 2007 University of Cologne,                                   #
-#                    Albertus-Magnus-Platz,                                   #
-#                    50932 Cologne, Germany                                   #
+# Copyright (C) 2007-2008 University of Cologne,                              #
+#                         Albertus-Magnus-Platz,                              #
+#                         50932 Cologne, Germany                              #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@uni-koeln.de>                                    #
@@ -47,8 +47,8 @@ PROGNAME = File.basename($0)
 # short-cut
 CGE = CMess::GuessEncoding
 
-# how to split list of encodings
-SPLIT_ENCODING_LIST_RE = /\s*[,\s]\s*/o
+# how to split list of arguments
+SPLIT_ARG_LIST_RE = /\s*[,\s]\s*/o
 
 options = {
   :input                => STDIN,
@@ -58,7 +58,10 @@ options = {
   :target_encoding      => determine_system_encoding,
   :manual               => false,
   :chunk_size           => nil,
-  :ignore_bom           => false
+  :ignore_bom           => false,
+  :charcodes            => nil,
+  :decimal              => false,
+  :octal                => false
 }
 
 OptionParser.new(nil, 40) { |opts|
@@ -94,6 +97,8 @@ OptionParser.new(nil, 40) { |opts|
     options[:manual] = true
   }
 
+  opts.separator ''
+
   opts.on('-l', '--line LINE', "Line number of input file to use for testing [Default: #{options[:line]}]") { |l|
     options[:line] = l.to_i
 
@@ -111,13 +116,31 @@ OptionParser.new(nil, 40) { |opts|
   }
 
   opts.on('-a', '--additional-encodings ENCODINGS...', "List of encodings to try >in addition to< default (see below)") { |e|
-    options[:additional_encodings] += e.split(SPLIT_ENCODING_LIST_RE)
+    options[:additional_encodings] += e.split(SPLIT_ARG_LIST_RE)
   }
 
   opts.separator ''
 
   opts.on('-t', '--target-encoding ENCODING', "Target encoding of your system [Default: #{options[:target_encoding]}]") { |e|
     options[:target_encoding] = e
+  }
+
+  opts.separator ''
+  opts.separator '  * Charcodes'
+  opts.separator ''
+
+  opts.on('-C', '--charcodes CHARCODES', "Specify a list of character codes (in hexadecimal by default)", "for manual guessing. (Options '-e', '-a', and '-t' apply here", "as well; see under \"Manual guessing\" for details.)") { |c|
+    options[:charcodes] = c.split(SPLIT_ARG_LIST_RE)
+  }
+
+  opts.separator ''
+
+  opts.on('-D', '--decimal', "Charcodes are in decimal") {
+    options[:decimal] = true
+  }
+
+  opts.on('-O', '--octal', "Charcodes are in octal") {
+    options[:octal] = true
   }
 
   opts.separator ''
@@ -165,9 +188,7 @@ if ARGV[0] && !options[:input_set]
   options[:input] = open_file_or_std(ARGV[0])
 end
 
-unless options[:manual]
-  puts CGE::Automatic.guess(options[:input], options[:chunk_size], options[:ignore_bom])
-else
+if options[:manual]
   options[:target_encoding].call if options[:target_encoding].respond_to?(:call)
 
   # reset line counter
@@ -185,4 +206,17 @@ else
     options[:encodings],
     options[:additional_encodings]
   )
+elsif charcodes = options[:charcodes]
+  options[:target_encoding].call if options[:target_encoding].respond_to?(:call)
+
+  base = options[:octal] ? 8 : options[:decimal] ? 10 : 16
+
+  CGE::Manual.display(
+    charcodes.map { |c| c.to_i(base).chr }.join,
+    options[:target_encoding],
+    options[:encodings],
+    options[:additional_encodings]
+  )
+else  # automatic
+  puts CGE::Automatic.guess(options[:input], options[:chunk_size], options[:ignore_bom])
 end
