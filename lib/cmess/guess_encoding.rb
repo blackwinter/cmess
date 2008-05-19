@@ -289,6 +289,13 @@ module CMess::GuessEncoding
     def check_bom
       return if eof?
 
+      # prevent "Illegal seek" error inside a pipe
+      begin
+        input.pos
+      rescue Errno::ESPIPE
+        return
+      end
+
       bom_guessers.each { |block|
         encoding = instance_eval(&block)
         return encoding if encoding && supported_bom?(encoding)

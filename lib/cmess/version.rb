@@ -30,7 +30,7 @@ module CMess::Version
 
   MAJOR = 0
   MINOR = 0
-  TINY  = 6
+  TINY  = 7
 
   class << self
 

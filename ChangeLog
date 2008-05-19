@@ -1,5 +1,9 @@
 = Revision history for cmess
 
+== 0.0.7 [2008-05-19]
+
+* Fixed "Illegal seek" error when inside a pipe
+
 == 0.0.6 [2008-01-30]
 
 * Added ability to specify charcodes as input for manual guessing
