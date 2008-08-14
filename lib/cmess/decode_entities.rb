@@ -27,6 +27,7 @@
 #++
 
 require 'iconv'
+require 'cmess'
 
 require 'rubygems'
 require 'htmlentities/string'

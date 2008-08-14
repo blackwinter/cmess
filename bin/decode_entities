@@ -33,7 +33,6 @@ require 'optparse'
 
 $: << File.join(File.dirname(__FILE__), '..', 'lib')
 
-require 'cmess'
 require 'cmess/decode_entities'
 require 'cmess/cli'
 

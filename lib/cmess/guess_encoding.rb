@@ -36,6 +36,8 @@ require 'yaml'
 require 'iconv'
 require 'forwardable'
 
+require 'cmess'
+
 # Outputs given string (or line), being encoded in target encoding, encoded in
 # various test encodings, thus allowing to identify the (seemingly) correct
 # encoding by visually comparing the input string with its desired appearance.

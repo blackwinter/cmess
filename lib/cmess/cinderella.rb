@@ -27,6 +27,7 @@
 #++
 
 require 'iconv'
+require 'cmess'
 
 # Find (and possibly repair) doubly encoded characters. Here's how it's done:
 #

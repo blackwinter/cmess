@@ -34,7 +34,6 @@ require 'yaml'
 
 $: << File.join(File.dirname(__FILE__), '..', 'lib')
 
-require 'cmess'
 require 'cmess/cinderella'
 require 'cmess/cli'
 

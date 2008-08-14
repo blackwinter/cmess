@@ -1,5 +1,9 @@
 = Revision history for cmess
 
+== 0.0.8 [2008-08-14]
+
+* Require 'cmess' inside libs, so the user doesn't have to
+
 == 0.0.7 [2008-05-19]
 
 * Fixed "Illegal seek" error when inside a pipe

@@ -36,7 +36,6 @@ require 'nuggets/string/word_wrap'
 
 $: << File.join(File.dirname(__FILE__), '..', 'lib')
 
-require 'cmess'
 require 'cmess/guess_encoding'
 require 'cmess/cli'
 
