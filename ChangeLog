@@ -1,5 +1,12 @@
 = Revision history for cmess
 
+== 0.0.9 [2008-08-15]
+
+* Reorganized file structure for guess_encoding
+* Added shortcuts GuessEncoding.manual/.automatic
+* GuessEncoding::Automatic now also takes a String
+  as input (will be converted to a StringIO)
+
 == 0.0.8 [2008-08-14]
 
 * Require 'cmess' inside libs, so the user doesn't have to

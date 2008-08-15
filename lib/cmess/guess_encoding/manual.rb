@@ -30,32 +30,76 @@
 ###############################################################################
 #++
 
-require 'cmess'
+require 'iconv'
 
-# Allows to guess an input's encoding either manually or automatically.
-# Works actually pretty good -- for the supported encodings. See Manual
-# and Automatic for details.
+# Outputs given string (or line), being encoded in target encoding, encoded in
+# various test encodings, thus allowing to identify the (seemingly) correct
+# encoding by visually comparing the input string with its desired appearance.
 
-module CMess::GuessEncoding
+module CMess::GuessEncoding::Manual
 
-  # our version ;-)
-  VERSION = '0.0.7'
+  extend self
 
-  class << self
+  include CMess::GuessEncoding::Encoding
 
-    def manual(*args)
-      Manual.display(*args)
-    end
+  # default encodings to try
+  ENCODINGS = [
+    ISO_8859_1,
+    ISO_8859_2,
+    ISO_8859_15,
+    CP1250,
+    CP1251,
+    CP1252,
+    CP850,
+    CP852,
+    CP856,
+    UTF_8
+  ]
 
-    def automatic(*args)
-      Automatic.guess(*args)
-    end
+  # likely candidates to suggest to the user
+  CANDIDATES = [
+    ANSI_X34,
+    EBCDIC_AT_DE,
+    EBCDIC_US,
+    EUC_JP,
+    KOI_8,
+    MACINTOSH,
+    MS_ANSI,
+    SHIFT_JIS,
+    UTF_7,
+    UTF_16,
+    UTF_16BE,
+    UTF_16LE,
+    UTF_32,
+    UTF_32BE,
+    UTF_32LE
+  ]
 
+  def display(input, target_encoding, encodings = nil, additional_encodings = [])
+    target = target_encoding
+
+    encodings = (encodings || ENCODINGS) + additional_encodings
+    encodings = encodings.reverse.uniq.reverse     # uniq with additional encodings
+                                                   # staying at the end
+    encodings = [target] + (encodings - [target])  # move target encoding to front
+
+    max_length = encodings.map { |encoding| encoding.length }.max
+
+    encodings.each { |encoding|
+      converted = begin
+        Iconv.conv(target, encoding, input)
+      rescue Iconv::IllegalSequence, Iconv::InvalidCharacter => err
+        "ILLEGAL INPUT SEQUENCE: #{err}"
+      rescue Iconv::InvalidEncoding
+        if encoding == target
+          abort "Invalid encoding: #{encoding}"
+        else
+          "INVALID ENCODING!"
+        end
+      end
+
+      puts "%-#{max_length}s : %s" % [encoding, converted]
+    }
   end
 
 end
-
-%w[encoding manual automatic].each { |lib|
-  lib = "cmess/guess_encoding/#{lib}"
-  require lib
-}
