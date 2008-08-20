@@ -111,7 +111,7 @@ OptionParser.new(nil, 40) { |opts|
 
   opts.on('-e', '--encodings ENCODINGS...', "List of encodings to try >instead of< default (see below)") { |e|
     options[:encodings] ||= []
-    options[:encodings] += e.split(SPLIT_ENCODING_LIST_RE)
+    options[:encodings] += e.split(SPLIT_ARG_LIST_RE)
   }
 
   opts.on('-a', '--additional-encodings ENCODINGS...', "List of encodings to try >in addition to< default (see below)") { |e|
