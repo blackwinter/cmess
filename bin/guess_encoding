@@ -125,6 +125,13 @@ OptionParser.new(nil, 40) { |opts|
   }
 
   opts.separator ''
+
+  opts.on('--list-encodings', 'Print a list of all available encodings on your system and exit') {
+    puts CGE::Encoding.all_encodings
+    exit
+  }
+
+  opts.separator ''
   opts.separator '  * Charcodes'
   opts.separator ''
 
@@ -178,6 +185,9 @@ OptionParser.new(nil, 40) { |opts|
   CGE::Manual::CANDIDATES.join(', ').word_wrap(110, true).each { |l|
     opts.separator l
   }
+
+  opts.separator ''
+  opts.separator 'NOTE: To select all encodings available on your system, specify __ALL__.'
 
   opts.separator ''
   opts.separator "When FILE is -, STDIN is used."

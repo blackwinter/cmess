@@ -36,8 +36,21 @@ module CMess::GuessEncoding::Encoding
 
   extend self
 
+  def all_encodings
+    const_defined?(:ALL_ENCODINGS) ? ALL_ENCODINGS :
+      const_set(:ALL_ENCODINGS, get_all_encodings)
+  end
+
+  private
+
+  def get_all_encodings
+    %x{iconv -l}.split("\n").map { |e|
+      get_or_set_encoding_const(e.sub(/\/*\z/, ''))
+    }
+  end
+
   def const_name_for(encoding)
-    encoding.tr('-', '_').gsub(/\W/, '').upcase
+    encoding.tr('-', '_').gsub(/\W/, '').sub(/\A\d/, 'ENC_\&').upcase
   end
 
   def set_encoding_const(encoding, const = const_name_for(encoding))
@@ -57,5 +70,9 @@ module CMess::GuessEncoding::Encoding
     UTF-7 UTF-EBCDIC SCSU BOCU-1
     ANSI_X3.4 EBCDIC-AT-DE EBCDIC-US EUC-JP KOI-8 MS-ANSI SHIFT-JIS
   ].each { |encoding| set_encoding_const(encoding) }
+
+  def included(base)
+    base.extend self
+  end
 
 end

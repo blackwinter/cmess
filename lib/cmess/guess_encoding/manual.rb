@@ -79,9 +79,12 @@ module CMess::GuessEncoding::Manual
     target = target_encoding
 
     encodings = (encodings || ENCODINGS) + additional_encodings
-    encodings = encodings.reverse.uniq.reverse     # uniq with additional encodings
-                                                   # staying at the end
-    encodings = [target] + (encodings - [target])  # move target encoding to front
+    encodings = encodings.include?('__ALL__') ? all_encodings :
+      encodings.reverse.uniq.reverse  # uniq with additional encodings
+                                      # staying at the end
+
+    # move target encoding to front
+    encodings = [target] + (encodings - [target])
 
     max_length = encodings.map { |encoding| encoding.length }.max
 
