@@ -13,7 +13,7 @@ begin
       :version      => CMess::VERSION,
       :summary      => %Q{
         Assist with handling messed up encodings (Currently includes the
-        following tools: #{Dir['bin/*'].map { |e| File.basename(e) }.join(', ')})
+        following tools: #{Dir['bin/*'].map { |e| File.basename(e) }.sort.join(', ')})
       },
       :files        => FileList['lib/**/*.rb', 'bin/*'].to_a,
       :extra_files  => FileList['[A-Z]*', 'example/**/*', 'data/**/*'].to_a,

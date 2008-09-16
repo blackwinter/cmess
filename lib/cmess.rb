@@ -36,6 +36,8 @@
 #                   convert them back -- this is where cinderella comes in,
 #                   sorting the good ones into the pot and the (potentially)
 #                   bad ones into the crop... (see Cinderella)
+# bconv::           Convert between bibliographic (and other) encodings.
+#                   (see BConv)
 # decode_entities:: Decode HTML entities in a string. (see DecodeEntities)
 
 module CMess

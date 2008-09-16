@@ -18,6 +18,7 @@ cinderella::      When characters are "double encoded", you can't easily
                   convert them back -- this is where cinderella comes in,
                   sorting the good ones into the pot and the (potentially)
                   bad ones into the crop...
+bconv::           Convert between bibliographic (and other) encodings.
 decode_entities:: Decode HTML entities in a string.
 
 TODO: well, more of the description... ;-)
