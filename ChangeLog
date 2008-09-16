@@ -1,5 +1,9 @@
 = Revision history for cmess
 
+== 0.1.1 [2008-09-16]
+
+* Added bconv tool to convert between bibliographic encodings
+
 == 0.1.0 [2008-09-15]
 
 * Added ability to operate on all encodings available on a system

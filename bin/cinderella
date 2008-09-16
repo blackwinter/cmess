@@ -48,9 +48,7 @@ options = {
   :crop            => nil,
   :source_encoding => nil,
   :target_encoding => determine_system_encoding,
-  :csets           => [
-    File.expand_path(File.join(File.dirname(__FILE__), '..', 'data', 'csets'))
-  ],
+  :csets           => [File.join(DATA_DIR, 'csets')],
   :repair          => false
 }
 

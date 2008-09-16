@@ -3,7 +3,7 @@
 #                                                                             #
 # A component of cmess, the encoding tool-box.                                #
 #                                                                             #
-# Copyright (C) 2007 University of Cologne,                                   #
+# Copyright (C) 2008 University of Cologne,                                   #
 #                    Albertus-Magnus-Platz,                                   #
 #                    50932 Cologne, Germany                                   #
 #                                                                             #
@@ -26,56 +26,73 @@
 ###############################################################################
 #++
 
-module CMess::CLI
+require 'iconv'
+require 'cmess'
 
-  DATA_DIR = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'data'))
+# Convert between bibliographic (and other) encodings.
 
-  def ensure_readable(file)
-    abort "Can't find input file: #{file}" unless File.readable?(file)
+module CMess::BConv
+
+  extend self
+
+  # our version ;-)
+  VERSION = '0.0.1'
+
+  INTERMEDIATE_ENCODING = 'utf-8'
+
+  def encodings(chartab)
+    chartab[chartab.keys.first].keys.map { |encoding|
+      encoding.upcase unless encoding =~ /\A__/
+    }.compact.sort
   end
 
-  def ensure_directory(dir)
-    abort "Directory not found: #{dir}" unless File.directory?(dir)
-  end
+  def convert(input, output, source_encoding, target_encoding, chartab)
+    source_encoding.upcase!
+    target_encoding.upcase!
 
-  def open_file_in_place(file)
-    ensure_readable(file)
-    [File.readlines(file), File.open(file, 'w')]
-  end
+    encodings = self.encodings(chartab)
 
-  def open_file_or_std(file, mode = 'r')
-    if file == '-'
-      case mode
-        when 'r': STDIN
-        when 'w': STDOUT
-        when 'a': STDERR
-        else      raise ArgumentError, "don't know how to handle mode '#{mode}'"
+    if encodings.include?(source_encoding)
+      if encodings.include?(target_encoding)
+        charmap = chartab.inject({}) { |hash, (code, map)|
+          hash.update(map[source_encoding] => map[target_encoding].pack('U*'))
+        }
+
+        input.each_byte { |byte|
+          output.print charmap[[byte]] || charmap[[byte, input.getc]]
+        }
+      else
+        iconv = Iconv.new(target_encoding, INTERMEDIATE_ENCODING)
+
+        charmap = chartab.inject({}) { |hash, (code, map)|
+          hash.update(map[source_encoding] => [code.to_i(16)].pack('U*'))
+        }
+
+        input.each_byte { |byte|
+          output.print iconv.iconv(charmap[[byte]] || charmap[[byte, input.getc]])
+        }
       end
     else
-      ensure_readable(file) unless mode == 'w'
-      File.open(file, mode)
+      if encodings.include?(target_encoding)
+        iconv = Iconv.new(INTERMEDIATE_ENCODING, source_encoding)
+
+        charmap = chartab.inject({}) { |hash, (code, map)|
+          hash.update(code.to_i(16) => map[target_encoding].pack('U*'))
+        }
+
+        input.each { |line|
+          iconv.iconv(line).unpack('U*').each { |byte|
+            output.print charmap[byte]
+          }
+        }
+      else
+        iconv = Iconv.new(target_encoding, source_encoding)
+
+        input.each { |line|
+          output.puts iconv.iconv(line)
+        }
+      end
     end
-  end
-
-  def determine_system_encoding
-    ENV['SYSTEM_ENCODING']   ||
-    ENV['LANG'][/\.(.*)/, 1] ||
-    system_encoding_not_found
-  end
-
-  def system_encoding_not_found
-    not_found = lambda {
-      abort <<-EOT
-Your system's encoding couldn't be determined automatically -- please specify it
-explicitly via the SYSTEM_ENCODING environment variable or via the '-t' option.
-      EOT
-    }
-
-    def not_found.to_s
-      'NOT FOUND'
-    end
-
-    not_found
   end
 
 end
