@@ -26,9 +26,15 @@
 ###############################################################################
 #++
 
+require 'tempfile'
+
+require 'rubygems'
+require 'nuggets/env/user_encoding'
+
 module CMess::CLI
 
-  DATA_DIR = File.expand_path(File.join(File.dirname(__FILE__), '..', '..', 'data'))
+  # how to split list of arguments
+  SPLIT_ARG_LIST_RE = /\s*[,\s]\s*/o
 
   def ensure_readable(file)
     abort "Can't find input file: #{file}" unless File.readable?(file)
@@ -39,8 +45,7 @@ module CMess::CLI
   end
 
   def open_file_in_place(file)
-    ensure_readable(file)
-    [File.readlines(file), File.open(file, 'w')]
+    [open_temporary_input(file), File.open(file, 'w')]
   end
 
   def open_file_or_std(file, mode = 'r')
@@ -57,25 +62,59 @@ module CMess::CLI
     end
   end
 
-  def determine_system_encoding
-    ENV['SYSTEM_ENCODING']   ||
-    ENV['LANG'][/\.(.*)/, 1] ||
-    system_encoding_not_found
-  end
+  def open_temporary_input(*files)
+    temp = Tempfile.new('cmess_cli')
 
-  def system_encoding_not_found
-    not_found = lambda {
-      abort <<-EOT
-Your system's encoding couldn't be determined automatically -- please specify it
-explicitly via the SYSTEM_ENCODING environment variable or via the '-t' option.
-      EOT
+    files.each { |file|
+      if file == '-'
+        STDIN.each { |line| temp << line }
+      else
+        ensure_readable(file)
+        File.open(file) { |f| f.each { |line| temp << line } }
+      end
     }
 
-    def not_found.to_s
-      'NOT FOUND'
-    end
+    # return File, instead of Tempfile
+    temp.close
+    temp.open
+  end
 
-    not_found
+  def trailing_args_as_input(options)
+    unless ARGV.empty? || options[:input_set]
+      options[:input] = if ARGV.size == 1
+        open_file_or_std(ARGV.first)
+      else
+        open_temporary_input(*ARGV)
+      end
+    end
+  end
+
+  def determine_system_encoding
+    ENV.user_encoding || begin
+      dummy = lambda {
+        abort <<-EOT
+Your system's encoding couldn't be determined automatically -- please specify
+it explicitly via the ENCODING environment variable or via the '-t' option.
+        EOT
+      }
+
+      def dummy.to_s; 'NOT FOUND' end
+
+      dummy
+    end
+  end
+
+  def cli
+    yield
+  rescue => err
+    if $VERBOSE
+      backtrace = err.backtrace
+      fromtrace = backtrace[1..-1].map { |i| "\n        from #{i}" }
+
+      abort "#{backtrace.first} #{err} (#{err.class})#{fromtrace}"
+    else
+      abort "#{err.to_s.capitalize} [#{err.backtrace.first}]"
+    end
   end
 
 end

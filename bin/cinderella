@@ -48,12 +48,12 @@ options = {
   :crop            => nil,
   :source_encoding => nil,
   :target_encoding => determine_system_encoding,
-  :csets           => [File.join(DATA_DIR, 'csets')],
+  :csets           => [CMess::Cinderella::DEFAULT_CSETS_DIR],
   :repair          => false
 }
 
 OptionParser.new(nil, 40) { |opts|
-  opts.banner = "Usage: #{$0} [options] [FILE]"
+  opts.banner = "Usage: #{$0} [options] [FILE...]"
 
   opts.separator ''
   opts.separator 'Options:'
@@ -161,29 +161,30 @@ OptionParser.new(nil, 40) { |opts|
   opts.separator "is ignored. When FILE is -, either STDIN or STDOUT is used (as appropriate)."
 }.parse!
 
-options[:target_encoding].call if options[:target_encoding].respond_to?(:call)
+cli do
+  options[:target_encoding].call if options[:target_encoding].respond_to?(:call)
 
-abort "No source encoding given! (Use the '-e' switch to do so; see '--help' for more information)" \
-  unless options[:source_encoding]
+  abort "No source encoding given! (Use the '-e' switch to do so; see '--help' for more information)" \
+    unless options[:source_encoding]
 
-yaml_file = "#{options[:target_encoding].downcase}.yaml"
-char_file = options[:csets].inject(nil) { |path, cset|
-  path = File.join(cset, yaml_file)
-  break path if File.readable?(path)
-}
-abort "Char file not found for target encoding: #{options[:target_encoding]}" \
-  unless char_file
+  yaml_file = "#{options[:target_encoding].downcase}.yaml"
+  char_file = options[:csets].inject(nil) { |path, cset|
+    path = File.join(cset, yaml_file)
+    break path if File.readable?(path)
+  }
 
-if ARGV[0] && !options[:input_set]
-  options[:input] = open_file_or_std(ARGV[0])
+  abort "Char file not found for target encoding: #{options[:target_encoding]}" \
+    unless char_file
+
+  trailing_args_as_input(options)
+
+  CMess::Cinderella.pick(
+    options[:input],
+    options[:pot],
+    options[:crop],
+    options[:source_encoding],
+    options[:target_encoding],
+    YAML.load_file(char_file),
+    options[:repair]
+  )
 end
-
-CMess::Cinderella.pick(
-  options[:input],
-  options[:pot],
-  options[:crop],
-  options[:source_encoding],
-  options[:target_encoding],
-  YAML.load_file(char_file),
-  options[:repair]
-)

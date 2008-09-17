@@ -273,11 +273,11 @@ class CMess::GuessEncoding::Automatic
   # UTF-8, if number of escape-bytes and following bytes
   # is matching (cf. http://en.wikipedia.org/wiki/UTF-8)
   encoding UTF_8 do
-    esc_bytes = byte_count_sum(0xc0..0xdf)     \
+    esc_bytes = byte_count_sum(0xc0..0xdf)     +
                 # => 110xxxxx 10xxxxxx
-              + byte_count_sum(0xe0..0xef) * 2 \
+                byte_count_sum(0xe0..0xef) * 2 +
                 # => 1110xxxx 10xxxxxx 10xxxxxx
-              + byte_count_sum(0xf0..0xf7) * 3
+                byte_count_sum(0xf0..0xf7) * 3
                 # => 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
     fol_bytes = byte_count_sum(0x80..0xbf)
                 # => 10xxxxxx
@@ -287,7 +287,7 @@ class CMess::GuessEncoding::Automatic
 
   # Analyse statistical appearance of German umlauts and other accented
   # letters (see TEST_CHARS)
-  encodings *TEST_ENCODINGS do
+  encodings(*TEST_ENCODINGS) do
     ratios = {}
 
     TEST_ENCODINGS.find(lambda {

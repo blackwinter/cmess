@@ -29,7 +29,6 @@
 ###############################################################################
 #++
 
-require 'yaml'
 require 'optparse'
 
 require 'rubygems'
@@ -49,11 +48,11 @@ options = {
   :output          => STDOUT,
   :source_encoding => determine_system_encoding,
   :target_encoding => determine_system_encoding,
-  :chartab_file    => File.join(DATA_DIR, 'chartab.yaml')
+  :chartab_file    => CMess::BConv::DEFAULT_CHARTAB_FILE
 }
 
 OptionParser.new(nil, 40) { |opts|
-  opts.banner = "Usage: #{$0} [options] [FILE]"
+  opts.banner = "Usage: #{$0} [options] [FILE...]"
 
   opts.separator ''
   opts.separator 'Options:'
@@ -84,7 +83,7 @@ OptionParser.new(nil, 40) { |opts|
 
   opts.separator ''
 
-  opts.on('-c', '--chartab PATH', "File containing character mappings [Default: #{options[:chartab_file]}]") { |c|
+  opts.on('-c', '--chartab YAML_FILE', "File containing character mappings, in YAML format.", "[Default: #{options[:chartab_file]}]") { |c|
     options[:chartab_file] = c
   }
 
@@ -109,28 +108,23 @@ OptionParser.new(nil, 40) { |opts|
   opts.separator "When FILE is -, either STDIN or STDOUT is used (as appropriate)."
 }.parse!
 
-abort "Chartab file not found: #{options[:chartab_file]}" \
-  unless File.readable?(options[:chartab_file])
+cli do
+  if options[:list_encodings]
+    puts CMess::BConv.encodings(options[:chartab_file])
+    exit
+  end
 
-chartab = YAML.load_file(options[:chartab_file])
+  [:source_encoding, :target_encoding].each { |key|
+    options[key].call if options[key].respond_to?(:call)
+  }
 
-if options[:list_encodings]
-  puts CMess::BConv.encodings(chartab)
-  exit
+  trailing_args_as_input(options)
+
+  CMess::BConv.convert(
+    options[:input],
+    options[:output],
+    options[:source_encoding],
+    options[:target_encoding],
+    options[:chartab_file]
+  )
 end
-
-[:source_encoding, :target_encoding].each { |key|
-  options[key].call if options[key].respond_to?(:call)
-}
-
-if ARGV[0] && !options[:input_set]
-  options[:input] = open_file_or_std(ARGV[0])
-end
-
-CMess::BConv.convert(
-  options[:input],
-  options[:output],
-  options[:source_encoding],
-  options[:target_encoding],
-  chartab
-)

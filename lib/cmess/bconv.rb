@@ -26,73 +26,144 @@
 ###############################################################################
 #++
 
+require 'yaml'
 require 'iconv'
 require 'cmess'
 
 # Convert between bibliographic (and other) encodings.
 
-module CMess::BConv
-
-  extend self
+class CMess::BConv
 
   # our version ;-)
-  VERSION = '0.0.1'
+  VERSION = '0.0.2'
 
   INTERMEDIATE_ENCODING = 'utf-8'
 
-  def encodings(chartab)
-    chartab[chartab.keys.first].keys.map { |encoding|
-      encoding.upcase unless encoding =~ /\A__/
-    }.compact.sort
+  DEFAULT_CHARTAB_FILE = File.join(CMess::DATA_DIR, 'chartab.yaml')
+
+  class << self
+
+    def encodings(chartab = DEFAULT_CHARTAB_FILE)
+      chartab = load_chartab(chartab)
+
+      chartab[chartab.keys.first].keys.map { |encoding|
+        encoding.upcase unless encoding =~ /\A__/
+      }.compact.sort
+    end
+
+    def convert(*args)
+      new(*args).convert
+    end
+
+    def load_chartab(chartab)
+      case chartab
+        when Hash
+          chartab
+        when String
+          raise "chartab file not found: #{chartab}" unless File.readable?(chartab)
+          YAML.load_file(chartab)
+        else
+          raise ArgumentError, "invalid chartab of type #{chartab.class}"
+      end
+    end
+
   end
 
-  def convert(input, output, source_encoding, target_encoding, chartab)
-    source_encoding.upcase!
-    target_encoding.upcase!
+  attr_reader :input, :output, :source_encoding, :target_encoding, :chartab, :encodings
 
-    encodings = self.encodings(chartab)
+  def initialize(input, output, source_encoding, target_encoding, chartab = DEFAULT_CHARTAB_FILE)
+    @input, @output = input, output
 
-    if encodings.include?(source_encoding)
-      if encodings.include?(target_encoding)
-        charmap = chartab.inject({}) { |hash, (code, map)|
+    @source_encoding = source_encoding.upcase
+    @target_encoding = target_encoding.upcase
+
+    @chartab = self.class.load_chartab(chartab)
+    @encodings = self.class.encodings(@chartab)
+  end
+
+  def encoding?(encoding)
+    encodings.include?(encoding)
+  end
+
+  def convert
+    if encoding?(source_encoding)
+      if encoding?(target_encoding)
+        @charmap = chartab.inject({}) { |hash, (code, map)|
           hash.update(map[source_encoding] => map[target_encoding].pack('U*'))
         }
 
-        input.each_byte { |byte|
-          output.print charmap[[byte]] || charmap[[byte, input.getc]]
+        input.each_byte { |char|
+          output.print map(char)
         }
       else
-        iconv = Iconv.new(target_encoding, INTERMEDIATE_ENCODING)
+        iconv = iconv_to
 
-        charmap = chartab.inject({}) { |hash, (code, map)|
+        @charmap = chartab.inject({}) { |hash, (code, map)|
           hash.update(map[source_encoding] => [code.to_i(16)].pack('U*'))
         }
 
-        input.each_byte { |byte|
-          output.print iconv.iconv(charmap[[byte]] || charmap[[byte, input.getc]])
+        input.each_byte { |char|
+          output.print iconv.iconv(map(char))
         }
       end
     else
-      if encodings.include?(target_encoding)
-        iconv = Iconv.new(INTERMEDIATE_ENCODING, source_encoding)
+      if encoding?(target_encoding)
+        iconv = iconv_from
 
         charmap = chartab.inject({}) { |hash, (code, map)|
           hash.update(code.to_i(16) => map[target_encoding].pack('U*'))
         }
 
         input.each { |line|
-          iconv.iconv(line).unpack('U*').each { |byte|
-            output.print charmap[byte]
+          iconv.iconv(line).unpack('U*').each { |char|
+            output.print charmap[char]
           }
         }
       else
-        iconv = Iconv.new(target_encoding, source_encoding)
+        iconv = iconv_from_to
 
         input.each { |line|
           output.puts iconv.iconv(line)
         }
       end
     end
+  end
+
+  private
+
+  def iconv_from_to(from = source_encoding, to = target_encoding)
+    iconv = begin
+      Iconv.new(to, from)
+    rescue Iconv::InvalidEncoding
+      raise ArgumentError, "invalid encoding: source encoding = #{from}, target encoding = #{to}"
+    end
+
+    def iconv.iconv(*args)
+      super
+    rescue Iconv::IllegalSequence, Iconv::InvalidCharacter => err
+      warn "ILLEGAL INPUT SEQUENCE: #{err}"; ''
+    end
+
+    iconv
+  end
+
+  def iconv_from(from = source_encoding)
+    iconv_from_to(from, INTERMEDIATE_ENCODING)
+  end
+
+  def iconv_to(to = target_encoding)
+    iconv_from_to(INTERMEDIATE_ENCODING, to)
+  end
+
+  def map(char, charmap = @charmap)
+    unless map = charmap[[char]]
+      unless map = charmap[[char, c = input.getc]]
+        input.ungetc(c) if c
+        map = ''
+      end
+    end
+
+    map
   end
 
 end

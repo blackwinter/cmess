@@ -48,7 +48,7 @@ options = {
 }
 
 OptionParser.new { |opts|
-  opts.banner = "Usage: #{$0} [options] [FILE]"
+  opts.banner = "Usage: #{$0} [options] [FILE...]"
 
   opts.separator ''
   opts.separator 'Options:'
@@ -94,13 +94,13 @@ OptionParser.new { |opts|
   opts.separator "When FILE is -, either STDIN or STDOUT is used (as appropriate)."
 }.parse!
 
-if ARGV[0] && !options[:input_set]
-  options[:input] = open_file_or_std(ARGV[0])
-end
+cli do
+  trailing_args_as_input(options)
 
-CMess::DecodeEntities.decode(
-  options[:input],
-  options[:output],
-  options[:source_encoding],
-  options[:target_encoding]
-)
+  CMess::DecodeEntities.decode(
+    options[:input],
+    options[:output],
+    options[:source_encoding],
+    options[:target_encoding]
+  )
+end

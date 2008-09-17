@@ -46,9 +46,6 @@ PROGNAME = File.basename($0)
 # short-cut
 CGE = CMess::GuessEncoding
 
-# how to split list of arguments
-SPLIT_ARG_LIST_RE = /\s*[,\s]\s*/o
-
 options = {
   :input                => STDIN,
   :line                 => 1,
@@ -64,7 +61,7 @@ options = {
 }
 
 OptionParser.new(nil, 40) { |opts|
-  opts.banner = "Usage: #{$0} [options] [FILE]"
+  opts.banner = "Usage: #{$0} [options] [FILE...]"
 
   opts.separator ''
   opts.separator 'Options:'
@@ -193,39 +190,34 @@ OptionParser.new(nil, 40) { |opts|
   opts.separator "When FILE is -, STDIN is used."
 }.parse!
 
-if ARGV[0] && !options[:input_set]
-  options[:input] = open_file_or_std(ARGV[0])
-end
+cli do
+  trailing_args_as_input(options)
 
-if options[:manual]
-  options[:target_encoding].call if options[:target_encoding].respond_to?(:call)
+  if options[:manual] || options[:charcodes]
+    options[:target_encoding].call if options[:target_encoding].respond_to?(:call)
 
-  # reset line counter
-  $. = 0
+    if charcodes = options[:charcodes]
+      base  = options[:octal] ? 8 : options[:decimal] ? 10 : 16
+      input = charcodes.map { |c| c.to_i(base).chr }.join
+    else
+      # reset line counter
+      $. = 0
 
-  input = options[:input].each { |line|
-    break line if $. == options[:line]
-  }
-  abort "Input was empty!" if $..zero?
-  abort "Line not found -- input has only #{$.} line#{'s' if $. != 1}" unless input.is_a?(String)
+      input = options[:input].each { |line|
+        break line if $. == options[:line]
+      }
 
-  CGE::Manual.display(
-    input,
-    options[:target_encoding],
-    options[:encodings],
-    options[:additional_encodings]
-  )
-elsif charcodes = options[:charcodes]
-  options[:target_encoding].call if options[:target_encoding].respond_to?(:call)
+      abort "Input was empty!" if $..zero?
+      abort "Line not found -- input has only #{$.} line#{'s' if $. != 1}" unless input.is_a?(String)
+    end
 
-  base = options[:octal] ? 8 : options[:decimal] ? 10 : 16
-
-  CGE::Manual.display(
-    charcodes.map { |c| c.to_i(base).chr }.join,
-    options[:target_encoding],
-    options[:encodings],
-    options[:additional_encodings]
-  )
-else  # automatic
-  puts CGE::Automatic.guess(options[:input], options[:chunk_size], options[:ignore_bom])
+    CGE::Manual.display(
+      input,
+      options[:target_encoding],
+      options[:encodings],
+      options[:additional_encodings]
+    )
+  else  # automatic
+    puts CGE::Automatic.guess(options[:input], options[:chunk_size], options[:ignore_bom])
+  end
 end

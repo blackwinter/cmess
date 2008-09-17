@@ -43,6 +43,8 @@ module CMess::Cinderella
   # our version ;-)
   VERSION = '0.0.3'
 
+  DEFAULT_CSETS_DIR = File.join(CMess::DATA_DIR, 'csets')
+
   def pick(input, pot, crop, source_encoding, target_encoding, chars, repair = false)
     iconv = Iconv.new(target_encoding, source_encoding)
 

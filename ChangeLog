@@ -1,5 +1,12 @@
 = Revision history for cmess
 
+== 0.1.2 [2008-09-17]
+
+* Some refactoring; started to make tools more usable as a library
+* Make tools accept multiple files for input (via tempfile)
+* Use ENV.user_encoding from ruby-nuggets
+* Wrap command execution in a block catching any exceptions
+
 == 0.1.1 [2008-09-16]
 
 * Added bconv tool to convert between bibliographic encodings

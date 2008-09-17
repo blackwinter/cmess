@@ -41,6 +41,9 @@
 # decode_entities:: Decode HTML entities in a string. (see DecodeEntities)
 
 module CMess
+
+  DATA_DIR = File.expand_path(File.join(File.dirname(__FILE__), '..', 'data'))
+
 end
 
 require 'cmess/version'

@@ -95,7 +95,7 @@ module CMess::GuessEncoding::Manual
         "ILLEGAL INPUT SEQUENCE: #{err}"
       rescue Iconv::InvalidEncoding
         if encoding == target
-          abort "Invalid encoding: #{encoding}"
+          raise ArgumentError, "invalid encoding: #{encoding}"
         else
           "INVALID ENCODING!"
         end
