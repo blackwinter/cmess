@@ -17,7 +17,7 @@ begin
       },
       :files        => FileList['lib/**/*.rb', 'bin/*'].to_a,
       :extra_files  => FileList['[A-Z]*', 'example/**/*', 'data/**/*'].to_a,
-      :dependencies => [['ruby-nuggets', '>= 0.3.3', 'htmlentities']
+      :dependencies => [['ruby-nuggets', '>= 0.3.3'], 'htmlentities']
     }
   }}
 rescue LoadError
