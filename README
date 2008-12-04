@@ -24,6 +24,13 @@ decode_entities:: Decode HTML entities in a string.
 TODO: well, more of the description... ;-)
 
 
+== LINKS
+
+* <http://prometheus.rubyforge.org/cmess>
+* <http://prometheus.rubyforge.org/svn/scratch/cmess>
+* <http://github.com/blackwinter/cmess>
+
+
 == AUTHORS
 
 * Jens Wille <mailto:jens.wille@uni-koeln.de>
