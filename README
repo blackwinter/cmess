@@ -26,9 +26,11 @@ TODO: well, more of the description... ;-)
 
 == LINKS
 
-* <http://prometheus.rubyforge.org/cmess>
-* <http://prometheus.rubyforge.org/svn/scratch/cmess>
-* <http://github.com/blackwinter/cmess>
+<b></b>
+Documentation::     <http://prometheus.rubyforge.org/cmess>
+Source code (old):: <http://prometheus.rubyforge.org/svn/scratch/cmess>
+Source code::       <http://github.com/blackwinter/cmess>
+Rubyforge project:: <http://rubyforge.org/projects/prometheus>
 
 
 == AUTHORS
