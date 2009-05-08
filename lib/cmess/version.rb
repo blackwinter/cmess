@@ -3,7 +3,7 @@
 #                                                                             #
 # A component of cmess, the encoding tool-box.                                #
 #                                                                             #
-# Copyright (C) 2007-2008 University of Cologne,                              #
+# Copyright (C) 2007-2009 University of Cologne,                              #
 #                         Albertus-Magnus-Platz,                              #
 #                         50932 Cologne, Germany                              #
 #                                                                             #
@@ -29,8 +29,8 @@
 module CMess::Version
 
   MAJOR = 0
-  MINOR = 1
-  TINY  = 2
+  MINOR = 2
+  TINY  = 0
 
   class << self
 

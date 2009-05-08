@@ -3,9 +3,9 @@
 #                                                                             #
 # A component of cmess, the encoding tool-box.                                #
 #                                                                             #
-# Copyright (C) 2007 University of Cologne,                                   #
-#                    Albertus-Magnus-Platz,                                   #
-#                    50932 Cologne, Germany                                   #
+# Copyright (C) 2007-2009 University of Cologne,                              #
+#                         Albertus-Magnus-Platz,                              #
+#                         50932 Cologne, Germany                              #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@uni-koeln.de>                                    #
@@ -51,10 +51,10 @@ module CMess::CLI
   def open_file_or_std(file, mode = 'r')
     if file == '-'
       case mode
-        when 'r': STDIN
-        when 'w': STDOUT
-        when 'a': STDERR
-        else      raise ArgumentError, "don't know how to handle mode '#{mode}'"
+        when 'r' then STDIN
+        when 'w' then STDOUT
+        when 'a' then STDERR
+        else          raise ArgumentError, "don't know how to handle mode '#{mode}'"
       end
     else
       ensure_readable(file) unless mode == 'w'

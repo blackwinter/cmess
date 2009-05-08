@@ -1,9 +1,11 @@
+# encoding: utf-8
+
 #--
 ###############################################################################
 #                                                                             #
 # A component of cmess, the encoding tool-box.                                #
 #                                                                             #
-# Copyright (C) 2007-2008 University of Cologne,                              #
+# Copyright (C) 2007-2009 University of Cologne,                              #
 #                         Albertus-Magnus-Platz,                              #
 #                         50932 Cologne, Germany                              #
 #                                                                             #
@@ -30,7 +32,7 @@
 ###############################################################################
 #++
 
-$KCODE = 'u'
+$KCODE = 'u' unless RUBY_VERSION >= '1.9'
 
 require 'yaml'
 require 'iconv'
@@ -262,10 +264,10 @@ class CMess::GuessEncoding::Automatic
   encodings UTF_16BE, UTF_16LE, UTF_16 do
     if relative_byte_count(byte_count[0]) > 0.25
       case first_byte
-        when 0x0:  UTF_32
-        when 0xfe: UTF_16BE
-        when 0xff: UTF_16LE
-        else       UTF_16
+        when 0x0  then UTF_32
+        when 0xfe then UTF_16BE
+        when 0xff then UTF_16LE
+        else           UTF_16
       end
     end
   end

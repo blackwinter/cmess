@@ -1,5 +1,9 @@
 = Revision history for cmess
 
+== 0.2.0 [2009-05-08]
+
+* Ruby 1.9 compatibility (Syntax, at least)
+
 == 0.1.2 [2008-09-17]
 
 * Some refactoring; started to make tools more usable as a library
