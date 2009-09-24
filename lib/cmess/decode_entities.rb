@@ -30,7 +30,7 @@ require 'iconv'
 require 'cmess'
 
 require 'rubygems'
-require 'htmlentities/string'
+require 'htmlentities'
 
 module CMess::DecodeEntities
 
@@ -61,8 +61,10 @@ module CMess::DecodeEntities
     iconv_out = target_encoding != INTERMEDIATE_ENCODING ?
       Iconv.new(target_encoding, INTERMEDIATE_ENCODING) : ICONV_DUMMY
 
+    html_entities = HTMLEntities.new
+
     input.each { |line|
-      output.puts iconv_out.iconv(iconv_in.iconv(line).decode_entities)
+      output.puts iconv_out.iconv(html_entities.decode(iconv_in.iconv(line)))
     }
   end
 
