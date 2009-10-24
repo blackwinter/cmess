@@ -37,7 +37,7 @@ module CMess::DecodeEntities
   extend self
 
   # our version ;-)
-  VERSION = '0.0.2'
+  VERSION = '0.0.3'
 
   # HTMLEntities requires UTF-8
   INTERMEDIATE_ENCODING = 'utf-8'
