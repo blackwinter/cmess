@@ -61,7 +61,20 @@ class CMess::GuessEncoding::Automatic
   TEST_ENCODINGS = [
     MACINTOSH,
     ISO_8859_1,
+    ISO_8859_2,
+    ISO_8859_3,
+    ISO_8859_4,
+    ISO_8859_5,
+    ISO_8859_6,
+    ISO_8859_7,
+    ISO_8859_8,
+    ISO_8859_9,
+    ISO_8859_10,
+    ISO_8859_11,
+    ISO_8859_13,
+    ISO_8859_14,
     ISO_8859_15,
+    ISO_8859_16,
     CP1252,
     CP850,
     MS_ANSI
@@ -75,7 +88,7 @@ class CMess::GuessEncoding::Automatic
 
   # Map TEST_ENCODINGS to respectively encoded CHARS_TO_TEST
   TEST_CHARS = Hash.new { |hash, encoding|
-    encoding = Encoding.get_or_set_encoding_const(encoding)
+    encoding = get_or_set_encoding_const(encoding)
     encchars = CHARS_TO_TEST.map { |char|
       begin
         byte = *ICONV_FOR[encoding].iconv(char).unpack('C')
