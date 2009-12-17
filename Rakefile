@@ -6,7 +6,8 @@ begin
 
   Hen.lay! {{
     :rubyforge => {
-      :package => 'cmess'
+      :project => %q{prometheus},
+      :package => %q{cmess}
     },
 
     :gem => {
