@@ -5,7 +5,7 @@
 #                                                                             #
 # Copyright (C) 2008 University of Cologne,                                   #
 #                    Albertus-Magnus-Platz,                                   #
-#                    50932 Cologne, Germany                                   #
+#                    50923 Cologne, Germany                                   #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@uni-koeln.de>                                    #
