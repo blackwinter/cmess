@@ -3,9 +3,9 @@
 #                                                                             #
 # A component of cmess, the encoding tool-box.                                #
 #                                                                             #
-# Copyright (C) 2008 University of Cologne,                                   #
-#                    Albertus-Magnus-Platz,                                   #
-#                    50923 Cologne, Germany                                   #
+# Copyright (C) 2008-2010 University of Cologne,                              #
+#                         Albertus-Magnus-Platz,                              #
+#                         50923 Cologne, Germany                              #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@uni-koeln.de>                                    #
@@ -32,14 +32,15 @@ require 'cmess'
 
 # Convert between bibliographic (and other) encodings.
 
-class CMess::BConv
+module CMess
+  class BConv
 
   # our version ;-)
   VERSION = '0.0.2'
 
   INTERMEDIATE_ENCODING = 'utf-8'
 
-  DEFAULT_CHARTAB_FILE = File.join(CMess::DATA_DIR, 'chartab.yaml')
+  DEFAULT_CHARTAB_FILE = File.join(DATA_DIR, 'chartab.yaml')
 
   class << self
 
@@ -166,4 +167,5 @@ class CMess::BConv
     map
   end
 
+  end
 end

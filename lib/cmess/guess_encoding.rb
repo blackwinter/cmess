@@ -3,7 +3,7 @@
 #                                                                             #
 # A component of cmess, the encoding tool-box.                                #
 #                                                                             #
-# Copyright (C) 2007-2008 University of Cologne,                              #
+# Copyright (C) 2007-2010 University of Cologne,                              #
 #                         Albertus-Magnus-Platz,                              #
 #                         50923 Cologne, Germany                              #
 #                                                                             #
@@ -30,13 +30,12 @@
 ###############################################################################
 #++
 
-require 'cmess'
-
 # Allows to guess an input's encoding either manually or automatically.
 # Works actually pretty good -- for the supported encodings. See Manual
 # and Automatic for details.
 
-module CMess::GuessEncoding
+module CMess
+  module GuessEncoding
 
   # our version ;-)
   VERSION = '0.0.9'
@@ -53,6 +52,7 @@ module CMess::GuessEncoding
 
   end
 
+  end
 end
 
 %w[encoding manual automatic].each { |lib|

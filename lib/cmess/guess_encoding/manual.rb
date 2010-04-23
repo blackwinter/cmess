@@ -3,7 +3,7 @@
 #                                                                             #
 # A component of cmess, the encoding tool-box.                                #
 #                                                                             #
-# Copyright (C) 2007-2008 University of Cologne,                              #
+# Copyright (C) 2007-2010 University of Cologne,                              #
 #                         Albertus-Magnus-Platz,                              #
 #                         50923 Cologne, Germany                              #
 #                                                                             #
@@ -36,11 +36,13 @@ require 'iconv'
 # various test encodings, thus allowing to identify the (seemingly) correct
 # encoding by visually comparing the input string with its desired appearance.
 
-module CMess::GuessEncoding::Manual
+module CMess
+  module GuessEncoding
+    module Manual
 
   extend self
 
-  include CMess::GuessEncoding::Encoding
+  include Encoding
 
   # default encodings to try
   ENCODINGS = [
@@ -105,4 +107,6 @@ module CMess::GuessEncoding::Manual
     }
   end
 
+    end
+  end
 end

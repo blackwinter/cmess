@@ -3,7 +3,7 @@
 #                                                                             #
 # A component of cmess, the encoding tool-box.                                #
 #                                                                             #
-# Copyright (C) 2007-2008 University of Cologne,                              #
+# Copyright (C) 2007-2010 University of Cologne,                              #
 #                         Albertus-Magnus-Platz,                              #
 #                         50923 Cologne, Germany                              #
 #                                                                             #
@@ -32,7 +32,9 @@
 
 # Namespace for our encodings.
 
-module CMess::GuessEncoding::Encoding
+module CMess
+  module GuessEncoding
+    module Encoding
 
   extend self
 
@@ -81,4 +83,6 @@ module CMess::GuessEncoding::Encoding
     base.extend self
   end
 
+    end
+  end
 end

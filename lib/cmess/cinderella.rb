@@ -3,9 +3,9 @@
 #                                                                             #
 # A component of cmess, the encoding tool-box.                                #
 #                                                                             #
-# Copyright (C) 2007 University of Cologne,                                   #
-#                    Albertus-Magnus-Platz,                                   #
-#                    50923 Cologne, Germany                                   #
+# Copyright (C) 2007-2010 University of Cologne,                              #
+#                         Albertus-Magnus-Platz,                              #
+#                         50923 Cologne, Germany                              #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@uni-koeln.de>                                    #
@@ -36,14 +36,15 @@ require 'cmess'
 # containing those doubly encoded characters; if asked to repair doubly
 # encoded characters, substitutes them with their original character.
 
-module CMess::Cinderella
+module CMess
+  module Cinderella
 
   extend self
 
   # our version ;-)
   VERSION = '0.0.4'
 
-  DEFAULT_CSETS_DIR = File.join(CMess::DATA_DIR, 'csets')
+  DEFAULT_CSETS_DIR = File.join(DATA_DIR, 'csets')
 
   def pick(input, pot, crop, source_encoding, target_encoding, chars, repair = false)
     iconv, encoded = Iconv.new(target_encoding, source_encoding), {}
@@ -66,4 +67,5 @@ module CMess::Cinderella
     }
   end
 
+  end
 end

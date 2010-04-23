@@ -5,7 +5,7 @@
 #                                                                             #
 # A component of cmess, the encoding tool-box.                                #
 #                                                                             #
-# Copyright (C) 2007-2009 University of Cologne,                              #
+# Copyright (C) 2007-2010 University of Cologne,                              #
 #                         Albertus-Magnus-Platz,                              #
 #                         50923 Cologne, Germany                              #
 #                                                                             #
@@ -45,14 +45,16 @@ require 'forwardable'
 #
 # If a BOM is found, it may determine the encoding directly.
 
-class CMess::GuessEncoding::Automatic
+module CMess
+  module GuessEncoding
+    class Automatic
 
   extend Forwardable
 
   def_delegators self, :encoding_guessers, :supported_encoding?,
                        :bom_guessers,      :supported_bom?
 
-  include CMess::GuessEncoding::Encoding
+  include Encoding
 
   # Creates a converter for desired encoding (from UTF-8)
   ICONV_FOR = Hash.new { |h, k| h[k] = Iconv.new(k, UTF_8) }
@@ -353,4 +355,6 @@ class CMess::GuessEncoding::Automatic
     starts_with?(0xfb, 0xee, 0x28)
   end
 
+    end
+  end
 end

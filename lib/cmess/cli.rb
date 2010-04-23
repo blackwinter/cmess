@@ -3,7 +3,7 @@
 #                                                                             #
 # A component of cmess, the encoding tool-box.                                #
 #                                                                             #
-# Copyright (C) 2007-2009 University of Cologne,                              #
+# Copyright (C) 2007-2010 University of Cologne,                              #
 #                         Albertus-Magnus-Platz,                              #
 #                         50923 Cologne, Germany                              #
 #                                                                             #
@@ -31,7 +31,8 @@ require 'tempfile'
 require 'rubygems'
 require 'nuggets/env/user_encoding'
 
-module CMess::CLI
+module CMess
+  module CLI
 
   # how to split list of arguments
   SPLIT_ARG_LIST_RE = /\s*[,\s]\s*/o
@@ -117,4 +118,5 @@ it explicitly via the ENCODING environment variable or via the '-t' option.
     end
   end
 
+  end
 end

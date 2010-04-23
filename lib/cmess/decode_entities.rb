@@ -3,9 +3,9 @@
 #                                                                             #
 # A component of cmess, the encoding tool-box.                                #
 #                                                                             #
-# Copyright (C) 2007 University of Cologne,                                   #
-#                    Albertus-Magnus-Platz,                                   #
-#                    50923 Cologne, Germany                                   #
+# Copyright (C) 2007-2010 University of Cologne,                              #
+#                         Albertus-Magnus-Platz,                              #
+#                         50923 Cologne, Germany                              #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@uni-koeln.de>                                    #
@@ -27,12 +27,12 @@
 #++
 
 require 'iconv'
-require 'cmess'
 
 require 'rubygems'
 require 'htmlentities'
 
-module CMess::DecodeEntities
+module CMess
+  module DecodeEntities
 
   extend self
 
@@ -68,4 +68,5 @@ module CMess::DecodeEntities
     }
   end
 
+  end
 end
