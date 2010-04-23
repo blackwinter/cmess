@@ -32,6 +32,10 @@
 
 require 'iconv'
 
+require 'rubygems'
+require 'nuggets/array/runiq'
+require 'nuggets/array/in_order'
+
 # Outputs given string (or line), being encoded in target encoding, encoded in
 # various test encodings, thus allowing to identify the (seemingly) correct
 # encoding by visually comparing the input string with its desired appearance.
@@ -81,12 +85,18 @@ module CMess
     target = target_encoding
 
     encodings = (encodings || ENCODINGS) + additional_encodings
-    encodings = encodings.include?('__ALL__') ? all_encodings :
-      encodings.reverse.uniq.reverse  # uniq with additional encodings
-                                      # staying at the end
+
+    if encodings.include?('__ALL__')
+      encodings.replace(all_encodings.dup)
+    elsif encodings.delete('__COMMON__')
+      encodings.concat(CANDIDATES)
+    end
+
+    # uniq with additional encodings staying at the end
+    encodings.runiq!
 
     # move target encoding to front
-    encodings = [target] + (encodings - [target])
+    encodings.in_order!(target)
 
     max_length = encodings.map { |encoding| encoding.length }.max
 

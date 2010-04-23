@@ -6,7 +6,7 @@
 # guess_encoding -- Assist with guessing the encoding of some input at hand   #
 #   [A component of cmess, the encoding tool-box]                             #
 #                                                                             #
-# Copyright (C) 2007-2008 University of Cologne,                              #
+# Copyright (C) 2007-2010 University of Cologne,                              #
 #                         Albertus-Magnus-Platz,                              #
 #                         50923 Cologne, Germany                              #
 #                                                                             #
@@ -123,7 +123,7 @@ OptionParser.new(nil, 40) { |opts|
 
   opts.separator ''
 
-  opts.on('--list-encodings', 'Print a list of all available encodings on your system and exit') {
+  opts.on('-L', '--list-encodings', 'Print a list of all available encodings on your system and exit') {
     puts CGE::Encoding.all_encodings
     exit
   }
@@ -184,7 +184,8 @@ OptionParser.new(nil, 40) { |opts|
   }
 
   opts.separator ''
-  opts.separator 'NOTE: To select all encodings available on your system, specify __ALL__.'
+  opts.separator 'NOTE: To select all encodings available on your system (see \'-L\'), specify __ALL__.'
+  opts.separator '      To select the likely candidates named above, specify __COMMON__.'
 
   opts.separator ''
   opts.separator "When FILE is -, STDIN is used."
