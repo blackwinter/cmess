@@ -199,8 +199,8 @@
 "000A":
   __name__: <control>
   __table__: Basic Latin
-  ALLEGRO_OSTWEST: []
-  ALLEGRO_WINDOWS: []
+  ALLEGRO_OSTWEST: [10]  # XXX
+  ALLEGRO_WINDOWS: [10]  # XXX
   CP1250: [10]
   CP1252: [10]
   CP1254: [10]
@@ -211,10 +211,10 @@
   ISO_8859_15: [10]
   ISO_8859_2: [10]
   ISO_8859_9: [10]
-  MAB2: []
-  MAB_DISKETTE: []
+  MAB2: [10]             # XXX
+  MAB_DISKETTE: [10]     # XXX
   PICA: [10]
-  USMARC_ANSEL: []
+  USMARC_ANSEL: [10]     # XXX
 "000B":
   __name__: <control>
   __table__: Basic Latin
@@ -256,8 +256,8 @@
 "000D":
   __name__: <control>
   __table__: Basic Latin
-  ALLEGRO_OSTWEST: []
-  ALLEGRO_WINDOWS: []
+  ALLEGRO_OSTWEST: [13]  # XXX
+  ALLEGRO_WINDOWS: [13]  # XXX
   CP1250: [13]
   CP1252: [13]
   CP1254: [13]
@@ -268,10 +268,10 @@
   ISO_8859_15: [13]
   ISO_8859_2: [13]
   ISO_8859_9: [13]
-  MAB2: []
-  MAB_DISKETTE: []
+  MAB2: [13]             # XXX
+  MAB_DISKETTE: [13]     # XXX
   PICA: [13]
-  USMARC_ANSEL: []
+  USMARC_ANSEL: [13]     # XXX
 "000E":
   __name__: <control>
   __table__: Basic Latin
