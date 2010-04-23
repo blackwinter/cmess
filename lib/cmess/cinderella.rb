@@ -41,15 +41,18 @@ module CMess::Cinderella
   extend self
 
   # our version ;-)
-  VERSION = '0.0.3'
+  VERSION = '0.0.4'
 
   DEFAULT_CSETS_DIR = File.join(CMess::DATA_DIR, 'csets')
 
   def pick(input, pot, crop, source_encoding, target_encoding, chars, repair = false)
-    iconv = Iconv.new(target_encoding, source_encoding)
+    iconv, encoded = Iconv.new(target_encoding, source_encoding), {}
 
-    encoded = chars.inject({}) { |hash, char|
-      hash.update(iconv.iconv(char) => char)
+    chars.each { |char|
+      begin
+        encoded[iconv.iconv(char)] = char
+      rescue Iconv::IllegalSequence
+      end
     }
 
     regexp = Regexp.union(*encoded.keys)
