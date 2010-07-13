@@ -37,7 +37,7 @@ module CMess
   extend self
 
   # our version ;-)
-  VERSION = '0.0.3'
+  VERSION = '0.0.4'
 
   # HTMLEntities requires UTF-8
   INTERMEDIATE_ENCODING = 'utf-8'
@@ -52,7 +52,9 @@ module CMess
     dummy
   end
 
-  def decode(input, output, source_encoding, target_encoding = nil)
+  DEFAULT_FLAVOUR = 'xml-safe'
+
+  def decode(input, output, source_encoding, target_encoding = nil, flavour = nil)
     target_encoding ||= source_encoding
 
     iconv_in  = source_encoding != INTERMEDIATE_ENCODING ?
@@ -61,7 +63,7 @@ module CMess
     iconv_out = target_encoding != INTERMEDIATE_ENCODING ?
       Iconv.new(target_encoding, INTERMEDIATE_ENCODING) : ICONV_DUMMY
 
-    html_entities = HTMLEntities.new
+    html_entities = HTMLEntities.new(flavour || DEFAULT_FLAVOUR)
 
     input.each { |line|
       output.puts iconv_out.iconv(html_entities.decode(iconv_in.iconv(line)))
@@ -69,4 +71,10 @@ module CMess
   end
 
   end
+end
+
+class HTMLEntities
+  FLAVORS << 'xml-safe'
+  MAPPINGS['xml-safe'] = MAPPINGS['xhtml1'].dup
+  %w[amp apos gt lt quot].each { |key| MAPPINGS['xml-safe'].delete(key) }
 end

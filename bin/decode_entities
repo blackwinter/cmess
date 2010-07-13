@@ -44,7 +44,8 @@ options = {
   :input           => STDIN,
   :output          => STDOUT,
   :source_encoding => CMess::DecodeEntities::INTERMEDIATE_ENCODING,
-  :target_encoding => nil
+  :target_encoding => nil,
+  :flavour         => CMess::DecodeEntities::DEFAULT_FLAVOUR
 }
 
 OptionParser.new { |opts|
@@ -78,6 +79,13 @@ OptionParser.new { |opts|
   }
 
   opts.separator ''
+
+  opts.on('-f', '--flavour FLAVOUR', "Flavour to use for the HTMLEntities decoder [Default: #{options[:flavour]}]",
+                                     "(Available flavours are: #{HTMLEntities::FLAVORS.join(', ')})") { |f|
+    options[:flavour] = f
+  }
+
+  opts.separator ''
   opts.separator 'Generic options:'
 
   opts.on('-h', '--help', "Print this help message and exit") {
@@ -97,10 +105,5 @@ OptionParser.new { |opts|
 cli do
   trailing_args_as_input(options)
 
-  CMess::DecodeEntities.decode(
-    options[:input],
-    options[:output],
-    options[:source_encoding],
-    options[:target_encoding]
-  )
+  CMess::DecodeEntities.decode(*options.values_at(:input, :output, :source_encoding, :target_encoding, :flavour))
 end
