@@ -1,4 +1,4 @@
-require %q{lib/cmess/version}
+require File.expand_path(%q{../lib/cmess/version}, __FILE__)
 
 begin
   require 'hen'
@@ -15,13 +15,14 @@ begin
         Assist with handling messed up encodings (Currently includes the
         following tools: #{Dir['bin/*'].map { |e| File.basename(e) }.sort.join(', ')})
       },
-      :files        => FileList['lib/**/*.rb', 'bin/*'].to_a,
-      :extra_files  => FileList['[A-Z]*', 'example/**/*', 'data/**/*'].to_a,
+      :author       => %q{Jens Wille},
+      :email        => %q{jens.wille@uni-koeln.de},
+      :extra_files  => FileList['data/**/*'].to_a,
       :dependencies => [['ruby-nuggets', '>= 0.3.3'], 'htmlentities']
     }
   }}
-rescue LoadError
-  abort "Please install the 'hen' gem first."
+rescue LoadError => err
+  warn "Please install the `hen' gem. (#{err})"
 end
 
 namespace :guess_encoding do
