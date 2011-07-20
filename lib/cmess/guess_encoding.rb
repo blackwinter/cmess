@@ -36,10 +36,6 @@
 
 module CMess
   module GuessEncoding
-
-  # our version ;-)
-  VERSION = '0.0.9'
-
   class << self
 
     def manual(*args)
@@ -55,7 +51,6 @@ module CMess
   end
 end
 
-%w[encoding manual automatic].each { |lib|
-  lib = "cmess/guess_encoding/#{lib}"
-  require lib
-}
+%w[encoding manual automatic].each do |filename|
+  require File.join(File.dirname(__FILE__), 'guess_encoding', filename)
+end
