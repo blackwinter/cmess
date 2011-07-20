@@ -129,7 +129,7 @@ module CMess
     private
 
     def encoding(encoding, &condition_block)
-      encoding_block = lambda {
+      encoding_block = proc {
         encoding if instance_eval(&condition_block)
       }
 
@@ -149,7 +149,7 @@ module CMess
     end
 
     def bom_encoding(encoding, &condition_block)
-      encoding_block = lambda {
+      encoding_block = proc {
         encoding if instance_eval(&condition_block)
       }
 
@@ -258,7 +258,7 @@ module CMess
     @byte_total > bytes_before
   end
 
-  def byte_count_sum(*bytes)
+  def byte_count_sum(bytes)
     bytes = *bytes  # treat arrays/ranges and lists alike
     bytes.inject(0) { |sum, n| sum + byte_count[n] }
   end
@@ -307,7 +307,7 @@ module CMess
   encodings(*TEST_ENCODINGS) do
     ratios = {}
 
-    TEST_ENCODINGS.find(lambda {
+    TEST_ENCODINGS.find(proc {
       ratio, encoding = ratios.sort.last
       encoding if ratio >= TEST_THRESHOLD_APPROX
     }) { |encoding|
