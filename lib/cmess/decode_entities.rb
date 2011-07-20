@@ -26,18 +26,14 @@
 ###############################################################################
 #++
 
-require 'iconv'
-
-require 'rubygems'
+require 'cmess'
 require 'htmlentities'
 
-module CMess
-  module DecodeEntities
+module CMess::DecodeEntities
 
   extend self
 
-  # our version ;-)
-  VERSION = '0.0.4'
+  VERSION = '0.0.5'
 
   # HTMLEntities requires UTF-8
   INTERMEDIATE_ENCODING = 'utf-8'
@@ -54,8 +50,12 @@ module CMess
 
   DEFAULT_FLAVOUR = 'xml-safe'
 
-  def decode(input, output, source_encoding, target_encoding = nil, flavour = nil)
-    target_encoding ||= source_encoding
+  def decode(options)
+    input, output, source_encoding = CMess.ensure_options!(options,
+      :input, :output, :source_encoding
+    )
+
+    target_encoding = options[:target_encoding] || source_encoding
 
     iconv_in  = source_encoding != INTERMEDIATE_ENCODING ?
       Iconv.new(INTERMEDIATE_ENCODING, source_encoding) : ICONV_DUMMY
@@ -63,17 +63,16 @@ module CMess
     iconv_out = target_encoding != INTERMEDIATE_ENCODING ?
       Iconv.new(target_encoding, INTERMEDIATE_ENCODING) : ICONV_DUMMY
 
-    html_entities = HTMLEntities.new(flavour || DEFAULT_FLAVOUR)
+    html_entities = HTMLEntities.new(options[:flavour] || DEFAULT_FLAVOUR)
 
     input.each { |line|
       output.puts iconv_out.iconv(html_entities.decode(iconv_in.iconv(line)))
     }
   end
 
-  end
 end
 
-class HTMLEntities
+class HTMLEntities  # :nodoc:
   FLAVORS << 'xml-safe'
   MAPPINGS['xml-safe'] = MAPPINGS['xhtml1'].dup
   %w[amp apos gt lt quot].each { |key| MAPPINGS['xml-safe'].delete(key) }

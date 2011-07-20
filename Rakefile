@@ -1,4 +1,6 @@
-require File.expand_path(%q{../lib/cmess/version}, __FILE__)
+$:.unshift(File.expand_path('../lib', __FILE__))
+
+require 'cmess'
 
 begin
   require 'hen'
@@ -29,24 +31,20 @@ namespace :guess_encoding do
 
   desc "Compare actual encoding and automatic guess of example files"
   task :check_examples do
-    require 'lib/cmess/guess_encoding'
-
     E = CMess::GuessEncoding::Encoding
 
     Dir[File.join(File.dirname(__FILE__), 'example', 'guess_encoding', '??.*.txt')].sort.each { |example|
       language, encoding = File.basename(example, '.txt').split('.')
       encoding.upcase!
 
-      guessed = CMess::GuessEncoding::Automatic.guess(File.open(example))
+      result = CMess::GuessEncoding::Automatic.guess(File.open(example))
 
-      match = case guessed
-        when E::UNKNOWN: '?'
-        when E::ASCII:   '#'
-        when encoding:   '+'
-        else             '-'
-      end
-
-      puts '%s %s/%-11s => %s' % [match, language, encoding, guessed]
+      puts '%s %s/%-11s => %s' % [case result
+        when E::UNKNOWN then '?'
+        when E::ASCII   then '#'
+        when encoding   then '+'
+        else                 '-'
+      end, language, encoding, result]
     }
   end
 

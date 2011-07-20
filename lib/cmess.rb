@@ -26,24 +26,33 @@
 ###############################################################################
 #++
 
-# Bundles several tools that aim at dealing with various problems occurring in
-# the context of character sets and encodings. Currently, there are:
-#
-# guess_encoding::  Simple helper to identify the encoding of a given string.
-#                   Includes the ability to automatically detect the encoding
-#                   of an input. (see GuessEncoding)
-# cinderella::      When characters are "double encoded", you can't easily
-#                   convert them back -- this is where cinderella comes in,
-#                   sorting the good ones into the pot and the (potentially)
-#                   bad ones into the crop... (see Cinderella)
-# bconv::           Convert between bibliographic (and other) encodings.
-#                   (see BConv)
-# decode_entities:: Decode HTML entities in a string. (see DecodeEntities)
+require 'cmess/version'
+require 'iconv'
+
+# See README for more information.
 
 module CMess
 
-  DATA_DIR = File.expand_path(File.join(File.dirname(__FILE__), '..', 'data'))
+  autoload :BConv,          'cmess/bconv'
+  autoload :Cinderella,     'cmess/cinderella'
+  autoload :CLI,            'cmess/cli'
+  autoload :DecodeEntities, 'cmess/decode_entities'
+  autoload :GuessEncoding,  'cmess/guess_encoding'
+
+  DATA_DIR = File.expand_path('../../data', __FILE__)
+
+  class << self
+
+    def ensure_options!(options, *required)
+      values = options.values_at(*required)
+
+      missing = values.select { |value| value.nil? }
+      return values if missing.empty?
+
+      msg = "required options missing: #{missing.join(', ')}"
+      raise ArgumentError, msg, caller(1)
+    end
+
+  end
 
 end
-
-require 'cmess/version'

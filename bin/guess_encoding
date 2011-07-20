@@ -29,22 +29,8 @@
 ###############################################################################
 #++
 
-require 'optparse'
-
-require 'rubygems'
-require 'nuggets/string/word_wrap'
-
-$: << File.join(File.dirname(__FILE__), '..', 'lib')
-
 require 'cmess/guess_encoding'
-require 'cmess/cli'
-
 include CMess::CLI
-
-PROGNAME = File.basename($0)
-
-# short-cut
-CGE = CMess::GuessEncoding
 
 options = {
   :input                => STDIN,
@@ -56,140 +42,136 @@ options = {
   :chunk_size           => nil,
   :ignore_bom           => false,
   :charcodes            => nil,
-  :decimal              => false,
-  :octal                => false
+  :base                 => 16
 }
 
-OptionParser.new(nil, 40) { |opts|
+parse_options { |opts|
   opts.banner = "Usage: #{$0} [options] [FILE...]"
 
   opts.separator ''
   opts.separator 'Options:'
 
-  opts.on('-i', '--input FILE', "Input file to read from [Default: STDIN]") { |f|
-    options[:input] = open_file_or_std(f)
+  opts.on('-i', '--input FILE', 'Input file to read from [Default: STDIN]') { |input|
+    options[:input] = open_file_or_std(input)
     options[:input_set] = true
   }
 
   opts.separator ''
   opts.separator '  * Automatic guessing'
-  opts.separator ''
 
-  opts.on('-c', '--chunk-size SIZE', Integer, "Size of chunks input will be read in until a valid encoding", "has been found; by default the whole file will be read") { |s|
-    options[:chunk_size] = s
+  opts.on('-c', '--chunk-size SIZE', Integer, 'Size of chunks input will be read in until a valid encoding', 'has been found; by default the whole file will be read') { |size|
+    options[:chunk_size] = size
   }
 
   opts.separator ''
 
-  opts.on('-b', '--ignore-bom', "Ignore detected BOM (if any)", "(see below for a list of supported encodings)") {
+  opts.on('-b', '--ignore-bom', 'Ignore detected BOM (if any); see below for a list of', 'supported encodings') {
     options[:ignore_bom] = true
   }
 
   opts.separator ''
   opts.separator '  * Manual guessing'
-  opts.separator ''
 
-  opts.on('-m', '--manual', "Present variously encoded input for manual encoding guessing") {
+  opts.on('-m', '--manual', 'Present variously encoded input for manual encoding guessing') {
     options[:manual] = true
   }
 
   opts.separator ''
 
-  opts.on('-l', '--line LINE', "Line number of input file to use for testing [Default: #{options[:line]}]") { |l|
-    options[:line] = l.to_i
+  opts.on('-l', '--line LINE', Integer, "Line number of input file to use for testing [Default: #{options[:line]}]") { |line|
+    options[:line] = line
 
     unless options[:line] > 0
-      options[:input].read  # prevent 'Broken pipe' error
-      abort "Line number must be greater then 0!"
+      options[:input].read # prevent 'Broken pipe' error
+      abort 'Line number must be greater then 0!'
     end
   }
 
   opts.separator ''
 
-  opts.on('-e', '--encodings ENCODINGS...', "List of encodings to try >instead of< default (see below)") { |e|
+  opts.on('-e', '--encodings ENCODINGS...', 'List of encodings to try >instead of< default (see below)') { |encodings|
     options[:encodings] ||= []
-    options[:encodings] += e.split(SPLIT_ARG_LIST_RE)
+    options[:encodings] += arg_list(encodings)
   }
 
-  opts.on('-a', '--additional-encodings ENCODINGS...', "List of encodings to try >in addition to< default (see below)") { |e|
-    options[:additional_encodings] += e.split(SPLIT_ARG_LIST_RE)
+  opts.on('-a', '--additional-encodings ENCODINGS...', 'List of encodings to try >in addition to< default (see below)') { |encodings|
+    options[:additional_encodings] += arg_list(encodings)
   }
 
   opts.separator ''
 
-  opts.on('-t', '--target-encoding ENCODING', "Target encoding of your system [Default: #{options[:target_encoding]}]") { |e|
-    options[:target_encoding] = e
+  opts.on('-t', '--target-encoding ENCODING', "Target encoding of your system [Default: #{options[:target_encoding]}]") { |encoding|
+    options[:target_encoding] = encoding
   }
 
   opts.separator ''
 
   opts.on('-L', '--list-encodings', 'Print a list of all available encodings on your system and exit') {
-    puts CGE::Encoding.all_encodings
+    puts CMess::GuessEncoding::Encoding.all_encodings
     exit
   }
 
   opts.separator ''
   opts.separator '  * Charcodes'
-  opts.separator ''
 
-  opts.on('-C', '--charcodes CHARCODES', "Specify a list of character codes (in hexadecimal by default)", "for manual guessing. (Options '-e', '-a', and '-t' apply here", "as well; see under \"Manual guessing\" for details.)") { |c|
-    options[:charcodes] = c.split(SPLIT_ARG_LIST_RE)
+  opts.on('-C', '--charcodes CHARCODES', 'Specify a list of character codes (in hexadecimal by default)', "for manual guessing. (Options '-e', '-a', and '-t' apply here", 'as well; see "Manual guessing" for details.)') { |charcodes|
+    options[:charcodes] = arg_list(charcodes)
   }
 
   opts.separator ''
 
-  opts.on('-D', '--decimal', "Charcodes are in decimal") {
-    options[:decimal] = true
+  opts.on('-D', '--decimal', 'Charcodes are in decimal') {
+    options[:base] = 10
   }
 
-  opts.on('-O', '--octal', "Charcodes are in octal") {
-    options[:octal] = true
+  opts.on('-O', '--octal', 'Charcodes are in octal') {
+    options[:base] = 8
   }
 
   opts.separator ''
   opts.separator 'Generic options:'
 
-  opts.on('-h', '--help', "Print this help message and exit") {
+  opts.on('-h', '--help', 'Print this help message and exit') {
     puts opts
     exit
   }
 
-  opts.on('--version', "Print program version and exit") {
-    puts "#{PROGNAME} v#{CGE::VERSION} (part of cmess v#{CMess::VERSION})"
+  opts.on('--version', 'Print program version and exit') {
+    puts "#{File.basename($0)} v#{CMess::GuessEncoding::VERSION} (part of cmess v#{CMess::VERSION})"
     exit
   }
 
   opts.separator ''
   opts.separator 'Supported encodings for automatic guessing (will be tried in that order):'
-  CGE::Automatic.supported_encodings.join(', ').word_wrap(110, true).each { |l|
-    opts.separator l
+  CMess::GuessEncoding::Automatic.supported_encodings.join(', ').word_wrap(110, true).each { |list|
+    opts.separator list
   }
 
   opts.separator ''
   opts.separator 'Supported encodings for BOM detection (will be tried in that order):'
-  CGE::Automatic.supported_boms.join(', ').word_wrap(110, true).each { |l|
-    opts.separator l
+  CMess::GuessEncoding::Automatic.supported_boms.join(', ').word_wrap(110, true).each { |list|
+    opts.separator list
   }
 
   opts.separator ''
   opts.separator 'Default encodings for manual guessing:'
-  CGE::Manual::ENCODINGS.join(', ').word_wrap(110, true).each { |l|
-    opts.separator l
+  CMess::GuessEncoding::Manual::ENCODINGS.join(', ').word_wrap(110, true).each { |list|
+    opts.separator list
   }
 
   opts.separator ''
   opts.separator 'Likely candidates for additional testing:'
-  CGE::Manual::CANDIDATES.join(', ').word_wrap(110, true).each { |l|
-    opts.separator l
+  CMess::GuessEncoding::Manual::CANDIDATES.join(', ').word_wrap(110, true).each { |list|
+    opts.separator list
   }
 
   opts.separator ''
-  opts.separator 'NOTE: To select all encodings available on your system (see \'-L\'), specify __ALL__.'
+  opts.separator "NOTE: To select all encodings available on your system (see '-L'), specify __ALL__."
   opts.separator '      To select the likely candidates named above, specify __COMMON__.'
 
   opts.separator ''
-  opts.separator "When FILE is -, STDIN is used."
-}.parse!
+  opts.separator 'When FILE is -, STDIN is used.'
+}
 
 cli do
   trailing_args_as_input(options)
@@ -198,27 +180,17 @@ cli do
     options[:target_encoding].call if options[:target_encoding].respond_to?(:call)
 
     if charcodes = options[:charcodes]
-      base  = options[:octal] ? 8 : options[:decimal] ? 10 : 16
-      input = charcodes.map { |c| c.to_i(base).chr }.join
+      input = charcodes.map { |charcode| charcode.to_i(options[:base]).chr }.join
     else
-      # reset line counter
-      $. = 0
-
-      input = options[:input].each { |line|
-        break line if $. == options[:line]
-      }
+      $. = 0 # reset line counter
+      input = options[:input].each { |line| break line if $. == options[:line] }
 
       abort "Input was empty!" if $..zero?
       abort "Line not found -- input has only #{$.} line#{'s' if $. != 1}" unless input.is_a?(String)
     end
 
-    CGE::Manual.display(
-      input,
-      options[:target_encoding],
-      options[:encodings],
-      options[:additional_encodings]
-    )
-  else  # automatic
-    puts CGE::Automatic.guess(options[:input], options[:chunk_size], options[:ignore_bom])
+    CMess::GuessEncoding.manual(options.merge(:input => input))
+  else
+    puts CMess::GuessEncoding.automatic(options[:input], options[:chunk_size], options[:ignore_bom])
   end
 end

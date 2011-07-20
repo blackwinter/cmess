@@ -30,15 +30,19 @@
 ###############################################################################
 #++
 
+require 'cmess'
+
 # Allows to guess an input's encoding either manually or automatically.
 # Works actually pretty good -- for the supported encodings. See Manual
 # and Automatic for details.
 
-module CMess
-  module GuessEncoding
+module CMess::GuessEncoding
 
-  # our version ;-)
-  VERSION = '0.0.9'
+  VERSION = '0.1.0'
+
+  autoload :Encoding,  'cmess/guess_encoding/encoding'
+  autoload :Manual,    'cmess/guess_encoding/manual'
+  autoload :Automatic, 'cmess/guess_encoding/automatic'
 
   class << self
 
@@ -46,16 +50,14 @@ module CMess
       Manual.display(*args)
     end
 
+    alias_method :display, :manual
+
     def automatic(*args)
       Automatic.guess(*args)
     end
 
-  end
+    alias_method :guess, :automatic
 
   end
+
 end
-
-%w[encoding manual automatic].each { |lib|
-  lib = "cmess/guess_encoding/#{lib}"
-  require lib
-}

@@ -30,25 +30,24 @@
 ###############################################################################
 #++
 
-require 'iconv'
+require 'cmess/guess_encoding'
 
-require 'rubygems'
 require 'nuggets/array/runiq'
 require 'nuggets/array/in_order'
+require 'nuggets/enumerable/minmax'
 
-# Outputs given string (or line), being encoded in target encoding, encoded in
-# various test encodings, thus allowing to identify the (seemingly) correct
-# encoding by visually comparing the input string with its desired appearance.
+# Outputs given string (or line), being encoded in target encoding,
+# encoded in various test encodings, thus allowing to identify the
+# (seemingly) correct encoding by visually comparing the input string
+# with its desired appearance.
 
-module CMess
-  module GuessEncoding
-    module Manual
+module CMess::GuessEncoding::Manual
 
   extend self
 
-  include Encoding
+  include CMess::GuessEncoding::Encoding
 
-  # default encodings to try
+  # Default encodings to try
   ENCODINGS = [
     ISO_8859_1,
     ISO_8859_2,
@@ -62,7 +61,7 @@ module CMess
     UTF_8
   ]
 
-  # likely candidates to suggest to the user
+  # Likely candidates to suggest to the user
   CANDIDATES = [
     ANSI_X34,
     EBCDIC_AT_DE,
@@ -81,16 +80,14 @@ module CMess
     UTF_32LE
   ]
 
-  def display(input, target_encoding, encodings = nil, additional_encodings = [])
-    target = target_encoding
+  def display(options)
+    input, target = CMess.ensure_options!(options, :input, :target_encoding)
 
-    encodings = (encodings || ENCODINGS) + additional_encodings
+    encodings = (options[:encodings] || ENCODINGS) +
+                (options[:additional_encodings] || [])
 
-    if encodings.include?('__ALL__')
-      encodings.replace(all_encodings.dup)
-    elsif encodings.delete('__COMMON__')
-      encodings.concat(CANDIDATES)
-    end
+    encodings.concat(all_encodings) if encodings.delete('__ALL__')
+    encodings.concat(CANDIDATES)    if encodings.delete('__COMMON__')
 
     # uniq with additional encodings staying at the end
     encodings.runiq!
@@ -98,7 +95,7 @@ module CMess
     # move target encoding to front
     encodings.in_order!(target)
 
-    max_length = encodings.map { |encoding| encoding.length }.max
+    max_length = encodings.max(:length)
 
     encodings.each { |encoding|
       converted = begin
@@ -109,7 +106,7 @@ module CMess
         if encoding == target
           raise ArgumentError, "invalid encoding: #{encoding}"
         else
-          "INVALID ENCODING!"
+          'INVALID ENCODING!'
         end
       end
 
@@ -117,6 +114,4 @@ module CMess
     }
   end
 
-    end
-  end
 end

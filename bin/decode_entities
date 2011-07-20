@@ -29,16 +29,8 @@
 ###############################################################################
 #++
 
-require 'optparse'
-
-$: << File.join(File.dirname(__FILE__), '..', 'lib')
-
 require 'cmess/decode_entities'
-require 'cmess/cli'
-
 include CMess::CLI
-
-PROGNAME = File.basename($0)
 
 options = {
   :input           => STDIN,
@@ -48,59 +40,59 @@ options = {
   :flavour         => CMess::DecodeEntities::DEFAULT_FLAVOUR
 }
 
-OptionParser.new { |opts|
+parse_options { |opts|
   opts.banner = "Usage: #{$0} [options] [FILE...]"
 
   opts.separator ''
   opts.separator 'Options:'
 
-  opts.on('-i', '--input FILE', "Input file to read from [Default: STDIN]") { |f|
-    options[:input] = open_file_or_std(f)
+  opts.on('-i', '--input FILE', 'Input file to read from [Default: STDIN]') { |input|
+    options[:input] = open_file_or_std(input)
     options[:input_set] = true
   }
 
-  opts.on('-o', '--output FILE', "Output file to write to [Default: STDOUT]") { |f|
-    options[:output] = open_file_or_std(f, 'w')
+  opts.on('-o', '--output FILE', 'Output file to write to [Default: STDOUT]') { |output|
+    options[:output] = open_file_or_std(output, 'w')
   }
 
-  opts.on('-I', '--in-place FILE', "Modify file in-place; sets '-i' and '-o'") { |f|
-    options[:input], options[:output] = open_file_in_place(f)
+  opts.on('-I', '--in-place FILE', "Modify file in-place; sets '-i' and '-o'") { |file|
+    options[:input], options[:output] = open_file_in_place(file)
     options[:input_set] = true
   }
 
   opts.separator ''
 
-  opts.on('-e', '--source-encoding ENCODING', "Encoding of input file [Default: #{options[:source_encoding].upcase}]") { |e|
-    options[:source_encoding] = e.downcase
+  opts.on('-e', '--source-encoding ENCODING', "Encoding of input file [Default: #{options[:source_encoding].upcase}]") { |encoding|
+    options[:source_encoding] = encoding.downcase
   }
 
-  opts.on('-t', '--target-encoding ENCODING', "Desired encoding for output file [Default: <source_encoding>]") { |e|
-    options[:target_encoding] = e.downcase
+  opts.on('-t', '--target-encoding ENCODING', 'Desired encoding for output file [Default: <source_encoding>]') { |encoding|
+    options[:target_encoding] = encoding.downcase
   }
 
   opts.separator ''
 
   opts.on('-f', '--flavour FLAVOUR', "Flavour to use for the HTMLEntities decoder [Default: #{options[:flavour]}]",
-                                     "(Available flavours are: #{HTMLEntities::FLAVORS.join(', ')})") { |f|
-    options[:flavour] = f
+                                     "(Available flavours are: #{HTMLEntities::FLAVORS.join(', ')})") { |flavour|
+    options[:flavour] = flavour
   }
 
   opts.separator ''
   opts.separator 'Generic options:'
 
-  opts.on('-h', '--help', "Print this help message and exit") {
+  opts.on('-h', '--help', 'Print this help message and exit') {
     puts opts
     exit
   }
 
-  opts.on('--version', "Print program version and exit") {
-    puts "#{PROGNAME} v#{CMess::DecodeEntities::VERSION} (part of cmess v#{CMess::VERSION})"
+  opts.on('--version', 'Print program version and exit') {
+    puts "#{File.basename($0)} v#{CMess::DecodeEntities::VERSION} (part of cmess v#{CMess::VERSION})"
     exit
   }
 
   opts.separator ''
-  opts.separator "When FILE is -, either STDIN or STDOUT is used (as appropriate)."
-}.parse!
+  opts.separator 'When FILE is -, either STDIN or STDOUT is used (as appropriate).'
+}
 
 cli do
   trailing_args_as_input(options)

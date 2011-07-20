@@ -30,11 +30,11 @@
 ###############################################################################
 #++
 
+require 'cmess/guess_encoding'
+
 # Namespace for our encodings.
 
-module CMess
-  module GuessEncoding
-    module Encoding
+module CMess::GuessEncoding::Encoding
 
   extend self
 
@@ -50,8 +50,8 @@ module CMess
   private
 
   def get_all_encodings
-    %x{iconv -l}.split("\n").map { |e|
-      get_or_set_encoding_const(e.sub(/\/*\z/, ''))
+    %x{iconv -l}.split($/).map { |encoding|
+      get_or_set_encoding_const(encoding.sub(%r{/*\z}, ''))
     }
   end
 
@@ -75,14 +75,12 @@ module CMess
     ISO-8859-11 ISO-8859-13 ISO-8859-14 ISO-8859-15 ISO-8859-16
     CP1250 CP1251 CP1252 CP850 CP852 CP856
     UTF-8 UTF-16 UTF-16BE UTF-16LE UTF-32 UTF-32BE UTF-32LE
-    UTF-7 UTF-EBCDIC SCSU BOCU-1
+    UTF-7 UTF-1 UTF-EBCDIC SCSU BOCU-1 GB-18030
     ANSI_X3.4 EBCDIC-AT-DE EBCDIC-US EUC-JP KOI-8 MS-ANSI SHIFT-JIS
   ].each { |encoding| set_encoding_const(encoding) }
 
-  def included(base)
-    base.extend self
+  def self.included(base)
+    base.extend(self)
   end
 
-    end
-  end
 end

@@ -26,23 +26,24 @@
 ###############################################################################
 #++
 
-require 'yaml'
-require 'iconv'
 require 'cmess'
+require 'yaml'
 
 # Convert between bibliographic (and other) encodings.
 
-module CMess
-  class BConv
+class CMess::BConv
 
-  # our version ;-)
-  VERSION = '0.0.2'
+  VERSION = '0.0.3'
 
   INTERMEDIATE_ENCODING = 'utf-8'
 
-  DEFAULT_CHARTAB_FILE = File.join(DATA_DIR, 'chartab.yaml')
+  DEFAULT_CHARTAB_FILE = File.join(CMess::DATA_DIR, 'chartab.yaml')
 
   class << self
+
+    def convert(*args)
+      new(*args).convert
+    end
 
     def encodings(chartab = DEFAULT_CHARTAB_FILE)
       chartab = load_chartab(chartab)
@@ -50,10 +51,6 @@ module CMess
       chartab[chartab.keys.first].keys.map { |encoding|
         encoding.upcase unless encoding =~ /\A__/
       }.compact.sort
-    end
-
-    def convert(*args)
-      new(*args).convert
     end
 
     def load_chartab(chartab)
@@ -72,13 +69,15 @@ module CMess
 
   attr_reader :input, :output, :source_encoding, :target_encoding, :chartab, :encodings
 
-  def initialize(input, output, source_encoding, target_encoding, chartab = DEFAULT_CHARTAB_FILE)
-    @input, @output = input, output
+  def initialize(options)
+    @input, @output, _ = CMess.ensure_options!(options,
+      :input, :output, :source_encoding, :target_encoding
+    )
 
-    @source_encoding = source_encoding.upcase
-    @target_encoding = target_encoding.upcase
+    @source_encoding = options[:source_encoding].upcase
+    @target_encoding = options[:target_encoding].upcase
 
-    @chartab = self.class.load_chartab(chartab)
+    @chartab   = self.class.load_chartab(options[:chartab] || DEFAULT_CHARTAB_FILE)
     @encodings = self.class.encodings(@chartab)
   end
 
@@ -167,5 +166,4 @@ module CMess
     map
   end
 
-  end
 end

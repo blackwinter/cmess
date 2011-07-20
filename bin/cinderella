@@ -29,17 +29,10 @@
 ###############################################################################
 #++
 
-require 'optparse'
-require 'yaml'
-
-$: << File.join(File.dirname(__FILE__), '..', 'lib')
-
 require 'cmess/cinderella'
-require 'cmess/cli'
-
 include CMess::CLI
 
-PROGNAME = File.basename($0)
+progname = File.basename($0)
 
 options = {
   :input           => STDIN,
@@ -52,82 +45,82 @@ options = {
   :repair          => false
 }
 
-OptionParser.new(nil, 40) { |opts|
+parse_options { |opts|
   opts.banner = "Usage: #{$0} [options] [FILE...]"
 
   opts.separator ''
   opts.separator 'Options:'
 
-  opts.on('-i', '--input FILE', "Input file to read from [Default: STDIN]") { |f|
-    options[:input] = open_file_or_std(f)
+  opts.on('-i', '--input FILE', 'Input file to read from [Default: STDIN]') { |input|
+    options[:input] = open_file_or_std(input)
     options[:input_set] = true
   }
 
   opts.separator ''
 
-  opts.on('-p', '--pot FILE', "The good into the pot...") { |f|
-    options[:pot] = open_file_or_std(f, 'w')
+  opts.on('-p', '--pot FILE', 'The good into the pot...') { |pot|
+    options[:pot] = open_file_or_std(pot, 'w')
   }
 
-  opts.on('-c', '--crop FILE', "...the bad into the crop") { |f|
-    options[:crop] = open_file_or_std(f, 'w')
-  }
-
-  opts.separator ''
-
-  opts.on('-o', '--output [FILE]', "Write both good and bad lines to FILE or", "default [Default: STDOUT] (Particularly", "useful in combination with the '-r' option)") { |f|
-    options[:output] = open_file_or_std(f, 'w') if f
-
-    options[:pot]  = options[:output]
-    options[:crop] = options[:output]
+  opts.on('-c', '--crop FILE', '...the bad into the crop') { |crop|
+    options[:crop] = open_file_or_std(crop, 'w')
   }
 
   opts.separator ''
 
-  opts.on('-I', '--in-place FILE', "Modify file in-place; sets '-i' and '-o'", "(Only really useful in combination with", "the '-r' option)") { |f|
-    options[:input], options[:output] = open_file_in_place(f)
+  opts.on('-o', '--output [FILE]', 'Write both good and bad lines to FILE or', 'default [Default: STDOUT] (Particularly', "useful in combination with the '-r' option)") { |output|
+    options[:output] = open_file_or_std(output, 'w') if output
+    options[:pot] = options[:crop] = options[:output]
+  }
+
+  opts.separator ''
+
+  opts.on('-I', '--in-place FILE', "Modify file in-place; sets '-i' and '-o'", '(Only really useful in combination with', "the '-r' option)") { |file|
+    options[:input], options[:output] = open_file_in_place(file)
     options[:input_set] = true
 
-    options[:pot]  = options[:output]
-    options[:crop] = options[:output]
+    options[:pot] = options[:crop] = options[:output]
   }
 
   opts.separator ''
 
-  opts.on('-e', '--source-encoding ENCODING', "Source encoding (from) [REQUIRED]") { |e|
-    options[:source_encoding] = e
+  opts.on('-e', '--source-encoding ENCODING', 'Source encoding (from) [REQUIRED]') { |encoding|
+    options[:source_encoding] = encoding
   }
 
-  opts.on('-t', '--target-encoding ENCODING', "Target encoding (to); see '-l' for a list", "of available encodings [Default: #{options[:target_encoding]}]") { |e|
-    options[:target_encoding] = e
-  }
-
-  opts.separator ''
-
-  opts.on('-T', '--addtl-target-encodings DIRECTORY', "Directory providing additional char files", "for target encoding") { |d|
-    ensure_directory(d)
-
-    options[:csets] |= [File.expand_path(d)]
+  opts.on('-t', '--target-encoding ENCODING', "Target encoding (to); see '-l' for a list", "of available encodings [Default: #{options[:target_encoding]}]") { |encoding|
+    options[:target_encoding] = encoding
   }
 
   opts.separator ''
 
-  opts.on('-l', '--list-encodings', "Display a list of available target encodings", "and exit; see '-T' on how to add your own") {
-    csets = options[:csets].inject({}) { |hash, cset|
+  opts.on('-T', '--addtl-target-encodings DIRECTORY', 'Directory providing additional char files', 'for target encoding') { |directory|
+    ensure_directory(directory)
+    options[:csets] |= [File.expand_path(directory)]
+  }
+
+  opts.separator ''
+
+  opts.on('-l', '--list-encodings', 'Display a list of available target encodings', "and exit; see '-T' on how to add your own") {
+    csets = {}
+
+    options[:csets].each { |cset|
       encodings = Dir[File.join(cset, '*.yaml')].sort.map { |yaml|
         File.basename(yaml, '.yaml') unless File.symlink?(yaml)
       }.compact
 
-      hash[cset] = encodings unless encodings.empty?
-      hash
+      csets[cset] = encodings unless encodings.empty?
     }
 
     if csets.empty?
-      puts "No target encodings available for #{PROGNAME}"
+      puts "No target encodings available for #{progname}"
     else
-      puts "Available target encodings for #{PROGNAME}:"
+      puts "Available target encodings for #{progname}:"
+
       csets.each { |cset, encodings|
+        puts
         puts "[#{cset}]"
+
         encodings.each { |encoding|
           puts "  - #{encoding}"
         }
@@ -139,52 +132,42 @@ OptionParser.new(nil, 40) { |opts|
 
   opts.separator ''
 
-  opts.on('-r', '--repair', "Try to repair corrupted characters") {
+  opts.on('-r', '--repair', 'Try to repair corrupted characters') {
     options[:repair] = true
   }
 
   opts.separator ''
   opts.separator 'Generic options:'
 
-  opts.on('-h', '--help', "Print this help message and exit") {
+  opts.on('-h', '--help', 'Print this help message and exit') {
     puts opts
     exit
   }
 
-  opts.on('--version', "Print program version and exit") {
-    puts "#{PROGNAME} v#{CMess::Cinderella::VERSION} (part of cmess v#{CMess::VERSION})"
+  opts.on('--version', 'Print program version and exit') {
+    puts "#{progname} v#{CMess::Cinderella::VERSION} (part of cmess v#{CMess::VERSION})"
     exit
   }
 
   opts.separator ''
   opts.separator "If '-p' or '-c' is omitted, and '-o' is not given either, that particular output"
-  opts.separator "is ignored. When FILE is -, either STDIN or STDOUT is used (as appropriate)."
-}.parse!
+  opts.separator 'is ignored. When FILE is -, either STDIN or STDOUT is used (as appropriate).'
+}
 
 cli do
   options[:target_encoding].call if options[:target_encoding].respond_to?(:call)
 
-  abort "No source encoding given! (Use the '-e' switch to do so; see '--help' for more information)" \
-    unless options[:source_encoding]
+  abort "No source encoding given! (Use the '-e' switch to do so; see '--help' for more information)" unless options[:source_encoding]
 
   yaml_file = "#{options[:target_encoding].downcase}.yaml"
-  char_file = options[:csets].inject(nil) { |path, cset|
+  char_file = options[:csets].find { |cset|
     path = File.join(cset, yaml_file)
     break path if File.readable?(path)
   }
 
-  abort "Char file not found for target encoding: #{options[:target_encoding]}" \
-    unless char_file
+  abort "Char file not found for target encoding: #{options[:target_encoding]}" unless char_file
 
   trailing_args_as_input(options)
 
-  CMess::Cinderella.pick(
-    options[:input],
-    options[:pot],
-    options[:crop],
-    options[:source_encoding],
-    options[:target_encoding],
-    YAML.load_file(char_file),
-    options[:repair]
-  )
+  CMess::Cinderella.pick(options.merge(:chars => YAML.load_file(char_file)))
 end

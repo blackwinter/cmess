@@ -26,16 +26,27 @@
 ###############################################################################
 #++
 
+require 'cmess'
+
+require 'optparse'
 require 'tempfile'
-
-require 'rubygems'
+require 'yaml'
 require 'nuggets/env/user_encoding'
+require 'nuggets/string/capitalize_first'
+require 'nuggets/string/word_wrap'
 
-module CMess
-  module CLI
+module CMess::CLI
 
-  # how to split list of arguments
-  SPLIT_ARG_LIST_RE = /\s*[,\s]\s*/o
+  # How to split list of arguments.
+  SPLIT_ARG_LIST_RE = %r{\s*[,\s]\s*}
+
+  def parse_options(&block)
+    OptionParser.new(nil, 40, &block).parse!
+  end
+
+  def arg_list(arg)
+    arg.split(SPLIT_ARG_LIST_RE)
+  end
 
   def ensure_readable(file)
     abort "Can't find input file: #{file}" unless File.readable?(file)
@@ -55,7 +66,7 @@ module CMess
         when 'r' then STDIN
         when 'w' then STDOUT
         when 'a' then STDERR
-        else          raise ArgumentError, "don't know how to handle mode '#{mode}'"
+        else          raise ArgumentError, "don't know how to handle mode `#{mode}'"
       end
     else
       ensure_readable(file) unless mode == 'w'
@@ -114,9 +125,8 @@ it explicitly via the ENCODING environment variable or via the '-t' option.
 
       abort "#{backtrace.first} #{err} (#{err.class})#{fromtrace}"
     else
-      abort "#{err.to_s.capitalize} [#{err.backtrace.first}]"
+      abort "#{err.to_s.capitalize_first} [#{err.backtrace.first}]"
     end
   end
 
-  end
 end

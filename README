@@ -11,15 +11,16 @@ CMess bundles several tools under its hood that aim at dealing with various
 problems occurring in the context of character sets and encodings. Currently,
 there are:
 
-guess_encoding::  Simple helper to identify the encoding of a given string.
-                  Includes the ability to automatically detect the encoding
-                  of an input.
-cinderella::      When characters are "double encoded", you can't easily
-                  convert them back -- this is where cinderella comes in,
-                  sorting the good ones into the pot and the (potentially)
-                  bad ones into the crop...
-bconv::           Convert between bibliographic (and other) encodings.
-decode_entities:: Decode HTML entities in a string.
++guess_encoding+::  Simple helper to identify the encoding of a given string.
+                    Includes the ability to automatically detect the encoding
+                    of an input. (see CMess::GuessEncoding)
++cinderella+::      When characters are "double encoded", you can't easily
+                    convert them back -- this is where cinderella comes in,
+                    sorting the good ones into the pot and the (potentially)
+                    bad ones into the crop... (see CMess::Cinderella)
++bconv+::           Convert between bibliographic (and other) encodings.
+                    (see CMess::BConv)
++decode_entities+:: Decode HTML entities in a string. (see CMess::DecodeEntities)
 
 TODO: well, more of the description... ;-)
 

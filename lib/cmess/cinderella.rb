@@ -26,7 +26,6 @@
 ###############################################################################
 #++
 
-require 'iconv'
 require 'cmess'
 
 # Find (and possibly repair) doubly encoded characters. Here's how it's done:
@@ -36,20 +35,23 @@ require 'cmess'
 # containing those doubly encoded characters; if asked to repair doubly
 # encoded characters, substitutes them with their original character.
 
-module CMess
-  module Cinderella
+module CMess::Cinderella
 
   extend self
 
-  # our version ;-)
-  VERSION = '0.0.4'
+  VERSION = '0.0.5'
 
-  DEFAULT_CSETS_DIR = File.join(DATA_DIR, 'csets')
+  DEFAULT_CSETS_DIR = File.join(CMess::DATA_DIR, 'csets')
 
-  def pick(input, pot, crop, source_encoding, target_encoding, chars, repair = false)
-    iconv, encoded = Iconv.new(target_encoding, source_encoding), {}
+  def pick(options)
+    CMess.ensure_options!(options,
+      :input, :pot, :crop, :source_encoding, :target_encoding, :chars
+    )
 
-    chars.each { |char|
+    encoded = {}
+    iconv = Iconv.new(*options.values_at(:target_encoding, :source_encoding))
+
+    options[:chars].each { |char|
       begin
         encoded[iconv.iconv(char)] = char
       rescue Iconv::IllegalSequence
@@ -57,15 +59,14 @@ module CMess
     }
 
     regexp = Regexp.union(*encoded.keys)
+    pot, crop, repair = options.values_at(:pot, :crop, :repair)
 
-    input.each { |line|
+    options[:input].each { |line|
       if out = line =~ regexp ? crop : pot
         line.gsub!(regexp) { |m| encoded[m] } if repair
-
         out.puts(line)
       end
     }
   end
 
-  end
 end

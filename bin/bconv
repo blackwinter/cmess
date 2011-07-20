@@ -29,19 +29,8 @@
 ###############################################################################
 #++
 
-require 'optparse'
-
-require 'rubygems'
-require 'nuggets/string/word_wrap'
-
-$: << File.join(File.dirname(__FILE__), '..', 'lib')
-
 require 'cmess/bconv'
-require 'cmess/cli'
-
 include CMess::CLI
-
-PROGNAME = File.basename($0)
 
 options = {
   :input           => STDIN,
@@ -51,62 +40,62 @@ options = {
   :chartab_file    => CMess::BConv::DEFAULT_CHARTAB_FILE
 }
 
-OptionParser.new(nil, 40) { |opts|
+parse_options { |opts|
   opts.banner = "Usage: #{$0} [options] [FILE...]"
 
   opts.separator ''
   opts.separator 'Options:'
 
-  opts.on('-i', '--input FILE', "Input file to read from [Default: STDIN]") { |f|
-    options[:input] = open_file_or_std(f)
+  opts.on('-i', '--input FILE', 'Input file to read from [Default: STDIN]') { |input|
+    options[:input] = open_file_or_std(input)
     options[:input_set] = true
   }
 
-  opts.on('-o', '--output FILE', "Output file to write to [Default: STDOUT]") { |f|
-    options[:output] = open_file_or_std(f, 'w')
+  opts.on('-o', '--output FILE', 'Output file to write to [Default: STDOUT]') { |output|
+    options[:output] = open_file_or_std(output, 'w')
   }
 
-  opts.on('-I', '--in-place FILE', "Modify file in-place; sets '-i' and '-o'") { |f|
-    options[:input], options[:output] = open_file_in_place(f)
+  opts.on('-I', '--in-place FILE', "Modify file in-place; sets '-i' and '-o'") { |file|
+    options[:input], options[:output] = open_file_in_place(file)
     options[:input_set] = true
   }
 
   opts.separator ''
 
-  opts.on('-e', '--source-encoding ENCODING', "Encoding of input file [Default: #{options[:source_encoding]}]") { |e|
-    options[:source_encoding] = e.downcase
+  opts.on('-e', '--source-encoding ENCODING', "Encoding of input file [Default: #{options[:source_encoding]}]") { |encoding|
+    options[:source_encoding] = encoding.downcase
   }
 
-  opts.on('-t', '--target-encoding ENCODING', "Desired encoding for output file [Default: #{options[:target_encoding]}]") { |e|
-    options[:target_encoding] = e.downcase
+  opts.on('-t', '--target-encoding ENCODING', "Desired encoding for output file [Default: #{options[:target_encoding]}]") { |encoding|
+    options[:target_encoding] = encoding.downcase
   }
 
   opts.separator ''
 
-  opts.on('-c', '--chartab YAML_FILE', "File containing character mappings, in YAML format.", "[Default: #{options[:chartab_file]}]") { |c|
-    options[:chartab_file] = c
+  opts.on('-c', '--chartab YAML_FILE', 'File containing character mappings, in YAML format.', "[Default: #{options[:chartab_file]}]") { |chartab|
+    options[:chartab_file] = chartab
   }
 
-  opts.on('-l', '--list-encodings', "Print a list of all available bibliographic", "encodings and exit; depends on <chartab>, see '-c'") {
+  opts.on('-l', '--list-encodings', 'Print a list of all available bibliographic encodings', "and exit; depends on <chartab>, see '-c'") {
     options[:list_encodings] = true
   }
 
   opts.separator ''
   opts.separator 'Generic options:'
 
-  opts.on('-h', '--help', "Print this help message and exit") {
+  opts.on('-h', '--help', 'Print this help message and exit') {
     puts opts
     exit
   }
 
-  opts.on('--version', "Print program version and exit") {
-    puts "#{PROGNAME} v#{CMess::BConv::VERSION} (part of cmess v#{CMess::VERSION})"
+  opts.on('--version', 'Print program version and exit') {
+    puts "#{File.basename($0)} v#{CMess::BConv::VERSION} (part of cmess v#{CMess::VERSION})"
     exit
   }
 
   opts.separator ''
-  opts.separator "When FILE is -, either STDIN or STDOUT is used (as appropriate)."
-}.parse!
+  opts.separator 'When FILE is -, either STDIN or STDOUT is used (as appropriate).'
+}
 
 cli do
   if options[:list_encodings]
@@ -120,11 +109,5 @@ cli do
 
   trailing_args_as_input(options)
 
-  CMess::BConv.convert(
-    options[:input],
-    options[:output],
-    options[:source_encoding],
-    options[:target_encoding],
-    options[:chartab_file]
-  )
+  CMess::BConv.convert(options)
 end
