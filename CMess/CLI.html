@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: CMess::CLI</title>
+
+  <link rel="stylesheet" href="../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../index.html">Home</a>
+          <a href="../index.html#classes">Classes</a>
+          <a href="../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../lib/cmess/cli_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/cmess/cli.rb">lib/cmess/cli.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-arg_list">#arg_list</a></li>
+          
+          <li><a href="#method-i-cli">#cli</a></li>
+          
+          <li><a href="#method-i-determine_system_encoding">#determine_system_encoding</a></li>
+          
+          <li><a href="#method-i-ensure_directory">#ensure_directory</a></li>
+          
+          <li><a href="#method-i-ensure_readable">#ensure_readable</a></li>
+          
+          <li><a href="#method-i-open_file_in_place">#open_file_in_place</a></li>
+          
+          <li><a href="#method-i-open_file_or_std">#open_file_or_std</a></li>
+          
+          <li><a href="#method-i-open_temporary_input">#open_temporary_input</a></li>
+          
+          <li><a href="#method-i-parse_options">#parse_options</a></li>
+          
+          <li><a href="#method-i-trailing_args_as_input">#trailing_args_as_input</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../COPYING.html">COPYING</a></li>
+        
+          <li class="file"><a href="../ChangeLog.html">ChangeLog</a></li>
+        
+          <li class="file"><a href="../README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../CMess.html">CMess</a></li>
+        
+          <li><a href="../CMess/BConv.html">CMess::BConv</a></li>
+        
+          <li><a href="../CMess/CLI.html">CMess::CLI</a></li>
+        
+          <li><a href="../CMess/Cinderella.html">CMess::Cinderella</a></li>
+        
+          <li><a href="../CMess/DecodeEntities.html">CMess::DecodeEntities</a></li>
+        
+          <li><a href="../CMess/GuessEncoding.html">CMess::GuessEncoding</a></li>
+        
+          <li><a href="../CMess/GuessEncoding/Automatic.html">CMess::GuessEncoding::Automatic</a></li>
+        
+          <li><a href="../CMess/GuessEncoding/Automatic/BOMGuessers.html">CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
+        
+          <li><a href="../CMess/GuessEncoding/Automatic/EncodingGuessers.html">CMess::GuessEncoding::Automatic::EncodingGuessers</a></li>
+        
+          <li><a href="../CMess/GuessEncoding/Encoding.html">CMess::GuessEncoding::Encoding</a></li>
+        
+          <li><a href="../CMess/GuessEncoding/Manual.html">CMess::GuessEncoding::Manual</a></li>
+        
+          <li><a href="../CMess/Version.html">CMess::Version</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">CMess::CLI</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="SPLIT_ARG_LIST_RE">SPLIT_ARG_LIST_RE</a></dt>
+          
+          <dd class="description"><p>How to split list of arguments.</p></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="arg_list-method" class="method-detail ">
+          <a name="method-i-arg_list"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">arg_list</span><span
+              class="method-args">(arg)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="arg_list-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">arg_list</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">SPLIT_ARG_LIST_RE</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- arg_list-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- arg_list-method -->
+
+      
+        <div id="cli-method" class="method-detail ">
+          <a name="method-i-cli"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">cli</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="cli-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cli</span>
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">$VERBOSE</span>
+    <span class="ruby-identifier">backtrace</span> = <span class="ruby-identifier">err</span>.<span class="ruby-identifier">backtrace</span>
+    <span class="ruby-identifier">fromtrace</span> = <span class="ruby-identifier">backtrace</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;\n        from #{i}&quot;</span> }
+
+    <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;#{backtrace.first} #{err} (#{err.class})#{fromtrace}&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;#{err.to_s.capitalize_first} [#{err.backtrace.first}]&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- cli-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- cli-method -->
+
+      
+        <div id="determine_system_encoding-method" class="method-detail ">
+          <a name="method-i-determine_system_encoding"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">determine_system_encoding</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="determine_system_encoding-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">determine_system_encoding</span>
+  <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">user_encoding</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">dummy</span> = <span class="ruby-identifier">lambda</span> {
+      <span class="ruby-identifier">abort</span> <span class="ruby-string">Your system's encoding couldn't be determined automatically -- please specifyit explicitly via the ENCODING environment variable or via the '-t' option.</span>
+    }
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">dummy</span>.<span class="ruby-identifier">to_s</span>; <span class="ruby-string">'NOT FOUND'</span> <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">dummy</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- determine_system_encoding-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- determine_system_encoding-method -->
+
+      
+        <div id="ensure_directory-method" class="method-detail ">
+          <a name="method-i-ensure_directory"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ensure_directory</span><span
+              class="method-args">(dir)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="ensure_directory-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ensure_directory</span>(<span class="ruby-identifier">dir</span>)
+  <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;Directory not found: #{dir}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">dir</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- ensure_directory-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ensure_directory-method -->
+
+      
+        <div id="ensure_readable-method" class="method-detail ">
+          <a name="method-i-ensure_readable"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ensure_readable</span><span
+              class="method-args">(file)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="ensure_readable-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ensure_readable</span>(<span class="ruby-identifier">file</span>)
+  <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;Can't find input file: #{file}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span>(<span class="ruby-identifier">file</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- ensure_readable-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ensure_readable-method -->
+
+      
+        <div id="open_file_in_place-method" class="method-detail ">
+          <a name="method-i-open_file_in_place"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">open_file_in_place</span><span
+              class="method-args">(file)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="open_file_in_place-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">open_file_in_place</span>(<span class="ruby-identifier">file</span>)
+  [<span class="ruby-identifier">open_temporary_input</span>(<span class="ruby-identifier">file</span>), <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">file</span>, <span class="ruby-string">'w'</span>)]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- open_file_in_place-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- open_file_in_place-method -->
+
+      
+        <div id="open_file_or_std-method" class="method-detail ">
+          <a name="method-i-open_file_or_std"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">open_file_or_std</span><span
+              class="method-args">(file, mode = 'r')</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="open_file_or_std-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">open_file_or_std</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">mode</span> = <span class="ruby-string">'r'</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">==</span> <span class="ruby-string">'-'</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">mode</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">'r'</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">STDIN</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">'w'</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">STDOUT</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">'a'</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">STDERR</span>
+      <span class="ruby-keyword">else</span>          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;don't know how to handle mode `#{mode}'&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">ensure_readable</span>(<span class="ruby-identifier">file</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-string">'w'</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">mode</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- open_file_or_std-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- open_file_or_std-method -->
+
+      
+        <div id="open_temporary_input-method" class="method-detail ">
+          <a name="method-i-open_temporary_input"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">open_temporary_input</span><span
+              class="method-args">(*files)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="open_temporary_input-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">open_temporary_input</span>(*<span class="ruby-identifier">files</span>)
+  <span class="ruby-identifier">temp</span> = <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'cmess_cli'</span>)
+
+  <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">==</span> <span class="ruby-string">'-'</span>
+      <span class="ruby-constant">STDIN</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">temp</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span> }
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">ensure_readable</span>(<span class="ruby-identifier">file</span>)
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">file</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">temp</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span> } }
+    <span class="ruby-keyword">end</span>
+  }
+
+  <span class="ruby-comment"># return File, instead of Tempfile</span>
+  <span class="ruby-identifier">temp</span>.<span class="ruby-identifier">close</span>
+  <span class="ruby-identifier">temp</span>.<span class="ruby-identifier">open</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- open_temporary_input-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- open_temporary_input-method -->
+
+      
+        <div id="parse_options-method" class="method-detail ">
+          <a name="method-i-parse_options"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">parse_options</span><span
+              class="method-args">(&block)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="parse_options-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_options</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-value">40</span>, &amp;<span class="ruby-identifier">block</span>).<span class="ruby-identifier">parse!</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- parse_options-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- parse_options-method -->
+
+      
+        <div id="trailing_args_as_input-method" class="method-detail ">
+          <a name="method-i-trailing_args_as_input"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">trailing_args_as_input</span><span
+              class="method-args">(options)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="trailing_args_as_input-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">trailing_args_as_input</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:input_set</span>]
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:input</span>] = <span class="ruby-keyword">if</span> <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">open_file_or_std</span>(<span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">first</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">open_temporary_input</span>(*<span class="ruby-constant">ARGV</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- trailing_args_as_input-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- trailing_args_as_input-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

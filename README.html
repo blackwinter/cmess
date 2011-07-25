@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>File: README [cmess Application documentation (v0.3.0)]</title>
+
+  <link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet" />
+
+  <script src="./js/jquery.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/thickbox-compressed.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/quicksearch.js" type="text/javascript"
+    charset="utf-8"></script>
+  <script src="./js/darkfish.js" type="text/javascript"
+    charset="utf-8"></script>
+</head>
+
+<body class="file">
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="./COPYING.html">COPYING</a></li>
+        
+          <li class="file"><a href="./ChangeLog.html">ChangeLog</a></li>
+        
+          <li class="file"><a href="./README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="./CMess.html">CMess</a></li>
+        
+          <li><a href="./CMess/BConv.html">CMess::BConv</a></li>
+        
+          <li><a href="./CMess/CLI.html">CMess::CLI</a></li>
+        
+          <li><a href="./CMess/Cinderella.html">CMess::Cinderella</a></li>
+        
+          <li><a href="./CMess/DecodeEntities.html">CMess::DecodeEntities</a></li>
+        
+          <li><a href="./CMess/GuessEncoding.html">CMess::GuessEncoding</a></li>
+        
+          <li><a href="./CMess/GuessEncoding/Automatic.html">CMess::GuessEncoding::Automatic</a></li>
+        
+          <li><a href="./CMess/GuessEncoding/Automatic/BOMGuessers.html">CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
+        
+          <li><a href="./CMess/GuessEncoding/Automatic/EncodingGuessers.html">CMess::GuessEncoding::Automatic::EncodingGuessers</a></li>
+        
+          <li><a href="./CMess/GuessEncoding/Encoding.html">CMess::GuessEncoding::Encoding</a></li>
+        
+          <li><a href="./CMess/GuessEncoding/Manual.html">CMess::GuessEncoding::Manual</a></li>
+        
+          <li><a href="./CMess/Version.html">CMess::Version</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    
+<h1>cmess - Assist with handling messed up encodings</h1>
+
+<h2>VERSION</h2>
+
+<p>This documentation refers to cmess version 0.3.0</p>
+
+<h2>DESCRIPTION</h2>
+
+<p><a href="CMess.html">CMess</a> bundles several tools under its hood that
+aim at dealing with various problems occurring in the context of character
+sets and encodings. Currently, there are:</p>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p><tt>guess_encoding</tt></p></td>
+<td>
+<p>Simple helper to identify the encoding of a given string. Includes the
+ability to automatically detect the encoding of an input. (see <a
+href="CMess/GuessEncoding.html">CMess::GuessEncoding</a>)</p>
+</td></tr><tr><td class="rdoc-term"><p><tt>cinderella</tt></p></td>
+<td>
+<p>When characters are “double encoded”, you can’t easily convert them
+back – this is where cinderella comes in, sorting the good ones into the
+pot and the (potentially) bad ones into the crop… (see <a
+href="CMess/Cinderella.html">CMess::Cinderella</a>)</p>
+</td></tr><tr><td class="rdoc-term"><p><tt>bconv</tt></p></td>
+<td>
+<p>Convert between bibliographic (and other) encodings. (see <a
+href="CMess/BConv.html">CMess::BConv</a>)</p>
+</td></tr><tr><td class="rdoc-term"><p><tt>decode_entities</tt></p></td>
+<td>
+<p>Decode HTML entities in a string. (see <a
+href="CMess/DecodeEntities.html">CMess::DecodeEntities</a>)</p>
+</td></tr></table>
+
+<p>TODO: well, more of the description… ;-)</p>
+
+<h2>LINKS</h2>
+
+<p></p>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>Documentation</p></td>
+<td>
+<p><a
+href="http://prometheus.rubyforge.org/cmess">prometheus.rubyforge.org/cmess</a></p>
+</td></tr><tr><td class="rdoc-term"><p>Source code</p></td>
+<td>
+<p><a
+href="http://github.com/blackwinter/cmess">github.com/blackwinter/cmess</a></p>
+</td></tr><tr><td class="rdoc-term"><p>RubyForge project</p></td>
+<td>
+<p><a
+href="http://rubyforge.org/projects/prometheus">rubyforge.org/projects/prometheus</a></p>
+</td></tr><tr><td class="rdoc-term"><p>RubyGem</p></td>
+<td>
+<p><a href="http://rubygems.org/gems/cmess">rubygems.org/gems/cmess</a></p>
+</td></tr></table>
+
+<h2>AUTHORS</h2>
+<ul><li>
+<p>Jens Wille &lt;<a
+href="mailto:jens.wille@uni-koeln.de">jens.wille@uni-koeln.de</a>&gt;</p>
+</li></ul>
+
+<h2>CREDITS</h2>
+<ul><li>
+<p>John Vorhauer &lt;<a
+href="mailto:john@vorhauer.de">john@vorhauer.de</a>&gt; for the idea and
+original implementation of the automatic encoding guesser (see <a
+href="CMess/GuessEncoding/Automatic.html">CMess::GuessEncoding::Automatic</a>).</p>
+</li></ul>
+
+<h2>LICENSE AND COPYRIGHT</h2>
+
+<p>Copyright (C) 2007-2011 University of Cologne, Albertus-Magnus-Platz, 50923
+Cologne, Germany</p>
+
+<p>cmess is free software: you can redistribute it and/or modify it under the
+terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option)
+any later version.</p>
+
+<p>cmess is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for
+more details.</p>
+
+<p>You should have received a copy of the GNU Affero General Public License
+along with cmess. If not, see &lt;<a
+href="http://www.gnu.org/licenses/">www.gnu.org/licenses/</a>&gt;.</p>
+
+  </div>
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+</body>
+</html>
+

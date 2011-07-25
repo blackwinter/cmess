@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>Module: CMess::GuessEncoding::Automatic::BOMGuessers</title>
+
+  <link rel="stylesheet" href="../../../rdoc.css" type="text/css" media="screen" />
+
+  <script src="../../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="../../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="module">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="../../../index.html">Home</a>
+          <a href="../../../index.html#classes">Classes</a>
+          <a href="../../../index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="../../../lib/cmess/guess_encoding/automatic_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="lib/cmess/guess_encoding/automatic.rb">lib/cmess/guess_encoding/automatic.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+
+      
+
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-i-bom_encoding_01_UTF_8">#bom_encoding_01_UTF_8</a></li>
+          
+          <li><a href="#method-i-bom_encoding_02_UTF_16BE">#bom_encoding_02_UTF_16BE</a></li>
+          
+          <li><a href="#method-i-bom_encoding_03_UTF_16LE">#bom_encoding_03_UTF_16LE</a></li>
+          
+          <li><a href="#method-i-bom_encoding_04_UTF_32BE">#bom_encoding_04_UTF_32BE</a></li>
+          
+          <li><a href="#method-i-bom_encoding_05_UTF_32LE">#bom_encoding_05_UTF_32LE</a></li>
+          
+          <li><a href="#method-i-bom_encoding_06_SCSU">#bom_encoding_06_SCSU</a></li>
+          
+          <li><a href="#method-i-bom_encoding_07_UTF_7">#bom_encoding_07_UTF_7</a></li>
+          
+          <li><a href="#method-i-bom_encoding_08_UTF_1">#bom_encoding_08_UTF_1</a></li>
+          
+          <li><a href="#method-i-bom_encoding_09_UTF_EBCDIC">#bom_encoding_09_UTF_EBCDIC</a></li>
+          
+          <li><a href="#method-i-bom_encoding_10_BOCU_1">#bom_encoding_10_BOCU_1</a></li>
+          
+          <li><a href="#method-i-bom_encoding_11_GB_18030">#bom_encoding_11_GB_18030</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="../../../COPYING.html">COPYING</a></li>
+        
+          <li class="file"><a href="../../../ChangeLog.html">ChangeLog</a></li>
+        
+          <li class="file"><a href="../../../README.html">README</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="../../../images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="../../../CMess.html">CMess</a></li>
+        
+          <li><a href="../../../CMess/BConv.html">CMess::BConv</a></li>
+        
+          <li><a href="../../../CMess/CLI.html">CMess::CLI</a></li>
+        
+          <li><a href="../../../CMess/Cinderella.html">CMess::Cinderella</a></li>
+        
+          <li><a href="../../../CMess/DecodeEntities.html">CMess::DecodeEntities</a></li>
+        
+          <li><a href="../../../CMess/GuessEncoding.html">CMess::GuessEncoding</a></li>
+        
+          <li><a href="../../../CMess/GuessEncoding/Automatic.html">CMess::GuessEncoding::Automatic</a></li>
+        
+          <li><a href="../../../CMess/GuessEncoding/Automatic/BOMGuessers.html">CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
+        
+          <li><a href="../../../CMess/GuessEncoding/Automatic/EncodingGuessers.html">CMess::GuessEncoding::Automatic::EncodingGuessers</a></li>
+        
+          <li><a href="../../../CMess/GuessEncoding/Encoding.html">CMess::GuessEncoding::Encoding</a></li>
+        
+          <li><a href="../../../CMess/GuessEncoding/Manual.html">CMess::GuessEncoding::Manual</a></li>
+        
+          <li><a href="../../../CMess/Version.html">CMess::Version</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="module">CMess::GuessEncoding::Automatic::BOMGuessers</h1>
+
+    <div id="description" class="description">
+      
+<p><a href="http://en.wikipedia.org/wiki/Byte_order_mark">BOM</a> detection.</p>
+
+    </div><!-- description -->
+
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="bom_encoding_01_UTF_8-method" class="method-detail ">
+          <a name="method-i-bom_encoding_01_UTF_8"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bom_encoding_01_UTF_8</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="http://en.wikipedia.org/wiki/UTF-8">UTF-8</a></p>
+            
+
+            
+            <div class="method-source-code" id="bom_encoding_01_UTF_8-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 318</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_01_UTF_8</span>
+  <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0xef</span>, <span class="ruby-value">0xbb</span>, <span class="ruby-value">0xbf</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- bom_encoding_01_UTF_8-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bom_encoding_01_UTF_8-method -->
+
+      
+        <div id="bom_encoding_02_UTF_16BE-method" class="method-detail ">
+          <a name="method-i-bom_encoding_02_UTF_16BE"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bom_encoding_02_UTF_16BE</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="http://en.wikipedia.org/wiki/UTF-16">UTF-16</a> (Big Endian)</p>
+            
+
+            
+            <div class="method-source-code" id="bom_encoding_02_UTF_16BE-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 323</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_02_UTF_16BE</span>
+  <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0xfe</span>, <span class="ruby-value">0xff</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- bom_encoding_02_UTF_16BE-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bom_encoding_02_UTF_16BE-method -->
+
+      
+        <div id="bom_encoding_03_UTF_16LE-method" class="method-detail ">
+          <a name="method-i-bom_encoding_03_UTF_16LE"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bom_encoding_03_UTF_16LE</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="http://en.wikipedia.org/wiki/UTF-16">UTF-16</a> (Little Endian)</p>
+            
+
+            
+            <div class="method-source-code" id="bom_encoding_03_UTF_16LE-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 328</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_03_UTF_16LE</span>
+  <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0xff</span>, <span class="ruby-value">0xfe</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- bom_encoding_03_UTF_16LE-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bom_encoding_03_UTF_16LE-method -->
+
+      
+        <div id="bom_encoding_04_UTF_32BE-method" class="method-detail ">
+          <a name="method-i-bom_encoding_04_UTF_32BE"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bom_encoding_04_UTF_32BE</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="http://en.wikipedia.org/wiki/UTF-32">UTF-32</a> (Big Endian)</p>
+            
+
+            
+            <div class="method-source-code" id="bom_encoding_04_UTF_32BE-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 333</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_04_UTF_32BE</span>
+  <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0x00</span>, <span class="ruby-value">0x00</span>, <span class="ruby-value">0xfe</span>, <span class="ruby-value">0xff</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- bom_encoding_04_UTF_32BE-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bom_encoding_04_UTF_32BE-method -->
+
+      
+        <div id="bom_encoding_05_UTF_32LE-method" class="method-detail ">
+          <a name="method-i-bom_encoding_05_UTF_32LE"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bom_encoding_05_UTF_32LE</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="http://en.wikipedia.org/wiki/UTF-32">UTF-32</a> (Little Endian)</p>
+            
+
+            
+            <div class="method-source-code" id="bom_encoding_05_UTF_32LE-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 338</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_05_UTF_32LE</span>
+  <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0xff</span>, <span class="ruby-value">0xfe</span>, <span class="ruby-value">0x00</span>, <span class="ruby-value">0x00</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- bom_encoding_05_UTF_32LE-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bom_encoding_05_UTF_32LE-method -->
+
+      
+        <div id="bom_encoding_06_SCSU-method" class="method-detail ">
+          <a name="method-i-bom_encoding_06_SCSU"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bom_encoding_06_SCSU</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a
+href="http://en.wikipedia.org/wiki/Standard_Compression_Scheme_for_Unicode">SCSU</a></p>
+            
+
+            
+            <div class="method-source-code" id="bom_encoding_06_SCSU-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 343</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_06_SCSU</span>
+  <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0x0e</span>, <span class="ruby-value">0xfe</span>, <span class="ruby-value">0xff</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- bom_encoding_06_SCSU-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bom_encoding_06_SCSU-method -->
+
+      
+        <div id="bom_encoding_07_UTF_7-method" class="method-detail ">
+          <a name="method-i-bom_encoding_07_UTF_7"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bom_encoding_07_UTF_7</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="http://en.wikipedia.org/wiki/UTF-7">UTF-7</a></p>
+            
+
+            
+            <div class="method-source-code" id="bom_encoding_07_UTF_7-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 348</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_07_UTF_7</span>
+  <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0x2b</span>, <span class="ruby-value">0x2f</span>, <span class="ruby-value">0x76</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">next_one_of?</span>(<span class="ruby-value">0x38</span>, <span class="ruby-value">0x39</span>, <span class="ruby-value">0x2b</span>, <span class="ruby-value">0x2f</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- bom_encoding_07_UTF_7-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bom_encoding_07_UTF_7-method -->
+
+      
+        <div id="bom_encoding_08_UTF_1-method" class="method-detail ">
+          <a name="method-i-bom_encoding_08_UTF_1"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bom_encoding_08_UTF_1</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="http://en.wikipedia.org/wiki/UTF-1">UTF-1</a></p>
+            
+
+            
+            <div class="method-source-code" id="bom_encoding_08_UTF_1-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 353</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_08_UTF_1</span>
+  <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0xf7</span>, <span class="ruby-value">0x64</span>, <span class="ruby-value">0x4c</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- bom_encoding_08_UTF_1-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bom_encoding_08_UTF_1-method -->
+
+      
+        <div id="bom_encoding_09_UTF_EBCDIC-method" class="method-detail ">
+          <a name="method-i-bom_encoding_09_UTF_EBCDIC"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bom_encoding_09_UTF_EBCDIC</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="http://en.wikipedia.org/wiki/UTF-EBCDIC">UTF-EBCDIC</a></p>
+            
+
+            
+            <div class="method-source-code" id="bom_encoding_09_UTF_EBCDIC-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 358</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_09_UTF_EBCDIC</span>
+  <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0xdd</span>, <span class="ruby-value">0x73</span>, <span class="ruby-value">0x66</span>, <span class="ruby-value">0x73</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- bom_encoding_09_UTF_EBCDIC-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bom_encoding_09_UTF_EBCDIC-method -->
+
+      
+        <div id="bom_encoding_10_BOCU_1-method" class="method-detail ">
+          <a name="method-i-bom_encoding_10_BOCU_1"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bom_encoding_10_BOCU_1</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="http://en.wikipedia.org/wiki/BOCU-1">BOCU-1</a></p>
+            
+
+            
+            <div class="method-source-code" id="bom_encoding_10_BOCU_1-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 363</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_10_BOCU_1</span>
+  <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0xfb</span>, <span class="ruby-value">0xee</span>, <span class="ruby-value">0x28</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- bom_encoding_10_BOCU_1-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bom_encoding_10_BOCU_1-method -->
+
+      
+        <div id="bom_encoding_11_GB_18030-method" class="method-detail ">
+          <a name="method-i-bom_encoding_11_GB_18030"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">bom_encoding_11_GB_18030</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            <p><a href="http://en.wikipedia.org/wiki/GB-18030">GB-18030</a></p>
+            
+
+            
+            <div class="method-source-code" id="bom_encoding_11_GB_18030-source">
+<pre>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 368</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_11_GB_18030</span>
+  <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0x84</span>, <span class="ruby-value">0x31</span>, <span class="ruby-value">0x95</span>, <span class="ruby-value">0x33</span>)
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- bom_encoding_11_GB_18030-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- bom_encoding_11_GB_18030-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+

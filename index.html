@@ -1,1 +1,306 @@
-My GitHub Page
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+
+  <title>cmess Application documentation (v0.3.0)</title>
+
+  <link type="text/css" media="screen" href="rdoc.css" rel="stylesheet" />
+
+  <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body class="indexpage">
+
+  
+  <h1>cmess Application documentation (v0.3.0)</h1>
+
+  
+  <div id="main">
+    
+
+<h2>VERSION</h2>
+
+<p>This documentation refers to cmess version 0.3.0</p>
+
+<h2>DESCRIPTION</h2>
+
+<p><a href="CMess.html">CMess</a> bundles several tools under its hood that
+aim at dealing with various problems occurring in the context of character
+sets and encodings. Currently, there are:</p>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p><tt>guess_encoding</tt></p></td>
+<td>
+<p>Simple helper to identify the encoding of a given string. Includes the
+ability to automatically detect the encoding of an input. (see <a
+href="CMess/GuessEncoding.html">CMess::GuessEncoding</a>)</p>
+</td></tr><tr><td class="rdoc-term"><p><tt>cinderella</tt></p></td>
+<td>
+<p>When characters are “double encoded”, you can’t easily convert them
+back – this is where cinderella comes in, sorting the good ones into the
+pot and the (potentially) bad ones into the crop… (see <a
+href="CMess/Cinderella.html">CMess::Cinderella</a>)</p>
+</td></tr><tr><td class="rdoc-term"><p><tt>bconv</tt></p></td>
+<td>
+<p>Convert between bibliographic (and other) encodings. (see <a
+href="CMess/BConv.html">CMess::BConv</a>)</p>
+</td></tr><tr><td class="rdoc-term"><p><tt>decode_entities</tt></p></td>
+<td>
+<p>Decode HTML entities in a string. (see <a
+href="CMess/DecodeEntities.html">CMess::DecodeEntities</a>)</p>
+</td></tr></table>
+
+<p>TODO: well, more of the description… ;-)</p>
+
+<h2>LINKS</h2>
+
+<p></p>
+<table class="rdoc-list"><tr><td class="rdoc-term"><p>Documentation</p></td>
+<td>
+<p><a
+href="http://prometheus.rubyforge.org/cmess">prometheus.rubyforge.org/cmess</a></p>
+</td></tr><tr><td class="rdoc-term"><p>Source code</p></td>
+<td>
+<p><a
+href="http://github.com/blackwinter/cmess">github.com/blackwinter/cmess</a></p>
+</td></tr><tr><td class="rdoc-term"><p>RubyForge project</p></td>
+<td>
+<p><a
+href="http://rubyforge.org/projects/prometheus">rubyforge.org/projects/prometheus</a></p>
+</td></tr><tr><td class="rdoc-term"><p>RubyGem</p></td>
+<td>
+<p><a href="http://rubygems.org/gems/cmess">rubygems.org/gems/cmess</a></p>
+</td></tr></table>
+
+<h2>AUTHORS</h2>
+<ul><li>
+<p>Jens Wille &lt;<a
+href="mailto:jens.wille@uni-koeln.de">jens.wille@uni-koeln.de</a>&gt;</p>
+</li></ul>
+
+<h2>CREDITS</h2>
+<ul><li>
+<p>John Vorhauer &lt;<a
+href="mailto:john@vorhauer.de">john@vorhauer.de</a>&gt; for the idea and
+original implementation of the automatic encoding guesser (see <a
+href="CMess/GuessEncoding/Automatic.html">CMess::GuessEncoding::Automatic</a>).</p>
+</li></ul>
+
+<h2>LICENSE AND COPYRIGHT</h2>
+
+<p>Copyright (C) 2007-2011 University of Cologne, Albertus-Magnus-Platz, 50923
+Cologne, Germany</p>
+
+<p>cmess is free software: you can redistribute it and/or modify it under the
+terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option)
+any later version.</p>
+
+<p>cmess is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Affero General Public License for
+more details.</p>
+
+<p>You should have received a copy of the GNU Affero General Public License
+along with cmess. If not, see &lt;<a
+href="http://www.gnu.org/licenses/">www.gnu.org/licenses/</a>&gt;.</p>
+
+  </div>
+  
+
+  
+  
+  <h2>Files</h2>
+  <ul>
+    
+      <li class="file"><a href="COPYING.html">COPYING</a></li>
+    
+      <li class="file"><a href="ChangeLog.html">ChangeLog</a></li>
+    
+      <li class="file"><a href="README.html">README</a></li>
+    
+  </ul>
+  
+
+  <h2 id="classes">Classes/Modules</h2>
+  <ul>
+    
+    <li class="module"><a href="CMess.html">CMess</a></li>
+    
+    <li class="class"><a href="CMess/BConv.html">CMess::BConv</a></li>
+    
+    <li class="module"><a href="CMess/CLI.html">CMess::CLI</a></li>
+    
+    <li class="module"><a href="CMess/Cinderella.html">CMess::Cinderella</a></li>
+    
+    <li class="module"><a href="CMess/DecodeEntities.html">CMess::DecodeEntities</a></li>
+    
+    <li class="module"><a href="CMess/GuessEncoding.html">CMess::GuessEncoding</a></li>
+    
+    <li class="class"><a href="CMess/GuessEncoding/Automatic.html">CMess::GuessEncoding::Automatic</a></li>
+    
+    <li class="module"><a href="CMess/GuessEncoding/Automatic/BOMGuessers.html">CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
+    
+    <li class="module"><a href="CMess/GuessEncoding/Automatic/EncodingGuessers.html">CMess::GuessEncoding::Automatic::EncodingGuessers</a></li>
+    
+    <li class="module"><a href="CMess/GuessEncoding/Encoding.html">CMess::GuessEncoding::Encoding</a></li>
+    
+    <li class="module"><a href="CMess/GuessEncoding/Manual.html">CMess::GuessEncoding::Manual</a></li>
+    
+    <li class="module"><a href="CMess/Version.html">CMess::Version</a></li>
+    
+  </ul>
+
+  <h2 id="methods">Methods</h2>
+  <ul>
+    
+      <li><a href="CMess/GuessEncoding.html#method-c-automatic">::automatic &mdash; CMess::GuessEncoding</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic.html#method-c-bom_encoding">::bom_encoding &mdash; CMess::GuessEncoding::Automatic</a></li>
+    
+      <li><a href="CMess/BConv.html#method-c-convert">::convert &mdash; CMess::BConv</a></li>
+    
+      <li><a href="CMess/GuessEncoding.html#method-c-display">::display &mdash; CMess::GuessEncoding</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic.html#method-c-encoding">::encoding &mdash; CMess::GuessEncoding::Automatic</a></li>
+    
+      <li><a href="CMess/BConv.html#method-c-encodings">::encodings &mdash; CMess::BConv</a></li>
+    
+      <li><a href="CMess.html#method-c-ensure_options-21">::ensure_options! &mdash; CMess</a></li>
+    
+      <li><a href="CMess/GuessEncoding.html#method-c-guess">::guess &mdash; CMess::GuessEncoding</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic.html#method-c-guess">::guess &mdash; CMess::GuessEncoding::Automatic</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Encoding.html#method-c-included">::included &mdash; CMess::GuessEncoding::Encoding</a></li>
+    
+      <li><a href="CMess/BConv.html#method-c-load_chartab">::load_chartab &mdash; CMess::BConv</a></li>
+    
+      <li><a href="CMess/GuessEncoding.html#method-c-manual">::manual &mdash; CMess::GuessEncoding</a></li>
+    
+      <li><a href="CMess/BConv.html#method-c-new">::new &mdash; CMess::BConv</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic.html#method-c-new">::new &mdash; CMess::GuessEncoding::Automatic</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic.html#method-c-supported_bom-3F">::supported_bom? &mdash; CMess::GuessEncoding::Automatic</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic.html#method-c-supported_encoding-3F">::supported_encoding? &mdash; CMess::GuessEncoding::Automatic</a></li>
+    
+      <li><a href="CMess/Version.html#method-c-to_a">::to_a &mdash; CMess::Version</a></li>
+    
+      <li><a href="CMess/Version.html#method-c-to_s">::to_s &mdash; CMess::Version</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Encoding.html#method-i-5B-5D">#[] &mdash; CMess::GuessEncoding::Encoding</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Encoding.html#method-i-all_encodings">#all_encodings &mdash; CMess::GuessEncoding::Encoding</a></li>
+    
+      <li><a href="CMess/CLI.html#method-i-arg_list">#arg_list &mdash; CMess::CLI</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic.html#method-i-bom">#bom &mdash; CMess::GuessEncoding::Automatic</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic/BOMGuessers.html#method-i-bom_encoding_01_UTF_8">#bom_encoding_01_UTF_8 &mdash; CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic/BOMGuessers.html#method-i-bom_encoding_02_UTF_16BE">#bom_encoding_02_UTF_16BE &mdash; CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic/BOMGuessers.html#method-i-bom_encoding_03_UTF_16LE">#bom_encoding_03_UTF_16LE &mdash; CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic/BOMGuessers.html#method-i-bom_encoding_04_UTF_32BE">#bom_encoding_04_UTF_32BE &mdash; CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic/BOMGuessers.html#method-i-bom_encoding_05_UTF_32LE">#bom_encoding_05_UTF_32LE &mdash; CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic/BOMGuessers.html#method-i-bom_encoding_06_SCSU">#bom_encoding_06_SCSU &mdash; CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic/BOMGuessers.html#method-i-bom_encoding_07_UTF_7">#bom_encoding_07_UTF_7 &mdash; CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic/BOMGuessers.html#method-i-bom_encoding_08_UTF_1">#bom_encoding_08_UTF_1 &mdash; CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic/BOMGuessers.html#method-i-bom_encoding_09_UTF_EBCDIC">#bom_encoding_09_UTF_EBCDIC &mdash; CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic/BOMGuessers.html#method-i-bom_encoding_10_BOCU_1">#bom_encoding_10_BOCU_1 &mdash; CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic/BOMGuessers.html#method-i-bom_encoding_11_GB_18030">#bom_encoding_11_GB_18030 &mdash; CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic.html#method-i-byte_count_sum">#byte_count_sum &mdash; CMess::GuessEncoding::Automatic</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic.html#method-i-check_bom">#check_bom &mdash; CMess::GuessEncoding::Automatic</a></li>
+    
+      <li><a href="CMess/CLI.html#method-i-cli">#cli &mdash; CMess::CLI</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Encoding.html#method-i-const_name_for">#const_name_for &mdash; CMess::GuessEncoding::Encoding</a></li>
+    
+      <li><a href="CMess/BConv.html#method-i-convert">#convert &mdash; CMess::BConv</a></li>
+    
+      <li><a href="CMess/DecodeEntities.html#method-i-decode">#decode &mdash; CMess::DecodeEntities</a></li>
+    
+      <li><a href="CMess/CLI.html#method-i-determine_system_encoding">#determine_system_encoding &mdash; CMess::CLI</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Manual.html#method-i-display">#display &mdash; CMess::GuessEncoding::Manual</a></li>
+    
+      <li><a href="CMess/BConv.html#method-i-encoding-3F">#encoding? &mdash; CMess::BConv</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic/EncodingGuessers.html#method-i-encoding_01_ASCII">#encoding_01_ASCII &mdash; CMess::GuessEncoding::Automatic::EncodingGuessers</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic/EncodingGuessers.html#method-i-encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16">#encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16 &mdash; CMess::GuessEncoding::Automatic::EncodingGuessers</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic/EncodingGuessers.html#method-i-encoding_03_UTF_8">#encoding_03_UTF_8 &mdash; CMess::GuessEncoding::Automatic::EncodingGuessers</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic/EncodingGuessers.html#method-i-encoding_04_TEST_ENCODINGS">#encoding_04_TEST_ENCODINGS &mdash; CMess::GuessEncoding::Automatic::EncodingGuessers</a></li>
+    
+      <li><a href="CMess/CLI.html#method-i-ensure_directory">#ensure_directory &mdash; CMess::CLI</a></li>
+    
+      <li><a href="CMess/CLI.html#method-i-ensure_readable">#ensure_readable &mdash; CMess::CLI</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic.html#method-i-eof-3F">#eof? &mdash; CMess::GuessEncoding::Automatic</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Encoding.html#method-i-get_all_encodings">#get_all_encodings &mdash; CMess::GuessEncoding::Encoding</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Encoding.html#method-i-get_or_set_encoding_const">#get_or_set_encoding_const &mdash; CMess::GuessEncoding::Encoding</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic.html#method-i-guess">#guess &mdash; CMess::GuessEncoding::Automatic</a></li>
+    
+      <li><a href="CMess/BConv.html#method-i-iconv_from">#iconv_from &mdash; CMess::BConv</a></li>
+    
+      <li><a href="CMess/BConv.html#method-i-iconv_from_to">#iconv_from_to &mdash; CMess::BConv</a></li>
+    
+      <li><a href="CMess/BConv.html#method-i-iconv_to">#iconv_to &mdash; CMess::BConv</a></li>
+    
+      <li><a href="CMess/BConv.html#method-i-map">#map &mdash; CMess::BConv</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic.html#method-i-next_byte">#next_byte &mdash; CMess::GuessEncoding::Automatic</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic.html#method-i-next_one_of-3F">#next_one_of? &mdash; CMess::GuessEncoding::Automatic</a></li>
+    
+      <li><a href="CMess/CLI.html#method-i-open_file_in_place">#open_file_in_place &mdash; CMess::CLI</a></li>
+    
+      <li><a href="CMess/CLI.html#method-i-open_file_or_std">#open_file_or_std &mdash; CMess::CLI</a></li>
+    
+      <li><a href="CMess/CLI.html#method-i-open_temporary_input">#open_temporary_input &mdash; CMess::CLI</a></li>
+    
+      <li><a href="CMess/CLI.html#method-i-parse_options">#parse_options &mdash; CMess::CLI</a></li>
+    
+      <li><a href="CMess/Cinderella.html#method-i-pick">#pick &mdash; CMess::Cinderella</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic.html#method-i-read">#read &mdash; CMess::GuessEncoding::Automatic</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic.html#method-i-relative_byte_count">#relative_byte_count &mdash; CMess::GuessEncoding::Automatic</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Encoding.html#method-i-set_encoding_const">#set_encoding_const &mdash; CMess::GuessEncoding::Encoding</a></li>
+    
+      <li><a href="CMess/GuessEncoding/Automatic.html#method-i-starts_with-3F">#starts_with? &mdash; CMess::GuessEncoding::Automatic</a></li>
+    
+      <li><a href="CMess/CLI.html#method-i-trailing_args_as_input">#trailing_args_as_input &mdash; CMess::CLI</a></li>
+    
+  </ul>
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+</body>
+</html>
