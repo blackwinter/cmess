@@ -1,5 +1,33 @@
 = Revision history for cmess
 
+== 0.3.0 [2011-07-25]
+
+* Extensive refactoring
+* Some more Ruby 1.9 compatibility fixes (thx to @Omer)
+
+== 0.2.5 [2011-04-29]
+
+* Switched license to Affero GPL
+
+== 0.2.4 [2010-07-13]
+
+* decode_entities: Added flavour 'xml-safe' for HTMLEntities decoder
+  and made it the new default
+
+== 0.2.3 [2010-04-23]
+
+* guess_encoding: Conveniently test common encodings
+* cinderella: Ignore illegal sequences in char pool
+* Housekeeping
+
+== 0.2.2 [2009-10-24]
+
+* guess_encoding: More encodings from the ISO 8859 family
+
+== 0.2.1 [2009-09-24]
+
+* decode_entities: Fixes for current HTMLEntities
+
 == 0.2.0 [2009-05-08]
 
 * Ruby 1.9 compatibility (Syntax, at least)
