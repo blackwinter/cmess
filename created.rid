@@ -1,10 +1,10 @@
-Mon, 25 Jul 2011 10:04:33 +0200
+Tue, 16 Aug 2011 16:30:34 +0200
 lib/cmess/decode_entities.rb	Wed, 20 Jul 2011 16:23:00 +0200
 lib/cmess/guess_encoding/manual.rb	Wed, 20 Jul 2011 16:23:00 +0200
 lib/cmess.rb	Wed, 20 Jul 2011 16:23:00 +0200
 COPYING	Fri, 29 Apr 2011 12:26:56 +0200
-README	Mon, 25 Jul 2011 10:03:22 +0200
-lib/cmess/version.rb	Mon, 25 Jul 2011 10:03:33 +0200
+README	Tue, 16 Aug 2011 16:29:45 +0200
+lib/cmess/version.rb	Tue, 16 Aug 2011 16:29:52 +0200
 lib/cmess/cinderella.rb	Wed, 20 Jul 2011 16:23:00 +0200
 lib/cmess/guess_encoding.rb	Wed, 20 Jul 2011 16:23:00 +0200
 lib/cmess/guess_encoding/automatic.rb	Wed, 20 Jul 2011 17:02:38 +0200
