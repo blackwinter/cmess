@@ -96,6 +96,5 @@ parse_options { |opts|
 
 cli do
   trailing_args_as_input(options)
-
-  CMess::DecodeEntities.decode(*options.values_at(:input, :output, :source_encoding, :target_encoding, :flavour))
+  CMess::DecodeEntities.decode(options)
 end
