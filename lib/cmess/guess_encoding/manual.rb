@@ -3,7 +3,7 @@
 #                                                                             #
 # A component of cmess, the encoding tool-box.                                #
 #                                                                             #
-# Copyright (C) 2007-2011 University of Cologne,                              #
+# Copyright (C) 2007-2012 University of Cologne,                              #
 #                         Albertus-Magnus-Platz,                              #
 #                         50923 Cologne, Germany                              #
 #                                                                             #
@@ -95,11 +95,14 @@ module CMess::GuessEncoding::Manual
     # move target encoding to front
     encodings.in_order!(target)
 
-    max_length = encodings.max(:length)
+    max_length, reverse = encodings.max(:length), options[:reverse]
 
     encodings.each { |encoding|
+      args = [target, encoding]
+      args.reverse! if reverse
+
       converted = begin
-        Iconv.conv(target, encoding, input)
+        Iconv.conv(*args << input)
       rescue Iconv::IllegalSequence, Iconv::InvalidCharacter => err
         "ILLEGAL INPUT SEQUENCE: #{err}"
       rescue Iconv::InvalidEncoding

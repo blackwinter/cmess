@@ -6,7 +6,7 @@
 # guess_encoding -- Assist with guessing the encoding of some input at hand   #
 #   [A component of cmess, the encoding tool-box]                             #
 #                                                                             #
-# Copyright (C) 2007-2011 University of Cologne,                              #
+# Copyright (C) 2007-2012 University of Cologne,                              #
 #                         Albertus-Magnus-Platz,                              #
 #                         50923 Cologne, Germany                              #
 #                                                                             #
@@ -39,6 +39,7 @@ options = {
   :additional_encodings => [],
   :target_encoding      => determine_system_encoding,
   :manual               => false,
+  :reverse              => false,
   :chunk_size           => nil,
   :ignore_bom           => false,
   :charcodes            => nil,
@@ -109,6 +110,12 @@ parse_options { |opts|
   opts.on('-L', '--list-encodings', 'Print a list of all available encodings on your system and exit') {
     puts CMess::GuessEncoding::Encoding.all_encodings
     exit
+  }
+
+  opts.separator ''
+
+  opts.on('-R', '--reverse', 'Reverse encoding direction (FROM target TO encodings)') {
+    options[:reverse] = true
   }
 
   opts.separator ''
