@@ -28,15 +28,14 @@ TODO: well, more of the description... ;-)
 == LINKS
 
 <b></b>
-Documentation::     http://prometheus.rubyforge.org/cmess
-Source code::       http://github.com/blackwinter/cmess
-RubyForge project:: http://rubyforge.org/projects/prometheus
-RubyGem::           http://rubygems.org/gems/cmess
+Documentation:: http://blackwinter.github.com/cmess
+Source code::   http://github.com/blackwinter/cmess
+RubyGem::       http://rubygems.org/gems/cmess
 
 
 == AUTHORS
 
-* Jens Wille <mailto:jens.wille@uni-koeln.de>
+* Jens Wille <mailto:jens.wille@gmail.com>
 
 
 == CREDITS
@@ -48,8 +47,10 @@ RubyGem::           http://rubygems.org/gems/cmess
 
 == LICENSE AND COPYRIGHT
 
-Copyright (C) 2007-2011 University of Cologne,
+Copyright (C) 2007-2012 University of Cologne,
 Albertus-Magnus-Platz, 50923 Cologne, Germany
+
+Copyright (C) 2013 Jens Wille
 
 cmess is free software: you can redistribute it and/or modify it under the
 terms of the GNU Affero General Public License as published by the Free

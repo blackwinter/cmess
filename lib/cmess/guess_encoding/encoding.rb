@@ -3,12 +3,14 @@
 #                                                                             #
 # A component of cmess, the encoding tool-box.                                #
 #                                                                             #
-# Copyright (C) 2007-2011 University of Cologne,                              #
+# Copyright (C) 2008-2012 University of Cologne,                              #
 #                         Albertus-Magnus-Platz,                              #
 #                         50923 Cologne, Germany                              #
 #                                                                             #
+# Copyright (C) 2013 Jens Wille                                               #
+#                                                                             #
 # Authors:                                                                    #
-#     Jens Wille <jens.wille@uni-koeln.de>                                    #
+#     Jens Wille <jens.wille@gmail.com>                                       #
 #                                                                             #
 # Contributors:                                                               #
 #     John Vorhauer <john@vorhauer.de> (idea and original implementation      #

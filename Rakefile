@@ -6,19 +6,16 @@ begin
   require 'hen'
 
   Hen.lay! {{
-    :rubyforge => {
-      :project => %q{prometheus},
-      :package => %q{cmess}
-    },
-
     :gem => {
+      :name         => %q{cmess},
       :version      => CMess::VERSION,
       :summary      => %Q{
         Assist with handling messed up encodings (Currently includes the
         following tools: #{Dir['bin/*'].map { |e| File.basename(e) }.sort.join(', ')})
       },
       :author       => %q{Jens Wille},
-      :email        => %q{jens.wille@uni-koeln.de},
+      :email        => %q{jens.wille@gmail.com},
+      :homepage     => :blackwinter,
       :extra_files  => FileList['data/**/*'].to_a,
       :dependencies => [['ruby-nuggets', '>= 0.3.3'], 'htmlentities']
     }
