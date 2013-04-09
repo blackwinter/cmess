@@ -1,14 +1,14 @@
-Tue, 16 Aug 2011 16:30:34 +0200
-lib/cmess/decode_entities.rb	Wed, 20 Jul 2011 16:23:00 +0200
-lib/cmess/guess_encoding/manual.rb	Wed, 20 Jul 2011 16:23:00 +0200
-lib/cmess.rb	Wed, 20 Jul 2011 16:23:00 +0200
-COPYING	Fri, 29 Apr 2011 12:26:56 +0200
-README	Tue, 16 Aug 2011 16:29:45 +0200
-lib/cmess/version.rb	Tue, 16 Aug 2011 16:29:52 +0200
-lib/cmess/cinderella.rb	Wed, 20 Jul 2011 16:23:00 +0200
-lib/cmess/guess_encoding.rb	Wed, 20 Jul 2011 16:23:00 +0200
-lib/cmess/guess_encoding/automatic.rb	Wed, 20 Jul 2011 17:02:38 +0200
-ChangeLog	Mon, 25 Jul 2011 10:02:21 +0200
-lib/cmess/cli.rb	Wed, 20 Jul 2011 16:23:00 +0200
-lib/cmess/bconv.rb	Wed, 20 Jul 2011 16:23:00 +0200
-lib/cmess/guess_encoding/encoding.rb	Wed, 20 Jul 2011 16:23:00 +0200
+Tue, 09 Apr 2013 12:47:13 +0200
+README	Tue, 09 Apr 2013 12:43:56 +0200
+COPYING	Mon, 18 Mar 2013 15:14:59 +0100
+ChangeLog	Mon, 18 Mar 2013 15:14:59 +0100
+lib/cmess.rb	Tue, 09 Apr 2013 12:44:56 +0200
+lib/cmess/cli.rb	Tue, 09 Apr 2013 12:45:08 +0200
+lib/cmess/bconv.rb	Tue, 09 Apr 2013 12:45:03 +0200
+lib/cmess/version.rb	Mon, 18 Mar 2013 15:14:59 +0100
+lib/cmess/cinderella.rb	Tue, 09 Apr 2013 12:45:06 +0200
+lib/cmess/guess_encoding.rb	Tue, 09 Apr 2013 12:45:14 +0200
+lib/cmess/decode_entities.rb	Tue, 09 Apr 2013 12:45:11 +0200
+lib/cmess/guess_encoding/manual.rb	Tue, 09 Apr 2013 12:45:45 +0200
+lib/cmess/guess_encoding/encoding.rb	Tue, 09 Apr 2013 12:45:38 +0200
+lib/cmess/guess_encoding/automatic.rb	Tue, 09 Apr 2013 12:45:34 +0200

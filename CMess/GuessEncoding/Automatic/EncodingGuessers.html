@@ -196,7 +196,7 @@ file to make that decision.</p>
             
             <div class="method-source-code" id="encoding_01_ASCII-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 266</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 268</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">encoding_01_ASCII</span>
   <span class="ruby-constant">ASCII</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">eof?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">byte_count_sum</span>(<span class="ruby-value">0x00</span><span class="ruby-operator">..</span><span class="ruby-value">0x7f</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">byte_total</span>
 <span class="ruby-keyword">end</span></pre>
@@ -231,7 +231,7 @@ href="http://en.wikipedia.org/wiki/Null_character">NULL</a> bytes present.</p>
             
             <div class="method-source-code" id="encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 273</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 275</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">relative_byte_count</span>(<span class="ruby-identifier">byte_count</span>[<span class="ruby-value">0</span>]) <span class="ruby-operator">&gt;</span> <span class="ruby-value">0.25</span>
     <span class="ruby-keyword">case</span> <span class="ruby-identifier">first_byte</span>
@@ -272,7 +272,7 @@ escape-bytes and following bytes is matching.</p>
             
             <div class="method-source-code" id="encoding_03_UTF_8-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 286</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 288</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">encoding_03_UTF_8</span>
   <span class="ruby-identifier">esc_bytes</span> = <span class="ruby-identifier">byte_count_sum</span>(<span class="ruby-value">0xc0</span><span class="ruby-operator">..</span><span class="ruby-value">0xdf</span>)     <span class="ruby-operator">+</span>
               <span class="ruby-comment"># =&gt; 110xxxxx 10xxxxxx</span>
@@ -313,7 +313,7 @@ escape-bytes and following bytes is matching.</p>
             
             <div class="method-source-code" id="encoding_04_TEST_ENCODINGS-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 299</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 301</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">encoding_04_TEST_ENCODINGS</span>
   <span class="ruby-identifier">ratios</span> = {}
 

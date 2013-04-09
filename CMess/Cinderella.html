@@ -135,8 +135,7 @@
 
     <div id="description" class="description">
       
-<p>Find (and possibly repair) doubly encoded characters. Here’s how it’s
-done:</p>
+<p>Find (and possibly repair) doubly encoded characters. Here’s how it’s done:</p>
 
 <p>Treats characters encoded in target encoding as if they were encoded in
 source encoding, converts them to target encoding and “grep”s for lines
@@ -200,7 +199,7 @@ encoded characters, substitutes them with their original character.</p>
             
             <div class="method-source-code" id="pick-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/cinderella.rb, line 46</span>
+<span class="ruby-comment"># File lib/cmess/cinderella.rb, line 48</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">pick</span>(<span class="ruby-identifier">options</span>)
   <span class="ruby-constant">CMess</span>.<span class="ruby-identifier">ensure_options!</span>(<span class="ruby-identifier">options</span>,
     <span class="ruby-value">:input</span>, <span class="ruby-value">:pot</span>, <span class="ruby-value">:crop</span>, <span class="ruby-value">:source_encoding</span>, <span class="ruby-value">:target_encoding</span>, <span class="ruby-value">:chars</span>

@@ -196,7 +196,7 @@
             
             <div class="method-source-code" id="bom_encoding_01_UTF_8-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 318</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 320</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_01_UTF_8</span>
   <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0xef</span>, <span class="ruby-value">0xbb</span>, <span class="ruby-value">0xbf</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -229,7 +229,7 @@
             
             <div class="method-source-code" id="bom_encoding_02_UTF_16BE-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 323</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 325</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_02_UTF_16BE</span>
   <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0xfe</span>, <span class="ruby-value">0xff</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -262,7 +262,7 @@
             
             <div class="method-source-code" id="bom_encoding_03_UTF_16LE-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 328</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 330</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_03_UTF_16LE</span>
   <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0xff</span>, <span class="ruby-value">0xfe</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -295,7 +295,7 @@
             
             <div class="method-source-code" id="bom_encoding_04_UTF_32BE-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 333</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 335</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_04_UTF_32BE</span>
   <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0x00</span>, <span class="ruby-value">0x00</span>, <span class="ruby-value">0xfe</span>, <span class="ruby-value">0xff</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -328,7 +328,7 @@
             
             <div class="method-source-code" id="bom_encoding_05_UTF_32LE-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 338</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 340</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_05_UTF_32LE</span>
   <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0xff</span>, <span class="ruby-value">0xfe</span>, <span class="ruby-value">0x00</span>, <span class="ruby-value">0x00</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -362,7 +362,7 @@ href="http://en.wikipedia.org/wiki/Standard_Compression_Scheme_for_Unicode">SCSU
             
             <div class="method-source-code" id="bom_encoding_06_SCSU-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 343</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 345</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_06_SCSU</span>
   <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0x0e</span>, <span class="ruby-value">0xfe</span>, <span class="ruby-value">0xff</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -395,7 +395,7 @@ href="http://en.wikipedia.org/wiki/Standard_Compression_Scheme_for_Unicode">SCSU
             
             <div class="method-source-code" id="bom_encoding_07_UTF_7-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 348</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 350</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_07_UTF_7</span>
   <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0x2b</span>, <span class="ruby-value">0x2f</span>, <span class="ruby-value">0x76</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">next_one_of?</span>(<span class="ruby-value">0x38</span>, <span class="ruby-value">0x39</span>, <span class="ruby-value">0x2b</span>, <span class="ruby-value">0x2f</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -428,7 +428,7 @@ href="http://en.wikipedia.org/wiki/Standard_Compression_Scheme_for_Unicode">SCSU
             
             <div class="method-source-code" id="bom_encoding_08_UTF_1-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 353</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 355</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_08_UTF_1</span>
   <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0xf7</span>, <span class="ruby-value">0x64</span>, <span class="ruby-value">0x4c</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -461,7 +461,7 @@ href="http://en.wikipedia.org/wiki/Standard_Compression_Scheme_for_Unicode">SCSU
             
             <div class="method-source-code" id="bom_encoding_09_UTF_EBCDIC-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 358</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 360</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_09_UTF_EBCDIC</span>
   <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0xdd</span>, <span class="ruby-value">0x73</span>, <span class="ruby-value">0x66</span>, <span class="ruby-value">0x73</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -494,7 +494,7 @@ href="http://en.wikipedia.org/wiki/Standard_Compression_Scheme_for_Unicode">SCSU
             
             <div class="method-source-code" id="bom_encoding_10_BOCU_1-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 363</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 365</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_10_BOCU_1</span>
   <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0xfb</span>, <span class="ruby-value">0xee</span>, <span class="ruby-value">0x28</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -527,7 +527,7 @@ href="http://en.wikipedia.org/wiki/Standard_Compression_Scheme_for_Unicode">SCSU
             
             <div class="method-source-code" id="bom_encoding_11_GB_18030-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 368</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 370</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding_11_GB_18030</span>
   <span class="ruby-identifier">starts_with?</span>(<span class="ruby-value">0x84</span>, <span class="ruby-value">0x31</span>, <span class="ruby-value">0x95</span>, <span class="ruby-value">0x33</span>)
 <span class="ruby-keyword">end</span></pre>

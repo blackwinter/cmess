@@ -188,7 +188,7 @@
             
             <div class="method-source-code" id="included-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/encoding.rb, line 82</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/encoding.rb, line 84</span>
 <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">base</span>)
   <span class="ruby-identifier">base</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-keyword">self</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -227,7 +227,7 @@
             
             <div class="method-source-code" id="5B-5D-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/encoding.rb, line 46</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/encoding.rb, line 48</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">encoding</span>)
   <span class="ruby-identifier">get_or_set_encoding_const</span>(<span class="ruby-identifier">encoding</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -260,7 +260,7 @@
             
             <div class="method-source-code" id="all_encodings-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/encoding.rb, line 41</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/encoding.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">all_encodings</span>
   <span class="ruby-identifier">const_defined?</span>(<span class="ruby-value">:ALL_ENCODINGS</span>) <span class="ruby-operator">?</span> <span class="ruby-constant">ALL_ENCODINGS</span> <span class="ruby-operator">:</span>
     <span class="ruby-identifier">const_set</span>(<span class="ruby-value">:ALL_ENCODINGS</span>, <span class="ruby-identifier">get_all_encodings</span>)
@@ -300,7 +300,7 @@
             
             <div class="method-source-code" id="const_name_for-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/encoding.rb, line 58</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/encoding.rb, line 60</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">const_name_for</span>(<span class="ruby-identifier">encoding</span>)
   <span class="ruby-identifier">encoding</span>.<span class="ruby-identifier">tr</span>(<span class="ruby-string">'-'</span>, <span class="ruby-string">'_'</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\W/</span>, <span class="ruby-string">''</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/\A\d/</span>, <span class="ruby-string">'ENC_\&amp;'</span>).<span class="ruby-identifier">upcase</span>
 <span class="ruby-keyword">end</span></pre>
@@ -333,7 +333,7 @@
             
             <div class="method-source-code" id="get_all_encodings-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/encoding.rb, line 52</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/encoding.rb, line 54</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_all_encodings</span>
   <span class="ruby-value">%{iconv -l}</span>.<span class="ruby-identifier">split</span>(<span class="ruby-identifier">$/</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">encoding</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">get_or_set_encoding_const</span>(<span class="ruby-identifier">encoding</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">%{/*\z}</span>, <span class="ruby-string">''</span>))
@@ -368,7 +368,7 @@
             
             <div class="method-source-code" id="get_or_set_encoding_const-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/encoding.rb, line 66</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/encoding.rb, line 68</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_or_set_encoding_const</span>(<span class="ruby-identifier">encoding</span>)
   <span class="ruby-identifier">const_defined?</span>(<span class="ruby-identifier">const</span> = <span class="ruby-identifier">const_name_for</span>(<span class="ruby-identifier">encoding</span>)) <span class="ruby-operator">?</span>
     <span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">const</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">set_encoding_const</span>(<span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">const</span>)
@@ -402,7 +402,7 @@
             
             <div class="method-source-code" id="set_encoding_const-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/encoding.rb, line 62</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/encoding.rb, line 64</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">set_encoding_const</span>(<span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">const</span> = <span class="ruby-identifier">const_name_for</span>(<span class="ruby-identifier">encoding</span>))
   <span class="ruby-identifier">const_set</span>(<span class="ruby-identifier">const</span>, <span class="ruby-identifier">encoding</span>.<span class="ruby-identifier">freeze</span>)
 <span class="ruby-keyword">end</span></pre>

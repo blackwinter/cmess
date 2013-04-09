@@ -205,7 +205,7 @@
             
             <div class="method-source-code" id="arg_list-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/cli.rb, line 47</span>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">arg_list</span>(<span class="ruby-identifier">arg</span>)
   <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">SPLIT_ARG_LIST_RE</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -238,7 +238,7 @@
             
             <div class="method-source-code" id="cli-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/cli.rb, line 119</span>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 121</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">cli</span>
   <span class="ruby-keyword">yield</span>
 <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
@@ -280,7 +280,7 @@
             
             <div class="method-source-code" id="determine_system_encoding-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/cli.rb, line 104</span>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 106</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">determine_system_encoding</span>
   <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">user_encoding</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">begin</span>
     <span class="ruby-identifier">dummy</span> = <span class="ruby-identifier">lambda</span> {
@@ -321,7 +321,7 @@
             
             <div class="method-source-code" id="ensure_directory-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/cli.rb, line 55</span>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 57</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">ensure_directory</span>(<span class="ruby-identifier">dir</span>)
   <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;Directory not found: #{dir}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">dir</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -354,7 +354,7 @@
             
             <div class="method-source-code" id="ensure_readable-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/cli.rb, line 51</span>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 53</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">ensure_readable</span>(<span class="ruby-identifier">file</span>)
   <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;Can't find input file: #{file}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span>(<span class="ruby-identifier">file</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -387,7 +387,7 @@
             
             <div class="method-source-code" id="open_file_in_place-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/cli.rb, line 59</span>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 61</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">open_file_in_place</span>(<span class="ruby-identifier">file</span>)
   [<span class="ruby-identifier">open_temporary_input</span>(<span class="ruby-identifier">file</span>), <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">file</span>, <span class="ruby-string">'w'</span>)]
 <span class="ruby-keyword">end</span></pre>
@@ -420,7 +420,7 @@
             
             <div class="method-source-code" id="open_file_or_std-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/cli.rb, line 63</span>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 65</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">open_file_or_std</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">mode</span> = <span class="ruby-string">'r'</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">==</span> <span class="ruby-string">'-'</span>
     <span class="ruby-keyword">case</span> <span class="ruby-identifier">mode</span>
@@ -463,7 +463,7 @@
             
             <div class="method-source-code" id="open_temporary_input-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/cli.rb, line 77</span>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 79</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">open_temporary_input</span>(*<span class="ruby-identifier">files</span>)
   <span class="ruby-identifier">temp</span> = <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'cmess_cli'</span>)
 
@@ -509,7 +509,7 @@
             
             <div class="method-source-code" id="parse_options-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/cli.rb, line 43</span>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 45</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_options</span>(&amp;<span class="ruby-identifier">block</span>)
   <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-value">40</span>, &amp;<span class="ruby-identifier">block</span>).<span class="ruby-identifier">parse!</span>
 <span class="ruby-keyword">end</span></pre>
@@ -542,7 +542,7 @@
             
             <div class="method-source-code" id="trailing_args_as_input-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/cli.rb, line 94</span>
+<span class="ruby-comment"># File lib/cmess/cli.rb, line 96</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">trailing_args_as_input</span>(<span class="ruby-identifier">options</span>)
   <span class="ruby-keyword">unless</span> <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:input_set</span>]
     <span class="ruby-identifier">options</span>[<span class="ruby-value">:input</span>] = <span class="ruby-keyword">if</span> <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>

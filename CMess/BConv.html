@@ -322,7 +322,7 @@
             
             <div class="method-source-code" id="convert-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/bconv.rb, line 44</span>
+<span class="ruby-comment"># File lib/cmess/bconv.rb, line 46</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">convert</span>(*<span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">new</span>(*<span class="ruby-identifier">args</span>).<span class="ruby-identifier">convert</span>
 <span class="ruby-keyword">end</span></pre>
@@ -355,7 +355,7 @@
             
             <div class="method-source-code" id="encodings-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/bconv.rb, line 48</span>
+<span class="ruby-comment"># File lib/cmess/bconv.rb, line 50</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">encodings</span>(<span class="ruby-identifier">chartab</span> = <span class="ruby-constant">DEFAULT_CHARTAB_FILE</span>)
   <span class="ruby-identifier">chartab</span> = <span class="ruby-identifier">load_chartab</span>(<span class="ruby-identifier">chartab</span>)
 
@@ -392,7 +392,7 @@
             
             <div class="method-source-code" id="load_chartab-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/bconv.rb, line 56</span>
+<span class="ruby-comment"># File lib/cmess/bconv.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">load_chartab</span>(<span class="ruby-identifier">chartab</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">chartab</span>
     <span class="ruby-keyword">when</span> <span class="ruby-constant">Hash</span>
@@ -433,7 +433,7 @@
             
             <div class="method-source-code" id="new-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/bconv.rb, line 72</span>
+<span class="ruby-comment"># File lib/cmess/bconv.rb, line 74</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span>)
   <span class="ruby-ivar">@input</span>, <span class="ruby-ivar">@output</span>, <span class="ruby-identifier">_</span> = <span class="ruby-constant">CMess</span>.<span class="ruby-identifier">ensure_options!</span>(<span class="ruby-identifier">options</span>,
     <span class="ruby-value">:input</span>, <span class="ruby-value">:output</span>, <span class="ruby-value">:source_encoding</span>, <span class="ruby-value">:target_encoding</span>
@@ -480,7 +480,7 @@
             
             <div class="method-source-code" id="convert-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/bconv.rb, line 88</span>
+<span class="ruby-comment"># File lib/cmess/bconv.rb, line 90</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">convert</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">encoding?</span>(<span class="ruby-identifier">source_encoding</span>)
     <span class="ruby-keyword">if</span> <span class="ruby-identifier">encoding?</span>(<span class="ruby-identifier">target_encoding</span>)
@@ -553,7 +553,7 @@
             
             <div class="method-source-code" id="encoding-3F-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/bconv.rb, line 84</span>
+<span class="ruby-comment"># File lib/cmess/bconv.rb, line 86</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">encoding?</span>(<span class="ruby-identifier">encoding</span>)
   <span class="ruby-identifier">encodings</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">encoding</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -592,7 +592,7 @@
             
             <div class="method-source-code" id="iconv_from-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/bconv.rb, line 150</span>
+<span class="ruby-comment"># File lib/cmess/bconv.rb, line 152</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">iconv_from</span>(<span class="ruby-identifier">from</span> = <span class="ruby-identifier">source_encoding</span>)
   <span class="ruby-identifier">iconv_from_to</span>(<span class="ruby-identifier">from</span>, <span class="ruby-constant">INTERMEDIATE_ENCODING</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -625,7 +625,7 @@
             
             <div class="method-source-code" id="iconv_from_to-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/bconv.rb, line 134</span>
+<span class="ruby-comment"># File lib/cmess/bconv.rb, line 136</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">iconv_from_to</span>(<span class="ruby-identifier">from</span> = <span class="ruby-identifier">source_encoding</span>, <span class="ruby-identifier">to</span> = <span class="ruby-identifier">target_encoding</span>)
   <span class="ruby-identifier">iconv</span> = <span class="ruby-keyword">begin</span>
     <span class="ruby-constant">Iconv</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">to</span>, <span class="ruby-identifier">from</span>)
@@ -670,7 +670,7 @@
             
             <div class="method-source-code" id="iconv_to-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/bconv.rb, line 154</span>
+<span class="ruby-comment"># File lib/cmess/bconv.rb, line 156</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">iconv_to</span>(<span class="ruby-identifier">to</span> = <span class="ruby-identifier">target_encoding</span>)
   <span class="ruby-identifier">iconv_from_to</span>(<span class="ruby-constant">INTERMEDIATE_ENCODING</span>, <span class="ruby-identifier">to</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -703,7 +703,7 @@
             
             <div class="method-source-code" id="map-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/bconv.rb, line 158</span>
+<span class="ruby-comment"># File lib/cmess/bconv.rb, line 160</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">map</span>(<span class="ruby-identifier">char</span>, <span class="ruby-identifier">charmap</span> = <span class="ruby-ivar">@charmap</span>)
   <span class="ruby-keyword">unless</span> <span class="ruby-identifier">map</span> = <span class="ruby-identifier">charmap</span>[[<span class="ruby-identifier">char</span>]]
     <span class="ruby-keyword">unless</span> <span class="ruby-identifier">map</span> = <span class="ruby-identifier">charmap</span>[[<span class="ruby-identifier">char</span>, <span class="ruby-identifier">c</span> = <span class="ruby-identifier">input</span>.<span class="ruby-identifier">getc</span>]]

@@ -209,7 +209,7 @@ appearance.</p>
             
             <div class="method-source-code" id="display-source">
 <pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/manual.rb, line 83</span>
+<span class="ruby-comment"># File lib/cmess/guess_encoding/manual.rb, line 85</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">display</span>(<span class="ruby-identifier">options</span>)
   <span class="ruby-identifier">input</span>, <span class="ruby-identifier">target</span> = <span class="ruby-constant">CMess</span>.<span class="ruby-identifier">ensure_options!</span>(<span class="ruby-identifier">options</span>, <span class="ruby-value">:input</span>, <span class="ruby-value">:target_encoding</span>)
 
@@ -225,11 +225,14 @@ appearance.</p>
   <span class="ruby-comment"># move target encoding to front</span>
   <span class="ruby-identifier">encodings</span>.<span class="ruby-identifier">in_order!</span>(<span class="ruby-identifier">target</span>)
 
-  <span class="ruby-identifier">max_length</span> = <span class="ruby-identifier">encodings</span>.<span class="ruby-identifier">max</span>(<span class="ruby-value">:length</span>)
+  <span class="ruby-identifier">max_length</span>, <span class="ruby-identifier">reverse</span> = <span class="ruby-identifier">encodings</span>.<span class="ruby-identifier">max</span>(<span class="ruby-value">:length</span>), <span class="ruby-identifier">options</span>[<span class="ruby-value">:reverse</span>]
 
   <span class="ruby-identifier">encodings</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">encoding</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">args</span> = [<span class="ruby-identifier">target</span>, <span class="ruby-identifier">encoding</span>]
+    <span class="ruby-identifier">args</span>.<span class="ruby-identifier">reverse!</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">reverse</span>
+
     <span class="ruby-identifier">converted</span> = <span class="ruby-keyword">begin</span>
-      <span class="ruby-constant">Iconv</span>.<span class="ruby-identifier">conv</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">input</span>)
+      <span class="ruby-constant">Iconv</span>.<span class="ruby-identifier">conv</span>(*<span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">input</span>)
     <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Iconv</span><span class="ruby-operator">::</span><span class="ruby-constant">IllegalSequence</span>, <span class="ruby-constant">Iconv</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidCharacter</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
       <span class="ruby-node">&quot;ILLEGAL INPUT SEQUENCE: #{err}&quot;</span>
     <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Iconv</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidEncoding</span>
