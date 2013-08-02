@@ -35,11 +35,11 @@ require 'cmess/decode_entities'
 include CMess::CLI
 
 options = {
-  :input           => STDIN,
-  :output          => STDOUT,
-  :source_encoding => CMess::DecodeEntities::INTERMEDIATE_ENCODING,
-  :target_encoding => nil,
-  :flavour         => CMess::DecodeEntities::DEFAULT_FLAVOUR
+  input:           STDIN,
+  output:          STDOUT,
+  source_encoding: CMess::DecodeEntities::ENCODING,
+  target_encoding: nil,
+  flavour:         CMess::DecodeEntities::DEFAULT_FLAVOUR
 }
 
 parse_options { |opts|

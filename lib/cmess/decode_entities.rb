@@ -35,41 +35,36 @@ module CMess::DecodeEntities
 
   extend self
 
-  VERSION = '0.0.5'
+  VERSION = '0.1.0'
 
   # HTMLEntities requires UTF-8
-  INTERMEDIATE_ENCODING = 'utf-8'
-
-  ICONV_DUMMY = begin
-    dummy = Object.new
-
-    def dummy.iconv(string)
-      string
-    end
-
-    dummy
-  end
+  ENCODING = 'UTF-8'
 
   DEFAULT_FLAVOUR = 'xml-safe'
 
   def decode(options)
-    input, output, source_encoding = CMess.ensure_options!(options,
+    input, output, source = CMess.ensure_options!(options,
       :input, :output, :source_encoding
     )
 
-    target_encoding = options[:target_encoding] || source_encoding
+    target, entities, encoding = options[:target_encoding] || source,
+      HTMLEntities.new(options[:flavour] || DEFAULT_FLAVOUR), ENCODING
 
-    iconv_in  = source_encoding != INTERMEDIATE_ENCODING ?
-      Iconv.new(INTERMEDIATE_ENCODING, source_encoding) : ICONV_DUMMY
-
-    iconv_out = target_encoding != INTERMEDIATE_ENCODING ?
-      Iconv.new(target_encoding, INTERMEDIATE_ENCODING) : ICONV_DUMMY
-
-    html_entities = HTMLEntities.new(options[:flavour] || DEFAULT_FLAVOUR)
+    skip_source, skip_target = source == encoding, target == encoding
 
     input.each { |line|
-      output.puts iconv_out.iconv(html_entities.decode(iconv_in.iconv(line)))
+      line = encode(line, source, encoding) unless skip_source
+      line = entities.decode(line)
+      line = encode(line, encoding, target) unless skip_target
+
+      output.puts(line)
     }
+  end
+
+  private
+
+  def encode(string, source, target)
+    string.encode(target, source)
   end
 
 end
