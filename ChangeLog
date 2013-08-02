@@ -2,6 +2,16 @@
 
 = Revision history for cmess
 
+== 0.4.0 [2013-08-02]
+
+* Updated for Ruby 1.9.2+. <b>Ruby 1.8 no longer supported.</b>
+* guess_encoding: Added <tt>--reverse</tt> option.
+* Housekeeping.
+
+== 0.3.1 [2011-08-16]
+
+* decode_entities: Fixed regression.
+
 == 0.3.0 [2011-07-25]
 
 * Extensive refactoring
