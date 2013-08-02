@@ -1,237 +1,231 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-  <title>Module: CMess::GuessEncoding::Automatic::EncodingGuessers</title>
+<title>module CMess::GuessEncoding::Automatic::EncodingGuessers - cmess Application documentation (v0.4.0)</title>
 
-  <link rel="stylesheet" href="../../../rdoc.css" type="text/css" media="screen" />
+<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
 
-  <script src="../../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
 
-</head>
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
+
+
 <body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../../../index.html">Home</a>
-          <a href="../../../index.html#classes">Classes</a>
-          <a href="../../../index.html#methods">Methods</a>
-        </h3>
-      </div>
-    </div>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../../../lib/cmess/guess_encoding/automatic_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/cmess/guess_encoding/automatic.rb">lib/cmess/guess_encoding/automatic.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
 
-      
-    </div>
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
 
-    <div id="class-metadata">
-      
 
-      
+  
 
-      
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/cmess/guess_encoding/automatic.rb
+  </ul>
+</nav>
 
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
-          
-          <li><a href="#method-i-encoding_01_ASCII">#encoding_01_ASCII</a></li>
-          
-          <li><a href="#method-i-encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16">#encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16</a></li>
-          
-          <li><a href="#method-i-encoding_03_UTF_8">#encoding_03_UTF_8</a></li>
-          
-          <li><a href="#method-i-encoding_04_TEST_ENCODINGS">#encoding_04_TEST_ENCODINGS</a></li>
-          
-        </ul>
-      </div>
-      
-
-      
-      <!-- Included Modules -->
-      <div id="includes-section" class="section">
-        <h3 class="section-header">Included Modules</h3>
-        <ul class="link-list">
-        
-        
-          <li><a class="include" href="../Encoding.html">CMess::GuessEncoding::Encoding</a></li>
-        
-        
-        </ul>
-      </div>
-      
-    </div>
-
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../../../COPYING.html">COPYING</a></li>
-        
-          <li class="file"><a href="../../../ChangeLog.html">ChangeLog</a></li>
-        
-          <li class="file"><a href="../../../README.html">README</a></li>
-        
-        </ul>
-      </div>
-      
-
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../../../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
-
-        <ul class="link-list">
-        
-          <li><a href="../../../CMess.html">CMess</a></li>
-        
-          <li><a href="../../../CMess/BConv.html">CMess::BConv</a></li>
-        
-          <li><a href="../../../CMess/CLI.html">CMess::CLI</a></li>
-        
-          <li><a href="../../../CMess/Cinderella.html">CMess::Cinderella</a></li>
-        
-          <li><a href="../../../CMess/DecodeEntities.html">CMess::DecodeEntities</a></li>
-        
-          <li><a href="../../../CMess/GuessEncoding.html">CMess::GuessEncoding</a></li>
-        
-          <li><a href="../../../CMess/GuessEncoding/Automatic.html">CMess::GuessEncoding::Automatic</a></li>
-        
-          <li><a href="../../../CMess/GuessEncoding/Automatic/BOMGuessers.html">CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
-        
-          <li><a href="../../../CMess/GuessEncoding/Automatic/EncodingGuessers.html">CMess::GuessEncoding::Automatic::EncodingGuessers</a></li>
-        
-          <li><a href="../../../CMess/GuessEncoding/Encoding.html">CMess::GuessEncoding::Encoding</a></li>
-        
-          <li><a href="../../../CMess/GuessEncoding/Manual.html">CMess::GuessEncoding::Manual</a></li>
-        
-          <li><a href="../../../CMess/Version.html">CMess::Version</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      
-    </div>
+    
   </div>
 
-  <div id="documentation">
-    <h1 class="module">CMess::GuessEncoding::Automatic::EncodingGuessers</h1>
+  <div id="class-metadata">
+    
+    
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
 
-    <div id="description" class="description">
-      
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="../Encoding.html">CMess::GuessEncoding::Encoding</a>
+  
+  
+  </ul>
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-i-encoding_01_ASCII">#encoding_01_ASCII</a>
+    
+    <li ><a href="#method-i-encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16">#encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16</a>
+    
+    <li ><a href="#method-i-encoding_03_UTF_8">#encoding_03_UTF_8</a>
+    
+    <li ><a href="#method-i-encoding_04_TEST_ENCODINGS">#encoding_04_TEST_ENCODINGS</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../../COPYING.html">COPYING</a>
+  
+    <li class="file"><a href="../../../ChangeLog.html">ChangeLog</a>
+  
+    <li class="file"><a href="../../../README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../CMess.html">CMess</a>
+  
+    <li><a href="../../../CMess/BConv.html">CMess::BConv</a>
+  
+    <li><a href="../../../CMess/CLI.html">CMess::CLI</a>
+  
+    <li><a href="../../../CMess/Cinderella.html">CMess::Cinderella</a>
+  
+    <li><a href="../../../CMess/DecodeEntities.html">CMess::DecodeEntities</a>
+  
+    <li><a href="../../../CMess/GuessEncoding.html">CMess::GuessEncoding</a>
+  
+    <li><a href="../../../CMess/GuessEncoding/Automatic.html">CMess::GuessEncoding::Automatic</a>
+  
+    <li><a href="../../../CMess/GuessEncoding/Automatic/BOMGuessers.html">CMess::GuessEncoding::Automatic::BOMGuessers</a>
+  
+    <li><a href="../../../CMess/GuessEncoding/Automatic/EncodingGuessers.html">CMess::GuessEncoding::Automatic::EncodingGuessers</a>
+  
+    <li><a href="../../../CMess/GuessEncoding/Encoding.html">CMess::GuessEncoding::Encoding</a>
+  
+    <li><a href="../../../CMess/GuessEncoding/Manual.html">CMess::GuessEncoding::Manual</a>
+  
+    <li><a href="../../../CMess/Version.html">CMess::Version</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module CMess::GuessEncoding::Automatic::EncodingGuessers</h1>
+
+  <div id="description" class="description">
+    
 <p>Definition of guessing heuristics. Order matters!</p>
 
-    </div><!-- description -->
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
 
     
+
     
+
     
-    <div id="5Buntitled-5D" class="documentation-section">
-      
 
-      
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
 
-      
+    
+      <div id="method-i-encoding_01_ASCII" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">encoding_01_ASCII</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
 
-      
-
-      <!-- Methods -->
-      
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
-
-      
-        <div id="encoding_01_ASCII-method" class="method-detail ">
-          <a name="method-i-encoding_01_ASCII"></a>
+        <div class="method-description">
+          
+          <p><a href="http://en.wikipedia.org/wiki/ASCII">ASCII</a>, if all bytes are
+within the lower 128 bytes. Unfortunately, we have to read the
+<strong>whole</strong> file to make that decision.</p>
+          
+          
 
           
-          <div class="method-heading">
-            <span class="method-name">encoding_01_ASCII</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            <p><a href="http://en.wikipedia.org/wiki/ASCII">ASCII</a>, if all bytes are
-within the lower 128 bytes. Unfortunately, we have to read the <b>whole</b>
-file to make that decision.</p>
-            
-
-            
-            <div class="method-source-code" id="encoding_01_ASCII-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 268</span>
+          <div class="method-source-code" id="encoding_01_ASCII-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 253</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">encoding_01_ASCII</span>
   <span class="ruby-constant">ASCII</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">eof?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">byte_count_sum</span>(<span class="ruby-value">0x00</span><span class="ruby-operator">..</span><span class="ruby-value">0x7f</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">byte_total</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- encoding_01_ASCII-source -->
-            
-          </div>
-
+          </div><!-- encoding_01_ASCII-source -->
           
+        </div>
 
+        
+
+        
+      </div><!-- encoding_01_ASCII-method -->
+
+    
+      <div id="method-i-encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16</span><span
+            class="method-args">()</span>
           
-        </div><!-- encoding_01_ASCII-method -->
-
-      
-        <div id="encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16-method" class="method-detail ">
-          <a name="method-i-encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16"></a>
-
+          <span class="method-click-advice">click to toggle source</span>
           
-          <div class="method-heading">
-            <span class="method-name">encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
+        </div>
+        
 
-          <div class="method-description">
-            
-            <p><a href="http://en.wikipedia.org/wiki/UTF-16">UTF-16</a> / <a
+        <div class="method-description">
+          
+          <p><a href="http://en.wikipedia.org/wiki/UTF-16">UTF-16</a> / <a
 href="http://en.wikipedia.org/wiki/UTF-32">UTF-32</a>, if lots of <a
 href="http://en.wikipedia.org/wiki/Null_character">NULL</a> bytes present.</p>
-            
+          
+          
 
-            
-            <div class="method-source-code" id="encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 275</span>
+          
+          <div class="method-source-code" id="encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 260</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16</span>
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">relative_byte_count</span>(<span class="ruby-identifier">byte_count</span>[<span class="ruby-value">0</span>]) <span class="ruby-operator">&gt;</span> <span class="ruby-value">0.25</span>
     <span class="ruby-keyword">case</span> <span class="ruby-identifier">first_byte</span>
@@ -242,78 +236,78 @@ href="http://en.wikipedia.org/wiki/Null_character">NULL</a> bytes present.</p>
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16-source -->
-            
-          </div>
-
+          </div><!-- encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16-source -->
           
+        </div>
 
+        
+
+        
+      </div><!-- encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16-method -->
+
+    
+      <div id="method-i-encoding_03_UTF_8" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">encoding_03_UTF_8</span><span
+            class="method-args">()</span>
           
-        </div><!-- encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16-method -->
-
-      
-        <div id="encoding_03_UTF_8-method" class="method-detail ">
-          <a name="method-i-encoding_03_UTF_8"></a>
-
+          <span class="method-click-advice">click to toggle source</span>
           
-          <div class="method-heading">
-            <span class="method-name">encoding_03_UTF_8</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
+        </div>
+        
 
-          <div class="method-description">
-            
-            <p><a href="http://en.wikipedia.org/wiki/UTF-8">UTF-8</a>, if number of
+        <div class="method-description">
+          
+          <p><a href="http://en.wikipedia.org/wiki/UTF-8">UTF-8</a>, if number of
 escape-bytes and following bytes is matching.</p>
-            
+          
+          
 
-            
-            <div class="method-source-code" id="encoding_03_UTF_8-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 288</span>
+          
+          <div class="method-source-code" id="encoding_03_UTF_8-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 273</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">encoding_03_UTF_8</span>
   <span class="ruby-identifier">esc_bytes</span> = <span class="ruby-identifier">byte_count_sum</span>(<span class="ruby-value">0xc0</span><span class="ruby-operator">..</span><span class="ruby-value">0xdf</span>)     <span class="ruby-operator">+</span>
               <span class="ruby-comment"># =&gt; 110xxxxx 10xxxxxx</span>
-              <span class="ruby-identifier">byte_count_sum</span>(<span class="ruby-value">0xe0</span><span class="ruby-operator">..</span><span class="ruby-value">0xef</span>) * <span class="ruby-value">2</span> <span class="ruby-operator">+</span>
+              <span class="ruby-identifier">byte_count_sum</span>(<span class="ruby-value">0xe0</span><span class="ruby-operator">..</span><span class="ruby-value">0xef</span>) <span class="ruby-operator">*</span> <span class="ruby-value">2</span> <span class="ruby-operator">+</span>
               <span class="ruby-comment"># =&gt; 1110xxxx 10xxxxxx 10xxxxxx</span>
-              <span class="ruby-identifier">byte_count_sum</span>(<span class="ruby-value">0xf0</span><span class="ruby-operator">..</span><span class="ruby-value">0xf7</span>) * <span class="ruby-value">3</span>
+              <span class="ruby-identifier">byte_count_sum</span>(<span class="ruby-value">0xf0</span><span class="ruby-operator">..</span><span class="ruby-value">0xf7</span>) <span class="ruby-operator">*</span> <span class="ruby-value">3</span>
               <span class="ruby-comment"># =&gt; 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx</span>
 
   <span class="ruby-constant">UTF_8</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">esc_bytes</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">esc_bytes</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">byte_count_sum</span>(<span class="ruby-value">0x80</span><span class="ruby-operator">..</span><span class="ruby-value">0xbf</span>)
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- encoding_03_UTF_8-source -->
-            
-          </div>
-
+          </div><!-- encoding_03_UTF_8-source -->
           
+        </div>
 
+        
+
+        
+      </div><!-- encoding_03_UTF_8-method -->
+
+    
+      <div id="method-i-encoding_04_TEST_ENCODINGS" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">encoding_04_TEST_ENCODINGS</span><span
+            class="method-args">()</span>
           
-        </div><!-- encoding_03_UTF_8-method -->
-
-      
-        <div id="encoding_04_TEST_ENCODINGS-method" class="method-detail ">
-          <a name="method-i-encoding_04_TEST_ENCODINGS"></a>
-
+          <span class="method-click-advice">click to toggle source</span>
           
-          <div class="method-heading">
-            <span class="method-name">encoding_04_TEST_ENCODINGS</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
+        </div>
+        
 
-          <div class="method-description">
-            
-            <p>TEST_ENCODINGS, if frequency of TEST_CHARS exceeds TEST_THRESHOLD_DIRECT
+        <div class="method-description">
+          
+          <p>TEST_ENCODINGS, if frequency of TEST_CHARS exceeds TEST_THRESHOLD_DIRECT
 (direct match) or TEST_THRESHOLD_APPROX (approximate match).</p>
-            
+          
+          
 
-            
-            <div class="method-source-code" id="encoding_04_TEST_ENCODINGS-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 301</span>
+          
+          <div class="method-source-code" id="encoding_04_TEST_ENCODINGS-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 286</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">encoding_04_TEST_ENCODINGS</span>
   <span class="ruby-identifier">ratios</span> = {}
 
@@ -325,29 +319,26 @@ escape-bytes and following bytes is matching.</p>
     <span class="ruby-identifier">ratio</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-constant">TEST_THRESHOLD_DIRECT</span> <span class="ruby-operator">||</span> (<span class="ruby-identifier">ratios</span>[<span class="ruby-identifier">ratio</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">encoding</span>; <span class="ruby-keyword">false</span>)
   }
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- encoding_04_TEST_ENCODINGS-source -->
-            
-          </div>
-
+          </div><!-- encoding_04_TEST_ENCODINGS-source -->
           
+        </div>
 
-          
-        </div><!-- encoding_04_TEST_ENCODINGS-method -->
+        
 
-      
-      </div><!-- public-instance-method-details -->
+        
+      </div><!-- encoding_04_TEST_ENCODINGS-method -->
+
     
-    </div><!-- 5Buntitled-5D -->
+    </section><!-- public-instance-method-details -->
   
+  </section><!-- 5Buntitled-5D -->
 
-  </div><!-- documentation -->
+</div><!-- documentation -->
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
-  </div>
 
-</body>
-</html>
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
 

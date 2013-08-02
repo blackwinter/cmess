@@ -1,205 +1,197 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-  <title>Class: CMess::GuessEncoding::Automatic</title>
+<title>class CMess::GuessEncoding::Automatic - cmess Application documentation (v0.4.0)</title>
 
-  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
 
-  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
 
-</head>
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
 <body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../../index.html">Home</a>
-          <a href="../../index.html#classes">Classes</a>
-          <a href="../../index.html#methods">Methods</a>
-        </h3>
-      </div>
-    </div>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../../lib/cmess/guess_encoding/automatic_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/cmess/guess_encoding/automatic.rb">lib/cmess/guess_encoding/automatic.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
 
-      
-    </div>
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
 
-    <div id="class-metadata">
-      
-      <!-- Parent Class -->
-      <div id="parent-class-section" class="section">
-        <h3 class="section-header">Parent</h3>
-        
-        <p class="link">Object</p>
-        
-      </div>
-      
 
-      
+  
 
-      
-      <!-- Namespace Contents -->
-      <div id="namespace-list-section" class="section">
-        <h3 class="section-header">Namespace</h3>
-        <ul class="link-list">
-          
-          <li><span class="type">MODULE</span> <a href="Automatic/BOMGuessers.html">CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
-          
-          <li><span class="type">MODULE</span> <a href="Automatic/EncodingGuessers.html">CMess::GuessEncoding::Automatic::EncodingGuessers</a></li>
-          
-        </ul>
-      </div>
-      
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/cmess/guess_encoding/automatic.rb
+  </ul>
+</nav>
 
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
-          
-          <li><a href="#method-c-bom_encoding">::bom_encoding</a></li>
-          
-          <li><a href="#method-c-encoding">::encoding</a></li>
-          
-          <li><a href="#method-c-guess">::guess</a></li>
-          
-          <li><a href="#method-c-new">::new</a></li>
-          
-          <li><a href="#method-c-supported_bom-3F">::supported_bom?</a></li>
-          
-          <li><a href="#method-c-supported_encoding-3F">::supported_encoding?</a></li>
-          
-          <li><a href="#method-i-bom">#bom</a></li>
-          
-          <li><a href="#method-i-byte_count_sum">#byte_count_sum</a></li>
-          
-          <li><a href="#method-i-check_bom">#check_bom</a></li>
-          
-          <li><a href="#method-i-eof-3F">#eof?</a></li>
-          
-          <li><a href="#method-i-guess">#guess</a></li>
-          
-          <li><a href="#method-i-next_byte">#next_byte</a></li>
-          
-          <li><a href="#method-i-next_one_of-3F">#next_one_of?</a></li>
-          
-          <li><a href="#method-i-read">#read</a></li>
-          
-          <li><a href="#method-i-relative_byte_count">#relative_byte_count</a></li>
-          
-          <li><a href="#method-i-starts_with-3F">#starts_with?</a></li>
-          
-        </ul>
-      </div>
-      
-
-      
-      <!-- Included Modules -->
-      <div id="includes-section" class="section">
-        <h3 class="section-header">Included Modules</h3>
-        <ul class="link-list">
-        
-        
-          <li><a class="include" href="Encoding.html">CMess::GuessEncoding::Encoding</a></li>
-        
-        
-        </ul>
-      </div>
-      
-    </div>
-
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../../COPYING.html">COPYING</a></li>
-        
-          <li class="file"><a href="../../ChangeLog.html">ChangeLog</a></li>
-        
-          <li class="file"><a href="../../README.html">README</a></li>
-        
-        </ul>
-      </div>
-      
-
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
-
-        <ul class="link-list">
-        
-          <li><a href="../../CMess.html">CMess</a></li>
-        
-          <li><a href="../../CMess/BConv.html">CMess::BConv</a></li>
-        
-          <li><a href="../../CMess/CLI.html">CMess::CLI</a></li>
-        
-          <li><a href="../../CMess/Cinderella.html">CMess::Cinderella</a></li>
-        
-          <li><a href="../../CMess/DecodeEntities.html">CMess::DecodeEntities</a></li>
-        
-          <li><a href="../../CMess/GuessEncoding.html">CMess::GuessEncoding</a></li>
-        
-          <li><a href="../../CMess/GuessEncoding/Automatic.html">CMess::GuessEncoding::Automatic</a></li>
-        
-          <li><a href="../../CMess/GuessEncoding/Automatic/BOMGuessers.html">CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
-        
-          <li><a href="../../CMess/GuessEncoding/Automatic/EncodingGuessers.html">CMess::GuessEncoding::Automatic::EncodingGuessers</a></li>
-        
-          <li><a href="../../CMess/GuessEncoding/Encoding.html">CMess::GuessEncoding::Encoding</a></li>
-        
-          <li><a href="../../CMess/GuessEncoding/Manual.html">CMess::GuessEncoding::Manual</a></li>
-        
-          <li><a href="../../CMess/Version.html">CMess::Version</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      
-    </div>
+    
   </div>
 
-  <div id="documentation">
-    <h1 class="class">CMess::GuessEncoding::Automatic</h1>
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
 
-    <div id="description" class="description">
-      
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Encoding.html">CMess::GuessEncoding::Encoding</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Extension Modules -->
+<nav id="extends-section" class="section">
+  <h3 class="section-header">Extended With Modules</h3>
+
+  <ul class="link-list">
+    
+  
+    <li><span class="extend">Forwardable</span>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-c-bom_encoding">::bom_encoding</a>
+    
+    <li ><a href="#method-c-encoding">::encoding</a>
+    
+    <li ><a href="#method-c-guess">::guess</a>
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-c-supported_bom-3F">::supported_bom?</a>
+    
+    <li ><a href="#method-c-supported_encoding-3F">::supported_encoding?</a>
+    
+    <li ><a href="#method-i-bom">#bom</a>
+    
+    <li ><a href="#method-i-byte_count_sum">#byte_count_sum</a>
+    
+    <li ><a href="#method-i-check_bom">#check_bom</a>
+    
+    <li ><a href="#method-i-eof-3F">#eof?</a>
+    
+    <li ><a href="#method-i-guess">#guess</a>
+    
+    <li ><a href="#method-i-next_byte">#next_byte</a>
+    
+    <li ><a href="#method-i-next_one_of-3F">#next_one_of?</a>
+    
+    <li ><a href="#method-i-read">#read</a>
+    
+    <li ><a href="#method-i-relative_byte_count">#relative_byte_count</a>
+    
+    <li ><a href="#method-i-starts_with-3F">#starts_with?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../COPYING.html">COPYING</a>
+  
+    <li class="file"><a href="../../ChangeLog.html">ChangeLog</a>
+  
+    <li class="file"><a href="../../README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../CMess.html">CMess</a>
+  
+    <li><a href="../../CMess/BConv.html">CMess::BConv</a>
+  
+    <li><a href="../../CMess/CLI.html">CMess::CLI</a>
+  
+    <li><a href="../../CMess/Cinderella.html">CMess::Cinderella</a>
+  
+    <li><a href="../../CMess/DecodeEntities.html">CMess::DecodeEntities</a>
+  
+    <li><a href="../../CMess/GuessEncoding.html">CMess::GuessEncoding</a>
+  
+    <li><a href="../../CMess/GuessEncoding/Automatic.html">CMess::GuessEncoding::Automatic</a>
+  
+    <li><a href="../../CMess/GuessEncoding/Automatic/BOMGuessers.html">CMess::GuessEncoding::Automatic::BOMGuessers</a>
+  
+    <li><a href="../../CMess/GuessEncoding/Automatic/EncodingGuessers.html">CMess::GuessEncoding::Automatic::EncodingGuessers</a>
+  
+    <li><a href="../../CMess/GuessEncoding/Encoding.html">CMess::GuessEncoding::Encoding</a>
+  
+    <li><a href="../../CMess/GuessEncoding/Manual.html">CMess::GuessEncoding::Manual</a>
+  
+    <li><a href="../../CMess/Version.html">CMess::Version</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class CMess::GuessEncoding::Automatic</h1>
+
+  <div id="description" class="description">
+    
 <p>Tries to detect the encoding of a given input by applying several
-heuristics to determine the <b>most likely</b> candidate. If no heuristic
-catches on, resorts to Encoding::UNKNOWN.</p>
+heuristics to determine the <strong>most likely</strong> candidate. If no
+heuristic catches on, resorts to Encoding::UNKNOWN.</p>
 
 <p>If a BOM is found, it may determine the encoding directly.</p>
 
@@ -207,579 +199,556 @@ catches on, resorts to Encoding::UNKNOWN.</p>
 href="Automatic/EncodingGuessers.html">EncodingGuessers</a> and <a
 href="Automatic/BOMGuessers.html">BOMGuessers</a>.</p>
 
-    </div><!-- description -->
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
 
     
-    
-    
-    <div id="5Buntitled-5D" class="documentation-section">
-      
 
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
       
-
-      
-      <!-- Constants -->
-      <div id="constants-list" class="section">
-        <h3 class="section-header">Constants</h3>
-        <dl>
+        <dt id="CHARS_TO_TEST">CHARS_TO_TEST
         
-          <dt><a name="CHARS_TO_TEST">CHARS_TO_TEST</a></dt>
-          
-          <dd class="description"><p>Certain (non-ASCII) chars to test for in <a
-href="Automatic.html#TEST_ENCODINGS">TEST_ENCODINGS</a>.</p></dd>
-          
+        <dd class="description"><p>Certain (non-ASCII) chars to test for in <a
+href="Automatic.html#TEST_ENCODINGS">TEST_ENCODINGS</a>.</p>
         
-          <dt><a name="GUESS_METHOD_RE">GUESS_METHOD_RE</a></dt>
-          
-          <dd class="description"><p>Pattern for method names in <a
+      
+        <dt id="GUESS_METHOD_RE">GUESS_METHOD_RE
+        
+        <dd class="description"><p>Pattern for method names in <a
 href="Automatic/EncodingGuessers.html">EncodingGuessers</a> and <a
-href="Automatic/BOMGuessers.html">BOMGuessers</a>.</p></dd>
-          
+href="Automatic/BOMGuessers.html">BOMGuessers</a>.</p>
         
-          <dt><a name="ICONV_FOR">ICONV_FOR</a></dt>
-          
-          <dd class="description"><p>Creates a converter for desired encoding (from UTF-8).</p></dd>
-          
+      
+        <dt id="TEST_CHARS">TEST_CHARS
         
-          <dt><a name="TEST_CHARS">TEST_CHARS</a></dt>
-          
-          <dd class="description"><p>Map <a href="Automatic.html#TEST_ENCODINGS">TEST_ENCODINGS</a> to
+        <dd class="description"><p>Map <a href="Automatic.html#TEST_ENCODINGS">TEST_ENCODINGS</a> to
 respectively encoded <a
-href="Automatic.html#CHARS_TO_TEST">CHARS_TO_TEST</a>.</p></dd>
-          
+href="Automatic.html#CHARS_TO_TEST">CHARS_TO_TEST</a>.</p>
         
-          <dt><a name="TEST_ENCODINGS">TEST_ENCODINGS</a></dt>
-          
-          <dd class="description"><p>Single-byte encodings to test statistically by <a
-href="Automatic.html#TEST_CHARS">TEST_CHARS</a>.</p></dd>
-          
+      
+        <dt id="TEST_ENCODINGS">TEST_ENCODINGS
         
-          <dt><a name="TEST_THRESHOLD_APPROX">TEST_THRESHOLD_APPROX</a></dt>
-          
-          <dd class="description"><p>Relative count of <a href="Automatic.html#TEST_CHARS">TEST_CHARS</a> must
-exceed this threshold to yield an approximate match.</p></dd>
-          
+        <dd class="description"><p>Single-byte encodings to test statistically by <a
+href="Automatic.html#TEST_CHARS">TEST_CHARS</a>.</p>
         
-          <dt><a name="TEST_THRESHOLD_DIRECT">TEST_THRESHOLD_DIRECT</a></dt>
-          
-          <dd class="description"><p>Relative count of <a href="Automatic.html#TEST_CHARS">TEST_CHARS</a> must
-exceed this threshold to yield a direct match.</p></dd>
-          
+      
+        <dt id="TEST_THRESHOLD_APPROX">TEST_THRESHOLD_APPROX
         
-        </dl>
+        <dd class="description"><p>Relative count of <a href="Automatic.html#TEST_CHARS">TEST_CHARS</a> must
+exceed this threshold to yield an approximate match.</p>
+        
+      
+        <dt id="TEST_THRESHOLD_DIRECT">TEST_THRESHOLD_DIRECT
+        
+        <dd class="description"><p>Relative count of <a href="Automatic.html#TEST_CHARS">TEST_CHARS</a> must
+exceed this threshold to yield a direct match.</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-c-bom_guessers" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">bom_guessers</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
       </div>
       
+      <div id="attribute-c-encoding_guessers" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">encoding_guessers</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
 
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
       
-      <!-- Attributes -->
-      <div id="attribute-method-details" class="method-section section">
-        <h3 class="section-header">Attributes</h3>
-
-        
-        <div id="bom_guessers-attribute-method" class="method-detail">
-          <a name="bom_guessers"></a>
-          
-          <div class="method-heading attribute-method-heading">
-            <span class="method-name">bom_guessers</span><span
-              class="attribute-access-type">[R]</span>
-          </div>
-
-          <div class="method-description">
-          
-          
-          
-          </div>
+      <div id="attribute-c-supported_boms" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">supported_boms</span><span
+            class="attribute-access-type">[R]</span>
         </div>
-        
-        <div id="encoding_guessers-attribute-method" class="method-detail">
-          <a name="encoding_guessers"></a>
-          
-          <div class="method-heading attribute-method-heading">
-            <span class="method-name">encoding_guessers</span><span
-              class="attribute-access-type">[R]</span>
-          </div>
 
-          <div class="method-description">
-          
-          
-          
-          </div>
-        </div>
+        <div class="method-description">
         
-        <div id="supported_boms-attribute-method" class="method-detail">
-          <a name="supported_boms"></a>
-          
-          <div class="method-heading attribute-method-heading">
-            <span class="method-name">supported_boms</span><span
-              class="attribute-access-type">[R]</span>
-          </div>
-
-          <div class="method-description">
-          
-          
-          
-          </div>
-        </div>
         
-        <div id="supported_encodings-attribute-method" class="method-detail">
-          <a name="supported_encodings"></a>
-          
-          <div class="method-heading attribute-method-heading">
-            <span class="method-name">supported_encodings</span><span
-              class="attribute-access-type">[R]</span>
-          </div>
-
-          <div class="method-description">
-          
-          
-          
-          </div>
-        </div>
         
-        <div id="byte_count-attribute-method" class="method-detail">
-          <a name="byte_count"></a>
-          
-          <div class="method-heading attribute-method-heading">
-            <span class="method-name">byte_count</span><span
-              class="attribute-access-type">[R]</span>
-          </div>
-
-          <div class="method-description">
-          
-          
-          
-          </div>
         </div>
-        
-        <div id="byte_total-attribute-method" class="method-detail">
-          <a name="byte_total"></a>
-          
-          <div class="method-heading attribute-method-heading">
-            <span class="method-name">byte_total</span><span
-              class="attribute-access-type">[R]</span>
-          </div>
-
-          <div class="method-description">
-          
-          
-          
-          </div>
-        </div>
-        
-        <div id="chunk_size-attribute-method" class="method-detail">
-          <a name="chunk_size"></a>
-          
-          <div class="method-heading attribute-method-heading">
-            <span class="method-name">chunk_size</span><span
-              class="attribute-access-type">[R]</span>
-          </div>
-
-          <div class="method-description">
-          
-          
-          
-          </div>
-        </div>
-        
-        <div id="first_byte-attribute-method" class="method-detail">
-          <a name="first_byte"></a>
-          
-          <div class="method-heading attribute-method-heading">
-            <span class="method-name">first_byte</span><span
-              class="attribute-access-type">[R]</span>
-          </div>
-
-          <div class="method-description">
-          
-          
-          
-          </div>
-        </div>
-        
-        <div id="input-attribute-method" class="method-detail">
-          <a name="input"></a>
-          
-          <div class="method-heading attribute-method-heading">
-            <span class="method-name">input</span><span
-              class="attribute-access-type">[R]</span>
-          </div>
-
-          <div class="method-description">
-          
-          
-          
-          </div>
-        </div>
-        
-      </div><!-- attribute-method-details -->
+      </div>
       
+      <div id="attribute-c-supported_encodings" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">supported_encodings</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
 
-      <!-- Methods -->
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
       
-      <div id="public-class-method-details" class="method-section section">
-        <h3 class="section-header">Public Class Methods</h3>
+      <div id="attribute-i-byte_count" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">byte_count</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
 
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
       
-        <div id="guess-method" class="method-detail ">
-          <a name="method-c-guess"></a>
+      <div id="attribute-i-byte_total" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">byte_total</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-chunk_size" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">chunk_size</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-first_byte" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">first_byte</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-input" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">input</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-guess" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">guess</span><span
+            class="method-args">(input, chunk_size = nil, ignore_bom = false)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
 
           
-          <div class="method-heading">
-            <span class="method-name">guess</span><span
-              class="method-args">(input, chunk_size = nil, ignore_bom = false)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="guess-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 130</span>
+          <div class="method-source-code" id="guess-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 116</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">guess</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">chunk_size</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ignore_bom</span> = <span class="ruby-keyword">false</span>)
   <span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">chunk_size</span>).<span class="ruby-identifier">guess</span>(<span class="ruby-identifier">ignore_bom</span>)
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- guess-source -->
-            
-          </div>
+          </div><!-- guess-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- guess-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(input, chunk_size = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
           
 
           
-        </div><!-- guess-method -->
-
-      
-        <div id="new-method" class="method-detail ">
-          <a name="method-c-new"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">new</span><span
-              class="method-args">(input, chunk_size = nil)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="new-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 164</span>
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 148</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">chunk_size</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-ivar">@input</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">input</span>
     <span class="ruby-keyword">when</span> <span class="ruby-constant">IO</span>     <span class="ruby-keyword">then</span> <span class="ruby-identifier">input</span>
     <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>)
-    <span class="ruby-keyword">else</span>
-      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;don't know how to handle input of type #{input.class}&quot;</span>
+    <span class="ruby-keyword">else</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+      <span class="ruby-node">&quot;don&#39;t know how to handle input of type #{input.class}&quot;</span>
   <span class="ruby-keyword">end</span>
 
   <span class="ruby-ivar">@chunk_size</span> = <span class="ruby-identifier">chunk_size</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- new-source -->
-            
-          </div>
-
+          </div><!-- new-source -->
           
+        </div>
 
-          
-        </div><!-- new-method -->
+        
 
-      
-      </div><!-- public-class-method-details -->
+        
+      </div><!-- new-method -->
+
     
-      <div id="private-class-method-details" class="method-section section">
-        <h3 class="section-header">Private Class Methods</h3>
+    </section><!-- public-class-method-details -->
+  
+     <section id="private-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Private Class Methods</h3>
 
-      
-        <div id="bom_encoding-method" class="method-detail ">
-          <a name="method-c-bom_encoding"></a>
+    
+      <div id="method-c-bom_encoding" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">bom_encoding</span><span
+            class="method-args">(encoding, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
 
           
-          <div class="method-heading">
-            <span class="method-name">bom_encoding</span><span
-              class="method-args">(encoding, &block)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="bom_encoding-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 149</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding</span>(<span class="ruby-identifier">encoding</span>, &amp;<span class="ruby-identifier">block</span>)
-  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@supported_boms</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">encoding</span>)
-
-  <span class="ruby-ivar">@supported_boms</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">encoding</span>
-  <span class="ruby-ivar">@bom_guessers</span>   <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span>*<span class="ruby-operator">|</span> <span class="ruby-identifier">encoding</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">block</span>) }
+          <div class="method-source-code" id="bom_encoding-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding</span>(<span class="ruby-identifier">encoding</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@supported_boms</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">encoding</span>)
+    <span class="ruby-ivar">@supported_boms</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">encoding</span>
+    <span class="ruby-ivar">@bom_guessers</span>   <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-operator">*</span><span class="ruby-operator">|</span> <span class="ruby-identifier">encoding</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) }
+  <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- bom_encoding-source -->
-            
-          </div>
+          </div><!-- bom_encoding-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- bom_encoding-method -->
+
+    
+      <div id="method-c-encoding" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">encoding</span><span
+            class="method-args">(*encodings, &block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
           
 
           
-        </div><!-- bom_encoding-method -->
-
-      
-        <div id="encoding-method" class="method-detail ">
-          <a name="method-c-encoding"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">encoding</span><span
-              class="method-args">(*encodings, &block)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="encoding-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 136</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">encoding</span>(*<span class="ruby-identifier">encodings</span>, &amp;<span class="ruby-identifier">block</span>)
+          <div class="method-source-code" id="encoding-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">encoding</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">encodings</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">encodings</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">encoding</span><span class="ruby-operator">|</span>
-    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@supported_encodings</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">encoding</span>)
-
-    <span class="ruby-ivar">@supported_encodings</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">encoding</span>
-    <span class="ruby-ivar">@encoding_guessers</span>   <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@supported_encodings</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">encoding</span>)
+      <span class="ruby-ivar">@supported_encodings</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">encoding</span>
+      <span class="ruby-ivar">@encoding_guessers</span>   <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-keyword">end</span>
   }
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- encoding-source -->
-            
-          </div>
+          </div><!-- encoding-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- encoding-method -->
+
+    
+      <div id="method-c-supported_bom-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">supported_bom?</span><span
+            class="method-args">(encoding)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
           
 
           
-        </div><!-- encoding-method -->
-
-      
-        <div id="supported_bom-3F-method" class="method-detail ">
-          <a name="method-c-supported_bom-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">supported_bom?</span><span
-              class="method-args">(encoding)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="supported_bom-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 156</span>
+          <div class="method-source-code" id="supported_bom-3F-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 142</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">supported_bom?</span>(<span class="ruby-identifier">encoding</span>)
   <span class="ruby-identifier">supported_boms</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">encoding</span>)
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- supported_bom-3F-source -->
-            
-          </div>
+          </div><!-- supported_bom-3F-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- supported_bom-3F-method -->
+
+    
+      <div id="method-c-supported_encoding-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">supported_encoding?</span><span
+            class="method-args">(encoding)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
           
 
           
-        </div><!-- supported_bom-3F-method -->
-
-      
-        <div id="supported_encoding-3F-method" class="method-detail ">
-          <a name="method-c-supported_encoding-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">supported_encoding?</span><span
-              class="method-args">(encoding)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="supported_encoding-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 145</span>
+          <div class="method-source-code" id="supported_encoding-3F-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 131</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">supported_encoding?</span>(<span class="ruby-identifier">encoding</span>)
   <span class="ruby-identifier">supported_encodings</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">encoding</span>)
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- supported_encoding-3F-source -->
-            
-          </div>
-
+          </div><!-- supported_encoding-3F-source -->
           
+        </div>
 
-          
-        </div><!-- supported_encoding-3F-method -->
+        
 
-      
-      </div><!-- private-class-method-details -->
+        
+      </div><!-- supported_encoding-3F-method -->
+
     
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
+    </section><!-- private-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
 
-      
-        <div id="bom-method" class="method-detail ">
-          <a name="method-i-bom"></a>
+    
+      <div id="method-i-bom" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">bom</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
 
           
-          <div class="method-heading">
-            <span class="method-name">bom</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="bom-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 189</span>
+          <div class="method-source-code" id="bom-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 175</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">bom</span>
   <span class="ruby-ivar">@bom</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">check_bom</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- bom-source -->
-            
-          </div>
+          </div><!-- bom-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- bom-method -->
+
+    
+      <div id="method-i-guess" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">guess</span><span
+            class="method-args">(ignore_bom = false)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
           
 
           
-        </div><!-- bom-method -->
-
-      
-        <div id="guess-method" class="method-detail ">
-          <a name="method-i-guess"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">guess</span><span
-              class="method-args">(ignore_bom = false)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="guess-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 175</span>
+          <div class="method-source-code" id="guess-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 161</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">guess</span>(<span class="ruby-identifier">ignore_bom</span> = <span class="ruby-keyword">false</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">bom</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">bom</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">ignore_bom</span>
 
   <span class="ruby-keyword">while</span> <span class="ruby-identifier">read</span>
     <span class="ruby-identifier">encoding_guessers</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">block</span><span class="ruby-operator">|</span>
-      <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">block</span>)
-      <span class="ruby-keyword">return</span> <span class="ruby-identifier">encoding</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">encoding</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">supported_encoding?</span>(<span class="ruby-identifier">encoding</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">supported_encoding?</span>(<span class="ruby-identifier">encoding</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">encoding</span>
+      <span class="ruby-keyword">end</span>
     }
   <span class="ruby-keyword">end</span>
 
-  <span class="ruby-comment"># nothing suitable found :-(</span>
   <span class="ruby-constant">UNKNOWN</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- guess-source -->
-            
-          </div>
-
+          </div><!-- guess-source -->
           
+        </div>
 
-          
-        </div><!-- guess-method -->
+        
 
-      
-      </div><!-- public-instance-method-details -->
+        
+      </div><!-- guess-method -->
+
     
-      <div id="private-instance-method-details" class="method-section section">
-        <h3 class="section-header">Private Instance Methods</h3>
+    </section><!-- public-instance-method-details -->
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Private Instance Methods</h3>
 
-      
-        <div id="byte_count_sum-method" class="method-detail ">
-          <a name="method-i-byte_count_sum"></a>
+    
+      <div id="method-i-byte_count_sum" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">byte_count_sum</span><span
+            class="method-args">(bytes)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
 
           
-          <div class="method-heading">
-            <span class="method-name">byte_count_sum</span><span
-              class="method-args">(bytes)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="byte_count_sum-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 251</span>
+          <div class="method-source-code" id="byte_count_sum-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 236</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">byte_count_sum</span>(<span class="ruby-identifier">bytes</span>)
   <span class="ruby-constant">Array</span>(<span class="ruby-identifier">bytes</span>).<span class="ruby-identifier">inject</span>(<span class="ruby-value">0</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">sum</span>, <span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sum</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">byte_count</span>[<span class="ruby-identifier">n</span>] }
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- byte_count_sum-source -->
-            
-          </div>
+          </div><!-- byte_count_sum-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- byte_count_sum-method -->
+
+    
+      <div id="method-i-check_bom" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_bom</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
           
 
           
-        </div><!-- byte_count_sum-method -->
-
-      
-        <div id="check_bom-method" class="method-detail ">
-          <a name="method-i-check_bom"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">check_bom</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="check_bom-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 199</span>
+          <div class="method-source-code" id="check_bom-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 185</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">check_bom</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">eof?</span>
 
@@ -791,145 +760,144 @@ exceed this threshold to yield a direct match.</p></dd>
   <span class="ruby-keyword">end</span>
 
   <span class="ruby-identifier">bom_guessers</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">block</span><span class="ruby-operator">|</span>
-    <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">block</span>)
-    <span class="ruby-keyword">return</span> <span class="ruby-identifier">encoding</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">encoding</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">supported_bom?</span>(<span class="ruby-identifier">encoding</span>)
-
-    <span class="ruby-comment"># read bytes don't build a BOM, so rewind...</span>
-    <span class="ruby-identifier">input</span>.<span class="ruby-identifier">rewind</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">supported_encoding?</span>(<span class="ruby-identifier">encoding</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">encoding</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">input</span>.<span class="ruby-identifier">rewind</span>
+    <span class="ruby-keyword">end</span>
   }
 
-  <span class="ruby-comment"># nothing suitable found :-(</span>
   <span class="ruby-keyword">nil</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- check_bom-source -->
-            
-          </div>
+          </div><!-- check_bom-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- check_bom-method -->
+
+    
+      <div id="method-i-eof-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eof?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
           
 
           
-        </div><!-- check_bom-method -->
-
-      
-        <div id="eof-3F-method" class="method-detail ">
-          <a name="method-i-eof-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">eof?</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="eof-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 195</span>
+          <div class="method-source-code" id="eof-3F-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 181</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">eof?</span>
   <span class="ruby-identifier">input</span>.<span class="ruby-identifier">eof?</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- eof-3F-source -->
-            
-          </div>
+          </div><!-- eof-3F-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- eof-3F-method -->
+
+    
+      <div id="method-i-next_byte" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">next_byte</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
           
 
           
-        </div><!-- eof-3F-method -->
-
-      
-        <div id="next_byte-method" class="method-detail ">
-          <a name="method-i-next_byte"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">next_byte</span><span
-              class="method-args">()</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="next_byte-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 221</span>
+          <div class="method-source-code" id="next_byte-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 206</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">next_byte</span>
-  <span class="ruby-identifier">input</span>.<span class="ruby-identifier">read</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">unpack</span>(<span class="ruby-string">'C'</span>).<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">input</span>.<span class="ruby-identifier">read</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&#39;C&#39;</span>).<span class="ruby-identifier">first</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- next_byte-source -->
-            
-          </div>
+          </div><!-- next_byte-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- next_byte-method -->
+
+    
+      <div id="method-i-next_one_of-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">next_one_of?</span><span
+            class="method-args">(*bytes)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
           
 
           
-        </div><!-- next_byte-method -->
-
-      
-        <div id="next_one_of-3F-method" class="method-detail ">
-          <a name="method-i-next_one_of-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">next_one_of?</span><span
-              class="method-args">(*bytes)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="next_one_of-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 229</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">next_one_of?</span>(*<span class="ruby-identifier">bytes</span>)
+          <div class="method-source-code" id="next_one_of-3F-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">next_one_of?</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">bytes</span>)
   <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">next_byte</span>)
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- next_one_of-3F-source -->
-            
-          </div>
+          </div><!-- next_one_of-3F-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- next_one_of-3F-method -->
+
+    
+      <div id="method-i-read" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">read</span><span
+            class="method-args">(chunk_size = chunk_size)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
           
 
           
-        </div><!-- next_one_of-3F-method -->
-
-      
-        <div id="read-method" class="method-detail ">
-          <a name="method-i-read"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">read</span><span
-              class="method-args">(chunk_size = chunk_size)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="read-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 233</span>
+          <div class="method-source-code" id="read-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 218</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">read</span>(<span class="ruby-identifier">chunk_size</span> = <span class="ruby-identifier">chunk_size</span>)
   <span class="ruby-ivar">@byte_count</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
   <span class="ruby-ivar">@byte_total</span> <span class="ruby-operator">||=</span> <span class="ruby-value">0</span>
@@ -947,95 +915,92 @@ exceed this threshold to yield a direct match.</p></dd>
 
   <span class="ruby-ivar">@byte_total</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">bytes_before</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- read-source -->
-            
-          </div>
+          </div><!-- read-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- read-method -->
+
+    
+      <div id="method-i-relative_byte_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">relative_byte_count</span><span
+            class="method-args">(count)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
           
 
           
-        </div><!-- read-method -->
-
-      
-        <div id="relative_byte_count-method" class="method-detail ">
-          <a name="method-i-relative_byte_count"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">relative_byte_count</span><span
-              class="method-args">(count)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="relative_byte_count-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 255</span>
+          <div class="method-source-code" id="relative_byte_count-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 240</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">relative_byte_count</span>(<span class="ruby-identifier">count</span>)
   <span class="ruby-identifier">count</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">byte_total</span>
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- relative_byte_count-source -->
-            
-          </div>
+          </div><!-- relative_byte_count-source -->
+          
+        </div>
 
+        
+
+        
+      </div><!-- relative_byte_count-method -->
+
+    
+      <div id="method-i-starts_with-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">starts_with?</span><span
+            class="method-args">(*bytes)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
           
 
           
-        </div><!-- relative_byte_count-method -->
-
-      
-        <div id="starts_with-3F-method" class="method-detail ">
-          <a name="method-i-starts_with-3F"></a>
-
-          
-          <div class="method-heading">
-            <span class="method-name">starts_with?</span><span
-              class="method-args">(*bytes)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
-          
-
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="starts_with-3F-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 225</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_with?</span>(*<span class="ruby-identifier">bytes</span>)
+          <div class="method-source-code" id="starts_with-3F-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 210</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_with?</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">bytes</span>)
   <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">byte</span><span class="ruby-operator">|</span> <span class="ruby-identifier">next_byte</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">byte</span> }
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- starts_with-3F-source -->
-            
-          </div>
-
+          </div><!-- starts_with-3F-source -->
           
+        </div>
 
-          
-        </div><!-- starts_with-3F-method -->
+        
 
-      
-      </div><!-- private-instance-method-details -->
+        
+      </div><!-- starts_with-3F-method -->
+
     
-    </div><!-- 5Buntitled-5D -->
+    </section><!-- private-instance-method-details -->
   
+  </section><!-- 5Buntitled-5D -->
 
-  </div><!-- documentation -->
+</div><!-- documentation -->
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
-  </div>
 
-</body>
-</html>
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
 

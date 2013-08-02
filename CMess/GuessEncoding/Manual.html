@@ -1,223 +1,217 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!DOCTYPE html>
+
+<html>
 <head>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 
-  <title>Module: CMess::GuessEncoding::Manual</title>
+<title>module CMess::GuessEncoding::Manual - cmess Application documentation (v0.4.0)</title>
 
-  <link rel="stylesheet" href="../../rdoc.css" type="text/css" media="screen" />
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
 
-  <script src="../../js/jquery.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
-  <script src="../../js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
 
-</head>
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
 <body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
 
-  <div id="metadata">
-    <div id="home-metadata">
-      <div id="home-section" class="section">
-        <h3 class="section-header">
-          <a href="../../index.html">Home</a>
-          <a href="../../index.html#classes">Classes</a>
-          <a href="../../index.html#methods">Methods</a>
-        </h3>
-      </div>
-    </div>
 
-    <div id="file-metadata">
-      <div id="file-list-section" class="section">
-        <h3 class="section-header">In Files</h3>
-        <div class="section-body">
-          <ul>
-          
-            <li><a href="../../lib/cmess/guess_encoding/manual_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
-              class="thickbox" title="lib/cmess/guess_encoding/manual.rb">lib/cmess/guess_encoding/manual.rb</a></li>
-          
-          </ul>
-        </div>
-      </div>
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
 
-      
-    </div>
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
 
-    <div id="class-metadata">
-      
 
-      
+  
 
-      
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/cmess/guess_encoding/manual.rb
+  </ul>
+</nav>
 
-      
-      <!-- Method Quickref -->
-      <div id="method-list-section" class="section">
-        <h3 class="section-header">Methods</h3>
-        <ul class="link-list">
-          
-          <li><a href="#method-i-display">#display</a></li>
-          
-        </ul>
-      </div>
-      
-
-      
-      <!-- Included Modules -->
-      <div id="includes-section" class="section">
-        <h3 class="section-header">Included Modules</h3>
-        <ul class="link-list">
-        
-        
-          <li><a class="include" href="Encoding.html">CMess::GuessEncoding::Encoding</a></li>
-        
-        
-        </ul>
-      </div>
-      
-    </div>
-
-    <div id="project-metadata">
-      
-      
-      <div id="fileindex-section" class="section project-section">
-        <h3 class="section-header">Files</h3>
-        <ul>
-        
-          <li class="file"><a href="../../COPYING.html">COPYING</a></li>
-        
-          <li class="file"><a href="../../ChangeLog.html">ChangeLog</a></li>
-        
-          <li class="file"><a href="../../README.html">README</a></li>
-        
-        </ul>
-      </div>
-      
-
-      <div id="classindex-section" class="section project-section">
-        <h3 class="section-header">Class/Module Index
-          <span class="search-toggle"><img src="../../images/find.png"
-            height="16" width="16" alt="[+]"
-            title="show/hide quicksearch" /></span></h3>
-        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
-        <fieldset>
-          <legend>Quicksearch</legend>
-          <input type="text" name="quicksearch" value=""
-            class="quicksearch-field" />
-        </fieldset>
-        </form>
-
-        <ul class="link-list">
-        
-          <li><a href="../../CMess.html">CMess</a></li>
-        
-          <li><a href="../../CMess/BConv.html">CMess::BConv</a></li>
-        
-          <li><a href="../../CMess/CLI.html">CMess::CLI</a></li>
-        
-          <li><a href="../../CMess/Cinderella.html">CMess::Cinderella</a></li>
-        
-          <li><a href="../../CMess/DecodeEntities.html">CMess::DecodeEntities</a></li>
-        
-          <li><a href="../../CMess/GuessEncoding.html">CMess::GuessEncoding</a></li>
-        
-          <li><a href="../../CMess/GuessEncoding/Automatic.html">CMess::GuessEncoding::Automatic</a></li>
-        
-          <li><a href="../../CMess/GuessEncoding/Automatic/BOMGuessers.html">CMess::GuessEncoding::Automatic::BOMGuessers</a></li>
-        
-          <li><a href="../../CMess/GuessEncoding/Automatic/EncodingGuessers.html">CMess::GuessEncoding::Automatic::EncodingGuessers</a></li>
-        
-          <li><a href="../../CMess/GuessEncoding/Encoding.html">CMess::GuessEncoding::Encoding</a></li>
-        
-          <li><a href="../../CMess/GuessEncoding/Manual.html">CMess::GuessEncoding::Manual</a></li>
-        
-          <li><a href="../../CMess/Version.html">CMess::Version</a></li>
-        
-        </ul>
-        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
-      </div>
-
-      
-    </div>
+    
   </div>
 
-  <div id="documentation">
-    <h1 class="module">CMess::GuessEncoding::Manual</h1>
+  <div id="class-metadata">
+    
+    
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
 
-    <div id="description" class="description">
-      
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Encoding.html">CMess::GuessEncoding::Encoding</a>
+  
+  
+  </ul>
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-i-display">#display</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../COPYING.html">COPYING</a>
+  
+    <li class="file"><a href="../../ChangeLog.html">ChangeLog</a>
+  
+    <li class="file"><a href="../../README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../CMess.html">CMess</a>
+  
+    <li><a href="../../CMess/BConv.html">CMess::BConv</a>
+  
+    <li><a href="../../CMess/CLI.html">CMess::CLI</a>
+  
+    <li><a href="../../CMess/Cinderella.html">CMess::Cinderella</a>
+  
+    <li><a href="../../CMess/DecodeEntities.html">CMess::DecodeEntities</a>
+  
+    <li><a href="../../CMess/GuessEncoding.html">CMess::GuessEncoding</a>
+  
+    <li><a href="../../CMess/GuessEncoding/Automatic.html">CMess::GuessEncoding::Automatic</a>
+  
+    <li><a href="../../CMess/GuessEncoding/Automatic/BOMGuessers.html">CMess::GuessEncoding::Automatic::BOMGuessers</a>
+  
+    <li><a href="../../CMess/GuessEncoding/Automatic/EncodingGuessers.html">CMess::GuessEncoding::Automatic::EncodingGuessers</a>
+  
+    <li><a href="../../CMess/GuessEncoding/Encoding.html">CMess::GuessEncoding::Encoding</a>
+  
+    <li><a href="../../CMess/GuessEncoding/Manual.html">CMess::GuessEncoding::Manual</a>
+  
+    <li><a href="../../CMess/Version.html">CMess::Version</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module CMess::GuessEncoding::Manual</h1>
+
+  <div id="description" class="description">
+    
 <p>Outputs given string (or line), being encoded in target encoding, encoded
 in various test encodings, thus allowing to identify the (seemingly)
 correct encoding by visually comparing the input string with its desired
 appearance.</p>
 
-    </div><!-- description -->
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
 
     
+
     
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="CANDIDATES">CANDIDATES
+        
+        <dd class="description"><p>Likely candidates to suggest to the user</p>
+        
+      
+        <dt id="ENCODINGS">ENCODINGS
+        
+        <dd class="description"><p>Default encodings to try</p>
+        
+      
+      </dl>
+    </section>
     
-    <div id="5Buntitled-5D" class="documentation-section">
-      
 
-      
+    
 
-      
-      <!-- Constants -->
-      <div id="constants-list" class="section">
-        <h3 class="section-header">Constants</h3>
-        <dl>
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-display" class="method-detail ">
         
-          <dt><a name="CANDIDATES">CANDIDATES</a></dt>
+        <div class="method-heading">
+          <span class="method-name">display</span><span
+            class="method-args">(options)</span>
           
-          <dd class="description"><p>Likely candidates to suggest to the user</p></dd>
+          <span class="method-click-advice">click to toggle source</span>
           
+        </div>
         
-          <dt><a name="ENCODINGS">ENCODINGS</a></dt>
+
+        <div class="method-description">
           
-          <dd class="description"><p>Default encodings to try</p></dd>
           
-        
-        </dl>
-      </div>
-      
-
-      
-
-      <!-- Methods -->
-      
-      <div id="public-instance-method-details" class="method-section section">
-        <h3 class="section-header">Public Instance Methods</h3>
-
-      
-        <div id="display-method" class="method-detail ">
-          <a name="method-i-display"></a>
-
           
-          <div class="method-heading">
-            <span class="method-name">display</span><span
-              class="method-args">(options)</span>
-            <span class="method-click-advice">click to toggle source</span>
-          </div>
           
 
-          <div class="method-description">
-            
-            
-            
-
-            
-            <div class="method-source-code" id="display-source">
-<pre>
-<span class="ruby-comment"># File lib/cmess/guess_encoding/manual.rb, line 85</span>
+          
+          <div class="method-source-code" id="display-source">
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/manual.rb, line 85</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">display</span>(<span class="ruby-identifier">options</span>)
   <span class="ruby-identifier">input</span>, <span class="ruby-identifier">target</span> = <span class="ruby-constant">CMess</span>.<span class="ruby-identifier">ensure_options!</span>(<span class="ruby-identifier">options</span>, <span class="ruby-value">:input</span>, <span class="ruby-value">:target_encoding</span>)
 
   <span class="ruby-identifier">encodings</span> = (<span class="ruby-identifier">options</span>[<span class="ruby-value">:encodings</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENCODINGS</span>) <span class="ruby-operator">+</span>
               (<span class="ruby-identifier">options</span>[<span class="ruby-value">:additional_encodings</span>] <span class="ruby-operator">||</span> [])
 
-  <span class="ruby-identifier">encodings</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">all_encodings</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">encodings</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">'__ALL__'</span>)
-  <span class="ruby-identifier">encodings</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-constant">CANDIDATES</span>)    <span class="ruby-keyword">if</span> <span class="ruby-identifier">encodings</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">'__COMMON__'</span>)
+  <span class="ruby-identifier">encodings</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">all_encodings</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">encodings</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&#39;__ALL__&#39;</span>)
+  <span class="ruby-identifier">encodings</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-constant">CANDIDATES</span>)    <span class="ruby-keyword">if</span> <span class="ruby-identifier">encodings</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&#39;__COMMON__&#39;</span>)
 
   <span class="ruby-comment"># uniq with additional encodings staying at the end</span>
   <span class="ruby-identifier">encodings</span>.<span class="ruby-identifier">runiq!</span>
@@ -232,43 +226,36 @@ appearance.</p>
     <span class="ruby-identifier">args</span>.<span class="ruby-identifier">reverse!</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">reverse</span>
 
     <span class="ruby-identifier">converted</span> = <span class="ruby-keyword">begin</span>
-      <span class="ruby-constant">Iconv</span>.<span class="ruby-identifier">conv</span>(*<span class="ruby-identifier">args</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">input</span>)
-    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Iconv</span><span class="ruby-operator">::</span><span class="ruby-constant">IllegalSequence</span>, <span class="ruby-constant">Iconv</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidCharacter</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
-      <span class="ruby-node">&quot;ILLEGAL INPUT SEQUENCE: #{err}&quot;</span>
-    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Iconv</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidEncoding</span>
-      <span class="ruby-keyword">if</span> <span class="ruby-identifier">encoding</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">target</span>
-        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;invalid encoding: #{encoding}&quot;</span>
-      <span class="ruby-keyword">else</span>
-        <span class="ruby-string">'INVALID ENCODING!'</span>
-      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">input</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UndefinedConversionError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
+      <span class="ruby-node">&quot;ILLEGAL INPUT SEQUENCE: #{err.error_char}&quot;</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">ConverterNotFoundError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
+      <span class="ruby-identifier">err</span>.<span class="ruby-identifier">to_s</span>
     <span class="ruby-keyword">end</span>
 
     <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;%-#{max_length}s : %s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">converted</span>]
   }
 <span class="ruby-keyword">end</span></pre>
-            </div><!-- display-source -->
-            
-          </div>
-
+          </div><!-- display-source -->
           
+        </div>
 
-          
-        </div><!-- display-method -->
+        
 
-      
-      </div><!-- public-instance-method-details -->
+        
+      </div><!-- display-method -->
+
     
-    </div><!-- 5Buntitled-5D -->
+    </section><!-- public-instance-method-details -->
   
+  </section><!-- 5Buntitled-5D -->
 
-  </div><!-- documentation -->
+</div><!-- documentation -->
 
-  <div id="validator-badges">
-    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
-    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
-      Rdoc Generator</a> 2</small>.</p>
-  </div>
 
-</body>
-</html>
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
 
