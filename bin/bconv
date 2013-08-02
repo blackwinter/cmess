@@ -35,11 +35,11 @@ require 'cmess/bconv'
 include CMess::CLI
 
 options = {
-  :input           => STDIN,
-  :output          => STDOUT,
-  :source_encoding => determine_system_encoding,
-  :target_encoding => determine_system_encoding,
-  :chartab_file    => CMess::BConv::DEFAULT_CHARTAB_FILE
+  input:           STDIN,
+  output:          STDOUT,
+  source_encoding: determine_system_encoding,
+  target_encoding: determine_system_encoding,
+  chartab_file:    CMess::BConv::DEFAULT_CHARTAB_FILE
 }
 
 parse_options { |opts|
