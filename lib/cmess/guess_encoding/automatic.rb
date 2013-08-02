@@ -34,8 +34,6 @@
 ###############################################################################
 #++
 
-$KCODE = 'u' if RUBY_VERSION < '1.9'
-
 require 'cmess/guess_encoding'
 
 require 'yaml'
@@ -58,9 +56,6 @@ class CMess::GuessEncoding::Automatic
                        :bom_guessers,      :supported_bom?
 
   include CMess::GuessEncoding::Encoding
-
-  # Creates a converter for desired encoding (from UTF-8).
-  ICONV_FOR = Hash.new { |h, k| h[k] = Iconv.new(k, UTF_8) }
 
   # Single-byte encodings to test statistically by TEST_CHARS.
   TEST_ENCODINGS = [
@@ -89,22 +84,13 @@ class CMess::GuessEncoding::Automatic
   CHARS_TO_TEST = (
     '€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂ' <<
     'ÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ'
-  ).split(//)
+  ).chars.to_a
 
   # Map TEST_ENCODINGS to respectively encoded CHARS_TO_TEST.
-  TEST_CHARS = Hash.new { |hash, encoding|
-    encoding = self[encoding]
-
-    encchars = CHARS_TO_TEST.map { |char|
-      begin
-        byte = *ICONV_FOR[encoding].iconv(char).unpack('C')
-      rescue Iconv::IllegalSequence
-      end
-    }.compact
-
-    TEST_ENCODINGS << encoding unless TEST_ENCODINGS.include?(encoding)
-
-    hash[encoding] = encchars
+  TEST_CHARS = Hash.new { |h, k|
+    e, f = self[k], UTF_8
+    TEST_ENCODINGS << e unless TEST_ENCODINGS.include?(e)
+    h[e] = CHARS_TO_TEST.flat_map { |c| c.encode(e, f).unpack('C') }
   }.update(YAML.load_file(File.join(CMess::DATA_DIR, 'test_chars.yaml')))
 
   # Relative count of TEST_CHARS must exceed this threshold to yield
@@ -136,10 +122,10 @@ class CMess::GuessEncoding::Automatic
 
     def encoding(*encodings, &block)
       encodings.flatten.each { |encoding|
-        next if @supported_encodings.include?(encoding)
-
-        @supported_encodings << encoding
-        @encoding_guessers   << block
+        unless @supported_encodings.include?(encoding)
+          @supported_encodings << encoding
+          @encoding_guessers   << block
+        end
       }
     end
 
@@ -148,10 +134,10 @@ class CMess::GuessEncoding::Automatic
     end
 
     def bom_encoding(encoding, &block)
-      return if @supported_boms.include?(encoding)
-
-      @supported_boms << encoding
-      @bom_guessers   << lambda { |*| encoding if instance_eval(&block) }
+      unless @supported_boms.include?(encoding)
+        @supported_boms << encoding
+        @bom_guessers   << lambda { |*| encoding if instance_eval(&block) }
+      end
     end
 
     def supported_bom?(encoding)
@@ -160,30 +146,30 @@ class CMess::GuessEncoding::Automatic
 
   end
 
-  attr_reader :input, :chunk_size, :byte_count, :byte_total, :first_byte
-
   def initialize(input, chunk_size = nil)
     @input = case input
       when IO     then input
       when String then StringIO.new(input)
-      else
-        raise ArgumentError, "don't know how to handle input of type #{input.class}"
+      else raise ArgumentError,
+        "don't know how to handle input of type #{input.class}"
     end
 
     @chunk_size = chunk_size
   end
+
+  attr_reader :input, :chunk_size, :byte_count, :byte_total, :first_byte
 
   def guess(ignore_bom = false)
     return bom if bom && !ignore_bom
 
     while read
       encoding_guessers.each { |block|
-        encoding = instance_eval(&block)
-        return encoding if encoding && supported_encoding?(encoding)
+        if encoding = instance_eval(&block) and supported_encoding?(encoding)
+          return encoding
+        end
       }
     end
 
-    # nothing suitable found :-(
     UNKNOWN
   end
 
@@ -208,14 +194,13 @@ class CMess::GuessEncoding::Automatic
     end
 
     bom_guessers.each { |block|
-      encoding = instance_eval(&block)
-      return encoding if encoding && supported_bom?(encoding)
-
-      # read bytes don't build a BOM, so rewind...
-      input.rewind
+      if encoding = instance_eval(&block) and supported_encoding?(encoding)
+        return encoding
+      else
+        input.rewind
+      end
     }
 
-    # nothing suitable found :-(
     nil
   end
 

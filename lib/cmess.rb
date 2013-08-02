@@ -29,7 +29,6 @@
 #++
 
 require 'cmess/version'
-require 'iconv'
 
 # See README for more information.
 

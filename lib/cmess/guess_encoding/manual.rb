@@ -59,13 +59,13 @@ module CMess::GuessEncoding::Manual
     CP1252,
     CP850,
     CP852,
-    CP856,
     UTF_8
   ]
 
   # Likely candidates to suggest to the user
   CANDIDATES = [
     ANSI_X34,
+    CP856,
     EBCDIC_AT_DE,
     EBCDIC_US,
     EUC_JP,
@@ -104,15 +104,11 @@ module CMess::GuessEncoding::Manual
       args.reverse! if reverse
 
       converted = begin
-        Iconv.conv(*args << input)
-      rescue Iconv::IllegalSequence, Iconv::InvalidCharacter => err
-        "ILLEGAL INPUT SEQUENCE: #{err}"
-      rescue Iconv::InvalidEncoding
-        if encoding == target
-          raise ArgumentError, "invalid encoding: #{encoding}"
-        else
-          'INVALID ENCODING!'
-        end
+        input.encode(*args)
+      rescue Encoding::UndefinedConversionError => err
+        "ILLEGAL INPUT SEQUENCE: #{err.error_char}"
+      rescue Encoding::ConverterNotFoundError => err
+        err.to_s
       end
 
       puts "%-#{max_length}s : %s" % [encoding, converted]

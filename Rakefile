@@ -6,19 +6,21 @@ begin
   require 'hen'
 
   Hen.lay! {{
-    :gem => {
-      :name         => %q{cmess},
-      :version      => CMess::VERSION,
-      :summary      => %Q{
-        Assist with handling messed up encodings (Currently includes the
-        following tools: #{Dir['bin/*'].map { |e| File.basename(e) }.sort.join(', ')})
-      },
-      :author       => %q{Jens Wille},
-      :email        => %q{jens.wille@gmail.com},
-      :license      => %q{AGPL},
-      :homepage     => :blackwinter,
-      :extra_files  => FileList['data/**/*'].to_a,
-      :dependencies => [['ruby-nuggets', '>= 0.3.3'], 'htmlentities']
+    gem: {
+      name:         %q{cmess},
+      version:      CMess::VERSION,
+      summary:      <<-EOT,
+Assist with handling messed up encodings (Currently includes the
+following tools: #{Dir['bin/*'].map { |e| File.basename(e) }.sort.join(', ')})
+      EOT
+      author:       %q{Jens Wille},
+      email:        %q{jens.wille@gmail.com},
+      license:      %q{AGPL},
+      homepage:     :blackwinter,
+      extra_files:  FileList['data/**/*'].to_a,
+      dependencies: [['ruby-nuggets', '>= 0.3.3'], 'htmlentities'],
+
+      required_ruby_version: '>= 1.9.2'
     }
   }}
 rescue LoadError => err

@@ -35,17 +35,17 @@ require 'cmess/guess_encoding'
 include CMess::CLI
 
 options = {
-  :input                => STDIN,
-  :line                 => 1,
-  :encodings            => nil,
-  :additional_encodings => [],
-  :target_encoding      => determine_system_encoding,
-  :manual               => false,
-  :reverse              => false,
-  :chunk_size           => nil,
-  :ignore_bom           => false,
-  :charcodes            => nil,
-  :base                 => 16
+  input:                STDIN,
+  line:                 1,
+  encodings:            nil,
+  additional_encodings: [],
+  target_encoding:      determine_system_encoding,
+  manual:               false,
+  reverse:              false,
+  chunk_size:           nil,
+  ignore_bom:           false,
+  charcodes:            nil,
+  base:                 16
 }
 
 parse_options { |opts|
@@ -82,12 +82,8 @@ parse_options { |opts|
   opts.separator ''
 
   opts.on('-l', '--line LINE', Integer, "Line number of input file to use for testing [Default: #{options[:line]}]") { |line|
+    abort 'Line number must be greater than 0!' unless line > 0
     options[:line] = line
-
-    unless options[:line] > 0
-      options[:input].read # prevent 'Broken pipe' error
-      abort 'Line number must be greater then 0!'
-    end
   }
 
   opts.separator ''
@@ -198,7 +194,7 @@ cli do
       abort "Line not found -- input has only #{$.} line#{'s' if $. != 1}" unless input.is_a?(String)
     end
 
-    CMess::GuessEncoding.manual(options.merge(:input => input))
+    CMess::GuessEncoding.manual(options.merge(input: input))
   else
     puts CMess::GuessEncoding.automatic(options[:input], options[:chunk_size], options[:ignore_bom])
   end

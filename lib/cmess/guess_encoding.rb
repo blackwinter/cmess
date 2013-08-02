@@ -40,7 +40,7 @@ require 'cmess'
 
 module CMess::GuessEncoding
 
-  VERSION = '0.1.0'
+  VERSION = '0.2.0'
 
   autoload :Encoding,  'cmess/guess_encoding/encoding'
   autoload :Manual,    'cmess/guess_encoding/manual'

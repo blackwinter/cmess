@@ -22,7 +22,11 @@ there are:
                     (see CMess::BConv)
 +decode_entities+:: Decode HTML entities in a string. (see CMess::DecodeEntities)
 
-TODO: well, more of the description... ;-)
+
+== SUPPORTED PLATFORMS
+
+Requires Ruby version 1.9.2 or higher; use the latest 0.3.x release on older
+Ruby versions. CMess has been tested with ruby 2.0.0p247 on x86_64-linux.
 
 
 == LINKS

@@ -52,9 +52,7 @@ module CMess::GuessEncoding::Encoding
   private
 
   def get_all_encodings
-    %x{iconv -l}.split($/).map { |encoding|
-      get_or_set_encoding_const(encoding.sub(%r{/*\z}, ''))
-    }
+    Encoding.name_list.map { |encoding| get_or_set_encoding_const(encoding) }
   end
 
   def const_name_for(encoding)

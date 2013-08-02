@@ -104,18 +104,12 @@ module CMess::CLI
   end
 
   def determine_system_encoding
-    ENV.user_encoding || begin
-      dummy = lambda {
-        abort <<-EOT
+    ENV.user_encoding || lambda {
+      abort <<-EOT
 Your system's encoding couldn't be determined automatically -- please specify
 it explicitly via the ENCODING environment variable or via the '-t' option.
-        EOT
-      }
-
-      def dummy.to_s; 'NOT FOUND' end
-
-      dummy
-    end
+      EOT
+    }.tap { |dummy| def dummy.to_s; 'NOT FOUND'; end }
   end
 
   def cli
