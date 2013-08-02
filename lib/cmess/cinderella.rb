@@ -41,34 +41,33 @@ module CMess::Cinderella
 
   extend self
 
-  VERSION = '0.0.5'
+  VERSION = '0.1.0'
 
   DEFAULT_CSETS_DIR = File.join(CMess::DATA_DIR, 'csets')
 
   def pick(options)
-    CMess.ensure_options!(options,
+    input, pot, crop, source, target, chars = CMess.ensure_options!(options,
       :input, :pot, :crop, :source_encoding, :target_encoding, :chars
     )
 
     encoded = {}
-    iconv = Iconv.new(*options.values_at(:target_encoding, :source_encoding))
-
-    options[:chars].each { |char|
-      begin
-        encoded[iconv.iconv(char)] = char
-      rescue Iconv::IllegalSequence
-      end
-    }
+    chars.each { |char| encoded[encode(char, source, target)] = char }
 
     regexp = Regexp.union(*encoded.keys)
-    pot, crop, repair = options.values_at(:pot, :crop, :repair)
 
-    options[:input].each { |line|
-      if out = line =~ regexp ? crop : pot
-        line.gsub!(regexp) { |m| encoded[m] } if repair
-        out.puts(line)
-      end
+    input.each { |line|
+      out = line =~ regexp ? crop : pot or next
+
+      line.gsub!(regexp) { |m| encoded[m] } if repair
+      out.puts(line)
     }
+  end
+
+  private
+
+  def encode(string, source, target)
+    string.encode(target, source)
+  rescue Encoding::UndefinedConversionError
   end
 
 end

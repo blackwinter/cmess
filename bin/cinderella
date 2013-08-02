@@ -37,14 +37,14 @@ include CMess::CLI
 progname = File.basename($0)
 
 options = {
-  :input           => STDIN,
-  :output          => STDOUT,
-  :pot             => nil,
-  :crop            => nil,
-  :source_encoding => nil,
-  :target_encoding => determine_system_encoding,
-  :csets           => [CMess::Cinderella::DEFAULT_CSETS_DIR],
-  :repair          => false
+  input:           STDIN,
+  output:          STDOUT,
+  pot:             nil,
+  crop:            nil,
+  source_encoding: nil,
+  target_encoding: determine_system_encoding,
+  csets:           [CMess::Cinderella::DEFAULT_CSETS_DIR],
+  repair:          false
 }
 
 parse_options { |opts|
@@ -171,5 +171,5 @@ cli do
 
   trailing_args_as_input(options)
 
-  CMess::Cinderella.pick(options.merge(:chars => YAML.load_file(char_file)))
+  CMess::Cinderella.pick(options.merge(chars: YAML.load_file(char_file)))
 end
