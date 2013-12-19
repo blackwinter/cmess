@@ -15,7 +15,7 @@ following tools: #{Dir['bin/*'].map { |e| File.basename(e) }.sort.join(', ')})
       EOT
       author:       %q{Jens Wille},
       email:        %q{jens.wille@gmail.com},
-      license:      %q{AGPL},
+      license:      %q{AGPL-3.0},
       homepage:     :blackwinter,
       extra_files:  FileList['data/**/*'].to_a,
       dependencies: [['ruby-nuggets', '>= 0.3.3'], 'htmlentities'],
