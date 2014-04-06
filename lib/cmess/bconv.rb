@@ -51,7 +51,7 @@ class CMess::BConv
       chartab = load_chartab(chartab)
 
       chartab[chartab.keys.first].keys.map { |encoding|
-        encoding.upcase unless encoding =~ /\A__/
+        encoding.upcase unless encoding.start_with?('__')
       }.compact.sort
     end
 
@@ -73,9 +73,6 @@ class CMess::BConv
     @input, @output, _ = CMess.ensure_options!(options,
       :input, :output, :source_encoding, :target_encoding
     )
-
-    @source_encoding = options[:source_encoding].upcase
-    @target_encoding = options[:target_encoding].upcase
 
     @chartab   = self.class.load_chartab(options[:chartab] || DEFAULT_CHARTAB_FILE)
     @encodings = self.class.encodings(@chartab)

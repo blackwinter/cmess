@@ -18,7 +18,7 @@ following tools: #{Dir['bin/*'].map { |e| File.basename(e) }.sort.join(', ')})
       license:      %q{AGPL-3.0},
       homepage:     :blackwinter,
       extra_files:  FileList['data/**/*'].to_a,
-      dependencies: [['ruby-nuggets', '>= 0.3.3'], 'htmlentities'],
+      dependencies: %w[htmlentities] << ['ruby-nuggets', '>= 0.3.3'],
 
       required_ruby_version: '>= 1.9.2'
     }

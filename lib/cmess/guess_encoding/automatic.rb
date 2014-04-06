@@ -122,9 +122,9 @@ class CMess::GuessEncoding::Automatic
 
     def encoding(*encodings, &block)
       encodings.flatten.each { |encoding|
-        unless @supported_encodings.include?(encoding)
-          @supported_encodings << encoding
-          @encoding_guessers   << block
+        unless supported_encoding?(encoding)
+          supported_encodings << encoding
+          encoding_guessers   << block
         end
       }
     end
@@ -134,9 +134,9 @@ class CMess::GuessEncoding::Automatic
     end
 
     def bom_encoding(encoding, &block)
-      unless @supported_boms.include?(encoding)
-        @supported_boms << encoding
-        @bom_guessers   << lambda { |*| encoding if instance_eval(&block) }
+      unless supported_bom?(encoding)
+        supported_boms << encoding
+        bom_guessers   << lambda { |*| encoding if instance_eval(&block) }
       end
     end
 

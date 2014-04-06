@@ -68,7 +68,7 @@ module CMess::CLI
         when 'r' then STDIN
         when 'w' then STDOUT
         when 'a' then STDERR
-        else          raise ArgumentError, "don't know how to handle mode `#{mode}'"
+        else raise ArgumentError, "don't know how to handle mode `#{mode}'"
       end
     else
       ensure_readable(file) unless mode == 'w'
@@ -84,7 +84,7 @@ module CMess::CLI
         STDIN.each { |line| temp << line }
       else
         ensure_readable(file)
-        File.open(file) { |f| f.each { |line| temp << line } }
+        File.foreach(file) { |line| temp << line }
       end
     }
 
@@ -95,11 +95,9 @@ module CMess::CLI
 
   def trailing_args_as_input(options)
     unless ARGV.empty? || options[:input_set]
-      options[:input] = if ARGV.size == 1
-        open_file_or_std(ARGV.first)
-      else
+      options[:input] = ARGV.size == 1 ?
+        open_file_or_std(ARGV.first) :
         open_temporary_input(*ARGV)
-      end
     end
   end
 

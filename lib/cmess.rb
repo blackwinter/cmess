@@ -40,7 +40,7 @@ module CMess
   autoload :DecodeEntities, 'cmess/decode_entities'
   autoload :GuessEncoding,  'cmess/guess_encoding'
 
-  DATA_DIR = File.expand_path('../../data', __FILE__)
+  DATA_DIR = ENV['CMESS_DATA'] || File.expand_path('../../data', __FILE__)
 
   class << self
 

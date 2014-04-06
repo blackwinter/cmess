@@ -58,7 +58,7 @@ module CMess::Cinderella
     input.each { |line|
       out = line =~ regexp ? crop : pot or next
 
-      line.gsub!(regexp) { |m| encoded[m] } if repair
+      line.gsub!(regexp, encoded) if repair
       out.puts(line)
     }
   end
