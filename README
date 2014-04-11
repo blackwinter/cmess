@@ -31,10 +31,9 @@ Ruby versions. CMess has been tested with ruby 2.0.0p247 on x86_64-linux.
 
 == LINKS
 
-<b></b>
-Documentation:: http://blackwinter.github.com/cmess
-Source code::   http://github.com/blackwinter/cmess
-RubyGem::       http://rubygems.org/gems/cmess
+Documentation:: https://blackwinter.github.io/cmess/
+Source code::   https://github.com/blackwinter/cmess
+RubyGem::       https://rubygems.org/gems/cmess
 
 
 == AUTHORS
