@@ -29,7 +29,7 @@
 #++
 
 require 'cmess'
-require 'yaml'
+require 'safe_yaml/load'
 
 # Convert between bibliographic (and other) encodings.
 
@@ -61,7 +61,7 @@ class CMess::BConv
           chartab
         when String
           raise "chartab file not found: #{chartab}" unless File.readable?(chartab)
-          YAML.load_file(chartab)
+          SafeYAML.load_file(chartab)
         else
           raise ArgumentError, "invalid chartab of type #{chartab.class}"
       end

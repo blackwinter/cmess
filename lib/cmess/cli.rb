@@ -32,7 +32,6 @@ require 'cmess'
 
 require 'optparse'
 require 'tempfile'
-require 'yaml'
 require 'nuggets/env/user_encoding'
 require 'nuggets/string/capitalize_first'
 require 'nuggets/string/word_wrap'

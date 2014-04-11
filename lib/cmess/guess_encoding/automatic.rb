@@ -9,7 +9,7 @@
 #                         Albertus-Magnus-Platz,                              #
 #                         50923 Cologne, Germany                              #
 #                                                                             #
-# Copyright (C) 2013 Jens Wille                                               #
+# Copyright (C) 2013-2014 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@gmail.com>                                       #
@@ -36,9 +36,9 @@
 
 require 'cmess/guess_encoding'
 
-require 'yaml'
 require 'stringio'
 require 'forwardable'
+require 'safe_yaml/load'
 
 # Tries to detect the encoding of a given input by applying several
 # heuristics to determine the <b>most likely</b> candidate. If no
@@ -91,7 +91,7 @@ class CMess::GuessEncoding::Automatic
     e, f = self[k], UTF_8
     TEST_ENCODINGS << e unless TEST_ENCODINGS.include?(e)
     h[e] = CHARS_TO_TEST.flat_map { |c| c.encode(e, f).unpack('C') }
-  }.update(YAML.load_file(File.join(CMess::DATA_DIR, 'test_chars.yaml')))
+  }.update(SafeYAML.load_file(File.join(CMess::DATA_DIR, 'test_chars.yaml')))
 
   # Relative count of TEST_CHARS must exceed this threshold to yield
   # a direct match.
