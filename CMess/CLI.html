@@ -2,59 +2,58 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8">
 
-<title>module CMess::CLI - cmess Application documentation (v0.4.0)</title>
+<title>module CMess::CLI - cmess Application documentation (v0.4.1)</title>
 
-<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
 </script>
 
-<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
 
 
-<body id="top" class="module">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="../index.html">Home</a>
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
     <a href="../table_of_contents.html#classes">Classes</a>
     <a href="../table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
+  </div>
+</div>
 
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
+    <div id="search-section" role="search" class="project-section initially-hidden">
   <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
              title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
   </form>
+</div>
 
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
+  </div>
 
   
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/cmess/cli.rb
-  </ul>
-</nav>
-
-    
-  </div>
 
   <div id="class-metadata">
     
@@ -62,10 +61,10 @@
     
     
     <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
 
-  <ul class="link-list">
+  <ul class="link-list" role="directory">
     
     <li ><a href="#method-i-arg_list">#arg_list</a>
     
@@ -88,66 +87,19 @@
     <li ><a href="#method-i-trailing_args_as_input">#trailing_args_as_input</a>
     
   </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="../COPYING.html">COPYING</a>
-  
-    <li class="file"><a href="../ChangeLog.html">ChangeLog</a>
-  
-    <li class="file"><a href="../README.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="../CMess.html">CMess</a>
-  
-    <li><a href="../CMess/BConv.html">CMess::BConv</a>
-  
-    <li><a href="../CMess/CLI.html">CMess::CLI</a>
-  
-    <li><a href="../CMess/Cinderella.html">CMess::Cinderella</a>
-  
-    <li><a href="../CMess/DecodeEntities.html">CMess::DecodeEntities</a>
-  
-    <li><a href="../CMess/GuessEncoding.html">CMess::GuessEncoding</a>
-  
-    <li><a href="../CMess/GuessEncoding/Automatic.html">CMess::GuessEncoding::Automatic</a>
-  
-    <li><a href="../CMess/GuessEncoding/Automatic/BOMGuessers.html">CMess::GuessEncoding::Automatic::BOMGuessers</a>
-  
-    <li><a href="../CMess/GuessEncoding/Automatic/EncodingGuessers.html">CMess::GuessEncoding::Automatic::EncodingGuessers</a>
-  
-    <li><a href="../CMess/GuessEncoding/Encoding.html">CMess::GuessEncoding::Encoding</a>
-  
-    <li><a href="../CMess/GuessEncoding/Manual.html">CMess::GuessEncoding::Manual</a>
-  
-    <li><a href="../CMess/Version.html">CMess::Version</a>
-  
-  </ul>
-</nav>
+</div>
 
   </div>
 </nav>
 
-<div id="documentation">
-  <h1 class="module">module CMess::CLI</h1>
+<main role="main" aria-labelledby="module-CMess::CLI">
+  <h1 id="module-CMess::CLI" class="module">
+    module CMess::CLI
+  </h1>
 
-  <div id="description" class="description">
+  <section class="description">
     
-  </div><!-- description -->
+  </section>
 
   
   
@@ -158,14 +110,15 @@
     
 
     
-    <!-- Constants -->
-    <section id="constants-list" class="section">
-      <h3 class="section-header">Constants</h3>
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
       <dl>
       
         <dt id="SPLIT_ARG_LIST_RE">SPLIT_ARG_LIST_RE
         
-        <dd class="description"><p>How to split list of arguments.</p>
+        <dd><p>How to split list of arguments.</p>
         
       
       </dl>
@@ -174,10 +127,11 @@
 
     
 
-    <!-- Methods -->
     
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
 
     
       <div id="method-i-arg_list" class="method-detail ">
@@ -199,18 +153,18 @@
 
           
           <div class="method-source-code" id="arg_list-source">
-            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 49</span>
+            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 48</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">arg_list</span>(<span class="ruby-identifier">arg</span>)
   <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">SPLIT_ARG_LIST_RE</span>)
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- arg_list-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- arg_list-method -->
+      </div>
 
     
       <div id="method-i-cli" class="method-detail ">
@@ -232,7 +186,7 @@
 
           
           <div class="method-source-code" id="cli-source">
-            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 115</span>
+            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 112</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">cli</span>
   <span class="ruby-keyword">yield</span>
 <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
@@ -245,14 +199,14 @@
     <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;#{err.to_s.capitalize_first} [#{err.backtrace.first}]&quot;</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- cli-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- cli-method -->
+      </div>
 
     
       <div id="method-i-determine_system_encoding" class="method-detail ">
@@ -274,7 +228,7 @@
 
           
           <div class="method-source-code" id="determine_system_encoding-source">
-            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 106</span>
+            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 103</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier">determine_system_encoding</span>
     <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">user_encoding</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">lambda</span> {
       <span class="ruby-identifier">abort</span> <span class="ruby-value">&lt;&lt;-EOT
@@ -283,14 +237,14 @@ it explicitly via the ENCODING environment variable or via the &#39;-t&#39; opti
       EOT</span>
     }.<span class="ruby-identifier">tap</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">dummy</span><span class="ruby-operator">|</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier">dummy</span>.<span class="ruby-identifier">to_s</span>; <span class="ruby-string">&#39;NOT FOUND&#39;</span>; <span class="ruby-keyword">end</span> }
   <span class="ruby-keyword">end</span></pre>
-          </div><!-- determine_system_encoding-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- determine_system_encoding-method -->
+      </div>
 
     
       <div id="method-i-ensure_directory" class="method-detail ">
@@ -312,18 +266,18 @@ it explicitly via the ENCODING environment variable or via the &#39;-t&#39; opti
 
           
           <div class="method-source-code" id="ensure_directory-source">
-            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 57</span>
+            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 56</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">ensure_directory</span>(<span class="ruby-identifier">dir</span>)
   <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;Directory not found: #{dir}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">dir</span>)
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- ensure_directory-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- ensure_directory-method -->
+      </div>
 
     
       <div id="method-i-ensure_readable" class="method-detail ">
@@ -345,18 +299,18 @@ it explicitly via the ENCODING environment variable or via the &#39;-t&#39; opti
 
           
           <div class="method-source-code" id="ensure_readable-source">
-            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 53</span>
+            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 52</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">ensure_readable</span>(<span class="ruby-identifier">file</span>)
   <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;Can&#39;t find input file: #{file}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span>(<span class="ruby-identifier">file</span>)
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- ensure_readable-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- ensure_readable-method -->
+      </div>
 
     
       <div id="method-i-open_file_in_place" class="method-detail ">
@@ -378,18 +332,18 @@ it explicitly via the ENCODING environment variable or via the &#39;-t&#39; opti
 
           
           <div class="method-source-code" id="open_file_in_place-source">
-            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 61</span>
+            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 60</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">open_file_in_place</span>(<span class="ruby-identifier">file</span>)
   [<span class="ruby-identifier">open_temporary_input</span>(<span class="ruby-identifier">file</span>), <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">file</span>, <span class="ruby-string">&#39;w&#39;</span>)]
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- open_file_in_place-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- open_file_in_place-method -->
+      </div>
 
     
       <div id="method-i-open_file_or_std" class="method-detail ">
@@ -411,28 +365,28 @@ it explicitly via the ENCODING environment variable or via the &#39;-t&#39; opti
 
           
           <div class="method-source-code" id="open_file_or_std-source">
-            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 65</span>
+            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 64</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">open_file_or_std</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">mode</span> = <span class="ruby-string">&#39;r&#39;</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;-&#39;</span>
     <span class="ruby-keyword">case</span> <span class="ruby-identifier">mode</span>
       <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;r&#39;</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">STDIN</span>
       <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;w&#39;</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">STDOUT</span>
       <span class="ruby-keyword">when</span> <span class="ruby-string">&#39;a&#39;</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">STDERR</span>
-      <span class="ruby-keyword">else</span>          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;don&#39;t know how to handle mode `#{mode}&#39;&quot;</span>
+      <span class="ruby-keyword">else</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;don&#39;t know how to handle mode `#{mode}&#39;&quot;</span>
     <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">else</span>
     <span class="ruby-identifier">ensure_readable</span>(<span class="ruby-identifier">file</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;w&#39;</span>
     <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">mode</span>)
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- open_file_or_std-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- open_file_or_std-method -->
+      </div>
 
     
       <div id="method-i-open_temporary_input" class="method-detail ">
@@ -454,7 +408,7 @@ it explicitly via the ENCODING environment variable or via the &#39;-t&#39; opti
 
           
           <div class="method-source-code" id="open_temporary_input-source">
-            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 79</span>
+            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 78</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">open_temporary_input</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">files</span>)
   <span class="ruby-identifier">temp</span> = <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&#39;cmess_cli&#39;</span>)
 
@@ -463,7 +417,7 @@ it explicitly via the ENCODING environment variable or via the &#39;-t&#39; opti
       <span class="ruby-constant">STDIN</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">temp</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span> }
     <span class="ruby-keyword">else</span>
       <span class="ruby-identifier">ensure_readable</span>(<span class="ruby-identifier">file</span>)
-      <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">file</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">temp</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span> } }
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-identifier">file</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">temp</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">line</span> }
     <span class="ruby-keyword">end</span>
   }
 
@@ -471,14 +425,14 @@ it explicitly via the ENCODING environment variable or via the &#39;-t&#39; opti
   <span class="ruby-identifier">temp</span>.<span class="ruby-identifier">close</span>
   <span class="ruby-identifier">temp</span>.<span class="ruby-identifier">open</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- open_temporary_input-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- open_temporary_input-method -->
+      </div>
 
     
       <div id="method-i-parse_options" class="method-detail ">
@@ -500,18 +454,18 @@ it explicitly via the ENCODING environment variable or via the &#39;-t&#39; opti
 
           
           <div class="method-source-code" id="parse_options-source">
-            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 45</span>
+            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_options</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-value">40</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>).<span class="ruby-identifier">parse!</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- parse_options-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- parse_options-method -->
+      </div>
 
     
       <div id="method-i-trailing_args_as_input" class="method-detail ">
@@ -533,36 +487,33 @@ it explicitly via the ENCODING environment variable or via the &#39;-t&#39; opti
 
           
           <div class="method-source-code" id="trailing_args_as_input-source">
-            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 96</span>
+            <pre><span class="ruby-comment"># File lib/cmess/cli.rb, line 95</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">trailing_args_as_input</span>(<span class="ruby-identifier">options</span>)
   <span class="ruby-keyword">unless</span> <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:input_set</span>]
-    <span class="ruby-identifier">options</span>[<span class="ruby-value">:input</span>] = <span class="ruby-keyword">if</span> <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
-      <span class="ruby-identifier">open_file_or_std</span>(<span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">first</span>)
-    <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:input</span>] = <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">?</span>
+      <span class="ruby-identifier">open_file_or_std</span>(<span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">first</span>) <span class="ruby-operator">:</span>
       <span class="ruby-identifier">open_temporary_input</span>(<span class="ruby-operator">*</span><span class="ruby-constant">ARGV</span>)
-    <span class="ruby-keyword">end</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- trailing_args_as_input-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- trailing_args_as_input-method -->
+      </div>
 
     
-    </section><!-- public-instance-method-details -->
+    </section>
   
-  </section><!-- 5Buntitled-5D -->
+  </section>
+</main>
 
-</div><!-- documentation -->
 
-
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

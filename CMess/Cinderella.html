@@ -2,59 +2,58 @@
 
 <html>
 <head>
-<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="UTF-8">
 
-<title>module CMess::Cinderella - cmess Application documentation (v0.4.0)</title>
+<title>module CMess::Cinderella - cmess Application documentation (v0.4.1)</title>
 
-<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+<link href="../fonts.css" rel="stylesheet">
+<link href="../rdoc.css" rel="stylesheet">
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "../";
 </script>
 
-<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
-<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+<script src="../js/jquery.js"></script>
+<script src="../js/navigation.js"></script>
+<script src="../js/search_index.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/searcher.js"></script>
+<script src="../js/darkfish.js"></script>
 
 
-<body id="top" class="module">
-<nav id="metadata">
-  <nav id="home-section" class="section">
-  <h3 class="section-header">
-    <a href="../index.html">Home</a>
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
     <a href="../table_of_contents.html#classes">Classes</a>
     <a href="../table_of_contents.html#methods">Methods</a>
-  </h3>
-</nav>
+  </div>
+</div>
 
-
-  <nav id="search-section" class="section project-section" class="initially-hidden">
+    <div id="search-section" role="search" class="project-section initially-hidden">
   <form action="#" method="get" accept-charset="utf-8">
-    <h3 class="section-header">
-      <input type="text" name="search" placeholder="Search" id="search-field"
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
              title="Type to search, Up and Down to navigate, Enter to load">
-    </h3>
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
   </form>
+</div>
 
-  <ul id="search-results" class="initially-hidden"></ul>
-</nav>
-
+  </div>
 
   
-
-  <div id="file-metadata">
-    <nav id="file-list-section" class="section">
-  <h3 class="section-header">Defined In</h3>
-  <ul>
-    <li>lib/cmess/cinderella.rb
-  </ul>
-</nav>
-
-    
-  </div>
 
   <div id="class-metadata">
     
@@ -62,74 +61,27 @@
     
     
     <!-- Method Quickref -->
-<nav id="method-list-section" class="section">
-  <h3 class="section-header">Methods</h3>
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
 
-  <ul class="link-list">
+  <ul class="link-list" role="directory">
     
     <li ><a href="#method-i-encode">#encode</a>
     
     <li ><a href="#method-i-pick">#pick</a>
     
   </ul>
-</nav>
-
-  </div>
-
-  <div id="project-metadata">
-    <nav id="fileindex-section" class="section project-section">
-  <h3 class="section-header">Pages</h3>
-
-  <ul>
-  
-    <li class="file"><a href="../COPYING.html">COPYING</a>
-  
-    <li class="file"><a href="../ChangeLog.html">ChangeLog</a>
-  
-    <li class="file"><a href="../README.html">README</a>
-  
-  </ul>
-</nav>
-
-    <nav id="classindex-section" class="section project-section">
-  <h3 class="section-header">Class and Module Index</h3>
-
-  <ul class="link-list">
-  
-    <li><a href="../CMess.html">CMess</a>
-  
-    <li><a href="../CMess/BConv.html">CMess::BConv</a>
-  
-    <li><a href="../CMess/CLI.html">CMess::CLI</a>
-  
-    <li><a href="../CMess/Cinderella.html">CMess::Cinderella</a>
-  
-    <li><a href="../CMess/DecodeEntities.html">CMess::DecodeEntities</a>
-  
-    <li><a href="../CMess/GuessEncoding.html">CMess::GuessEncoding</a>
-  
-    <li><a href="../CMess/GuessEncoding/Automatic.html">CMess::GuessEncoding::Automatic</a>
-  
-    <li><a href="../CMess/GuessEncoding/Automatic/BOMGuessers.html">CMess::GuessEncoding::Automatic::BOMGuessers</a>
-  
-    <li><a href="../CMess/GuessEncoding/Automatic/EncodingGuessers.html">CMess::GuessEncoding::Automatic::EncodingGuessers</a>
-  
-    <li><a href="../CMess/GuessEncoding/Encoding.html">CMess::GuessEncoding::Encoding</a>
-  
-    <li><a href="../CMess/GuessEncoding/Manual.html">CMess::GuessEncoding::Manual</a>
-  
-    <li><a href="../CMess/Version.html">CMess::Version</a>
-  
-  </ul>
-</nav>
+</div>
 
   </div>
 </nav>
 
-<div id="documentation">
-  <h1 class="module">module CMess::Cinderella</h1>
+<main role="main" aria-labelledby="module-CMess::Cinderella">
+  <h1 id="module-CMess::Cinderella" class="module">
+    module CMess::Cinderella
+  </h1>
 
-  <div id="description" class="description">
+  <section class="description">
     
 <p>Find (and possibly repair) doubly encoded characters. Here&#39;s how
 it&#39;s done:</p>
@@ -139,7 +91,7 @@ source encoding, converts them to target encoding and “grep”s for lines
 containing those doubly encoded characters; if asked to repair doubly
 encoded characters, substitutes them with their original character.</p>
 
-  </div><!-- description -->
+  </section>
 
   
   
@@ -150,19 +102,20 @@ encoded characters, substitutes them with their original character.</p>
     
 
     
-    <!-- Constants -->
-    <section id="constants-list" class="section">
-      <h3 class="section-header">Constants</h3>
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
       <dl>
       
         <dt id="DEFAULT_CSETS_DIR">DEFAULT_CSETS_DIR
         
-        <dd class="description">
+        <dd>
         
       
         <dt id="VERSION">VERSION
         
-        <dd class="description">
+        <dd>
         
       
       </dl>
@@ -171,10 +124,11 @@ encoded characters, substitutes them with their original character.</p>
 
     
 
-    <!-- Methods -->
     
-     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Public Instance Methods</h3>
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
 
     
       <div id="method-i-pick" class="method-detail ">
@@ -210,24 +164,26 @@ encoded characters, substitutes them with their original character.</p>
   <span class="ruby-identifier">input</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">out</span> = <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">regexp</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">crop</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">pot</span> <span class="ruby-keyword">or</span> <span class="ruby-keyword">next</span>
 
-    <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-identifier">regexp</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">encoded</span>[<span class="ruby-identifier">m</span>] } <span class="ruby-keyword">if</span> <span class="ruby-identifier">repair</span>
+    <span class="ruby-identifier">line</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-identifier">regexp</span>, <span class="ruby-identifier">encoded</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">repair</span>
     <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">line</span>)
   }
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- pick-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- pick-method -->
+      </div>
 
     
-    </section><!-- public-instance-method-details -->
+    </section>
   
-     <section id="private-instance-5Buntitled-5D-method-details" class="method-section section">
-      <h3 class="section-header">Private Instance Methods</h3>
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
 
     
       <div id="method-i-encode" class="method-detail ">
@@ -254,26 +210,25 @@ encoded characters, substitutes them with their original character.</p>
   <span class="ruby-identifier">string</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">source</span>)
 <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UndefinedConversionError</span>
 <span class="ruby-keyword">end</span></pre>
-          </div><!-- encode-source -->
+          </div>
           
         </div>
 
         
 
         
-      </div><!-- encode-method -->
+      </div>
 
     
-    </section><!-- private-instance-method-details -->
+    </section>
   
-  </section><!-- 5Buntitled-5D -->
+  </section>
+</main>
 
-</div><!-- documentation -->
 
-
-<footer id="validator-badges">
-  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
-  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.1.
-  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="http://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
