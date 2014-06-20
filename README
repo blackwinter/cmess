@@ -2,7 +2,7 @@
 
 == VERSION
 
-This documentation refers to cmess version 0.4.0
+This documentation refers to cmess version 0.4.1
 
 
 == DESCRIPTION
@@ -31,7 +31,7 @@ Ruby versions. CMess has been tested with ruby 2.0.0p247 on x86_64-linux.
 
 == LINKS
 
-Documentation:: https://blackwinter.github.io/cmess/
+Documentation:: https://blackwinter.github.com/cmess
 Source code::   https://github.com/blackwinter/cmess
 RubyGem::       https://rubygems.org/gems/cmess
 
@@ -53,7 +53,7 @@ RubyGem::       https://rubygems.org/gems/cmess
 Copyright (C) 2007-2012 University of Cologne,
 Albertus-Magnus-Platz, 50923 Cologne, Germany
 
-Copyright (C) 2013 Jens Wille
+Copyright (C) 2013-2014 Jens Wille
 
 cmess is free software: you can redistribute it and/or modify it under the
 terms of the GNU Affero General Public License as published by the Free

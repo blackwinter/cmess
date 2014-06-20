@@ -2,6 +2,11 @@
 
 = Revision history for cmess
 
+== 0.4.1 [2014-06-20]
+
+* Various updates/refactorings.
+* Housekeeping.
+
 == 0.4.0 [2013-08-02]
 
 * Updated for Ruby 1.9.2+. <b>Ruby 1.8 no longer supported.</b>
