@@ -216,7 +216,7 @@ class CMess::GuessEncoding::Automatic
     bytes.include?(next_byte)
   end
 
-  def read(chunk_size = chunk_size)
+  def read(chunk_size = chunk_size())
     @byte_count ||= Hash.new(0)
     @byte_total ||= 0
 
