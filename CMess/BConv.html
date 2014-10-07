@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class CMess::BConv - cmess Application documentation (v0.4.1)</title>
+<title>class CMess::BConv - cmess Application documentation (v0.5.0)</title>
 
 <link href="../fonts.css" rel="stylesheet">
 <link href="../rdoc.css" rel="stylesheet">
@@ -237,7 +237,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/cmess/bconv.rb, line 72</span>
+            <pre><span class="ruby-comment"># File lib/cmess/bconv.rb, line 73</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span>)
   <span class="ruby-ivar">@input</span>, <span class="ruby-ivar">@output</span>, <span class="ruby-identifier">_</span> = <span class="ruby-constant">CMess</span>.<span class="ruby-identifier">ensure_options!</span>(<span class="ruby-identifier">options</span>,
     <span class="ruby-value">:input</span>, <span class="ruby-value">:output</span>, <span class="ruby-value">:source_encoding</span>, <span class="ruby-value">:target_encoding</span>
@@ -288,7 +288,7 @@
 
           
           <div class="method-source-code" id="convert-source">
-            <pre><span class="ruby-comment"># File lib/cmess/bconv.rb, line 46</span>
+            <pre><span class="ruby-comment"># File lib/cmess/bconv.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">convert</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
   <span class="ruby-identifier">new</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>).<span class="ruby-identifier">convert</span>
 <span class="ruby-keyword">end</span></pre>
@@ -321,7 +321,7 @@
 
           
           <div class="method-source-code" id="encodings-source">
-            <pre><span class="ruby-comment"># File lib/cmess/bconv.rb, line 50</span>
+            <pre><span class="ruby-comment"># File lib/cmess/bconv.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">encodings</span>(<span class="ruby-identifier">chartab</span> = <span class="ruby-constant">DEFAULT_CHARTAB_FILE</span>)
   <span class="ruby-identifier">chartab</span> = <span class="ruby-identifier">load_chartab</span>(<span class="ruby-identifier">chartab</span>)
 
@@ -358,7 +358,7 @@
 
           
           <div class="method-source-code" id="load_chartab-source">
-            <pre><span class="ruby-comment"># File lib/cmess/bconv.rb, line 58</span>
+            <pre><span class="ruby-comment"># File lib/cmess/bconv.rb, line 59</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">load_chartab</span>(<span class="ruby-identifier">chartab</span>)
   <span class="ruby-keyword">case</span> <span class="ruby-identifier">chartab</span>
     <span class="ruby-keyword">when</span> <span class="ruby-constant">Hash</span>
@@ -407,7 +407,7 @@
 
           
           <div class="method-source-code" id="encode-source">
-            <pre><span class="ruby-comment"># File lib/cmess/bconv.rb, line 130</span>
+            <pre><span class="ruby-comment"># File lib/cmess/bconv.rb, line 131</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">encode</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">source</span>, <span class="ruby-identifier">target</span>)
   <span class="ruby-identifier">string</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-identifier">target</span>, <span class="ruby-identifier">source</span>)
 <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UndefinedConversionError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
@@ -442,7 +442,7 @@
 
           
           <div class="method-source-code" id="map-source">
-            <pre><span class="ruby-comment"># File lib/cmess/bconv.rb, line 136</span>
+            <pre><span class="ruby-comment"># File lib/cmess/bconv.rb, line 137</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">map</span>(<span class="ruby-identifier">char</span>, <span class="ruby-identifier">charmap</span>)
   <span class="ruby-keyword">unless</span> <span class="ruby-identifier">map</span> = <span class="ruby-identifier">charmap</span>[[<span class="ruby-identifier">char</span>]]
     <span class="ruby-keyword">unless</span> <span class="ruby-identifier">map</span> = <span class="ruby-identifier">charmap</span>[[<span class="ruby-identifier">char</span>, <span class="ruby-identifier">c</span> = <span class="ruby-identifier">input</span>.<span class="ruby-identifier">getc</span>]]
@@ -471,7 +471,7 @@
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 

@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class CMess::GuessEncoding::Automatic - cmess Application documentation (v0.4.1)</title>
+<title>class CMess::GuessEncoding::Automatic - cmess Application documentation (v0.5.0)</title>
 
 <link href="../../fonts.css" rel="stylesheet">
 <link href="../../rdoc.css" rel="stylesheet">
@@ -360,7 +360,7 @@ exceed this threshold to yield a direct match.</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 148</span>
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 146</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">chunk_size</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-ivar">@input</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">input</span>
     <span class="ruby-keyword">when</span> <span class="ruby-constant">IO</span>     <span class="ruby-keyword">then</span> <span class="ruby-identifier">input</span>
@@ -408,7 +408,7 @@ exceed this threshold to yield a direct match.</p>
 
           
           <div class="method-source-code" id="bom-source">
-            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 175</span>
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 173</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">bom</span>
   <span class="ruby-ivar">@bom</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">check_bom</span>
 <span class="ruby-keyword">end</span></pre>
@@ -441,7 +441,7 @@ exceed this threshold to yield a direct match.</p>
 
           
           <div class="method-source-code" id="guess-source">
-            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 116</span>
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 114</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">guess</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">chunk_size</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">ignore_bom</span> = <span class="ruby-keyword">false</span>)
   <span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">chunk_size</span>).<span class="ruby-identifier">guess</span>(<span class="ruby-identifier">ignore_bom</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -482,7 +482,7 @@ exceed this threshold to yield a direct match.</p>
 
           
           <div class="method-source-code" id="bom_encoding-source">
-            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 135</span>
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 133</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">bom_encoding</span>(<span class="ruby-identifier">encoding</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-keyword">unless</span> <span class="ruby-identifier">supported_bom?</span>(<span class="ruby-identifier">encoding</span>)
     <span class="ruby-identifier">supported_boms</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">encoding</span>
@@ -518,7 +518,7 @@ exceed this threshold to yield a direct match.</p>
 
           
           <div class="method-source-code" id="byte_count_sum-source">
-            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 236</span>
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 234</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">byte_count_sum</span>(<span class="ruby-identifier">bytes</span>)
   <span class="ruby-constant">Array</span>(<span class="ruby-identifier">bytes</span>).<span class="ruby-identifier">inject</span>(<span class="ruby-value">0</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">sum</span>, <span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sum</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">byte_count</span>[<span class="ruby-identifier">n</span>] }
 <span class="ruby-keyword">end</span></pre>
@@ -551,7 +551,7 @@ exceed this threshold to yield a direct match.</p>
 
           
           <div class="method-source-code" id="check_bom-source">
-            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 185</span>
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 183</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">check_bom</span>
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">eof?</span>
 
@@ -601,7 +601,7 @@ exceed this threshold to yield a direct match.</p>
 
           
           <div class="method-source-code" id="encoding-source">
-            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 122</span>
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 120</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">encoding</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">encodings</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
   <span class="ruby-identifier">encodings</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">encoding</span><span class="ruby-operator">|</span>
     <span class="ruby-keyword">unless</span> <span class="ruby-identifier">supported_encoding?</span>(<span class="ruby-identifier">encoding</span>)
@@ -639,7 +639,7 @@ exceed this threshold to yield a direct match.</p>
 
           
           <div class="method-source-code" id="eof-3F-source">
-            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 181</span>
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 179</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">eof?</span>
   <span class="ruby-identifier">input</span>.<span class="ruby-identifier">eof?</span>
 <span class="ruby-keyword">end</span></pre>
@@ -672,7 +672,7 @@ exceed this threshold to yield a direct match.</p>
 
           
           <div class="method-source-code" id="next_byte-source">
-            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 206</span>
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 204</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">next_byte</span>
   <span class="ruby-identifier">input</span>.<span class="ruby-identifier">read</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&#39;C&#39;</span>).<span class="ruby-identifier">first</span>
 <span class="ruby-keyword">end</span></pre>
@@ -705,7 +705,7 @@ exceed this threshold to yield a direct match.</p>
 
           
           <div class="method-source-code" id="next_one_of-3F-source">
-            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 214</span>
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 212</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">next_one_of?</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">bytes</span>)
   <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">next_byte</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -723,7 +723,7 @@ exceed this threshold to yield a direct match.</p>
         
         <div class="method-heading">
           <span class="method-name">read</span><span
-            class="method-args">(chunk_size = chunk_size)</span>
+            class="method-args">(chunk_size = chunk_size())</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -738,8 +738,8 @@ exceed this threshold to yield a direct match.</p>
 
           
           <div class="method-source-code" id="read-source">
-            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 218</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier">read</span>(<span class="ruby-identifier">chunk_size</span> = <span class="ruby-identifier">chunk_size</span>)
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 216</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">read</span>(<span class="ruby-identifier">chunk_size</span> = <span class="ruby-identifier">chunk_size</span>())
   <span class="ruby-ivar">@byte_count</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
   <span class="ruby-ivar">@byte_total</span> <span class="ruby-operator">||=</span> <span class="ruby-value">0</span>
 
@@ -785,7 +785,7 @@ exceed this threshold to yield a direct match.</p>
 
           
           <div class="method-source-code" id="relative_byte_count-source">
-            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 240</span>
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 238</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">relative_byte_count</span>(<span class="ruby-identifier">count</span>)
   <span class="ruby-identifier">count</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">byte_total</span>
 <span class="ruby-keyword">end</span></pre>
@@ -818,7 +818,7 @@ exceed this threshold to yield a direct match.</p>
 
           
           <div class="method-source-code" id="starts_with-3F-source">
-            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 210</span>
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 208</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_with?</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">bytes</span>)
   <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">byte</span><span class="ruby-operator">|</span> <span class="ruby-identifier">next_byte</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">byte</span> }
 <span class="ruby-keyword">end</span></pre>
@@ -851,7 +851,7 @@ exceed this threshold to yield a direct match.</p>
 
           
           <div class="method-source-code" id="supported_bom-3F-source">
-            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 142</span>
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 140</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">supported_bom?</span>(<span class="ruby-identifier">encoding</span>)
   <span class="ruby-identifier">supported_boms</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">encoding</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -884,7 +884,7 @@ exceed this threshold to yield a direct match.</p>
 
           
           <div class="method-source-code" id="supported_encoding-3F-source">
-            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 131</span>
+            <pre><span class="ruby-comment"># File lib/cmess/guess_encoding/automatic.rb, line 129</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">supported_encoding?</span>(<span class="ruby-identifier">encoding</span>)
   <span class="ruby-identifier">supported_encodings</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">encoding</span>)
 <span class="ruby-keyword">end</span></pre>
@@ -906,7 +906,7 @@ exceed this threshold to yield a direct match.</p>
 
 <footer id="validator-badges" role="contentinfo">
   <p><a href="http://validator.w3.org/check/referer">Validate</a>
-  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.1.
+  <p>Generated by <a href="http://rdoc.rubyforge.org">RDoc</a> 4.1.2.
   <p>Based on <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
 </footer>
 
