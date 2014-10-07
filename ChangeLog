@@ -2,6 +2,11 @@
 
 = Revision history for cmess
 
+== 0.5.0 [2014-10-07]
+
+* Dropped +autoload+; require modules explicitly.
+* Ruby 2.2 compatibility.
+
 == 0.4.1 [2014-06-20]
 
 * Various updates/refactorings.
@@ -28,7 +33,7 @@
 
 == 0.2.4 [2010-07-13]
 
-* decode_entities: Added flavour 'xml-safe' for HTMLEntities decoder
+* decode_entities: Added flavour +xml-safe+ for HTMLEntities decoder
   and made it the new default
 
 == 0.2.3 [2010-04-23]
@@ -53,12 +58,12 @@
 
 * Some refactoring; started to make tools more usable as a library
 * Make tools accept multiple files for input (via tempfile)
-* Use ENV.user_encoding from ruby-nuggets
+* Use +ENV.user_encoding+ from ruby-nuggets
 * Wrap command execution in a block catching any exceptions
 
 == 0.1.1 [2008-09-16]
 
-* Added bconv tool to convert between bibliographic encodings
+* Added +bconv+ tool to convert between bibliographic encodings
 
 == 0.1.0 [2008-09-15]
 
@@ -73,7 +78,7 @@
 
 == 0.0.8 [2008-08-14]
 
-* Require 'cmess' inside libs, so the user doesn't have to
+* Require +cmess+ inside libs, so the user doesn't have to
 
 == 0.0.7 [2008-05-19]
 
