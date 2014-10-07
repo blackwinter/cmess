@@ -7,7 +7,7 @@
 #                         Albertus-Magnus-Platz,                              #
 #                         50923 Cologne, Germany                              #
 #                                                                             #
-# Copyright (C) 2013 Jens Wille                                               #
+# Copyright (C) 2013-2014 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@gmail.com>                                       #
@@ -28,17 +28,11 @@
 ###############################################################################
 #++
 
-require 'cmess/version'
+require_relative 'cmess/version'
 
 # See README for more information.
 
 module CMess
-
-  autoload :BConv,          'cmess/bconv'
-  autoload :Cinderella,     'cmess/cinderella'
-  autoload :CLI,            'cmess/cli'
-  autoload :DecodeEntities, 'cmess/decode_entities'
-  autoload :GuessEncoding,  'cmess/guess_encoding'
 
   DATA_DIR = ENV['CMESS_DATA'] || File.expand_path('../../data', __FILE__)
 

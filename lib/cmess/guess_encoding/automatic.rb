@@ -34,8 +34,6 @@
 ###############################################################################
 #++
 
-require 'cmess/guess_encoding'
-
 require 'stringio'
 require 'forwardable'
 require 'safe_yaml/load'

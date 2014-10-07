@@ -7,7 +7,7 @@
 #                         Albertus-Magnus-Platz,                              #
 #                         50923 Cologne, Germany                              #
 #                                                                             #
-# Copyright (C) 2013 Jens Wille                                               #
+# Copyright (C) 2013-2014 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@gmail.com>                                       #
@@ -28,8 +28,9 @@
 ###############################################################################
 #++
 
-require 'cmess'
 require 'safe_yaml/load'
+
+require 'cmess' unless Object.const_defined?(:CMess)
 
 # Convert between bibliographic (and other) encodings.
 

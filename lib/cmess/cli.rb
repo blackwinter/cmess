@@ -7,7 +7,7 @@
 #                         Albertus-Magnus-Platz,                              #
 #                         50923 Cologne, Germany                              #
 #                                                                             #
-# Copyright (C) 2013 Jens Wille                                               #
+# Copyright (C) 2013-2014 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@gmail.com>                                       #
@@ -28,8 +28,6 @@
 ###############################################################################
 #++
 
-require 'cmess'
-
 require 'optparse'
 require 'tempfile'
 require 'nuggets/env/user_encoding'
@@ -37,6 +35,8 @@ require 'nuggets/string/capitalize_first'
 require 'nuggets/string/word_wrap'
 
 module CMess::CLI
+
+  extend self
 
   # How to split list of arguments.
   SPLIT_ARG_LIST_RE = %r{\s*[,\s]\s*}

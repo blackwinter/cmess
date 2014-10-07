@@ -7,7 +7,7 @@
 #                         Albertus-Magnus-Platz,                              #
 #                         50923 Cologne, Germany                              #
 #                                                                             #
-# Copyright (C) 2013 Jens Wille                                               #
+# Copyright (C) 2013-2014 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@gmail.com>                                       #
@@ -32,7 +32,7 @@
 ###############################################################################
 #++
 
-require 'cmess'
+require 'cmess' unless Object.const_defined?(:CMess)
 
 # Allows to guess an input's encoding either manually or automatically.
 # Works actually pretty good -- for the supported encodings. See Manual
@@ -41,10 +41,6 @@ require 'cmess'
 module CMess::GuessEncoding
 
   VERSION = '0.2.0'
-
-  autoload :Encoding,  'cmess/guess_encoding/encoding'
-  autoload :Manual,    'cmess/guess_encoding/manual'
-  autoload :Automatic, 'cmess/guess_encoding/automatic'
 
   class << self
 
@@ -63,3 +59,7 @@ module CMess::GuessEncoding
   end
 
 end
+
+require_relative 'guess_encoding/encoding'
+require_relative 'guess_encoding/manual'
+require_relative 'guess_encoding/automatic'
