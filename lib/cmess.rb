@@ -7,7 +7,7 @@
 #                         Albertus-Magnus-Platz,                              #
 #                         50923 Cologne, Germany                              #
 #                                                                             #
-# Copyright (C) 2013-2014 Jens Wille                                          #
+# Copyright (C) 2013-2016 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@gmail.com>                                       #
@@ -39,13 +39,15 @@ module CMess
   class << self
 
     def ensure_options!(options, *required)
-      values = options.values_at(*required)
+      values, missing = [], []
 
-      missing = values.select { |value| value.nil? }
-      return values if missing.empty?
+      required.each { |key|
+        value = options[key]
+        value.nil? ? missing << key : values << value
+      }
 
-      msg = "required options missing: #{missing.join(', ')}"
-      raise ArgumentError, msg, caller(1)
+      missing.empty? ? values : raise(ArgumentError,
+        "required options missing: #{missing.join(', ')}", caller(1))
     end
 
   end
