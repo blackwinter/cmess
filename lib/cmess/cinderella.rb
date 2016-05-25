@@ -41,7 +41,7 @@ module CMess::Cinderella
 
   extend self
 
-  VERSION = '0.1.0'
+  VERSION = '0.1.1'
 
   DEFAULT_CSETS_DIR = File.join(CMess::DATA_DIR, 'csets')
 

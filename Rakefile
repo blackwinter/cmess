@@ -18,7 +18,7 @@ following tools: #{Dir['bin/*'].map { |e| File.basename(e) }.sort.join(', ')})
       extra_files:  FileList['data/**/*'].to_a,
       dependencies: {
         htmlentities: '~> 4.3',
-        nuggets:      '~> 1.0',
+        nuggets:      '~> 1.5',
         safe_yaml:    '~> 1.0'
       },
 
