@@ -10,7 +10,7 @@
 #                         Albertus-Magnus-Platz,                              #
 #                         50923 Cologne, Germany                              #
 #                                                                             #
-# Copyright (C) 2013-2014 Jens Wille                                          #
+# Copyright (C) 2013-2016 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@gmail.com>                                       #
@@ -30,6 +30,8 @@
 #                                                                             #
 ###############################################################################
 #++
+
+require 'safe_yaml/load'
 
 require 'cmess/cinderella'
 require 'cmess/cli'
@@ -173,5 +175,5 @@ cli do
 
   trailing_args_as_input(options)
 
-  CMess::Cinderella.pick(options.merge(chars: YAML.load_file(char_file)))
+  CMess::Cinderella.pick(options.merge(chars: SafeYAML.load_file(char_file)))
 end
