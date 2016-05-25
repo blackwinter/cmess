@@ -94,4 +94,4 @@
 - "|"  # VERTICAL LINE
 - "}"  # RIGHT CURLY BRACKET
 - "~"  # TILDE
-- "" # DEL
+- "\x7f" # DEL

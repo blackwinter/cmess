@@ -95,7 +95,7 @@
 #- "|"  # VERTICAL LINE
 #- "}"  # RIGHT CURLY BRACKET
 #- "~"  # TILDE
-#- "" # DEL
+#- "\x7f" # DEL
 
 # ====[ latin_1_supplement ]====
 - "¡"  # INVERTED EXCLAMATION MARK
