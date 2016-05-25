@@ -7,7 +7,7 @@
 #                         Albertus-Magnus-Platz,                              #
 #                         50923 Cologne, Germany                              #
 #                                                                             #
-# Copyright (C) 2013-2014 Jens Wille                                          #
+# Copyright (C) 2013-2016 Jens Wille                                          #
 #                                                                             #
 # Authors:                                                                    #
 #     Jens Wille <jens.wille@gmail.com>                                       #
@@ -46,8 +46,12 @@ module CMess::Cinderella
   DEFAULT_CSETS_DIR = File.join(CMess::DATA_DIR, 'csets')
 
   def pick(options)
-    input, pot, crop, source, target, chars = CMess.ensure_options!(options,
-      :input, :pot, :crop, :source_encoding, :target_encoding, :chars
+    input, source, target, chars = CMess.ensure_options!(options,
+      :input, :source_encoding, :target_encoding, :chars
+    )
+
+    pot, crop, repair = options.values_at(
+      :pot, :crop, :repair
     )
 
     encoded = {}
