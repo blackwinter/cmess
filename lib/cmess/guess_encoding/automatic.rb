@@ -116,6 +116,10 @@ class CMess::GuessEncoding::Automatic
       new(input, chunk_size).guess(ignore_bom)
     end
 
+    def supported_encoding?(encoding)
+      supported_encodings.include?(encoding)
+    end
+
     private
 
     def encoding(*encodings, &block)
@@ -125,10 +129,6 @@ class CMess::GuessEncoding::Automatic
           encoding_guessers   << block
         end
       }
-    end
-
-    def supported_encoding?(encoding)
-      supported_encodings.include?(encoding)
     end
 
     def bom_encoding(encoding, &block)
