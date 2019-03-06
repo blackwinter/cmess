@@ -162,8 +162,7 @@ class CMess::GuessEncoding::Automatic
 
     while read
       encoding_guessers.each { |block|
-        if encoding = instance_eval(&block) 
-            and supported_encoding?(encoding) # Offending line. 
+        if encoding = instance_eval(&block) and supported_encoding?(encoding) # Offending line. 
           return encoding
         end
       }
@@ -193,8 +192,7 @@ class CMess::GuessEncoding::Automatic
     end
 
     bom_guessers.each { |block|
-      if encoding = instance_eval(&block) 
-          and supported_encoding?(encoding) # Should also be Offending line
+      if encoding = instance_eval(&block) and supported_encoding?(encoding) # Should also be Offending line
         return encoding
       else
         input.rewind
