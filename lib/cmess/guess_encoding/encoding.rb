@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 #--
 ###############################################################################
 #                                                                             #
@@ -37,11 +35,12 @@
 # Namespace for our encodings.
 
 module CMess::GuessEncoding::Encoding
+
   extend self
 
   def all_encodings
-    if const_defined?(:ALL_ENCODINGS)
-      ALL_ENCODINGS
+    if const_defined?(:ALL_ENCODINGS) then 
+      ALL_ENCODINGS 
     else
       const_set(:ALL_ENCODINGS, get_all_encodings)
     end
@@ -51,8 +50,8 @@ module CMess::GuessEncoding::Encoding
     get_or_set_encoding_const(encoding)
   end
 
-  private(:get_all_encodings, :const_name_for, :set_encoding_const, :get_or_set_encoding_const)
   private_class_method :included
+  private
 
   def get_all_encodings
     Encoding.name_list.map { |encoding| get_or_set_encoding_const(encoding) }
@@ -67,9 +66,9 @@ module CMess::GuessEncoding::Encoding
   end
 
   def get_or_set_encoding_const(encoding)
-    if const_defined?(const = const_name_for(encoding))
-      const_get(const)
-    else
+    if const_defined?(const = const_name_for(encoding)) then 
+      const_get(const) 
+    else 
       set_encoding_const(encoding, const)
     end
   end
@@ -88,4 +87,5 @@ module CMess::GuessEncoding::Encoding
   def self.included(base)
     base.extend(self)
   end
+
 end
