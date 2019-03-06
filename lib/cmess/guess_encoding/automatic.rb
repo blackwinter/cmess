@@ -119,6 +119,10 @@ class CMess::GuessEncoding::Automatic
     def supported_encoding?(encoding)
       supported_encodings.include?(encoding) ## Calls Original Offending Method # Moved to public
     end
+    
+    def supported_bom?(encoding)
+      supported_boms.include?(encoding) # Moved to public
+    end
 
     private
 
@@ -136,10 +140,6 @@ class CMess::GuessEncoding::Automatic
         supported_boms << encoding
         bom_guessers   << lambda { |*| encoding if instance_eval(&block) }
       end
-    end
-
-    def supported_bom?(encoding)
-      supported_boms.include?(encoding)
     end
 
   end
