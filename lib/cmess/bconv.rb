@@ -86,7 +86,7 @@ class CMess::BConv
   attr_reader :input, :output, :source_encoding, :target_encoding, :chartab, :encodings
 
   def convert
-    # TODO: Refactor
+    # TODO: Refactor  
     source = source_encoding
     target = target_encoding
     out = output
@@ -146,4 +146,12 @@ class CMess::BConv
 
     map
   end
+
+  # def map_refactor(char, charmap)
+  #   # if map = charmap[[char]] fails do
+  #   # if map = charmap[[char, c = input.getc]] fails do
+  #   # reset input (which is what?)
+  #   # set map to ''
+  #   # return map
+  # end
 end
