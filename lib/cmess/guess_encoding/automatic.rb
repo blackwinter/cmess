@@ -35,7 +35,7 @@
 #++
 
 require 'stringio'
-require 'forwardable'
+require 'forwardable'  # This is part of the Offending issue
 require 'safe_yaml/load'
 
 # Tries to detect the encoding of a given input by applying several
@@ -50,7 +50,7 @@ class CMess::GuessEncoding::Automatic
 
   extend Forwardable
 
-  def_delegators self, :encoding_guessers, :supported_encoding?,
+  def_delegators self, :encoding_guessers, :supported_encoding?,  #Here is the issue supported_encoding is private but delegated
                        :bom_guessers,      :supported_bom?
 
   include CMess::GuessEncoding::Encoding
@@ -115,6 +115,10 @@ class CMess::GuessEncoding::Automatic
     def guess(input, chunk_size = nil, ignore_bom = false)
       new(input, chunk_size).guess(ignore_bom)
     end
+    
+    def supported_encoding?(encoding)
+      supported_encodings.include?(encoding) ## Calls Original Offending Method # Moved to public
+    end
 
     private
 
@@ -125,10 +129,6 @@ class CMess::GuessEncoding::Automatic
           encoding_guessers   << block
         end
       }
-    end
-
-    def supported_encoding?(encoding)
-      supported_encodings.include?(encoding)
     end
 
     def bom_encoding(encoding, &block)
@@ -162,7 +162,8 @@ class CMess::GuessEncoding::Automatic
 
     while read
       encoding_guessers.each { |block|
-        if encoding = instance_eval(&block) and supported_encoding?(encoding)
+        if encoding = instance_eval(&block) 
+            and supported_encoding?(encoding) # Offending line. 
           return encoding
         end
       }
@@ -192,7 +193,8 @@ class CMess::GuessEncoding::Automatic
     end
 
     bom_guessers.each { |block|
-      if encoding = instance_eval(&block) and supported_encoding?(encoding)
+      if encoding = instance_eval(&block) 
+          and supported_encoding?(encoding) # Should also be Offending line
         return encoding
       else
         input.rewind
