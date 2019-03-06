@@ -146,12 +146,4 @@ class CMess::BConv
 
     map
   end
-
-  # def map_refactor(char, charmap)
-  #   # if map = charmap[[char]] fails do
-  #   # if map = charmap[[char, c = input.getc]] fails do
-  #   # reset input (which is what?)
-  #   # set map to ''
-  #   # return map
-  # end
 end
