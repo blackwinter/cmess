@@ -50,7 +50,7 @@ class CMess::GuessEncoding::Automatic
 
   extend Forwardable
 
-  def_delegators self, :encoding_guessers, :supported_encoding?,  #Here is the issue supported_encoding is private but delegated
+  def_delegators self, :encoding_guessers, :supported_encoding?,
                        :bom_guessers,      :supported_bom?
 
   include CMess::GuessEncoding::Encoding
@@ -117,11 +117,11 @@ class CMess::GuessEncoding::Automatic
     end
     
     def supported_encoding?(encoding)
-      supported_encodings.include?(encoding) ## Calls Original Offending Method # Moved to public
+      supported_encodings.include?(encoding)
     end
     
     def supported_bom?(encoding)
-      supported_boms.include?(encoding) # Moved to public
+      supported_boms.include?(encoding) 
     end
 
     private
@@ -162,7 +162,7 @@ class CMess::GuessEncoding::Automatic
 
     while read
       encoding_guessers.each { |block|
-        if encoding = instance_eval(&block) and supported_encoding?(encoding) # Offending line. 
+        if encoding = instance_eval(&block) and supported_encoding?(encoding) 
           return encoding
         end
       }
@@ -192,7 +192,7 @@ class CMess::GuessEncoding::Automatic
     end
 
     bom_guessers.each { |block|
-      if encoding = instance_eval(&block) and supported_encoding?(encoding) # Should also be Offending line
+      if encoding = instance_eval(&block) and supported_encoding?(encoding)
         return encoding
       else
         input.rewind
