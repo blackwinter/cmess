@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #--
 ###############################################################################
 #                                                                             #
@@ -30,26 +32,25 @@
 
 require_relative 'cmess/version'
 
-# See README for more information.
-
+# CMess - Assist with handling messed up encodings. See README for more information.
 module CMess
-
-  DATA_DIR = ENV['CMESS_DATA'] || File.expand_path('../../data', __FILE__)
+  DATA_DIR = ENV['CMESS_DATA'] || File.expand_path('../data', __dir__)
 
   class << self
-
     def ensure_options!(options, *required)
-      values, missing = [], []
+      values = []
+      missing = []
 
-      required.each { |key|
+      required.each do |key|
         value = options[key]
         value.nil? ? missing << key : values << value
-      }
+      end
 
-      missing.empty? ? values : raise(ArgumentError,
-        "required options missing: #{missing.join(', ')}", caller(1))
+      if missing.empty?
+        values
+      else
+        raise(ArgumentError, "required options missing: #{missing.join(', ')}", caller(1))
+      end
     end
-
   end
-
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #--
 ###############################################################################
 #                                                                             #
@@ -38,7 +40,6 @@ require 'cmess' unless Object.const_defined?(:CMess)
 # encoded characters, substitutes them with their original character.
 
 module CMess::Cinderella
-
   extend self
 
   VERSION = '0.1.1'
@@ -47,24 +48,21 @@ module CMess::Cinderella
 
   def pick(options)
     input, source, target, chars = CMess.ensure_options!(options,
-      :input, :source_encoding, :target_encoding, :chars
-    )
+                                                         :input, :source_encoding, :target_encoding, :chars)
 
-    pot, crop, repair = options.values_at(
-      :pot, :crop, :repair
-    )
+    pot, crop, repair = options.values_at(:pot, :crop, :repair)
 
     encoded = {}
     chars.each { |char| encoded[encode(char, source, target)] = char }
 
     regexp = Regexp.union(*encoded.keys)
 
-    input.each { |line|
-      out = line =~ regexp ? crop : pot or next
+    input.each do |line|
+      (out = line&.match?(regexp) ? crop : pot) || next
 
       line.gsub!(regexp, encoded) if repair
       out.puts(line)
-    }
+    end
   end
 
   private
@@ -73,5 +71,4 @@ module CMess::Cinderella
     string.encode(target, source)
   rescue Encoding::UndefinedConversionError
   end
-
 end

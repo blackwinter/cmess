@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+# rubocop:disable Naming/AccessorMethodName
+
 #--
 ###############################################################################
 #                                                                             #
@@ -35,17 +39,21 @@
 # Namespace for our encodings.
 
 module CMess::GuessEncoding::Encoding
-
   extend self
 
   def all_encodings
-    const_defined?(:ALL_ENCODINGS) ? ALL_ENCODINGS :
+    if const_defined?(:ALL_ENCODINGS)
+      ALL_ENCODINGS
+    else
       const_set(:ALL_ENCODINGS, get_all_encodings)
+    end
   end
 
   def [](encoding)
     get_or_set_encoding_const(encoding)
   end
+
+  private_class_method :included
 
   private
 
@@ -62,8 +70,11 @@ module CMess::GuessEncoding::Encoding
   end
 
   def get_or_set_encoding_const(encoding)
-    const_defined?(const = const_name_for(encoding)) ?
-      const_get(const) : set_encoding_const(encoding, const)
+    if const_defined?(const = const_name_for(encoding))
+      const_get(const)
+    else
+      set_encoding_const(encoding, const)
+    end
   end
 
   %w[
@@ -80,5 +91,5 @@ module CMess::GuessEncoding::Encoding
   def self.included(base)
     base.extend(self)
   end
-
 end
+# rubocop:enable Naming/AccessorMethodName

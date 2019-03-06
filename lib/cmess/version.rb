@@ -1,13 +1,12 @@
+# frozen_string_literal: true
+
 module CMess
-
   module Version
-
     MAJOR = 0
     MINOR = 5
-    TINY  = 1
+    TINY  = 2
 
     class << self
-
       # Returns array representation.
       def to_a
         [MAJOR, MINOR, TINY]
@@ -17,11 +16,8 @@ module CMess
       def to_s
         to_a.join('.')
       end
-
     end
-
   end
 
   VERSION = Version.to_s
-
 end

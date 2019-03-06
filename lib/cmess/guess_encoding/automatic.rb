@@ -1,4 +1,6 @@
-# encoding: utf-8
+# frozen_string_literal: true
+
+# rubocop:disable Naming/MethodName
 
 #--
 ###############################################################################
@@ -47,11 +49,10 @@ require 'safe_yaml/load'
 # For supported encodings see EncodingGuessers and BOMGuessers.
 
 class CMess::GuessEncoding::Automatic
-
   extend Forwardable
 
   def_delegators self, :encoding_guessers, :supported_encoding?,
-                       :bom_guessers,      :supported_bom?
+                 :bom_guessers, :supported_bom?
 
   include CMess::GuessEncoding::Encoding
 
@@ -76,20 +77,21 @@ class CMess::GuessEncoding::Automatic
     CP1252,
     CP850,
     MS_ANSI
-  ]
+  ].freeze
 
   # Certain (non-ASCII) chars to test for in TEST_ENCODINGS.
-  CHARS_TO_TEST = (
-    '€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂ' <<
+  CHARS_TO_TEST =
+    '€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ¡¢£¤¥¦§¨©ª«¬­®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂ' \
     'ÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ'
-  ).chars.to_a
+    .chars.to_a
 
   # Map TEST_ENCODINGS to respectively encoded CHARS_TO_TEST.
-  TEST_CHARS = Hash.new { |h, k|
-    e, f = self[k], UTF_8
+  TEST_CHARS = Hash.new do |h, k|
+    e = self[k]
+    f = UTF_8
     TEST_ENCODINGS << e unless TEST_ENCODINGS.include?(e)
     h[e] = CHARS_TO_TEST.flat_map { |c| c.encode(e, f).unpack('C') }
-  }.update(SafeYAML.load_file(File.join(CMess::DATA_DIR, 'test_chars.yaml')))
+  end.update(SafeYAML.load_file(File.join(CMess::DATA_DIR, 'test_chars.yaml')))
 
   # Relative count of TEST_CHARS must exceed this threshold to yield
   # a direct match.
@@ -100,7 +102,7 @@ class CMess::GuessEncoding::Automatic
   TEST_THRESHOLD_APPROX = 0.0004
 
   # Pattern for method names in EncodingGuessers and BOMGuessers.
-  GUESS_METHOD_RE = %r{\A((?:bom_)?encoding)_\d+_(.+)\z}
+  GUESS_METHOD_RE = /\A((?:bom_)?encoding)_\d+_(.+)\z/.freeze
 
   @supported_encodings = []
   @encoding_guessers   = []
@@ -108,7 +110,6 @@ class CMess::GuessEncoding::Automatic
   @bom_guessers        = []
 
   class << self
-
     attr_reader :supported_encodings, :encoding_guessers,
                 :supported_boms,      :bom_guessers
 
@@ -116,41 +117,43 @@ class CMess::GuessEncoding::Automatic
       new(input, chunk_size).guess(ignore_bom)
     end
 
-    private
-
-    def encoding(*encodings, &block)
-      encodings.flatten.each { |encoding|
-        unless supported_encoding?(encoding)
-          supported_encodings << encoding
-          encoding_guessers   << block
-        end
-      }
-    end
-
     def supported_encoding?(encoding)
       supported_encodings.include?(encoding)
-    end
-
-    def bom_encoding(encoding, &block)
-      unless supported_bom?(encoding)
-        supported_boms << encoding
-        bom_guessers   << lambda { |*| encoding if instance_eval(&block) }
-      end
     end
 
     def supported_bom?(encoding)
       supported_boms.include?(encoding)
     end
 
+    private
+
+    def encoding(*encodings, &block)
+      encodings.flatten.each do |encoding|
+        unless supported_encoding?(encoding)
+          supported_encodings << encoding
+          encoding_guessers   << block
+        end
+      end
+    end
+
+    def bom_encoding(encoding, &block)
+      unless supported_bom?(encoding)
+        supported_boms << encoding
+        bom_guessers   << ->(*) { encoding if instance_eval(&block) }
+      end
+    end
   end
 
   def initialize(input, chunk_size = nil)
-    @input = case input
-      when IO     then input
-      when String then StringIO.new(input)
-      else raise ArgumentError,
-        "don't know how to handle input of type #{input.class}"
-    end
+    @input =
+      case input
+      when IO     then
+        input
+      when String then
+        StringIO.new(input)
+      else
+        raise ArgumentError, "don't know how to handle input of type #{input.class}"
+      end
 
     @chunk_size = chunk_size
   end
@@ -161,11 +164,11 @@ class CMess::GuessEncoding::Automatic
     return bom if bom && !ignore_bom
 
     while read
-      encoding_guessers.each { |block|
-        if encoding = instance_eval(&block) and supported_encoding?(encoding)
+      encoding_guessers.each do |block|
+        if (encoding = instance_eval(&block)) && supported_encoding?(encoding)
           return encoding
         end
-      }
+      end
     end
 
     UNKNOWN
@@ -191,19 +194,19 @@ class CMess::GuessEncoding::Automatic
       return
     end
 
-    bom_guessers.each { |block|
-      if encoding = instance_eval(&block) and supported_encoding?(encoding)
+    bom_guessers.each do |block|
+      if (encoding = instance_eval(&block)) && supported_encoding?(encoding)
         return encoding
       else
         input.rewind
       end
-    }
+    end
 
     nil
   end
 
   def next_byte
-    input.read(1).unpack('C').first
+    input.read(1).unpack1('C')
   end
 
   def starts_with?(*bytes)
@@ -214,7 +217,7 @@ class CMess::GuessEncoding::Automatic
     bytes.include?(next_byte)
   end
 
-  def read(chunk_size = chunk_size())
+  def read(chunk_size = @chunk_size)
     @byte_count ||= Hash.new(0)
     @byte_total ||= 0
 
@@ -222,12 +225,12 @@ class CMess::GuessEncoding::Automatic
 
     bytes_before = @byte_total
 
-    input.read(chunk_size).each_byte { |byte|
+    input.read(chunk_size).each_byte do |byte|
       @byte_count[byte] += 1
       @byte_total       += 1
 
       @first_byte ||= byte
-    }
+    end
 
     @byte_total > bytes_before
   end
@@ -243,7 +246,6 @@ class CMess::GuessEncoding::Automatic
   # Definition of guessing heuristics. Order matters!
 
   module EncodingGuessers
-
     include CMess::GuessEncoding::Encoding
 
     # ASCII[http://en.wikipedia.org/wiki/ASCII], if all bytes are
@@ -259,10 +261,10 @@ class CMess::GuessEncoding::Automatic
     def encoding_02_UTF_32_and_UTF_16BE_and_UTF_16LE_and_UTF_16
       if relative_byte_count(byte_count[0]) > 0.25
         case first_byte
-          when 0x00 then UTF_32
-          when 0xfe then UTF_16BE
-          when 0xff then UTF_16LE
-          else           UTF_16
+        when 0x00 then UTF_32
+        when 0xfe then UTF_16BE
+        when 0xff then UTF_16LE
+        else UTF_16
         end
       end
     end
@@ -275,9 +277,9 @@ class CMess::GuessEncoding::Automatic
                   byte_count_sum(0xe0..0xef) * 2 +
                   # => 1110xxxx 10xxxxxx 10xxxxxx
                   byte_count_sum(0xf0..0xf7) * 3
-                  # => 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
+      # => 11110xxx 10xxxxxx 10xxxxxx 10xxxxxx
 
-      UTF_8 if esc_bytes > 0 && esc_bytes == byte_count_sum(0x80..0xbf)
+      UTF_8 if esc_bytes.positive? && esc_bytes == byte_count_sum(0x80..0xbf)
     end
 
     # TEST_ENCODINGS, if frequency of TEST_CHARS exceeds TEST_THRESHOLD_DIRECT
@@ -286,20 +288,18 @@ class CMess::GuessEncoding::Automatic
       ratios = {}
 
       TEST_ENCODINGS.find(lambda {
-        ratio, encoding = ratios.sort.last
+        ratio, encoding = ratios.max
         encoding if ratio >= TEST_THRESHOLD_APPROX
-      }) { |encoding|
+      }) do |encoding|
         ratio = relative_byte_count(byte_count_sum(TEST_CHARS[encoding]))
         ratio >= TEST_THRESHOLD_DIRECT || (ratios[ratio] ||= encoding; false)
-      }
+      end
     end
-
   end
 
   # BOM[http://en.wikipedia.org/wiki/Byte_order_mark] detection.
 
   module BOMGuessers
-
     # UTF-8[http://en.wikipedia.org/wiki/UTF-8]
     def bom_encoding_01_UTF_8
       starts_with?(0xef, 0xbb, 0xbf)
@@ -354,18 +354,19 @@ class CMess::GuessEncoding::Automatic
     def bom_encoding_11_GB_18030
       starts_with?(0x84, 0x31, 0x95, 0x33)
     end
-
   end
 
-  [EncodingGuessers, BOMGuessers].each { |mod|
+  [EncodingGuessers, BOMGuessers].each do |mod|
     include mod
 
-    mod.instance_methods(false).sort.each { |method|
+    mod.instance_methods(false).sort.each do |method|
       next unless method =~ GUESS_METHOD_RE
-      name, list = $1, $2.split('_and_')
+
+      name = Regexp.last_match(1)
+      list = Regexp.last_match(2).split('_and_')
 
       send(name, *list.map { |encoding| const_get(encoding) }) { send(method) }
-    }
-  }
-
+    end
+  end
 end
+# rubocop:enable Naming/MethodName
