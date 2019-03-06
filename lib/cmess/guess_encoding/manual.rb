@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #--
 ###############################################################################
 #                                                                             #
@@ -42,8 +44,7 @@ require 'nuggets/enumerable/minmax'
 # with its desired appearance.
 
 module CMess::GuessEncoding::Manual
-
-  extend self
+  module_function
 
   include CMess::GuessEncoding::Encoding
 
@@ -58,7 +59,7 @@ module CMess::GuessEncoding::Manual
     CP850,
     CP852,
     UTF_8
-  ]
+  ].freeze
 
   # Likely candidates to suggest to the user
   CANDIDATES = [
@@ -78,7 +79,7 @@ module CMess::GuessEncoding::Manual
     UTF_32,
     UTF_32BE,
     UTF_32LE
-  ]
+  ].freeze
 
   def display(options)
     input, target = CMess.ensure_options!(options, :input, :target_encoding)
@@ -95,22 +96,22 @@ module CMess::GuessEncoding::Manual
     # move target encoding to front
     encodings.in_order!(target)
 
-    max_length, reverse = encodings.max(:length), options[:reverse]
+    max_length = encodings.max(:length)
+    reverse = options[:reverse]
 
-    encodings.each { |encoding|
+    encodings.each do |encoding|
       args = [target, encoding]
       args.reverse! if reverse
 
       converted = begin
         input.encode(*args)
-      rescue Encoding::UndefinedConversionError => err
-        "ILLEGAL INPUT SEQUENCE: #{err.error_char}"
-      rescue Encoding::ConverterNotFoundError => err
-        err.to_s
+                  rescue Encoding::UndefinedConversionError => err
+                    "ILLEGAL INPUT SEQUENCE: #{err.error_char}"
+                  rescue Encoding::ConverterNotFoundError => err
+                    err.to_s
       end
 
-      puts "%-#{max_length}s : %s" % [encoding, converted]
-    }
+      puts format("%-#{max_length}s : %s", encoding, converted)
+    end
   end
-
 end

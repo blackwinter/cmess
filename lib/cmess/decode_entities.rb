@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #--
 ###############################################################################
 #                                                                             #
@@ -33,7 +35,6 @@ require 'htmlentities'
 require 'cmess' unless Object.const_defined?(:CMess)
 
 module CMess::DecodeEntities
-
   extend self
 
   VERSION = '0.1.0'
@@ -45,21 +46,22 @@ module CMess::DecodeEntities
 
   def decode(options)
     input, output, source = CMess.ensure_options!(options,
-      :input, :output, :source_encoding
-    )
+                                                  :input, :output, :source_encoding)
 
-    target, entities, encoding = options[:target_encoding] || source,
-      HTMLEntities.new(options[:flavour] || DEFAULT_FLAVOUR), ENCODING
+    target = options[:target_encoding] || source
+    entities = HTMLEntities.new(options[:flavour] || DEFAULT_FLAVOUR)
+    encoding = ENCODING
 
-    skip_source, skip_target = source == encoding, target == encoding
+    skip_source = source == encoding
+    skip_target = target == encoding
 
-    input.each { |line|
+    input.each do |line|
       line = encode(line, source, encoding) unless skip_source
       line = entities.decode(line)
       line = encode(line, encoding, target) unless skip_target
 
       output.puts(line)
-    }
+    end
   end
 
   private
@@ -67,10 +69,9 @@ module CMess::DecodeEntities
   def encode(string, source, target)
     string.encode(target, source)
   end
-
 end
 
-class HTMLEntities  # :nodoc:
+class HTMLEntities # :nodoc:
   FLAVORS << 'xml-safe'
   MAPPINGS['xml-safe'] = MAPPINGS['xhtml1'].dup
   %w[amp apos gt lt quot].each { |key| MAPPINGS['xml-safe'].delete(key) }

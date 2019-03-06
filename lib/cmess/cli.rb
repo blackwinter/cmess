@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #--
 ###############################################################################
 #                                                                             #
@@ -35,11 +37,10 @@ require 'nuggets/string/capitalize_first'
 require 'nuggets/string/word_wrap'
 
 module CMess::CLI
-
-  extend self
+  module_function
 
   # How to split list of arguments.
-  SPLIT_ARG_LIST_RE = %r{\s*[,\s]\s*}
+  SPLIT_ARG_LIST_RE = /\s*[,\s]\s*/.freeze
 
   def parse_options(&block)
     OptionParser.new(nil, 40, &block).parse!
@@ -64,10 +65,10 @@ module CMess::CLI
   def open_file_or_std(file, mode = 'r')
     if file == '-'
       case mode
-        when 'r' then STDIN
-        when 'w' then STDOUT
-        when 'a' then STDERR
-        else raise ArgumentError, "don't know how to handle mode `#{mode}'"
+      when 'r' then STDIN
+      when 'w' then STDOUT
+      when 'a' then STDERR
+      else raise ArgumentError, "don't know how to handle mode `#{mode}'"
       end
     else
       ensure_readable(file) unless mode == 'w'
@@ -78,14 +79,14 @@ module CMess::CLI
   def open_temporary_input(*files)
     temp = Tempfile.new('cmess_cli')
 
-    files.each { |file|
+    files.each do |file|
       if file == '-'
         STDIN.each { |line| temp << line }
       else
         ensure_readable(file)
         File.foreach(file) { |line| temp << line }
       end
-    }
+    end
 
     # return File, instead of Tempfile
     temp.close
@@ -94,24 +95,31 @@ module CMess::CLI
 
   def trailing_args_as_input(options)
     unless ARGV.empty? || options[:input_set]
-      options[:input] = ARGV.size == 1 ?
-        open_file_or_std(ARGV.first) :
-        open_temporary_input(*ARGV)
+      options[:input] =
+        if ARGV.size == 1
+          open_file_or_std(ARGV.first)
+        else
+          open_temporary_input(*ARGV)
+        end
     end
   end
 
   def determine_system_encoding
     ENV.user_encoding || lambda {
-      abort <<-EOT
-Your system's encoding couldn't be determined automatically -- please specify
-it explicitly via the ENCODING environment variable or via the '-t' option.
+      abort <<~EOT
+        Your system's encoding couldn't be determined automatically -- please specify
+        it explicitly via the ENCODING environment variable or via the '-t' option.
       EOT
-    }.tap { |dummy| def dummy.to_s; 'NOT FOUND'; end }
+    }.tap do |dummy|
+      def dummy.to_s
+        'NOT FOUND'
+      end
+    end
   end
 
   def cli
     yield
-  rescue => err
+  rescue StandardError => err
     if $VERBOSE
       backtrace = err.backtrace
       fromtrace = backtrace[1..-1].map { |i| "\n        from #{i}" }
@@ -121,5 +129,4 @@ it explicitly via the ENCODING environment variable or via the '-t' option.
       abort "#{err.to_s.capitalize_first} [#{err.backtrace.first}]"
     end
   end
-
 end

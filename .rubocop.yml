@@ -1,0 +1,15 @@
+Metrics/LineLength:
+  Max: 108
+  
+Metrics/MethodLength:
+  Max: 15
+  
+Metrics/AbcSize:
+  Max: 18
+  
+Style/ClassAndModuleChildren:
+  Severity: warning
+  EnforcedStyle: compact
+  
+Style/Documentation:
+  Enabled: false 

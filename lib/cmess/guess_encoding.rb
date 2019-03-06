@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #--
 ###############################################################################
 #                                                                             #
@@ -39,25 +41,21 @@ require 'cmess' unless Object.const_defined?(:CMess)
 # and Automatic for details.
 
 module CMess::GuessEncoding
-
   VERSION = '0.2.0'
 
   class << self
-
     def manual(*args)
       Manual.display(*args)
     end
 
-    alias_method :display, :manual
+    alias display manual
 
     def automatic(*args)
       Automatic.guess(*args)
     end
 
-    alias_method :guess, :automatic
-
+    alias guess automatic
   end
-
 end
 
 require_relative 'guess_encoding/encoding'
